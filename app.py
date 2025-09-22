@@ -15,6 +15,7 @@ from flask_migrate import Migrate
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Optional
+import pymysql
 
 # Load environment variables from .env file
 load_dotenv()
@@ -33,19 +34,24 @@ def from_json_filter(value):
 
 app.jinja_env.filters['from_json'] = from_json_filter
 
-# app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'a_very_secret_key')
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'mysql+mysqlconnector://root:password@localhost/dts_db')
-import pymysql
+# This is the correct database URI configuration
+# The DATABASE_URL must be set in Vercel's environment variables
+database_url = os.environ.get('DATABASE_URL')
+if database_url:
+    # This line replaces 'mysql' with 'mysql+pymysql' to explicitly use PyMySQL
+    database_url = database_url.replace('mysql://', 'mysql+pymysql://')
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+else:
+    # Fallback for local development
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/dts_db'
 
-# Tell SQLAlchemy to use pymysql as the database connector
-# This is the correct database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('mysql+mysqlconnector', 'mysql+pymysql')
+# This line is not needed and can be removed
+# pymysql.install_as_MySQLdb()
 
-# This is the new line to pass SSL arguments correctly
+# This is the correct way to pass SSL arguments separately
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'ssl': {'ssl_mode': 'REQUIRED'}}}
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -185,12 +191,12 @@ def admin_dashboard():
     creator_count = User.query.filter_by(role='creator').count()
     participant_count = User.query.filter_by(role='participant').count()
     return render_template('dashboard_admin.html', 
-                           total_users=total_users, 
-                           total_tests=total_tests, 
-                           total_submissions=total_submissions,
-                           admin_count=admin_count,
-                           creator_count=creator_count,
-                           participant_count=participant_count)
+                            total_users=total_users, 
+                            total_tests=total_tests, 
+                            total_submissions=total_submissions,
+                            admin_count=admin_count,
+                            creator_count=creator_count,
+                            participant_count=participant_count)
 
 @app.route('/dashboard/creator')
 @login_required
@@ -409,7 +415,7 @@ def contact():
         return redirect(url_for('contact'))
     return render_template('contact.html')
 
-# if __name__ == '__main__':
-#     with app.app_context():
-#         db.create_all()
-#     app.run(debug=True)
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
