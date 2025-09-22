@@ -38,10 +38,15 @@ app.jinja_env.filters['from_json'] = from_json_filter
 import pymysql
 
 # Tell SQLAlchemy to use pymysql as the database connector
+# This is the correct database URI
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('mysql+mysqlconnector', 'mysql+pymysql')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# This is the new line to pass SSL arguments correctly
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'ssl': {'ssl_mode': 'REQUIRED'}}}
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
