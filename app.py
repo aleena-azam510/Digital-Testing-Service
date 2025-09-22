@@ -37,18 +37,29 @@ def from_json_filter(value):
 
 app.jinja_env.filters['from_json'] = from_json_filter
 
-# Check the DATABASE_URL environment variable
-database_url = os.environ.get('DATABASE_URL')
-
 # ==============================================================================
 # CONDITIONAL DATABASE CONFIGURATION
 # ==============================================================================
+database_url = os.environ.get('DATABASE_URL')
+db_cert = os.environ.get('MYSQL_CERT_CA') # Added to get the certificate content from Vercel
+
 if database_url:
-    # This is a more robust way to handle the Vercel connection string.
-    # It ensures the 'mysql+pymysql' dialect and the 'ssl' argument are
-    # correctly passed.
+    # Aiven requires the SSL certificate content to be passed in the connection arguments.
+    # We create a dictionary to hold the arguments.
+    connect_args = {
+        'ssl': {
+            'ssl_mode': 'REQUIRED'
+        }
+    }
+    
+    # If the certificate environment variable exists, add it to the connect_args.
+    if db_cert:
+        # The 'ca' key is used to pass the certificate authority content.
+        connect_args['ssl']['ca'] = db_cert
+
     app.config['SQLALCHEMY_DATABASE_URI'] = database_url
-    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'ssl': {'ssl_mode': 'REQUIRED'}}}
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': connect_args}
+
 else:
     # Fallback for local development
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/dts_db'
@@ -65,6 +76,8 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+
+
 
 # ==============================================================================
 # DATABASE MODELS
