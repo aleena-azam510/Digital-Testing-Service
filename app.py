@@ -17,12 +17,12 @@ from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Optional
 import pymysql
 
+# This is the crucial line. It allows SQLAlchemy to use PyMySQL
+# when it expects MySQLdb.
+pymysql.install_as_MySQLdb()
+
 # Load environment variables from .env file
 load_dotenv()
-
-# This is the crucial line that was missing. It tells SQLAlchemy to use PyMySQL
-# when a 'mysql' connection is requested.
-pymysql.install_as_MySQLdb()
 
 # ==============================================================================
 # APP AND DATABASE CONFIGURATION
@@ -42,9 +42,6 @@ app.jinja_env.filters['from_json'] = from_json_filter
 # The DATABASE_URL must be set in Vercel's environment variables
 database_url = os.environ.get('DATABASE_URL')
 if database_url:
-    # We still want to replace the protocol to be explicit with pymysql,
-    # but the install_as_MySQLdb() is the primary fix.
-    database_url = database_url.replace('mysql://', 'mysql+pymysql://')
     app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 else:
     # Fallback for local development
