@@ -41,30 +41,29 @@ app.jinja_env.filters['from_json'] = from_json_filter
 # CONDITIONAL DATABASE CONFIGURATION
 # ==============================================================================
 database_url = os.environ.get('DATABASE_URL')
-db_cert = os.environ.get('MYSQL_CERT_CA') # Added to get the certificate content from Vercel
+db_cert = os.environ.get('MYSQL_CERT_CA')  # Get certificate content from Vercel
 
 if database_url:
-    # Aiven requires the SSL certificate content to be passed in the connection arguments.
-    # We create a dictionary to hold the arguments.
-    connect_args = {
-        'ssl': {
-            'ssl_mode': 'REQUIRED'
-        }
-    }
-    
-    # If the certificate environment variable exists, add it to the connect_args.
-    if db_cert:
-        # The 'ca' key is used to pass the certificate authority content.
-        connect_args['ssl']['ca'] = db_cert
+    connect_args = {"ssl": {"ssl_mode": "REQUIRED"}}
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
-    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': connect_args}
+    if db_cert:
+        # Write certificate content into a temp file
+        ca_path = "/tmp/ca.pem"
+        with open(ca_path, "w") as f:
+            f.write(db_cert)
+        
+        # Tell MySQL to use that file
+        connect_args["ssl"]["ca"] = ca_path
+
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
 
 else:
     # Fallback for local development
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/dts_db'
+    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
 
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
