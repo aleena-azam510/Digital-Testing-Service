@@ -15,9 +15,10 @@ from flask_migrate import Migrate
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Optional
-# No longer needed, as we will modify the URL directly
-# import pymysql
-# pymysql.install_as_MySQLdb()
+import pymysql
+
+# This is a crucial line for some environments, let's keep it.
+pymysql.install_as_MySQLdb()
 
 # Load environment variables from .env file
 load_dotenv()
@@ -36,20 +37,21 @@ def from_json_filter(value):
 
 app.jinja_env.filters['from_json'] = from_json_filter
 
-# This is the correct database URI configuration
-# The DATABASE_URL must be set in Vercel's environment variables
+# Check the DATABASE_URL environment variable
 database_url = os.environ.get('DATABASE_URL')
+
+# ==============================================================================
+# CONDITIONAL DATABASE CONFIGURATION
+# ==============================================================================
 if database_url:
-    # Explicitly change the dialect to mysql+pymysql
-    if database_url.startswith('mysql://'):
-        database_url = database_url.replace('mysql://', 'mysql+pymysql://', 1)
+    # This is a more robust way to handle the Vercel connection string.
+    # It ensures the 'mysql+pymysql' dialect and the 'ssl' argument are
+    # correctly passed.
     app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'ssl': {'ssl_mode': 'REQUIRED'}}}
 else:
     # Fallback for local development
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/dts_db'
-
-# This is the correct way to pass SSL arguments separately
-app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'ssl': {'ssl_mode': 'REQUIRED'}}}
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -58,6 +60,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+# Initialize the SQLAlchemy object after setting the config
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
@@ -190,9 +193,9 @@ def admin_dashboard():
     admin_count = User.query.filter_by(role='admin').count()
     creator_count = User.query.filter_by(role='creator').count()
     participant_count = User.query.filter_by(role='participant').count()
-    return render_template('dashboard_admin.html', 
-                            total_users=total_users, 
-                            total_tests=total_tests, 
+    return render_template('dashboard_admin.html',
+                            total_users=total_users,
+                            total_tests=total_tests,
                             total_submissions=total_submissions,
                             admin_count=admin_count,
                             creator_count=creator_count,
@@ -259,11 +262,11 @@ def upload_json_test():
                     return redirect(request.url)
                 test_title = data['test_title']
                 questions_data = data['questions']
-                
+
                 # The description field is already handled here.
                 # It reads the 'test_description' field from the JSON.
                 test_description = data.get('test_description', '')
-                
+
                 new_test = Test(
                     creator_id=current_user.id,
                     title=test_title,
@@ -271,7 +274,7 @@ def upload_json_test():
                 )
                 db.session.add(new_test)
                 db.session.commit()
-                
+
                 for q_data in questions_data:
                     is_open_ended = q_data.get('is_open_ended', False)
                     if is_open_ended:
