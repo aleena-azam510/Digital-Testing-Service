@@ -40,29 +40,30 @@ app.jinja_env.filters['from_json'] = from_json_filter
 # ==============================================================================
 # CONDITIONAL DATABASE CONFIGURATION
 # ==============================================================================
-database_url = os.environ.get('DATABASE_URL')
-db_cert = os.environ.get('MYSQL_CERT_CA')  # Get certificate content from Vercel
+database_url = os.environ.get("DATABASE_URL")
+db_cert = os.environ.get("MYSQL_CERT_CA")  # PEM string from Vercel env
 
 if database_url:
     connect_args = {"ssl": {"ssl_mode": "REQUIRED"}}
 
     if db_cert:
-        # Write certificate content into a temp file
+        # Save PEM to a temp file
         ca_path = "/tmp/ca.pem"
         with open(ca_path, "w") as f:
             f.write(db_cert)
         
-        # Tell MySQL to use that file
+        # Pass file path to PyMySQL
         connect_args["ssl"]["ca"] = ca_path
 
     app.config["SQLALCHEMY_DATABASE_URI"] = database_url
     app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
 
 else:
-    # Fallback for local development
+    # Local dev fallback
     app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
 
 
 UPLOAD_FOLDER = 'uploads'
