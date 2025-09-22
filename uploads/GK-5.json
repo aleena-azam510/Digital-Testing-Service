@@ -1,0 +1,117 @@
+{
+  "test_title": "GK Card 5 - Arts & Culture",
+  "description": "This quiz explores literature, music, paintings, and cultural heritage from around the world.",
+  "category": "GK",
+  "questions": [
+    {
+      "question_text": "Who painted the Mona Lisa?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Leonardo da Vinci",
+        "B": "Pablo Picasso",
+        "C": "Vincent van Gogh",
+        "D": "Michelangelo"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which Shakespeare play features the characters Rosencrantz and Guildenstern?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Macbeth",
+        "B": "Hamlet",
+        "C": "Othello",
+        "D": "King Lear"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which country is famous for the dance form 'Flamenco'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Italy",
+        "B": "Spain",
+        "C": "Mexico",
+        "D": "Argentina"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Who wrote the epic poem 'Paradise Lost'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "John Milton",
+        "B": "Geoffrey Chaucer",
+        "C": "William Wordsworth",
+        "D": "T.S. Eliot"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "The 'Starry Night' painting was created by which artist?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Claude Monet",
+        "B": "Vincent van Gogh",
+        "C": "Salvador Dalí",
+        "D": "Edvard Munch"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which ancient civilization built the Machu Picchu?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Maya",
+        "B": "Aztec",
+        "C": "Inca",
+        "D": "Olmec"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Who composed the famous classical piece 'Fur Elise'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Mozart",
+        "B": "Beethoven",
+        "C": "Bach",
+        "D": "Chopin"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which is the national flower of Japan?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Rose",
+        "B": "Lotus",
+        "C": "Cherry Blossom",
+        "D": "Tulip"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Who wrote 'The Divine Comedy'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Homer",
+        "B": "Virgil",
+        "C": "Dante Alighieri",
+        "D": "Sophocles"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which museum is home to the painting 'The Last Supper'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Louvre Museum",
+        "B": "Uffizi Gallery",
+        "C": "Santa Maria delle Grazie",
+        "D": "British Museum"
+      },
+      "correct_option": "C"
+    }
+  ]
+}

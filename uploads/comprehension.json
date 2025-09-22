@@ -1,0 +1,117 @@
+{
+  "test_title": "English Card 4 - Reading Comprehension",
+  "description": "This quiz tests reading comprehension and inference skills.",
+  "category": "English",
+  "questions": [
+    {
+      "question_text": "Read the sentence: 'The sun set and darkness spread quickly.' What does 'darkness spread quickly' mean?",
+      "is_open_ended": false,
+      "options": {
+        "A": "It became dark very fast",
+        "B": "The sun was shining",
+        "C": "It stayed bright",
+        "D": "Morning was coming"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Read: 'He was too tired to continue.' What does this suggest?",
+      "is_open_ended": false,
+      "options": {
+        "A": "He wanted to continue",
+        "B": "He stopped because of tiredness",
+        "C": "He was not tired",
+        "D": "He kept working"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of these words best describes the tone of the sentence: 'She smiled warmly at the little child.'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Angry",
+        "B": "Kind",
+        "C": "Sad",
+        "D": "Cold"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "In the passage: 'The storm destroyed many houses.' What is the main idea?",
+      "is_open_ended": false,
+      "options": {
+        "A": "The storm was weak",
+        "B": "The storm caused damage",
+        "C": "People enjoyed the storm",
+        "D": "No houses were damaged"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Read: 'She whispered the secret.' What does 'whispered' mean?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Shouted loudly",
+        "B": "Spoke softly",
+        "C": "Sang a song",
+        "D": "Said nothing"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What is the best summary of: 'Tom studied hard, passed the exam, and was very happy.'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Tom was sad",
+        "B": "Tom failed the exam",
+        "C": "Tom succeeded through effort",
+        "D": "Tom did not study"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Read: 'The boy ran as fast as he could to catch the bus.' What was the boy trying to do?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Miss the bus",
+        "B": "Catch the bus",
+        "C": "Sleep on the bus",
+        "D": "Avoid running"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Read: 'She opened the window because it was too hot inside.' Why did she open the window?",
+      "is_open_ended": false,
+      "options": {
+        "A": "It was cold",
+        "B": "It was raining",
+        "C": "The room was hot",
+        "D": "She wanted to close it"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which word best describes the mood of 'He danced with joy.'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Sad",
+        "B": "Angry",
+        "C": "Happy",
+        "D": "Afraid"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "What does the sentence 'The teacher praised her for her hard work' mean?",
+      "is_open_ended": false,
+      "options": {
+        "A": "The teacher was angry",
+        "B": "The teacher ignored her",
+        "C": "The teacher appreciated her effort",
+        "D": "The teacher punished her"
+      },
+      "correct_option": "C"
+    }
+  ]
+}

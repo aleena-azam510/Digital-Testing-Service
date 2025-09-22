@@ -1,0 +1,117 @@
+{
+  "test_title": "Math Card 6 - Calculus Basics",
+  "description": "This quiz tests fundamental calculus concepts.",
+  "category": "Mathematics",
+  "questions": [
+    {
+      "question_text": "What is the derivative of x²?",
+      "is_open_ended": false,
+      "options": {
+        "A": "x",
+        "B": "2x",
+        "C": "x²",
+        "D": "2"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What is the derivative of sin x?",
+      "is_open_ended": false,
+      "options": {
+        "A": "cos x",
+        "B": "−cos x",
+        "C": "−sin x",
+        "D": "tan x"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "The integral of 1 dx is _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "x",
+        "B": "1",
+        "C": "x²",
+        "D": "ln x"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "What is the derivative of a constant?",
+      "is_open_ended": false,
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "same constant",
+        "D": "undefined"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "∫ x dx = ?",
+      "is_open_ended": false,
+      "options": {
+        "A": "x",
+        "B": "x²/2 + C",
+        "C": "x²",
+        "D": "2x"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "d/dx (ln x) = ?",
+      "is_open_ended": false,
+      "options": {
+        "A": "1",
+        "B": "x",
+        "C": "1/x",
+        "D": "log x"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "If f(x) = 3x, what is f'(x)?",
+      "is_open_ended": false,
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "x",
+        "D": "3x"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "The slope of a tangent line is given by _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "integration",
+        "B": "differentiation",
+        "C": "multiplication",
+        "D": "division"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "∫ dx/x = ?",
+      "is_open_ended": false,
+      "options": {
+        "A": "x",
+        "B": "ln|x| + C",
+        "C": "1/x",
+        "D": "x²"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "The process of finding area under a curve is called _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "Differentiation",
+        "B": "Integration",
+        "C": "Division",
+        "D": "Multiplication"
+      },
+      "correct_option": "B"
+    }
+  ]
+}

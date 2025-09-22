@@ -1,0 +1,116 @@
+{
+  "test_title": "Data Structures & Algorithms",
+  "description": "This test evaluates knowledge of common data structures and algorithms used in computer science.",
+  "questions": [
+    {
+      "question_text": "Which data structure uses FIFO (First In, First Out)?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Tree",
+        "D": "Graph"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which sorting algorithm has the best average-case time complexity?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Bubble Sort",
+        "B": "Merge Sort",
+        "C": "Insertion Sort",
+        "D": "Selection Sort"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of the following is NOT a linear data structure?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Array",
+        "B": "Linked List",
+        "C": "Queue",
+        "D": "Binary Tree"
+      },
+      "correct_option": "D"
+    },
+    {
+      "question_text": "Which operation has O(1) complexity in a stack?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Search",
+        "B": "Push",
+        "C": "Traverse",
+        "D": "Sort"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What is the worst-case time complexity of QuickSort?",
+      "is_open_ended": false,
+      "options": {
+        "A": "O(n)",
+        "B": "O(n log n)",
+        "C": "O(log n)",
+        "D": "O(n^2)"
+      },
+      "correct_option": "D"
+    },
+    {
+      "question_text": "Which data structure is used in recursion?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Queue",
+        "B": "Heap",
+        "C": "Stack",
+        "D": "Array"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which algorithm is used to find the shortest path in a weighted graph?",
+      "is_open_ended": false,
+      "options": {
+        "A": "DFS",
+        "B": "BFS",
+        "C": "Dijkstra's Algorithm",
+        "D": "Kruskal’s Algorithm"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which traversal method visits root, left, and right in order?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Preorder",
+        "B": "Inorder",
+        "C": "Postorder",
+        "D": "Level-order"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which data structure is best for implementing LRU cache?",
+      "is_open_ended": false,
+      "options": {
+        "A": "HashMap + Doubly Linked List",
+        "B": "Queue",
+        "C": "Stack",
+        "D": "Array"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which of the following is a divide and conquer algorithm?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Merge Sort",
+        "B": "Bubble Sort",
+        "C": "Selection Sort",
+        "D": "Insertion Sort"
+      },
+      "correct_option": "A"
+    }
+  ]
+}

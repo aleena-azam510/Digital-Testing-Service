@@ -1,0 +1,117 @@
+{
+  "test_title": "English Card 2 - Grammar",
+  "description": "This quiz tests grammar rules, sentence structure, and parts of speech.",
+  "category": "English",
+  "questions": [
+    {
+      "question_text": "Identify the adjective: She wore a beautiful dress.",
+      "is_open_ended": false,
+      "options": {
+        "A": "She",
+        "B": "wore",
+        "C": "beautiful",
+        "D": "dress"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which sentence is grammatically correct?",
+      "is_open_ended": false,
+      "options": {
+        "A": "She don’t like apples.",
+        "B": "She doesn’t likes apples.",
+        "C": "She doesn’t like apples.",
+        "D": "She not like apples."
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Choose the correct article: I saw _____ elephant in the zoo.",
+      "is_open_ended": false,
+      "options": {
+        "A": "a",
+        "B": "an",
+        "C": "the",
+        "D": "no article"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of the following is a conjunction?",
+      "is_open_ended": false,
+      "options": {
+        "A": "And",
+        "B": "Quickly",
+        "C": "Table",
+        "D": "Run"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Identify the noun: The cat is sleeping.",
+      "is_open_ended": false,
+      "options": {
+        "A": "cat",
+        "B": "is",
+        "C": "sleeping",
+        "D": "the"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which sentence is in passive voice?",
+      "is_open_ended": false,
+      "options": {
+        "A": "She sings a song.",
+        "B": "A song is sung by her.",
+        "C": "She will sing a song.",
+        "D": "She is singing a song."
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which is the plural of 'child'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "childs",
+        "B": "childes",
+        "C": "children",
+        "D": "childrens"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Fill in the blank: There _____ many books on the table.",
+      "is_open_ended": false,
+      "options": {
+        "A": "is",
+        "B": "are",
+        "C": "was",
+        "D": "be"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of the following is a preposition?",
+      "is_open_ended": false,
+      "options": {
+        "A": "in",
+        "B": "write",
+        "C": "happy",
+        "D": "quickly"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Identify the adverb: She sings beautifully.",
+      "is_open_ended": false,
+      "options": {
+        "A": "She",
+        "B": "sings",
+        "C": "beautifully",
+        "D": "None"
+      },
+      "correct_option": "C"
+    }
+  ]
+}

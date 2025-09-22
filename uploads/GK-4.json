@@ -1,0 +1,117 @@
+{
+  "test_title": "GK Card 4 - Sports",
+  "description": "This quiz covers famous players, tournaments, and records in sports.",
+  "category": "GK",
+  "questions": [
+    {
+      "question_text": "Which country won the FIFA World Cup in 2018?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Germany",
+        "B": "France",
+        "C": "Brazil",
+        "D": "Argentina"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Who holds the record for the most Olympic gold medals?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Usain Bolt",
+        "B": "Michael Phelps",
+        "C": "Carl Lewis",
+        "D": "Mark Spitz"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "In which sport is the term 'love' used?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Cricket",
+        "B": "Tennis",
+        "C": "Football",
+        "D": "Basketball"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which country hosted the 2016 Summer Olympics?",
+      "is_open_ended": false,
+      "options": {
+        "A": "China",
+        "B": "Brazil",
+        "C": "UK",
+        "D": "Russia"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Who is known as the 'God of Cricket'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Ricky Ponting",
+        "B": "Brian Lara",
+        "C": "Sachin Tendulkar",
+        "D": "Virat Kohli"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which country has won the most FIFA World Cups?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Germany",
+        "B": "Brazil",
+        "C": "Italy",
+        "D": "Argentina"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "How many players are there in a basketball team on the court?",
+      "is_open_ended": false,
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "5",
+        "D": "11"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "What is the national sport of Japan?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Baseball",
+        "B": "Judo",
+        "C": "Sumo Wrestling",
+        "D": "Karate"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which tennis player is known as the 'King of Clay'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Roger Federer",
+        "B": "Novak Djokovic",
+        "C": "Rafael Nadal",
+        "D": "Andy Murray"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "In which sport is the Ryder Cup contested?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Cricket",
+        "B": "Golf",
+        "C": "Hockey",
+        "D": "Baseball"
+      },
+      "correct_option": "B"
+    }
+  ]
+}

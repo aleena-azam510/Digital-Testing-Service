@@ -1,0 +1,116 @@
+{
+  "test_title": "Operating Systems",
+  "description": "This test covers fundamental concepts of operating systems including processes, memory management, and scheduling.",
+  "questions": [
+    {
+      "question_text": "Which of the following is NOT an operating system?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Linux",
+        "B": "Windows",
+        "C": "Oracle",
+        "D": "macOS"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which OS component is responsible for process scheduling?",
+      "is_open_ended": false,
+      "options": {
+        "A": "File System",
+        "B": "Kernel",
+        "C": "Shell",
+        "D": "Device Driver"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which scheduling algorithm is also called 'First Come First Serve'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "FCFS",
+        "B": "SJF",
+        "C": "Round Robin",
+        "D": "Priority Scheduling"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "In paging, the fixed-size blocks of physical memory are called?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Pages",
+        "B": "Frames",
+        "C": "Blocks",
+        "D": "Segments"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of the following is a deadlock condition?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Mutual Exclusion",
+        "B": "Hold and Wait",
+        "C": "Circular Wait",
+        "D": "All of the above"
+      },
+      "correct_option": "D"
+    },
+    {
+      "question_text": "Which memory management technique suffers from external fragmentation?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Paging",
+        "B": "Segmentation",
+        "C": "Dynamic Partitioning",
+        "D": "Swapping"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which is the smallest unit of CPU scheduling?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Process",
+        "B": "Thread",
+        "C": "Job",
+        "D": "Instruction"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What is the full form of IPC?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Inter Process Communication",
+        "B": "Internal Processing Control",
+        "C": "Input Processing Cycle",
+        "D": "Instruction Processing Command"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which OS is mainly used in mobile phones?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Windows",
+        "B": "Linux",
+        "C": "Android",
+        "D": "MS-DOS"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which of the following is a real-time OS?",
+      "is_open_ended": false,
+      "options": {
+        "A": "MS-DOS",
+        "B": "Linux",
+        "C": "VxWorks",
+        "D": "Windows 7"
+      },
+      "correct_option": "C"
+    }
+  ]
+}

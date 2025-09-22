@@ -1,0 +1,30 @@
+{
+  "test_title": "Sample Quiz on General Knowledge",
+  "questions": [
+    {
+      "question_text": "What is the capital of Japan?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Beijing",
+        "B": "Tokyo",
+        "C": "Seoul",
+        "D": "Bangkok"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "The Great Wall of China is visible from space. (True/False)",
+      "is_open_ended": false,
+      "options": {
+        "A": "True",
+        "B": "False"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What is the largest organ in the human body?",
+      "is_open_ended": true,
+      "correct_answer_text": "skin"
+    }
+  ]
+}

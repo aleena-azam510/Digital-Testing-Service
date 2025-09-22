@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block title %}Participant Dashboard{% endblock %}
+
+{% block head %}
+<style>
+    :root {
+        --primary: #4361ee;
+        --secondary: #3f37c9;
+        --success: #4cc9f0;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --accent: #7209b7; /* purple accent */
+        --warning: #ffb703;
+        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    body {
+        background: linear-gradient(180deg, #f5f7fb, #edf1f9);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .dashboard-header {
+        background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+        border-radius: 20px;
+        padding: 2rem;
+        color: white;
+        margin-bottom: 2.5rem;
+        box-shadow: var(--card-shadow);
+        background-size: 300% 300%;
+        animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .welcome-badge {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: 500;
+        animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    .test-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    .test-card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        transition: var(--transition);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: none;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    .test-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(67, 97, 238, 0.25);
+    }
+
+    .test-card__header {
+        padding: 1rem 1.5rem;
+        background: linear-gradient(120deg, var(--primary), var(--success));
+        color: white;
+        font-weight: 600;
+    }
+
+    .badge {
+        background: white !important;
+        color: var(--secondary) !important;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 50px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .test-card__body {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .test-card__title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+    }
+
+    .test-card__description {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .test-card__action {
+        margin-top: auto;
+    }
+
+    /* Gradient Buttons */
+    .btn-start {
+        background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+        background-size: 300% 300%;
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 10px;
+        font-weight: 500;
+        transition: var(--transition);
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        animation: gradientShift 6s ease infinite;
+    }
+
+    .btn-start::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.2);
+        transition: all 0.4s ease;
+    }
+
+    .btn-start:hover::after {
+        left: 100%;
+    }
+
+    .btn-start:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+    }
+
+    .no-tests-card {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 3rem;
+        background: white;
+        border-radius: 18px;
+        box-shadow: var(--card-shadow);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .no-tests-icon {
+        font-size: 4rem;
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    /* Fade-in staggered animation */
+    .fade-in {
+        animation: fadeInUp 0.7s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .test-grid {
+            grid-template-columns: 1fr;
+        }
+        .dashboard-header {
+            padding: 1.5rem;
+        }
+    }
+.filter-bar {
+        margin-bottom: 2rem;
+        text-align: right;
+    }
+
+    .filter-select {
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--gray);
+        font-weight: 500;
+        transition: var(--transition);
+    }
+
+    .filter-select:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 6px rgba(67, 97, 238, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .filter-bar {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="dashboard-header">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <h1 class="display-5 fw-bold">Test Dashboard</h1>
+                <p class="mb-0">Select a test below to begin your assessment</p>
+            </div>
+            <div class="welcome-badge mt-3 mt-md-0">
+                <span>Welcome, {{ current_user.username }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Filter Dropdown -->
+    <div class="filter-bar">
+        <label for="categoryFilter" class="me-2 fw-bold">Filter by:</label>
+       <select id="categoryFilter" class="filter-select">
+            <option value="all">All Categories</option>
+            <option value="CS">Computer Science</option>
+            <option value="GK">General Knowledge</option>
+            <option value="English">English</option>
+            <option value="Math">Math</option>
+        </select>
+    </div>
+
+    <div class="test-grid" id="testGrid">
+        {% for test in all_tests %}
+        <div class="test-card fade-in"
+             data-category="{{ test.category}}"
+             style="animation-delay: {{ loop.index0 * 0.15 }}s;">
+            <div class="test-card__header">
+                <span class="badge">Test {{ loop.index }}</span>
+            </div>
+            <div class="test-card__body">
+                <h3 class="test-card__title">{{ test.title }}</h3>
+                <p class="test-card__description">{{ test.description or 'No description provided.' }}</p>
+                <div class="test-card__action">
+                    <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-start">
+                        Start Test <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="no-tests-card fade-in">
+            <div class="no-tests-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h3 class="text-muted">No Tests Available</h3>
+            <p class="text-muted">There are no tests created yet. Please check back later.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById("categoryFilter").addEventListener("change", function() {
+        let selected = this.value.toLowerCase();
+        console.log("Selected value:", selected); // Check this value
+        let cards = document.querySelectorAll(".test-card");
+
+        cards.forEach(card => {
+            let category = card.getAttribute("data-category").toLowerCase();
+            console.log("Card category:", category); // Check this value
+            
+            if (selected === "all" || category === selected) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
+{% endblock %}

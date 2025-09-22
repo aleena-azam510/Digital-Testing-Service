@@ -1,0 +1,117 @@
+{
+  "test_title": "GK Card 1 - World History",
+  "description": "This quiz covers major events, leaders, and milestones in world history.",
+  "category": "GK",
+  "questions": [
+    {
+      "question_text": "Who was the first President of the United States?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Abraham Lincoln",
+        "B": "George Washington",
+        "C": "Thomas Jefferson",
+        "D": "John Adams"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "In which year did the French Revolution begin?",
+      "is_open_ended": false,
+      "options": {
+        "A": "1776",
+        "B": "1789",
+        "C": "1815",
+        "D": "1848"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Who was the British Prime Minister during most of World War II?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Neville Chamberlain",
+        "B": "Winston Churchill",
+        "C": "Clement Attlee",
+        "D": "Harold Macmillan"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "The Great Wall of China was mainly built to protect against which group?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Mongols",
+        "B": "Romans",
+        "C": "Persians",
+        "D": "Japanese"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Who discovered America in 1492?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Ferdinand Magellan",
+        "B": "Christopher Columbus",
+        "C": "Marco Polo",
+        "D": "Vasco da Gama"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which empire was ruled by Genghis Khan?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Ottoman Empire",
+        "B": "Roman Empire",
+        "C": "Mongol Empire",
+        "D": "Persian Empire"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "In which country did the Industrial Revolution begin?",
+      "is_open_ended": false,
+      "options": {
+        "A": "France",
+        "B": "Germany",
+        "C": "United States",
+        "D": "United Kingdom"
+      },
+      "correct_option": "D"
+    },
+    {
+      "question_text": "Who was the last Tsar of Russia?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Alexander II",
+        "B": "Nicholas II",
+        "C": "Peter the Great",
+        "D": "Ivan the Terrible"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "The Cold War was mainly between which two countries?",
+      "is_open_ended": false,
+      "options": {
+        "A": "USA and China",
+        "B": "USA and USSR",
+        "C": "UK and Germany",
+        "D": "France and USSR"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Who was known as the 'Iron Lady'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Angela Merkel",
+        "B": "Margaret Thatcher",
+        "C": "Indira Gandhi",
+        "D": "Golda Meir"
+      },
+      "correct_option": "B"
+    }
+  ]
+}

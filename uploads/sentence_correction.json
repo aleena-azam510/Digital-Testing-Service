@@ -1,0 +1,117 @@
+{
+  "test_title": "English Card 8 - Sentence Correction",
+  "description": "This quiz tests sentence correction and error spotting skills.",
+  "category": "English",
+  "questions": [
+    {
+      "question_text": "Find the error: She go to school every day.",
+      "is_open_ended": false,
+      "options": {
+        "A": "She go",
+        "B": "school",
+        "C": "every",
+        "D": "day"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Correct the sentence: He don’t like tea.",
+      "is_open_ended": false,
+      "options": {
+        "A": "He doesn’t like tea.",
+        "B": "He don’t likes tea.",
+        "C": "He doesn’t likes tea.",
+        "D": "He don’t like tea."
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Find the correct sentence.",
+      "is_open_ended": false,
+      "options": {
+        "A": "She has went to the market.",
+        "B": "She have gone to the market.",
+        "C": "She has gone to the market.",
+        "D": "She gone to the market."
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Choose the correct sentence:",
+      "is_open_ended": false,
+      "options": {
+        "A": "They was happy.",
+        "B": "They were happy.",
+        "C": "They is happy.",
+        "D": "They be happy."
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Find the error: She sings good.",
+      "is_open_ended": false,
+      "options": {
+        "A": "She",
+        "B": "sings",
+        "C": "good",
+        "D": "No error"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Correct the sentence: I am agree with you.",
+      "is_open_ended": false,
+      "options": {
+        "A": "I agree with you.",
+        "B": "I am agreed with you.",
+        "C": "I agreeing with you.",
+        "D": "I am agree you."
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which is correct?",
+      "is_open_ended": false,
+      "options": {
+        "A": "He is senior than me.",
+        "B": "He is more senior than me.",
+        "C": "He senior than me.",
+        "D": "He senior to me."
+      },
+      "correct_option": "D"
+    },
+    {
+      "question_text": "Correct the error: She is my cousin sister.",
+      "is_open_ended": false,
+      "options": {
+        "A": "She is my cousin.",
+        "B": "She is my sister.",
+        "C": "She is cousin sister.",
+        "D": "No correction needed."
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Choose the correct sentence:",
+      "is_open_ended": false,
+      "options": {
+        "A": "Neither of the boys are guilty.",
+        "B": "Neither of the boys is guilty.",
+        "C": "Neither boys is guilty.",
+        "D": "Neither boys are guilty."
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Correct the sentence: He is living here since 2010.",
+      "is_open_ended": false,
+      "options": {
+        "A": "He has lived here since 2010.",
+        "B": "He lived here since 2010.",
+        "C": "He is lived here since 2010.",
+        "D": "He has been living here since 2010."
+      },
+      "correct_option": "D"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "test_title": "Cybersecurity Basics",
+  "description": "This test checks understanding of cybersecurity fundamentals, threats, and preventive measures.",
+  "questions": [
+    {
+      "question_text": "Which of the following is NOT a type of malware?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Virus",
+        "B": "Worm",
+        "C": "Firewall",
+        "D": "Trojan"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "What does 'phishing' usually involve?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Stealing fish",
+        "B": "Deceiving users via fake emails",
+        "C": "Breaking passwords by brute force",
+        "D": "Injecting malicious code"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which protocol is used for secure communication over the internet?",
+      "is_open_ended": false,
+      "options": {
+        "A": "HTTP",
+        "B": "FTP",
+        "C": "HTTPS",
+        "D": "SMTP"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "What does a firewall do?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Protects against malware",
+        "B": "Monitors and filters network traffic",
+        "C": "Encrypts data",
+        "D": "Deletes spam emails"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which attack involves overwhelming a system with traffic?",
+      "is_open_ended": false,
+      "options": {
+        "A": "SQL Injection",
+        "B": "DDoS",
+        "C": "Phishing",
+        "D": "Spoofing"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of the following is a strong password?",
+      "is_open_ended": false,
+      "options": {
+        "A": "123456",
+        "B": "password",
+        "C": "Pa$$w0rd@2023",
+        "D": "qwerty"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which type of cryptography uses two keys (public and private)?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Symmetric",
+        "B": "Asymmetric",
+        "C": "Hashing",
+        "D": "Steganography"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What does 'CIA triad' stand for in cybersecurity?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Confidentiality, Integrity, Availability",
+        "B": "Control, Internet, Access",
+        "C": "Cybersecurity, Information, Authentication",
+        "D": "Confidential, Internal, Authority"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which of the following is a common two-factor authentication method?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Password + OTP",
+        "B": "Username + Password",
+        "C": "PIN only",
+        "D": "Captcha"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which type of attack exploits vulnerabilities in SQL queries?",
+      "is_open_ended": false,
+      "options": {
+        "A": "SQL Injection",
+        "B": "Cross-site Scripting",
+        "C": "Phishing",
+        "D": "Brute Force"
+      },
+      "correct_option": "A"
+    }
+  ]
+}

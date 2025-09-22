@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    :root {
+        --primary: #4361ee;
+        --secondary: #3a0ca3;
+        --accent: #7209b7;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #edf2fb 0%, #e2eafc 100%);
+        color: var(--dark);
+        line-height: 1.6;
+    }
+
+    h1.display-4 {
+        color: var(--secondary);
+    }
+
+    .lead {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .divider {
+        width: 80px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--primary);
+        margin: 1rem auto 3rem;
+    }
+
+    .card {
+        border: none;
+        border-radius: 20px;
+        background: white;
+        box-shadow: var(--card-shadow);
+        transition: var(--transition);
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        transition: var(--transition);
+    }
+
+    .card:hover .feature-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .card-title {
+        color: var(--primary);
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-text {
+        color: #555;
+        font-size: 0.95rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-4 fw-bold mb-3">Our Key Features</h1>
+            <div class="divider"></div>
+            <p class="lead text-muted">A look into what makes ExamProctor AI the leading digital testing platform.</p>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-robot text-primary feature-icon mb-3"></i>
+                    <h5 class="card-title fw-bold">Intelligent Grading</h5>
+                    <p class="card-text">Our AI models automatically grade open-ended and essay-type questions, providing instant feedback and reducing manual effort.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-shield-alt text-success feature-icon mb-3"></i>
+                    <h5 class="card-title fw-bold">Real-time Proctoring</h5>
+                    <p class="card-text">Utilize AI-driven proctoring to monitor for suspicious activity, ensuring exam integrity and a fair testing environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-chart-line text-warning feature-icon mb-3"></i>
+                    <h5 class="card-title fw-bold">Insightful Analytics</h5>
+                    <p class="card-text">Gain a deeper understanding of student performance with comprehensive, data-driven reports and analytics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

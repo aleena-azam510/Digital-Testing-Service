@@ -1,0 +1,117 @@
+{
+  "test_title": "English Card 3 - Vocabulary",
+  "description": "This quiz tests vocabulary knowledge and word usage.",
+  "category": "English",
+  "questions": [
+    {
+      "question_text": "Choose the correct word: He is very _____ in mathematics.",
+      "is_open_ended": false,
+      "options": {
+        "A": "skill",
+        "B": "skilled",
+        "C": "skills",
+        "D": "skillful"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which word is opposite in meaning to 'brave'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "cowardly",
+        "B": "fearless",
+        "C": "bold",
+        "D": "heroic"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "What is the meaning of 'rapid'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "slow",
+        "B": "quick",
+        "C": "late",
+        "D": "tiny"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Choose the correct spelling:",
+      "is_open_ended": false,
+      "options": {
+        "A": "Recieve",
+        "B": "Receive",
+        "C": "Recive",
+        "D": "Receeve"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which word best completes the sentence? He was _____ by her kindness.",
+      "is_open_ended": false,
+      "options": {
+        "A": "touched",
+        "B": "touching",
+        "C": "touch",
+        "D": "touches"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Choose the synonym of 'happy'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "sad",
+        "B": "joyful",
+        "C": "angry",
+        "D": "tired"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which word is closest in meaning to 'difficult'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "easy",
+        "B": "hard",
+        "C": "simple",
+        "D": "quick"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Choose the correct word: The opposite of 'increase' is _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "reduce",
+        "B": "rise",
+        "C": "grow",
+        "D": "expand"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which of the following words means 'extremely small'?",
+      "is_open_ended": false,
+      "options": {
+        "A": "tiny",
+        "B": "huge",
+        "C": "vast",
+        "D": "giant"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Find the synonym of 'intelligent'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "smart",
+        "B": "dull",
+        "C": "lazy",
+        "D": "weak"
+      },
+      "correct_option": "A"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{% extends "base.html" %} 
+
+{% block title %}Test Results{% endblock %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    :root {
+        --primary: #4361ee;
+        --secondary: #3a0ca3;
+        --accent: #7209b7;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #4cc9f0;
+        --danger: #f72585;
+        --warning: #f8961e;
+        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #edf2fb 0%, #e2eafc 100%);
+        color: var(--dark);
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 24px;
+        box-shadow: var(--card-shadow);
+        background: white;
+        overflow: hidden;
+    }
+
+    .card-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--secondary);
+    }
+
+    .score-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 2rem 0;
+    }
+
+    .percentage-circle {
+        width: 220px;
+        height: 220px;
+        position: relative;
+    }
+
+    .circular-chart {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+    }
+
+    .circle-bg {
+        fill: none;
+        stroke: #e9ecef;
+        stroke-width: 3;
+    }
+
+    .circle {
+        fill: none;
+        stroke: var(--success);
+        stroke-width: 3;
+        stroke-linecap: round;
+        transition: stroke-dasharray 1s ease-out;
+    }
+
+    .percentage-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        fill: var(--dark);
+        text-anchor: middle;
+        dominant-baseline: middle;
+    }
+
+    .score-text {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary);
+    }
+    
+    .score-detail {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, var(--primary), var(--accent));
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        color: white;
+        transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .divider {
+        width: 80px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--primary);
+        margin: 1rem auto 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg p-5 text-center">
+                <h1 class="card-title">Results for "{{ test.title }}"</h1>
+                <div class="divider"></div>
+                
+                <div class="score-container">
+                    <div class="percentage-circle" id="percentage-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg"
+                                d="M18 2.0845
+                                   a 15.9155 15.9155 0 0 1 0 31.831
+                                   a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <path class="circle" id="score-circle"
+                                stroke-dasharray="0, 100"
+                                d="M18 2.0845
+                                   a 15.9155 15.9155 0 0 1 0 31.831
+                                   a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <text x="18" y="20.35" class="percentage-text" id="percentage-text"></text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="score-text">{{ submission.score }} / {{ questions|length }}</div>
+                <p class="score-detail">Total Questions: {{ questions|length }}</p>
+                <p class="score-detail">Completed on: {{ submission.id }}</p>
+
+                <a href="{{ url_for('dashboard_redirect') }}" class="btn btn-primary mt-4">
+                    <i class="fa-solid fa-arrow-left me-2"></i>Return to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const score = {{ submission.score }};
+        const totalQuestions = {{ questions|length }};
+        const percentage = (score / totalQuestions) * 100;
+        const circle = document.getElementById('score-circle');
+        const percentageText = document.getElementById('percentage-text');
+        
+        const circumference = 100;
+        const offset = circumference - (percentage / 100) * circumference;
+
+        circle.style.strokeDasharray = `${circumference - offset}, ${circumference}`;
+        percentageText.textContent = `${percentage.toFixed(0)}%`;
+    });
+</script>
+{% endblock %}
+{% endblock %}

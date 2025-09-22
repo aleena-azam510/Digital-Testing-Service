@@ -1,0 +1,117 @@
+{
+  "test_title": "English Card 7 - Punctuation",
+  "description": "This quiz tests punctuation rules in English writing.",
+  "category": "English",
+  "questions": [
+    {
+      "question_text": "Which sentence is punctuated correctly?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Its raining outside.",
+        "B": "It's raining outside.",
+        "C": "Its' raining outside.",
+        "D": "Its raining, outside."
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What punctuation mark is used at the end of a question?",
+      "is_open_ended": false,
+      "options": {
+        "A": ".",
+        "B": "!",
+        "C": "?",
+        "D": ","
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which sentence needs a comma?",
+      "is_open_ended": false,
+      "options": {
+        "A": "I bought apples oranges and bananas.",
+        "B": "I bought apples, oranges, and bananas.",
+        "C": "I bought apples and oranges and bananas.",
+        "D": "I bought apples oranges bananas."
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What is the purpose of quotation marks?",
+      "is_open_ended": false,
+      "options": {
+        "A": "To show surprise",
+        "B": "To show spoken words",
+        "C": "To end a sentence",
+        "D": "To separate items"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which punctuation shows strong emotion?",
+      "is_open_ended": false,
+      "options": {
+        "A": "?",
+        "B": "!",
+        "C": ",",
+        "D": ";"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Choose the correct sentence:",
+      "is_open_ended": false,
+      "options": {
+        "A": "Johns book is new.",
+        "B": "John's book is new.",
+        "C": "Johns' book is new.",
+        "D": "John book's is new."
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What punctuation is used to join two related sentences?",
+      "is_open_ended": false,
+      "options": {
+        "A": "colon",
+        "B": "semicolon",
+        "C": "comma",
+        "D": "apostrophe"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which sentence is correct?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Where are you.",
+        "B": "Where are you?",
+        "C": "Where are you!",
+        "D": "Where, are you?"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which punctuation is used in contractions?",
+      "is_open_ended": false,
+      "options": {
+        "A": "comma",
+        "B": "apostrophe",
+        "C": "colon",
+        "D": "semicolon"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which is the correct use of a colon?",
+      "is_open_ended": false,
+      "options": {
+        "A": "I need: bread milk eggs.",
+        "B": "I need bread, milk, eggs.",
+        "C": "I need the following: bread, milk, eggs.",
+        "D": "I need bread: milk: eggs."
+      },
+      "correct_option": "C"
+    }
+  ]
+}

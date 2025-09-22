@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    :root {
+        --primary: #4361ee;
+        --secondary: #3a0ca3;
+        --accent: #7209b7;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #edf2fb 0%, #e2eafc 100%);
+        color: var(--dark);
+        line-height: 1.6;
+    }
+
+    h1.display-4 {
+        color: var(--secondary);
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .divider {
+        width: 80px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--primary);
+        margin: 1.5rem auto 2rem;
+    }
+
+    .card {
+        border: none;
+        border-radius: 20px;
+        background: white;
+        box-shadow: var(--card-shadow);
+        transition: var(--transition);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .card p {
+        color: #555;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-4 fw-bold mb-3">About ExamProctor AI</h1>
+            <div class="divider"></div>
+            <p class="lead text-muted">Our mission is to revolutionize digital assessments with technology and integrity.</p>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-lg p-5">
+                <h3 class="fw-bold mb-3"><i class="fa-solid fa-lightbulb me-2 text-warning"></i>Our Vision</h3>
+                <p>We believe that digital testing should be secure, intelligent, and accessible to everyone. Our platform aims to create a seamless experience for both educators and students, ensuring fairness and efficiency.</p>
+                
+                <h3 class="fw-bold mt-5 mb-3"><i class="fa-solid fa-users me-2 text-primary"></i>Our Team</h3>
+                <p>ExamProctor AI was founded by a team of passionate developers and data scientists. We are dedicated to building a platform that not only meets the needs of today's educational landscape but also pushes the boundaries of what's possible with AI.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

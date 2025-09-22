@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Test{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4">
+                <h2 class="card-title text-center mb-4">Create a New Test</h2>
+                <form id="create-test-form" method="POST" action="{{ url_for('create_test') }}">
+                    <div class="mb-3">
+                        <label for="test_title" class="form-label">Test Title</label>
+                        <input type="text" class="form-control" id="test_title" name="test_title" required>
+                    </div>
+
+                    <div id="questions-container" class="mt-4">
+                        </div>
+
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="button" class="btn btn-secondary me-2" id="add-mcq-btn">Add Multiple Choice Question</button>
+                        <button type="button" class="btn btn-secondary" id="add-open-ended-btn">Add Open-Ended Question</button>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Save Test</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+    // Define the URL for the dashboard here in the HTML file
+    const creatorDashboardUrl = "{{ url_for('creator_dashboard') }}";
+</script>
+<script src="{{ url_for('static', filename='js/create_test.js') }}"></script>
+{% endblock %}
+{% endblock %}

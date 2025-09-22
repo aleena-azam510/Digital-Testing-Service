@@ -1,0 +1,117 @@
+{
+  "test_title": "English Card 5 - Synonyms & Antonyms",
+  "description": "This quiz tests synonyms (similar meanings) and antonyms (opposite meanings).",
+  "category": "English",
+  "questions": [
+    {
+      "question_text": "Choose the synonym of 'begin'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "end",
+        "B": "start",
+        "C": "close",
+        "D": "finish"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Choose the antonym of 'honest'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "truthful",
+        "B": "loyal",
+        "C": "dishonest",
+        "D": "faithful"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Select the synonym of 'angry'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "furious",
+        "B": "happy",
+        "C": "calm",
+        "D": "quiet"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Select the antonym of 'success'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "victory",
+        "B": "failure",
+        "C": "achievement",
+        "D": "progress"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Synonym of 'rapid' is _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "slow",
+        "B": "fast",
+        "C": "late",
+        "D": "small"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Antonym of 'ancient' is _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "old",
+        "B": "past",
+        "C": "modern",
+        "D": "historic"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Choose the synonym of 'beautiful'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "ugly",
+        "B": "pretty",
+        "C": "plain",
+        "D": "dull"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Choose the antonym of 'brave'.",
+      "is_open_ended": false,
+      "options": {
+        "A": "fearless",
+        "B": "bold",
+        "C": "cowardly",
+        "D": "heroic"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Synonym of 'tiny' is _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "huge",
+        "B": "big",
+        "C": "small",
+        "D": "giant"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Antonym of 'joy' is _____.",
+      "is_open_ended": false,
+      "options": {
+        "A": "happiness",
+        "B": "sorrow",
+        "C": "smile",
+        "D": "delight"
+      },
+      "correct_option": "B"
+    }
+  ]
+}

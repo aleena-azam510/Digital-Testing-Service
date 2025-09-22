@@ -1,0 +1,116 @@
+{
+  "test_title": "Computer Architecture",
+  "description": "This test assesses knowledge of computer architecture, memory hierarchy, and instruction-level concepts.",
+  "questions": [
+    {
+      "question_text": "Which of the following is the brain of the computer?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Memory",
+        "B": "CPU",
+        "C": "I/O Devices",
+        "D": "Cache"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which register holds the address of the next instruction?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Accumulator",
+        "B": "Program Counter",
+        "C": "Instruction Register",
+        "D": "MAR"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which memory is fastest?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Cache",
+        "B": "RAM",
+        "C": "ROM",
+        "D": "Hard Disk"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which of the following is NOT a type of computer architecture?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Von Neumann",
+        "B": "Harvard",
+        "C": "Princeton",
+        "D": "RISC"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which instruction is used to load data from memory into CPU registers?",
+      "is_open_ended": false,
+      "options": {
+        "A": "STORE",
+        "B": "LOAD",
+        "C": "FETCH",
+        "D": "MOVE"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What does ALU stand for?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Arithmetic Logic Unit",
+        "B": "Application Layer Unit",
+        "C": "Algorithm Learning Utility",
+        "D": "Address Lookup Unit"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which memory is non-volatile?",
+      "is_open_ended": false,
+      "options": {
+        "A": "RAM",
+        "B": "ROM",
+        "C": "Cache",
+        "D": "Registers"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which pipeline hazard is caused by data dependency?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Structural Hazard",
+        "B": "Data Hazard",
+        "C": "Control Hazard",
+        "D": "Cache Miss"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which of the following is a CISC processor?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Intel x86",
+        "B": "ARM",
+        "C": "MIPS",
+        "D": "RISC-V"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "What is the full form of DMA?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Direct Memory Allocation",
+        "B": "Data Memory Access",
+        "C": "Direct Memory Access",
+        "D": "Dynamic Memory Allocation"
+      },
+      "correct_option": "C"
+    }
+  ]
+}
