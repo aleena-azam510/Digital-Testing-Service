@@ -420,5 +420,6 @@ def contact():
 
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()
+        # db.create_all()  # <-- Comment this out before deployment
+        pass  # <-- Add a pass statement to keep the code valid
     app.run(debug=True)
