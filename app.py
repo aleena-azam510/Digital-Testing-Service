@@ -33,8 +33,14 @@ def from_json_filter(value):
 
 app.jinja_env.filters['from_json'] = from_json_filter
 
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'a_very_secret_key')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'mysql+mysqlconnector://root:password@localhost/dts_db')
+# app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'a_very_secret_key')
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'mysql+mysqlconnector://root:password@localhost/dts_db')
+import pymysql
+
+# Tell SQLAlchemy to use pymysql as the database connector
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('mysql+mysqlconnector', 'mysql+pymysql')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
