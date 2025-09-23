@@ -22,6 +22,13 @@ pymysql.install_as_MySQLdb()
 # Flask app config
 # -----------------------------
 app = Flask(__name__)
+@app.template_filter('from_json')
+def from_json_filter(value):
+    try:
+        return json.loads(value)
+    except Exception:
+        return {}
+
 app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
 
 UPLOAD_FOLDER = "uploads"
