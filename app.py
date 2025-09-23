@@ -13,25 +13,25 @@ from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Optional
 import pymysql
 
-# MySQL compatibility
+# -----------------------------
+# MySQLdb compatibility
+# -----------------------------
 pymysql.install_as_MySQLdb()
 
-# Load environment variables
-from dotenv import load_dotenv
-load_dotenv()
-
-# =========================
-# App configuration
-# =========================
+# -----------------------------
+# Flask app config
+# -----------------------------
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'supersecretkey')
+app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
+
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
 
-# =========================
+# -----------------------------
 # Database configuration
-# =========================
+# -----------------------------
 database_url = os.environ.get("DATABASE_URL")
 db_cert = os.environ.get("MYSQL_CERT_CA")  # PEM string from Vercel
 
@@ -45,19 +45,18 @@ if database_url:
     app.config["SQLALCHEMY_DATABASE_URI"] = database_url
     app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
 else:
-    # Local fallback
     app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
+app.config['SQLALCHEMY_ECHO'] = True  # logs all SQL queries
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-# =========================
-# Models
-# =========================
+# -----------------------------
+# Database models
+# -----------------------------
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
@@ -94,9 +93,9 @@ class Submission(db.Model):
     score = db.Column(db.Integer)
     ai_feedback = db.Column(db.Text)
 
-# =========================
-# Admin panel
-# =========================
+# -----------------------------
+# Flask-Admin
+# -----------------------------
 admin = Admin(app, name='DTS Admin Panel', template_mode='bootstrap3')
 
 class CustomModelView(ModelView):
@@ -114,22 +113,63 @@ admin.add_view(CustomModelView(Submission, db.session))
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# =========================
-# Flask Forms
-# =========================
+# -----------------------------
+# Create tables & default admin
+# -----------------------------
+with app.app_context():
+    db.create_all()
+     # Default admin
+    if not User.query.filter_by(username='admin').first():
+        admin_user = User(username='admin', role='admin')
+        admin_user.set_password('adminpassword')  # Change this in production
+        db.session.add(admin_user)
+        print("Default admin user created")
+
+    # Default creator
+    if not User.query.filter_by(username='testcreator').first():
+        creator_user = User(username='testcreator', role='creator')
+        creator_user.set_password('creatorpassword')  # Change this in production
+        db.session.add(creator_user)
+        print("Default creator user created")
+# -----------------------------
+# Forms
+# -----------------------------
 class CreateTestForm(FlaskForm):
     title = StringField('Test Title', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[Optional()])
     submit = SubmitField('Create Test')
 
-# =========================
+# -----------------------------
 # Routes
-# =========================
+# -----------------------------
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# ----- LOGIN / REGISTER -----
+# Register
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        role = 'participant'
+        if User.query.filter_by(username=username).first():
+            flash('Username already exists.', 'error')
+            return redirect(url_for('register'))
+        try:
+            new_user = User(username=username, role=role)
+            new_user.set_password(password)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Registration successful!', 'success')
+            return redirect(url_for('login'))
+        except Exception as e:
+            db.session.rollback()
+            flash(f"Registration failed: {e}", 'error')
+            return redirect(url_for('register'))
+    return render_template('register.html')
+
+# Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -144,24 +184,14 @@ def login():
         flash('Invalid username or password', 'error')
     return render_template('login.html')
 
-# Only participant registration
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-        if User.query.filter_by(username=username).first():
-            flash('Username already exists.', 'error')
-            return redirect(url_for('register'))
-        new_user = User(username=username, role='participant')  # always participant
-        new_user.set_password(password)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('Registration successful! You can now log in.', 'success')
-        return redirect(url_for('login'))
-    return render_template('register.html')
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Logged out successfully.', 'success')
+    return redirect(url_for('index'))
 
-# Dashboard redirection
+# Dashboard redirect
 @app.route('/dashboard')
 @login_required
 def dashboard_redirect():
@@ -172,7 +202,7 @@ def dashboard_redirect():
     else:
         return redirect(url_for('participant_dashboard'))
 
-# ----- Admin dashboard -----
+# Admin dashboard
 @app.route('/dashboard/admin')
 @login_required
 def admin_dashboard():
@@ -193,7 +223,7 @@ def admin_dashboard():
                            creator_count=creator_count,
                            participant_count=participant_count)
 
-# ----- Creator dashboard -----
+# Creator dashboard
 @app.route('/dashboard/creator')
 @login_required
 def creator_dashboard():
@@ -203,7 +233,7 @@ def creator_dashboard():
     my_tests = Test.query.filter_by(creator_id=current_user.id).all()
     return render_template('dashboard_creator.html', my_tests=my_tests)
 
-# ----- Participant dashboard -----
+# Participant dashboard
 @app.route('/dashboard/participant')
 @login_required
 def participant_dashboard():
@@ -213,7 +243,7 @@ def participant_dashboard():
     all_tests = Test.query.all()
     return render_template('dashboard_participant.html', all_tests=all_tests)
 
-# ----- Create test -----
+# Create Test
 @app.route('/create_test', methods=['GET', 'POST'])
 @login_required
 def create_test():
@@ -227,11 +257,11 @@ def create_test():
                         creator_id=current_user.id)
         db.session.add(new_test)
         db.session.commit()
-        flash('Test created successfully!', 'success')
+        flash("Test created successfully!", "success")
         return redirect(url_for('creator_dashboard'))
     return render_template('create_test.html', form=form)
 
-# ----- Upload JSON Test -----
+# Upload JSON Test
 @app.route('/upload_json_test', methods=['GET', 'POST'])
 @login_required
 def upload_json_test():
@@ -262,26 +292,44 @@ def upload_json_test():
                 new_test = Test(title=test_title, description=test_description, creator_id=current_user.id)
                 db.session.add(new_test)
                 db.session.commit()
-                for q in questions_data:
-                    question = Question(
-                        test_id=new_test.id,
-                        question_text=q.get('question_text'),
-                        is_open_ended=q.get('is_open_ended', False),
-                        options=json.dumps(q.get('options', [])),
-                        correct_option=q.get('correct_option', ''),
-                        correct_answer_text=q.get('correct_answer_text', '')
-                    )
-                    db.session.add(question)
+                for q_data in questions_data:
+                    if q_data.get('is_open_ended', False):
+                        q = Question(test_id=new_test.id,
+                                     question_text=q_data['question_text'],
+                                     is_open_ended=True,
+                                     correct_answer_text=q_data.get('correct_answer_text'))
+                    else:
+                        q = Question(test_id=new_test.id,
+                                     question_text=q_data['question_text'],
+                                     options=json.dumps(q_data.get('options', {})),
+                                     correct_option=q_data.get('correct_option'))
+                    db.session.add(q)
                 db.session.commit()
-                flash("Test uploaded successfully!", "success")
+                flash("Test created successfully from JSON!", "success")
                 return redirect(url_for('creator_dashboard'))
             except Exception as e:
+                db.session.rollback()
                 flash(f"Error processing JSON: {e}", "error")
                 return redirect(request.url)
     return render_template('upload_json_test.html')
 
-# ----- Take test -----
-@app.route('/take_test/<int:test_id>', methods=['GET', 'POST'])
+# Delete Test
+@app.route('/delete_test/<int:test_id>', methods=['POST'])
+@login_required
+def delete_test(test_id):
+    test = Test.query.get_or_404(test_id)
+    if test.creator_id != current_user.id:
+        flash("Unauthorized access.", 'error')
+        return redirect(url_for('creator_dashboard'))
+    Question.query.filter_by(test_id=test_id).delete()
+    Submission.query.filter_by(test_id=test_id).delete()
+    db.session.delete(test)
+    db.session.commit()
+    flash("Test and all associated data have been deleted.", "success")
+    return redirect(url_for('creator_dashboard'))
+
+# Take Test
+@app.route('/take_test/<int:test_id>', methods=['GET'])
 @login_required
 def take_test(test_id):
     if current_user.role != 'participant':
@@ -289,61 +337,79 @@ def take_test(test_id):
         return redirect(url_for('dashboard_redirect'))
     test = Test.query.get_or_404(test_id)
     questions = Question.query.filter_by(test_id=test_id).all()
-    if request.method == 'POST':
-        answers = {}
-        score = 0
-        for q in questions:
-            ans = request.form.get(f"question_{q.id}")
-            answers[q.id] = ans
-            if not q.is_open_ended and ans == q.correct_option:
-                score += 1
-        submission = Submission(
-            test_id=test_id,
-            participant_id=current_user.id,
-            answers=json.dumps(answers),
-            score=score,
-            ai_feedback=''  # placeholder
-        )
-        db.session.add(submission)
-        db.session.commit()
-        flash(f"Test submitted! Your score: {score}/{len(questions)}", "success")
-        return redirect(url_for('participant_dashboard'))
     return render_template('take_test.html', test=test, questions=questions)
 
-# =========================
-# Table creation + default users
-# =========================
-with app.app_context():
-    db.create_all()
-
-    # Default admin
-    if not User.query.filter_by(username='admin').first():
-        admin_user = User(username='admin', role='admin')
-        admin_user.set_password('adminpassword')  # CHANGE in production
-        db.session.add(admin_user)
-        print("Default admin created")
-
-    # Default creator
-    if not User.query.filter_by(username='creator1').first():
-        creator_user = User(username='creator1', role='creator')
-        creator_user.set_password('creatorpassword')  # CHANGE in production
-        db.session.add(creator_user)
-        print("Default creator created")
-
-    db.session.commit()
-
-# =========================
-# Logout
-# =========================
-@app.route('/logout')
+# Submit Test
+@app.route('/submit_test/<int:test_id>', methods=['POST'])
 @login_required
-def logout():
-    logout_user()
-    flash('Logged out successfully.', 'success')
-    return redirect(url_for('index'))
+def submit_test(test_id):
+    if current_user.role != 'participant':
+        return jsonify({'message': 'Unauthorized'}), 403
+    answers = request.json.get('answers', {})
+    test = Test.query.get_or_404(test_id)
+    questions = Question.query.filter_by(test_id=test_id).all()
+    total_score = 0
+    feedback = {}
+    for q in questions:
+        submitted_answer = answers.get(str(q.id))
+        if not submitted_answer:
+            feedback[q.id] = "No answer provided."
+            continue
+        if q.is_open_ended:
+            correct_text = (q.correct_answer_text or "").strip().lower()
+            submitted_text = submitted_answer.strip().lower()
+            if submitted_text == correct_text:
+                total_score += 1
+                feedback[q.id] = "AI: Your answer seems correct."
+            else:
+                feedback[q.id] = "AI: Your answer needs more detail."
+        else:
+            if submitted_answer == q.correct_option:
+                total_score += 1
+                feedback[q.id] = "Correct."
+            else:
+                feedback[q.id] = "Incorrect."
+    new_submission = Submission(test_id=test_id,
+                                participant_id=current_user.id,
+                                answers=json.dumps(answers),
+                                score=total_score,
+                                ai_feedback=json.dumps(feedback))
+    db.session.add(new_submission)
+    db.session.commit()
+    return jsonify({'message': 'Test submitted successfully!',
+                    'score': total_score,
+                    'redirect_url': url_for('show_results', submission_id=new_submission.id)})
 
-# =========================
+# Show Results
+@app.route('/results/<int:submission_id>')
+@login_required
+def show_results(submission_id):
+    submission = Submission.query.get_or_404(submission_id)
+    if submission.participant_id != current_user.id:
+        flash("You cannot view this submission.", 'error')
+        return redirect(url_for('participant_dashboard'))
+    test = Test.query.get_or_404(submission.test_id)
+    questions = Question.query.filter_by(test_id=test.id).all()
+    return render_template('results.html', submission=submission, test=test, questions=questions)
+
+# Other static pages
+@app.route('/features')
+def features():
+    return render_template('features.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        flash("Thank you for your message!", 'success')
+        return redirect(url_for('contact'))
+    return render_template('contact.html')
+
+# -----------------------------
 # Run app
-# =========================
+# -----------------------------
 if __name__ == '__main__':
     app.run(debug=True)
