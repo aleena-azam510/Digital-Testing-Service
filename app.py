@@ -7,7 +7,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
-from collections import defaultdict
 from werkzeug.utils import secure_filename
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
@@ -375,7 +374,7 @@ def show_results(submission_id):
     submission = Submission.query.get_or_404(submission_id)
     if submission.participant_id != current_user.id:
         flash("You cannot view this submission.", "error")
-        return redirect(url_for('dashboard_participant'))
+        return redirect(url_for('participant_dashboard'))
     test = Test.query.get_or_404(submission.test_id)
     questions = Question.query.filter_by(test_id=test.id).all()
     return render_template('results.html', submission=submission, test=test, questions=questions)
@@ -410,7 +409,11 @@ def contact():
 # ======================================================================
 if __name__ == '__main__':
     with app.app_context():
-        # Only for local/dev testing; avoid auto-create on Vercel
-        # db.create_all()
-        pass
+        # ONLY create tables automatically if connecting to production DB
+        database_url = os.environ.get("DATABASE_URL")
+        if database_url:
+            print("Production DB detected. Creating tables if they don't exist...")
+            db.create_all()
+        else:
+            print("Local DB detected. Skipping auto-create of tables.")
     app.run(debug=True)
