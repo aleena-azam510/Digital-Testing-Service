@@ -265,56 +265,94 @@ def create_test():
     return render_template('create_test.html', form=form)
 
 # Upload JSON Test
+# Upload JSON Test
 @app.route('/upload_json_test', methods=['GET', 'POST'])
 @login_required
 def upload_json_test():
     if current_user.role != 'creator':
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
+
     if request.method == 'POST':
         if 'file' not in request.files:
-            flash('No file part', 'error')
+            flash('No file part in the request.', 'error')
             return redirect(request.url)
+        
         file = request.files['file']
         if file.filename == '':
-            flash('No selected file', 'error')
+            flash('No file selected.', 'error')
             return redirect(request.url)
-        if file and file.filename.endswith('.json'):
-            filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(filepath)
-            try:
-                with open(filepath, 'r') as f:
-                    data = json.load(f)
-                test_title = data.get('test_title')
-                test_description = data.get('test_description', '')
-                questions_data = data.get('questions', [])
-                if not test_title or not questions_data:
-                    flash("JSON missing 'test_title' or 'questions'.", 'error')
-                    return redirect(request.url)
-                new_test = Test(title=test_title, description=test_description, creator_id=current_user.id)
-                db.session.add(new_test)
-                db.session.commit()
-                for q_data in questions_data:
-                    if q_data.get('is_open_ended', False):
-                        q = Question(test_id=new_test.id,
-                                     question_text=q_data['question_text'],
-                                     is_open_ended=True,
-                                     correct_answer_text=q_data.get('correct_answer_text'))
-                    else:
-                        q = Question(test_id=new_test.id,
-                                     question_text=q_data['question_text'],
-                                     options=json.dumps(q_data.get('options', {})),
-                                     correct_option=q_data.get('correct_option'))
-                    db.session.add(q)
-                db.session.commit()
-                flash("Test created successfully from JSON!", "success")
-                return redirect(url_for('creator_dashboard'))
-            except Exception as e:
-                db.session.rollback()
-                flash(f"Error processing JSON: {e}", "error")
-                return redirect(request.url)
+
+        if not file.filename.endswith('.json'):
+            flash('Only JSON files are allowed.', 'error')
+            return redirect(request.url)
+
+        try:
+            # Parse JSON
+            data = json.load(file)
+        except Exception as e:
+            flash(f"Invalid JSON file: {e}", 'error')
+            return redirect(request.url)
+
+        # Validate required fields
+        test_title = data.get('test_title')
+        questions_data = data.get('questions')
+
+        if not test_title or not isinstance(questions_data, list) or len(questions_data) == 0:
+            flash("JSON must contain 'test_title' and a non-empty 'questions' list.", 'error')
+            return redirect(request.url)
+
+        test_description = data.get('test_description', '')
+
+        try:
+            # Create Test
+            new_test = Test(
+                title=test_title,
+                description=test_description,
+                creator_id=current_user.id
+            )
+            db.session.add(new_test)
+            db.session.commit()
+
+            # Add Questions
+            for idx, q_data in enumerate(questions_data, start=1):
+                question_text = q_data.get('question_text')
+                if not question_text:
+                    flash(f"Question {idx} is missing 'question_text'. Skipping.", 'warning')
+                    continue
+
+                if q_data.get('is_open_ended', False):
+                    q = Question(
+                        test_id=new_test.id,
+                        question_text=question_text,
+                        is_open_ended=True,
+                        correct_answer_text=q_data.get('correct_answer_text', '')
+                    )
+                else:
+                    options = q_data.get('options')
+                    correct_option = q_data.get('correct_option')
+                    if not options or not correct_option:
+                        flash(f"Question {idx} missing 'options' or 'correct_option'. Skipping.", 'warning')
+                        continue
+                    q = Question(
+                        test_id=new_test.id,
+                        question_text=question_text,
+                        options=json.dumps(options),
+                        correct_option=correct_option
+                    )
+                db.session.add(q)
+            db.session.commit()
+
+            flash("Test created successfully from JSON!", 'success')
+            return redirect(url_for('creator_dashboard'))
+
+        except Exception as e:
+            db.session.rollback()
+            flash(f"Database error: {e}", 'error')
+            return redirect(request.url)
+
     return render_template('upload_json_test.html')
+
 
 # Delete Test
 @app.route('/delete_test/<int:test_id>', methods=['POST'])
