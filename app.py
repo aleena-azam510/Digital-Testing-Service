@@ -1,12 +1,9 @@
 import os
 import json
-import joblib
-import numpy as np
 from flask import Flask, render_template, redirect, url_for, flash, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
@@ -16,65 +13,50 @@ from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Optional
 import pymysql
 
-# Ensure MySQLdb compatibility
+# -----------------------------
+# MySQLdb compatibility
+# -----------------------------
 pymysql.install_as_MySQLdb()
 
-# Load environment variables from .env
-load_dotenv()
-
-# ======================================================================
-# APP CONFIGURATION
-# ======================================================================
+# -----------------------------
+# Flask app config
+# -----------------------------
 app = Flask(__name__)
-
-# Register Jinja2 filter
-def from_json_filter(value):
-    if value:
-        return json.loads(value)
-    return {}
-app.jinja_env.filters['from_json'] = from_json_filter
-
-# ======================================================================
-# DATABASE CONFIGURATION
-# ======================================================================
-database_url = os.environ.get("DATABASE_URL")
-db_cert = os.environ.get("MYSQL_CERT_CA")  # PEM string from Vercel
-
-if database_url:
-    # Build SSL connect_args
-    connect_args = {"ssl": {"ssl_mode": "REQUIRED"}}
-
-    if db_cert:
-        # Save PEM content to temporary file (Vercel allows /tmp)
-        ca_path = "/tmp/ca.pem"
-        with open(ca_path, "w") as f:
-            f.write(db_cert)
-        connect_args["ssl"]["ca"] = ca_path
-
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
-    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
-    print("Using production Aiven MySQL DB with SSL.")
-else:
-    # Local development fallback
-    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
-    print("Using local MySQL DB.")
-
-
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
 
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+# -----------------------------
+# Database configuration
+# -----------------------------
+database_url = os.environ.get("DATABASE_URL")
+db_cert = os.environ.get("MYSQL_CERT_CA")  # PEM string from Vercel
+
+if database_url:
+    connect_args = {"ssl": {"ssl_mode": "REQUIRED"}}
+    if db_cert:
+        ca_path = "/tmp/ca.pem"
+        with open(ca_path, "w") as f:
+            f.write(db_cert)
+        connect_args["ssl"]["ca"] = ca_path
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
+
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config['SQLALCHEMY_ECHO'] = True  # logs all SQL queries
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-# ======================================================================
-# DATABASE MODELS
-# ======================================================================
+# -----------------------------
+# Database models
+# -----------------------------
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
@@ -111,10 +93,11 @@ class Submission(db.Model):
     score = db.Column(db.Integer)
     ai_feedback = db.Column(db.Text)
 
-# ======================================================================
-# FLASK-ADMIN
-# ======================================================================
+# -----------------------------
+# Flask-Admin
+# -----------------------------
 admin = Admin(app, name='DTS Admin Panel', template_mode='bootstrap3')
+
 class CustomModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated and current_user.role == 'admin'
@@ -130,24 +113,57 @@ admin.add_view(CustomModelView(Submission, db.session))
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# ======================================================================
-# FLASK FORMS
-# ======================================================================
+# -----------------------------
+# Create tables & default admin
+# -----------------------------
+with app.app_context():
+    db.create_all()
+    if not User.query.filter_by(username='admin').first():
+        admin_user = User(username='admin', role='admin')
+        admin_user.set_password('adminpassword')  # Change this in production
+        db.session.add(admin_user)
+        db.session.commit()
+        print("Default admin user created")
+
+# -----------------------------
+# Forms
+# -----------------------------
 class CreateTestForm(FlaskForm):
     title = StringField('Test Title', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[Optional()])
     submit = SubmitField('Create Test')
 
-# ======================================================================
-# ROUTES
-# ======================================================================
+# -----------------------------
+# Routes
+# -----------------------------
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# -----------------------------
-# LOGIN / REGISTER
-# -----------------------------
+# Register
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        role = 'participant'
+        if User.query.filter_by(username=username).first():
+            flash('Username already exists.', 'error')
+            return redirect(url_for('register'))
+        try:
+            new_user = User(username=username, role=role)
+            new_user.set_password(password)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Registration successful!', 'success')
+            return redirect(url_for('login'))
+        except Exception as e:
+            db.session.rollback()
+            flash(f"Registration failed: {e}", 'error')
+            return redirect(url_for('register'))
+    return render_template('register.html')
+
+# Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -162,26 +178,14 @@ def login():
         flash('Invalid username or password', 'error')
     return render_template('login.html')
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-        role = 'participant'
-        if User.query.filter_by(username=username).first():
-            flash('Username already exists.', 'error')
-            return redirect(url_for('register'))
-        new_user = User(username=username, role=role)
-        new_user.set_password(password)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('Registration successful! You can now log in.', 'success')
-        return redirect(url_for('login'))
-    return render_template('register.html')
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Logged out successfully.', 'success')
+    return redirect(url_for('index'))
 
-# -----------------------------
-# DASHBOARDS
-# -----------------------------
+# Dashboard redirect
 @app.route('/dashboard')
 @login_required
 def dashboard_redirect():
@@ -192,6 +196,7 @@ def dashboard_redirect():
     else:
         return redirect(url_for('participant_dashboard'))
 
+# Admin dashboard
 @app.route('/dashboard/admin')
 @login_required
 def admin_dashboard():
@@ -212,6 +217,7 @@ def admin_dashboard():
                            creator_count=creator_count,
                            participant_count=participant_count)
 
+# Creator dashboard
 @app.route('/dashboard/creator')
 @login_required
 def creator_dashboard():
@@ -221,6 +227,7 @@ def creator_dashboard():
     my_tests = Test.query.filter_by(creator_id=current_user.id).all()
     return render_template('dashboard_creator.html', my_tests=my_tests)
 
+# Participant dashboard
 @app.route('/dashboard/participant')
 @login_required
 def participant_dashboard():
@@ -230,14 +237,12 @@ def participant_dashboard():
     all_tests = Test.query.all()
     return render_template('dashboard_participant.html', all_tests=all_tests)
 
-# -----------------------------
-# CREATE TEST / UPLOAD JSON
-# -----------------------------
+# Create Test
 @app.route('/create_test', methods=['GET', 'POST'])
 @login_required
 def create_test():
     if current_user.role != 'creator':
-        flash("Unauthorized access.", "error")
+        flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
     form = CreateTestForm()
     if form.validate_on_submit():
@@ -246,15 +251,16 @@ def create_test():
                         creator_id=current_user.id)
         db.session.add(new_test)
         db.session.commit()
-        flash('Test created successfully!', 'success')
+        flash("Test created successfully!", "success")
         return redirect(url_for('creator_dashboard'))
     return render_template('create_test.html', form=form)
 
+# Upload JSON Test
 @app.route('/upload_json_test', methods=['GET', 'POST'])
 @login_required
 def upload_json_test():
     if current_user.role != 'creator':
-        flash("Unauthorized access.", "error")
+        flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -301,15 +307,13 @@ def upload_json_test():
                 return redirect(request.url)
     return render_template('upload_json_test.html')
 
-# -----------------------------
-# DELETE TEST
-# -----------------------------
+# Delete Test
 @app.route('/delete_test/<int:test_id>', methods=['POST'])
 @login_required
 def delete_test(test_id):
     test = Test.query.get_or_404(test_id)
     if test.creator_id != current_user.id:
-        flash("Unauthorized access.", "error")
+        flash("Unauthorized access.", 'error')
         return redirect(url_for('creator_dashboard'))
     Question.query.filter_by(test_id=test_id).delete()
     Submission.query.filter_by(test_id=test_id).delete()
@@ -318,9 +322,7 @@ def delete_test(test_id):
     flash("Test and all associated data have been deleted.", "success")
     return redirect(url_for('creator_dashboard'))
 
-# -----------------------------
-# TAKE TEST / SUBMIT TEST
-# -----------------------------
+# Take Test
 @app.route('/take_test/<int:test_id>', methods=['GET'])
 @login_required
 def take_test(test_id):
@@ -331,6 +333,7 @@ def take_test(test_id):
     questions = Question.query.filter_by(test_id=test_id).all()
     return render_template('take_test.html', test=test, questions=questions)
 
+# Submit Test
 @app.route('/submit_test/<int:test_id>', methods=['POST'])
 @login_required
 def submit_test(test_id):
@@ -347,7 +350,7 @@ def submit_test(test_id):
             feedback[q.id] = "No answer provided."
             continue
         if q.is_open_ended:
-            correct_text = q.correct_answer_text.strip().lower()
+            correct_text = (q.correct_answer_text or "").strip().lower()
             submitted_text = submitted_answer.strip().lower()
             if submitted_text == correct_text:
                 total_score += 1
@@ -371,27 +374,19 @@ def submit_test(test_id):
                     'score': total_score,
                     'redirect_url': url_for('show_results', submission_id=new_submission.id)})
 
+# Show Results
 @app.route('/results/<int:submission_id>')
 @login_required
 def show_results(submission_id):
     submission = Submission.query.get_or_404(submission_id)
     if submission.participant_id != current_user.id:
-        flash("You cannot view this submission.", "error")
+        flash("You cannot view this submission.", 'error')
         return redirect(url_for('participant_dashboard'))
     test = Test.query.get_or_404(submission.test_id)
     questions = Question.query.filter_by(test_id=test.id).all()
     return render_template('results.html', submission=submission, test=test, questions=questions)
 
-# -----------------------------
-# OTHER ROUTES
-# -----------------------------
-@app.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    flash('Logged out successfully.', 'success')
-    return redirect(url_for('index'))
-
+# Other static pages
 @app.route('/features')
 def features():
     return render_template('features.html')
@@ -407,16 +402,8 @@ def contact():
         return redirect(url_for('contact'))
     return render_template('contact.html')
 
-# ======================================================================
-# RUN APP
-# ======================================================================
+# -----------------------------
+# Run app
+# -----------------------------
 if __name__ == '__main__':
-    with app.app_context():
-        # ONLY create tables automatically if connecting to production DB
-        database_url = os.environ.get("DATABASE_URL")
-        if database_url:
-            print("Production DB detected. Creating tables if they don't exist...")
-            db.create_all()
-        else:
-            print("Local DB detected. Skipping auto-create of tables.")
     app.run(debug=True)
