@@ -126,11 +126,14 @@ with app.app_context():
         print("Default admin user created")
 
     # Default creator
-    if not User.query.filter_by(username='testcreator').first():
-        creator_user = User(username='testcreator', role='creator')
-        creator_user.set_password('creatorpassword')  # Change this in production
+    if not User.query.filter_by(username='test_creator').first():
+        creator_user = User(username='test_creator', role='creator')
+        creator_user.set_password('creatorpassword123@')  # Change this in production
         db.session.add(creator_user)
+    db.session.commit()
         print("Default creator user created")
+
+
 # -----------------------------
 # Forms
 # -----------------------------
