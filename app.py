@@ -41,10 +41,11 @@ database_url = os.environ.get("DATABASE_URL")
 db_cert = os.environ.get("MYSQL_CERT_CA")  # PEM string from Vercel
 
 if database_url:
+    # Build SSL connect_args
     connect_args = {"ssl": {"ssl_mode": "REQUIRED"}}
 
     if db_cert:
-        # Save PEM content to temp file
+        # Save PEM content to temporary file (Vercel allows /tmp)
         ca_path = "/tmp/ca.pem"
         with open(ca_path, "w") as f:
             f.write(db_cert)
@@ -52,10 +53,12 @@ if database_url:
 
     app.config["SQLALCHEMY_DATABASE_URI"] = database_url
     app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
-
+    print("Using production Aiven MySQL DB with SSL.")
 else:
-    # Local fallback
+    # Local development fallback
     app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
+    print("Using local MySQL DB.")
+
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
