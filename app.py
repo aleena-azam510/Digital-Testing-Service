@@ -130,8 +130,8 @@ with app.app_context():
         creator_user = User(username='test_creator', role='creator')
         creator_user.set_password('creatorpassword123@')  # Change this in production
         db.session.add(creator_user)
-    db.session.commit()
         print("Default creator user created")
+    db.session.commit()
 
 
 # -----------------------------
