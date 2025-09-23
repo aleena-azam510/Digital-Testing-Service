@@ -116,14 +116,22 @@ def load_user(user_id):
 # -----------------------------
 # Create tables & default admin
 # -----------------------------
-with app.app_context():
-    db.create_all()
+# Default admin
     if not User.query.filter_by(username='admin').first():
         admin_user = User(username='admin', role='admin')
         admin_user.set_password('adminpassword')  # Change this in production
         db.session.add(admin_user)
-        db.session.commit()
         print("Default admin user created")
+
+    # Default creator
+    if not User.query.filter_by(username='creator1').first():
+        creator_user = User(username='creator1', role='creator')
+        creator_user.set_password('creatorpassword')  # Change this in production
+        db.session.add(creator_user)
+        print("Default creator user created")
+
+    db.session.commit()
+
 
 # -----------------------------
 # Forms
