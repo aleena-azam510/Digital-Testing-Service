@@ -1,208 +1,213 @@
-{% extends "base.html" %}
-
-{% block title %}Register{% endblock %}
-
-{% block styles %}
-<style>
-    :root {
-        --primary-purple: #6a11cb;
-        --primary-blue: #2575fc;
-        --light-purple: #8a2be2;
-        --light-blue: #4a90e2;
-        --dark-purple: #4b0082;
-        --text-light: #f8f9fa;
-        --glass-bg: rgba(255, 255, 255, 0.1);
-        --glass-border: rgba(255, 255, 255, 0.2);
-    }
-    
-    .register-container {
-        max-width: 450px;
-        width: 100%;
-        margin: 0 auto;
-    }
-    
-    .register-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        border: 1px solid var(--glass-border);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        padding: 40px 30px;
-        color: var(--text-light);
-        transition: transform 0.3s ease;
-        background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
-    }
-    
-    .register-card:hover {
-        transform: translateY(-5px);
-    }
-    
-    .register-title {
-        font-weight: 700;
-        margin-bottom: 30px;
-        text-align: center;
-        font-size: 2rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    .form-label {
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-    
-    .form-control {
-        background: rgba(255, 255, 255, 0.15);
-        border: 2px solid var(--glass-border);
-        border-radius: 10px;
-        color: var(--text-light);
-        padding: 12px 15px;
-        transition: all 0.3s ease;
-    }
-    
-    .form-control:focus {
-        background: rgba(255, 255, 255, 0.25);
-        border-color: rgba(255, 255, 255, 0.4);
-        box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.15);
-        color: var(--text-light);
-    }
-    
-    .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .btn-register {
-        background: linear-gradient(135deg, var(--light-purple) 0%, var(--light-blue) 100%);
-        border: none;
-        border-radius: 10px;
-        padding: 12px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        margin-top: 10px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        color: white;
-    }
-    
-    .btn-register:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
-        color: white;
-    }
-    
-    .login-link {
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    .login-link a {
-        color: var(--text-light);
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border-bottom: 1px solid transparent;
-    }
-    
-    .login-link a:hover {
-        border-bottom: 1px solid var(--text-light);
-    }
-    
-    .decoration {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        z-index: -1;
-    }
-    
-    .decoration-1 {
-        width: 200px;
-        height: 200px;
-        top: 10%;
-        left: 10%;
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    .decoration-2 {
-        width: 150px;
-        height: 150px;
-        bottom: 10%;
-        right: 10%;
-        animation: float 8s ease-in-out infinite;
-    }
-    
-    .decoration-3 {
-        width: 100px;
-        height: 100px;
-        top: 50%;
-        right: 20%;
-        animation: float 5s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-        0% {
-            transform: translateY(0) rotate(0deg);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #6a11cb;
+            --primary-blue: #2575fc;
+            --light-purple: #8a2be2;
+            --light-blue: #4a90e2;
+            --dark-purple: #4b0082;
+            --text-light: #f8f9fa;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
         }
-        50% {
-            transform: translateY(-20px) rotate(180deg);
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
         }
-        100% {
-            transform: translateY(0) rotate(360deg);
+        
+        .register-container {
+            max-width: 450px;
+            width: 100%;
+            margin: 0 auto;
         }
-    }
-    
-    @media (max-width: 576px) {
+        
         .register-card {
-            padding: 30px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 40px 30px;
+            color: var(--text-light);
+            transition: transform 0.3s ease;
+        }
+        
+        .register-card:hover {
+            transform: translateY(-5px);
         }
         
         .register-title {
-            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-    }
-</style>
-{% endblock %}
-
-
-{% block content %}
-<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center" 
-     style="background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);">
-    
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-light);
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.15);
+            color: var(--text-light);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .btn-register {
+            background: linear-gradient(135deg, var(--light-purple) 0%, var(--light-blue) 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .login-link a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .login-link a:hover {
+            border-bottom: 1px solid var(--text-light);
+        }
+        
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 10%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .decoration-3 {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            right: 20%;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .register-card {
+                padding: 30px 20px;
+            }
+            
+            .register-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <!-- Background Decorations -->
     <div class="decoration decoration-1"></div>
     <div class="decoration decoration-2"></div>
     <div class="decoration decoration-3"></div>
     
-    <div class="register-container">
-        <div class="register-card shadow-lg">
-            <h2 class="register-title">Create a New Account</h2>
-            <form action="{{ url_for('register') }}" method="POST">
-                <div class="mb-4">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required 
-                           placeholder="Enter your username">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="register-container">
+                    <div class="register-card shadow-lg">
+                        <h2 class="register-title">Create a New Account</h2>
+                        <form action="{{ url_for('register') }}" method="POST">
+                            <div class="mb-4">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required 
+                                       placeholder="Enter your username">
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required 
+                                       placeholder="Enter your password">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required 
+                                       placeholder="Enter your email">
+                            </div>
+                            <button type="submit" class="btn btn-register w-100">Register</button>
+                        </form>
+                        <div class="login-link">
+                            <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" required 
-                           placeholder="Enter your email">
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required 
-                           placeholder="Enter your password">
-                </div>
-                <div class="mb-4">
-                    <label for="confirm_password" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required 
-                           placeholder="Confirm your password">
-                </div>
-                <button type="submit" class="btn btn-register w-100">Register</button>
-            </form>
-            <div class="login-link">
-                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
             </div>
         </div>
     </div>
-</div>
 
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
