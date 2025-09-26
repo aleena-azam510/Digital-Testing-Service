@@ -426,6 +426,27 @@ def upload_json_test():
 
     return render_template('upload_json_test.html')
 
+
+@app.route('/dashboard/topic/<topic>')
+@login_required
+def topic_detail(topic):
+    if current_user.role != 'participant':
+        flash("Unauthorized access.", 'error')
+        return redirect(url_for('dashboard_redirect'))
+
+    # Fetch tests for this topic (all difficulties)
+    tests = Test.query.filter_by(topic=topic).all()
+
+    if not tests:
+        flash("No tests available for this topic yet.", "warning")
+
+    return render_template(
+        'topic_detail.html',
+        topic=topic,
+        tests=tests
+    )
+
+
 @app.route('/start_test/<string:topic>/<string:difficulty_level>', methods=['GET'])
 @login_required
 def start_test(topic, difficulty_level):
