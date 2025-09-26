@@ -2,119 +2,517 @@
 
 {% block head %}
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
     :root {
-        --primary: #4361ee;
-        --secondary: #3a0ca3;
-        --accent: #7209b7;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
+        --primary-purple: #6a0dad;
+        --secondary-purple: #8a2be2;
+        --light-purple: #9370db;
+        --dark-blue: #4b0082;
+        --light-blue: #e6e6fa;
+        --gradient-primary: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
+        --gradient-secondary: linear-gradient(135deg, #8a2be2 0%, #6a0dad 100%);
+        --gradient-card: linear-gradient(135deg, #f8f4ff 0%, #f0ebff 100%);
+        --success: #10b981;
+        --warning: #f59e0b;
+        --info: #06b6d4;
     }
 
     body {
         font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #edf2fb 0%, #e2eafc 100%);
-        color: var(--dark);
+        background: linear-gradient(135deg, #f5f0ff 0%, #e6e6fa 100%);
+        color: #333;
         line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding: 5rem 0 3rem;
+        background: linear-gradient(135deg, rgba(106, 13, 173, 0.05) 0%, rgba(75, 0, 130, 0.05) 100%);
+        border-radius: 0 0 50% 50% / 0 0 40px 40px;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(106, 13, 173, 0.03)"><circle cx="50" cy="50" r="1.5"/></svg>') repeat;
+        animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+        from { transform: translateY(0) translateX(0); }
+        to { transform: translateY(-100px) translateX(100px); }
     }
 
     h1.display-4 {
-        color: var(--secondary);
+        color: var(--dark-blue);
+        font-weight: 700;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+        from { text-shadow: 0 0 20px rgba(106, 13, 173, 0.3); }
+        to { text-shadow: 0 0 30px rgba(138, 43, 226, 0.5); }
     }
 
     .lead {
-        max-width: 650px;
+        font-size: 1.3rem;
+        max-width: 700px;
         margin: 0 auto;
+        color: #666;
+        font-weight: 400;
+        line-height: 1.8;
     }
 
     .divider {
-        width: 80px;
+        width: 100px;
         height: 4px;
         border-radius: 2px;
-        background: var(--primary);
-        margin: 1rem auto 3rem;
+        background: var(--gradient-primary);
+        margin: 2rem auto 3rem;
+        position: relative;
+        overflow: hidden;
     }
 
-    .card {
+    .divider::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-secondary);
+        animation: slideDivider 3s ease-in-out infinite;
+    }
+
+    @keyframes slideDivider {
+        0% { left: -100%; }
+        50% { left: 100%; }
+        100% { left: 100%; }
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .feature-card {
+        background: var(--gradient-card);
         border: none;
         border-radius: 20px;
-        background: white;
-        box-shadow: var(--card-shadow);
-        transition: var(--transition);
+        padding: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 25px rgba(106, 13, 173, 0.1);
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        transform: translateY(50px);
     }
 
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.2);
+    .feature-card.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        background: var(--gradient-primary);
+        transition: all 0.6s ease;
+    }
+
+    .feature-card:hover::before {
+        left: 0;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(106, 13, 173, 0.15);
     }
 
     .card-body {
-        padding: 2rem;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
     }
 
     .feature-icon {
-        font-size: 3rem;
-        transition: var(--transition);
+        font-size: 4rem;
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
-    .card:hover .feature-icon {
-        transform: scale(1.1) rotate(5deg);
+    .feature-card:hover .feature-icon {
+        transform: scale(1.2) rotate(360deg);
     }
 
     .card-title {
-        color: var(--primary);
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        color: var(--dark-blue);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        font-size: 1.5rem;
     }
 
     .card-text {
-        color: #555;
-        font-size: 0.95rem;
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--gradient-primary);
+        color: white;
+        padding: 0.3rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transform: rotate(5deg);
+    }
+
+    .feature-details {
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+
+    .feature-details ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .feature-details li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .feature-details li:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--success);
+        font-weight: bold;
+    }
+
+    /* Stats Section */
+    .stats-section {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 4rem 0;
+        margin: 4rem 0;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stats-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(255,255,255,0.05)"><circle cx="50" cy="50" r="2"/></svg>') repeat;
+        animation: float 20s linear infinite;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    .cta-button {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin-top: 1rem;
+        border: none;
+        box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(106, 13, 173, 0.4);
+        color: white;
+    }
+
+    /* Floating Animation */
+    @keyframes floatElement {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .floating {
+        animation: floatElement 6s ease-in-out infinite;
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h1.display-4 {
+            font-size: 2.5rem;
+        }
+        
+        .lead {
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 2rem 1.5rem;
+        }
+        
+        .hero-section {
+            padding: 3rem 0 2rem;
+        }
     }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="container my-5">
-    <div class="row">
-        <div class="col text-center">
-            <h1 class="display-4 fw-bold mb-3">Our Key Features</h1>
-            <div class="divider"></div>
-            <p class="lead text-muted">A look into what makes ExamProctor AI the leading digital testing platform.</p>
-        </div>
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3 floating">Our Key Features</h1>
+        <div class="divider"></div>
+        <p class="lead text-muted fade-in">Discover how ExamProctor AI revolutionizes digital testing with cutting-edge technology, intelligent automation, and unparalleled security.</p>
     </div>
-    
-    <div class="row mt-5">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-                <div class="card-body">
-                    <i class="fas fa-robot text-primary feature-icon mb-3"></i>
-                    <h5 class="card-title fw-bold">Intelligent Grading</h5>
-                    <p class="card-text">Our AI models automatically grade open-ended and essay-type questions, providing instant feedback and reducing manual effort.</p>
+</div>
+
+<div class="container my-5">
+    <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card fade-in">
+            <span class="feature-badge">AI Powered</span>
+            <div class="card-body">
+                <i class="fas fa-robot feature-icon"></i>
+                <h5 class="card-title fw-bold">Intelligent Grading</h5>
+                <p class="card-text">Our advanced AI models automatically grade open-ended and essay-type questions with remarkable accuracy, providing instant feedback and reducing manual effort.</p>
+                <div class="feature-details">
+                    <ul>
+                        <li>Natural Language Processing for essay evaluation</li>
+                        <li>95% accuracy in automated grading</li>
+                        <li>Instant feedback for students</li>
+                        <li>Reduces grading time by 80%</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-                <div class="card-body">
-                    <i class="fas fa-shield-alt text-success feature-icon mb-3"></i>
-                    <h5 class="card-title fw-bold">Real-time Proctoring</h5>
-                    <p class="card-text">Utilize AI-driven proctoring to monitor for suspicious activity, ensuring exam integrity and a fair testing environment.</p>
+        <!-- Feature 2 -->
+        <div class="feature-card fade-in">
+            <span class="feature-badge">Secure</span>
+            <div class="card-body">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h5 class="card-title fw-bold">Real-time Proctoring</h5>
+                <p class="card-text">Utilize AI-driven proctoring to monitor for suspicious activity, ensuring exam integrity and maintaining a fair testing environment for all participants.</p>
+                <div class="feature-details">
+                    <ul>
+                        <li>Facial recognition technology</li>
+                        <li>Screen monitoring and recording</li>
+                        <li>Behavioral anomaly detection</li>
+                        <li>Real-time alert system</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-                <div class="card-body">
-                    <i class="fas fa-chart-line text-warning feature-icon mb-3"></i>
-                    <h5 class="card-title fw-bold">Insightful Analytics</h5>
-                    <p class="card-text">Gain a deeper understanding of student performance with comprehensive, data-driven reports and analytics.</p>
+        <!-- Feature 3 -->
+        <div class="feature-card fade-in">
+            <span class="feature-badge">Analytics</span>
+            <div class="card-body">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h5 class="card-title fw-bold">Insightful Analytics</h5>
+                <p class="card-text">Gain a deeper understanding of student performance with comprehensive, data-driven reports and analytics that highlight strengths and areas for improvement.</p>
+                <div class="feature-details">
+                    <ul>
+                        <li>Performance trend analysis</li>
+                        <li>Comparative class statistics</li>
+                        <li>Individual progress tracking</li>
+                        <li>Customizable report generation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Feature 4 -->
+        <div class="feature-card fade-in">
+            <span class="feature-badge">Adaptive</span>
+            <div class="card-body">
+                <i class="fas fa-cogs feature-icon"></i>
+                <h5 class="card-title fw-bold">Adaptive Testing</h5>
+                <p class="card-text">Our platform dynamically adjusts question difficulty based on student performance, creating personalized testing experiences that accurately measure knowledge.</p>
+                <div class="feature-details">
+                    <ul>
+                        <li>Dynamic difficulty adjustment</li>
+                        <li>Personalized learning paths</li>
+                        <li>Real-time performance adaptation</li>
+                        <li>Accurate skill level assessment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Feature 5 -->
+        <div class="feature-card fade-in">
+            <span class="feature-badge">Collaborative</span>
+            <div class="card-body">
+                <i class="fas fa-users feature-icon"></i>
+                <h5 class="card-title fw-bold">Collaborative Tools</h5>
+                <p class="card-text">Facilitate group assessments and peer reviews with our integrated collaboration features designed to enhance learning through teamwork and feedback.</p>
+                <div class="feature-details">
+                    <ul>
+                        <li>Group assessment capabilities</li>
+                        <li>Peer review and feedback system</li>
+                        <li>Real-time collaboration tools</li>
+                        <li>Instructor-student interaction features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Feature 6 -->
+        <div class="feature-card fade-in">
+            <span class="feature-badge">Accessible</span>
+            <div class="card-body">
+                <i class="fas fa-universal-access feature-icon"></i>
+                <h5 class="card-title fw-bold">Accessibility Features</h5>
+                <p class="card-text">Ensure equal testing opportunities for all students with our comprehensive accessibility features designed to accommodate diverse learning needs.</p>
+                <div class="feature-details">
+                    <ul>
+                        <li>Screen reader compatibility</li>
+                        <li>Text-to-speech functionality</li>
+                        <li>Adjustable font sizes and colors</li>
+                        <li>Extended time accommodations</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Stats Section -->
+<div class="stats-section fade-in">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Exams Proctored</div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Accuracy Rate</div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Students Served</div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section fade-in">
+    <div class="container">
+        <h3 class="mb-3 fw-bold">Ready to Transform Your Assessment Process?</h3>
+        <p class="lead text-muted mb-4">Join thousands of educators already using ExamProctor AI to enhance their testing experience.</p>
+        <a href="#" class="cta-button">
+            Get Started Today <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+    </div>
+</div>
+
+<script>
+    // Scroll animation implementation
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // Initial check
+        fadeInOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Add animation delay to cards for staggered effect
+        const cards = document.querySelectorAll('.feature-card');
+        cards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+    });
+</script>
 {% endblock %}

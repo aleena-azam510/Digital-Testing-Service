@@ -1,62 +1,110 @@
 {% extends "base.html" %} 
 
-{% block title %}Test Results{% endblock %}
+{% block title %}Test Results - ExamProctor AI{% endblock %}
 
 {% block head %}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     :root {
-        --primary: #4361ee;
-        --secondary: #3a0ca3;
-        --accent: #7209b7;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --success: #4cc9f0;
-        --danger: #f72585;
-        --warning: #f8961e;
-        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
+        --primary-purple: #6a0dad;
+        --secondary-purple: #8a2be2;
+        --light-purple: #9370db;
+        --dark-blue: #4b0082;
+        --light-blue: #e6e6fa;
+        --gradient-primary: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
+        --gradient-secondary: linear-gradient(135deg, #8a2be2 0%, #6a0dad 100%);
+        --gradient-card: linear-gradient(135deg, #f8f4ff 0%, #f0ebff 100%);
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --card-shadow: 0 15px 35px -5px rgba(106, 13, 173, 0.15);
+        --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     body {
         font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #edf2fb 0%, #e2eafc 100%);
-        color: var(--dark);
+        background: linear-gradient(135deg, #f5f0ff 0%, #e6e6fa 100%);
+        color: #333;
         line-height: 1.6;
         min-height: 100vh;
         padding: 20px;
     }
 
     .container {
-        max-width: 800px;
+        max-width: 900px;
     }
 
-    .card {
+    .results-card {
         border: none;
-        border-radius: 24px;
+        border-radius: 25px;
         box-shadow: var(--card-shadow);
         background: white;
         overflow: hidden;
+        padding: 0;
+        position: relative;
+    }
+
+    .results-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: var(--gradient-primary);
+    }
+
+    .card-header {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 3rem 2rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='2' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat;
+        animation: float 20s linear infinite;
     }
 
     .card-title {
-        font-size: 2rem;
+        font-size: 2.8rem;
         font-weight: 700;
-        color: var(--secondary);
+        margin-bottom: 0.5rem;
+        position: relative;
     }
 
+    .card-subtitle {
+        font-size: 1.3rem;
+        font-weight: 400;
+        opacity: 0.9;
+        margin-bottom: 0;
+    }
+
+    .card-body {
+        padding: 3rem 2rem;
+    }
+
+    /* Score Circle */
     .score-container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin: 2rem 0;
+        margin: 2rem 0 3rem;
     }
 
     .percentage-circle {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
         position: relative;
     }
 
@@ -64,62 +112,240 @@
         display: block;
         margin: auto;
         max-width: 100%;
+        transform: rotate(-90deg);
     }
 
     .circle-bg {
         fill: none;
-        stroke: #e9ecef;
-        stroke-width: 3;
+        stroke: #f0ebff;
+        stroke-width: 4;
     }
 
     .circle {
         fill: none;
-        stroke: var(--success);
-        stroke-width: 3;
+        stroke: var(--primary-purple);
+        stroke-width: 6;
         stroke-linecap: round;
-        transition: stroke-dasharray 1s ease-out;
+        transition: stroke-dasharray 1.5s ease-out, stroke 0.5s ease;
     }
 
-    .percentage-text {
-        font-size: 1.2rem;
-        font-weight: 600;
-        fill: var(--dark);
-        text-anchor: middle;
-        dominant-baseline: middle;
+    .percentage-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    .score-text {
-        font-size: 2.5rem;
+    .percentage-value {
+        font-size: 4rem;
         font-weight: 700;
-        color: var(--primary);
+        line-height: 1;
+        color: var(--dark-blue);
+        margin-bottom: 0.5rem;
+    }
+
+    .percentage-label {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--light-purple);
     }
     
-    .score-detail {
-        font-size: 1rem;
-        color: #6c757d;
+    /* Result Message */
+    .result-message {
+        padding: 1.5rem;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition);
+        border-left: 5px solid;
     }
 
+    .result-message.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .result-message.success { 
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        color: var(--success);
+        border-left-color: var(--success);
+    }
+
+    .result-message.warning { 
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        color: #b45309;
+        border-left-color: var(--warning);
+    }
+
+    .result-message.danger { 
+        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+        color: var(--danger);
+        border-left-color: var(--danger);
+    }
+
+    /* Score Stats */
+    .score-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+        padding: 2rem 0;
+        border-top: 2px solid var(--light-blue);
+        border-bottom: 2px solid var(--light-blue);
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        background: var(--gradient-card);
+        border-radius: 15px;
+        transition: var(--transition);
+    }
+
+    .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(106, 13, 173, 0.1);
+    }
+
+    .stat-item i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+        color: var(--light-purple);
+        font-weight: 500;
+    }
+
+    /* Buttons */
     .btn-primary {
-        background: linear-gradient(45deg, var(--primary), var(--accent));
+        background: var(--gradient-primary);
         border: none;
-        padding: 12px 30px;
+        padding: 1rem 2.5rem;
         border-radius: 50px;
         font-weight: 600;
         color: white;
+        font-size: 1.1rem;
         transition: var(--transition);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
     }
 
     .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 15px 30px rgba(106, 13, 173, 0.4);
+        color: white;
     }
 
-    .divider {
-        width: 80px;
-        height: 4px;
-        border-radius: 2px;
-        background: var(--primary);
-        margin: 1rem auto 2rem;
+    .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary-purple);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        color: var(--primary-purple);
+        font-size: 1.1rem;
+        transition: var(--transition);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-outline:hover {
+        background: var(--primary-purple);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+        
+        .card-title {
+            font-size: 2.2rem;
+        }
+        
+        .card-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .percentage-circle {
+            width: 220px;
+            height: 220px;
+        }
+        
+        .percentage-value {
+            font-size: 3rem;
+        }
+        
+        .score-stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .button-group {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn-primary, .btn-outline {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
     }
 </style>
 {% endblock %}
@@ -128,56 +354,159 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-10">
-            <div class="card shadow-lg p-5 text-center">
-                <h1 class="card-title">Results for "{{ test.title }}"</h1>
-                <div class="divider"></div>
-                
-                <div class="score-container">
-                    <div class="percentage-circle" id="percentage-circle">
-                        <svg viewBox="0 0 36 36" class="circular-chart">
-                            <path class="circle-bg"
-                                d="M18 2.0845
-                                   a 15.9155 15.9155 0 0 1 0 31.831
-                                   a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                            <path class="circle" id="score-circle"
-                                stroke-dasharray="0, 100"
-                                d="M18 2.0845
-                                   a 15.9155 15.9155 0 0 1 0 31.831
-                                   a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                            <text x="18" y="20.35" class="percentage-text" id="percentage-text"></text>
-                        </svg>
-                    </div>
+            <div class="results-card shadow-lg fade-in">
+                <div class="card-header">
+                    <h1 class="card-title"><i class="fas fa-trophy floating me-3"></i>Test Completed!</h1>
+                    <p class="card-subtitle">Results for <strong>{{ test.title }}</strong></p>
                 </div>
                 
-                <div class="score-text">{{ submission.score }} / {{ questions|length }}</div>
-                <p class="score-detail">Total Questions: {{ questions|length }}</p>
-                <p class="score-detail">Completed on: {{ submission.id }}</p>
+                <div class="card-body">
+                    <div class="score-container">
+                        <div class="percentage-circle" id="percentage-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle" id="score-circle"
+                                    stroke-dasharray="0, 100"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                            </svg>
+                            <div class="percentage-overlay">
+                                <div class="percentage-value" id="percentage-value">0%</div>
+                                <div class="percentage-label">Overall Score</div>
+                            </div>
+                        </div>
+                    </div>
 
-                <a href="{{ url_for('dashboard_redirect') }}" class="btn btn-primary mt-4">
-                    <i class="fa-solid fa-arrow-left me-2"></i>Return to Dashboard
-                </a>
+                    <div class="result-message" id="result-message"></div>
+                    
+                    <div class="score-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                            <div class="stat-value">{{ score }}</div>
+                            <div class="stat-label">Correct Answers</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-times-circle" style="color: var(--danger);"></i>
+                            <div class="stat-value">{{ incorrect_answers }}</div>
+                            <div class="stat-label">Incorrect Answers</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-list-ol" style="color: var(--primary-purple);"></i>
+                            <div class="stat-value">{{ total_attempted }}</div>
+                            <div class="stat-label">Questions Attempted</div>
+                        </div>
+                        {% if total_available is defined and total_available > total_attempted %}
+                        <div class="stat-item">
+                            <i class="fas fa-layer-group" style="color: var(--secondary-purple);"></i>
+                            <div class="stat-value">{{ total_available }}</div>
+                            <div class="stat-label">Total Available</div>
+                        </div>
+                        {% endif %}
+                        {% if submission.time_taken_seconds is defined %}
+                        <div class="stat-item">
+                            <i class="fas fa-clock" style="color: var(--light-purple);"></i>
+                            <div class="stat-value" id="time-taken-display"></div>
+                            <div class="stat-label">Time Taken</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-muted mb-4">Submission ID: {{ submission.id }}</p>
+                        
+                        <div class="button-group">
+                            {% if needs_recommendations %}
+                            <a href="{{ url_for('adaptive_recommendations', submission_id=submission.id) }}" class="btn-primary">
+                                <i class="fas fa-graduation-cap me-2"></i>View Recommendations
+                            </a>
+                            {% endif %}
+                            
+                            <a href="{{ url_for('dashboard_redirect') }}" class="btn-outline">
+                                <i class="fas fa-arrow-left me-2"></i>Return to Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+{% endblock %}
+
 {% block scripts %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const score = {{ submission.score }};
-        const totalQuestions = {{ questions|length }};
-        const percentage = (score / totalQuestions) * 100;
+        // Get the pre-calculated percentage directly from Python for accuracy
+        const percentage = {{ percentage_score | default(0) }};
+        const timeTakenSeconds = {{ submission.time_taken_seconds | default(0) }};
+
         const circle = document.getElementById('score-circle');
-        const percentageText = document.getElementById('percentage-text');
+        const percentageValue = document.getElementById('percentage-value');
+        const resultMessage = document.getElementById('result-message');
         
         const circumference = 100;
         const offset = circumference - (percentage / 100) * circumference;
 
+        // Set Circle Fill and Color
         circle.style.strokeDasharray = `${circumference - offset}, ${circumference}`;
-        percentageText.textContent = `${percentage.toFixed(0)}%`;
+        
+        let color, message, messageClass;
+
+        if (percentage >= 80) {
+            color = 'var(--success)';
+            messageClass = 'success';
+            message = '<i class="fas fa-award me-2"></i> Outstanding! You\'ve mastered this material!';
+        } else if (percentage >= 60) {
+            color = 'var(--warning)';
+            messageClass = 'warning';
+            message = '<i class="fas fa-thumbs-up me-2"></i> Good work! You\'re on the right track.';
+        } else {
+            color = 'var(--danger)';
+            messageClass = 'danger';
+            message = '<i class="fas fa-lightbulb me-2"></i> Review recommended to strengthen your understanding.';
+        }
+
+        circle.style.stroke = color;
+        percentageValue.style.color = color;
+        percentageValue.textContent = `${percentage.toFixed(0)}%`;
+
+        // Set Result Message
+        resultMessage.innerHTML = message;
+        resultMessage.classList.add(messageClass, 'show');
+
+        // Format and Display Time Taken
+        const timeDisplay = document.getElementById('time-taken-display');
+        if (timeDisplay) {
+            const minutes = Math.floor(timeTakenSeconds / 60);
+            const seconds = timeTakenSeconds % 60;
+            timeDisplay.textContent = `${minutes}m ${seconds}s`;
+        }
+
+        // Add fade-in animations for elements
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // Initial check
+        fadeInOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
     });
 </script>
-{% endblock %}
 {% endblock %}

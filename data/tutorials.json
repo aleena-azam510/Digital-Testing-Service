@@ -1,0 +1,12 @@
+{
+    "Web Development": [
+        {"title": "HTML Crash Course", "video_id": "UB1O30fR-EE"},
+        {"title": "CSS Tutorial for Beginners", "video_id": "yfoY53QXEnI"},
+        {"title": "JavaScript Tutorial for Beginners", "video_id": "upDLs1sn7g4"}
+    ],
+    "Python": [
+        {"title": "Python Crash Course", "video_id": "rfscVS0vtbw"},
+        {"title": "Python Tutorial for Beginners", "video_id": "_uQrJ0TkZlc"},
+        {"title": "Python Full Course", "video_id": "WGJJIrtnfpk"}
+    ]
+}

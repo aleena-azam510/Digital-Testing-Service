@@ -1,14 +1,33 @@
-<nav class="navbar navbar-expand-lg sticky-top">
+<style>
+    /* Navbar gradient styles */
+    .navbar-gradient {
+        background: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
+    }
+    .navbar-gradient .navbar-brand,
+    .navbar-gradient .nav-link,
+    .navbar-gradient .navbar-toggler-icon {
+        color: #e9d7ff !important; /* lighter lavender for readability */
+    }
+    .navbar-gradient .nav-link.active {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-gradient sticky-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url_for('index') }}">
-            <i class="fas fa-laptop-code"></i> ExamProctor AI
-        </a>
-        
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
+    <i class="fa-solid fa-laptop-code"></i> ExamProctor AI
+</a>
+
+        <!-- Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
+        <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">

@@ -2,14 +2,22 @@
 
 {% block head %}
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
     :root {
         --primary: #4361ee;
         --secondary: #3a0ca3;
         --accent: #7209b7;
         --light: #f8f9fa;
         --dark: #212529;
+        --warning: #f59e0b;
+        --success: #10b981;
+        --info: #06b6d4;
         --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         --transition: all 0.3s ease;
+        --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        --gradient-secondary: linear-gradient(135deg, #7209b7 0%, #4361ee 100%);
+        --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
     }
 
     body {
@@ -17,71 +25,416 @@
         background: linear-gradient(135deg, #edf2fb 0%, #e2eafc 100%);
         color: var(--dark);
         line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding: 5rem 0 3rem;
+        background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(58, 12, 163, 0.05) 100%);
+        border-radius: 0 0 50% 50% / 0 0 40px 40px;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(67, 97, 238, 0.03)"><circle cx="50" cy="50" r="1.5"/></svg>') repeat;
+        animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+        from { transform: translateY(0) translateX(0); }
+        to { transform: translateY(-100px) translateX(100px); }
     }
 
     h1.display-4 {
         color: var(--secondary);
+        font-weight: 700;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+        from { text-shadow: 0 0 20px rgba(67, 97, 238, 0.3); }
+        to { text-shadow: 0 0 30px rgba(114, 9, 183, 0.5); }
     }
 
     .lead {
-        font-size: 1.2rem;
-        max-width: 650px;
+        font-size: 1.3rem;
+        max-width: 700px;
         margin: 0 auto;
+        color: #666;
+        font-weight: 400;
+        line-height: 1.8;
     }
 
     .divider {
-        width: 80px;
+        width: 100px;
         height: 4px;
         border-radius: 2px;
-        background: var(--primary);
-        margin: 1.5rem auto 2rem;
+        background: var(--gradient-primary);
+        margin: 2rem auto 3rem;
+        position: relative;
+        overflow: hidden;
     }
 
-    .card {
+    .divider::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-secondary);
+        animation: slideDivider 3s ease-in-out infinite;
+    }
+
+    @keyframes slideDivider {
+        0% { left: -100%; }
+        50% { left: 100%; }
+        100% { left: 100%; }
+    }
+
+    .about-card {
         border: none;
-        border-radius: 20px;
+        border-radius: 25px;
         background: white;
         box-shadow: var(--card-shadow);
         transition: var(--transition);
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        transform: translateY(50px);
     }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.15);
+    .about-card.animated {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.8s ease;
     }
 
-    .card h3 {
-        color: var(--primary);
+    .about-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.6s ease;
+    }
+
+    .about-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .about-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-content {
+        padding: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-title {
+        font-size: 2rem;
         font-weight: 600;
+        margin-bottom: 2rem;
+        color: var(--secondary);
+        position: relative;
+        display: inline-block;
     }
 
-    .card p {
-        color: #555;
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+    }
+
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        transition: var(--transition);
+    }
+
+    .vision-icon {
+        background: var(--gradient-warning);
+        color: white;
+    }
+
+    .team-icon {
+        background: var(--gradient-primary);
+        color: white;
+    }
+
+    .about-card:hover .icon-wrapper {
+        transform: scale(1.1) rotate(10deg);
+    }
+
+    /* Values Section */
+    .values-section {
+        margin: 4rem 0;
+    }
+
+    .value-item {
+        text-align: center;
+        padding: 2rem;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+
+    .value-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .value-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: var(--transition);
+    }
+
+    .value-item:hover .value-icon {
+        transform: scale(1.2);
+    }
+
+    /* CTA Section */
+    .cta-section {
+        text-align: center;
+        padding: 4rem 0;
+        background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(58, 12, 163, 0.05) 100%);
+        border-radius: 25px;
+        margin: 3rem 0;
+    }
+
+    .cta-button {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        display: inline-block;
+        margin-top: 1rem;
+        border: none;
+        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+        color: white;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h1.display-4 {
+            font-size: 2.5rem;
+        }
+        
+        .lead {
+            font-size: 1.1rem;
+        }
+        
+        .card-content {
+            padding: 2rem;
+        }
+        
+        .hero-section {
+            padding: 3rem 0 2rem;
+        }
     }
 </style>
 {% endblock %}
 
 {% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3 floating">About ExamProctor AI</h1>
+        <div class="divider"></div>
+        <p class="lead text-muted fade-in">Our mission is to revolutionize digital assessments with cutting-edge technology while maintaining the highest standards of integrity and fairness.</p>
+    </div>
+</div>
 
 <div class="container my-5">
     <div class="row">
-        <div class="col text-center">
-            <h1 class="display-4 fw-bold mb-3">About ExamProctor AI</h1>
-            <div class="divider"></div>
-            <p class="lead text-muted">Our mission is to revolutionize digital assessments with technology and integrity.</p>
-        </div>
-    </div>
-    
-    <div class="row mt-5">
-        <div class="col-md-8 mx-auto">
-            <div class="card shadow-lg p-5">
-                <h3 class="fw-bold mb-3"><i class="fa-solid fa-lightbulb me-2 text-warning"></i>Our Vision</h3>
-                <p>We believe that digital testing should be secure, intelligent, and accessible to everyone. Our platform aims to create a seamless experience for both educators and students, ensuring fairness and efficiency.</p>
-                
-                <h3 class="fw-bold mt-5 mb-3"><i class="fa-solid fa-users me-2 text-primary"></i>Our Team</h3>
-                <p>ExamProctor AI was founded by a team of passionate developers and data scientists. We are dedicated to building a platform that not only meets the needs of today's educational landscape but also pushes the boundaries of what's possible with AI.</p>
+        <div class="col-lg-10 mx-auto">
+            <div class="about-card shadow-lg fade-in">
+                <div class="card-content">
+                    <!-- Vision Section -->
+                    <div class="vision-section mb-5">
+                        <div class="icon-wrapper vision-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="section-title">Our Vision</h3>
+                        <p class="fs-5 lh-lg">We envision a future where digital testing is not only secure and intelligent but also accessible to everyone. Our platform is designed to create a seamless, fair, and efficient experience for both educators and students, leveraging the power of artificial intelligence to transform traditional assessment methods.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>AI-powered assessment tools</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Real-time proctoring technology</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Adaptive learning pathways</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Comprehensive analytics dashboard</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Seamless integration capabilities</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>24/7 technical support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Section -->
+                    <div class="team-section">
+                        <div class="icon-wrapper team-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="section-title">Our Team</h3>
+                        <p class="fs-5 lh-lg">ExamProctor AI was founded by a diverse team of passionate developers, data scientists, and educational experts. With decades of combined experience in both technology and education, we are dedicated to building a platform that not only meets the evolving needs of today's educational landscape but also pushes the boundaries of what's possible with artificial intelligence in assessment.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-code value-icon"></i>
+                                <h5>Expert Developers</h5>
+                                <p class="text-muted">Building robust, scalable solutions</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-brain value-icon"></i>
+                                <h5>AI Specialists</h5>
+                                <p class="text-muted">Advanced machine learning algorithms</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-graduation-cap value-icon"></i>
+                                <h5>Education Experts</h5>
+                                <p class="text-muted">Deep understanding of learning needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Values Section -->
+<div class="values-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 value-item">
+                <i class="fas fa-shield-alt value-icon"></i>
+                <h4>Security First</h4>
+                <p class="text-muted">Enterprise-grade security protocols to protect your data and ensure exam integrity.</p>
+            </div>
+            <div class="col-md-4 value-item">
+                <i class="fas fa-rocket value-icon"></i>
+                <h4>Innovation Driven</h4>
+                <p class="text-muted">Constantly evolving with the latest AI and machine learning technologies.</p>
+            </div>
+            <div class="col-md-4 value-item">
+                <i class="fas fa-hand-holding-heart value-icon"></i>
+                <h4>User Centric</h4>
+                <p class="text-muted">Designed with both educators and students in mind for optimal experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section fade-in">
+    <div class="container">
+        <h3 class="mb-3 fw-bold">Join the Future of Digital Assessment</h3>
+        <p class="lead text-muted mb-4">Experience the difference that AI-powered proctoring can make in your educational institution.</p>
+        <a href="#" class="cta-button">
+            Get Started Today <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in, .value-item, .about-card');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible', 'animated');
+                }
+            });
+        };
+
+        // Initial check
+        fadeInOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Add staggered animation to value items
+        const valueItems = document.querySelectorAll('.value-item');
+        valueItems.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.2}s`;
+        });
+    });
+</script>
 {% endblock %}

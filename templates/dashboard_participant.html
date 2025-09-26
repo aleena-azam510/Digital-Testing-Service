@@ -2,233 +2,174 @@
 
 {% block title %}Participant Dashboard{% endblock %}
 
-{% block head %}
+{% block content %}
 <style>
     :root {
-        --primary: #4361ee;
-        --secondary: #3f37c9;
-        --success: #4cc9f0;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --gray: #6c757d;
-        --accent: #7209b7; /* purple accent */
-        --warning: #ffb703;
-        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
+        --primary-purple: #6a0dad;
+        --secondary-purple: #8a2be2;
+        --light-purple: #9370db;
+        --dark-blue: #4b0082;
+        --light-blue: #e6e6fa;
+        --gradient-primary: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
+        --gradient-secondary: linear-gradient(135deg, #8a2be2 0%, #6a0dad 100%);
+        --gradient-card: linear-gradient(135deg, #f8f4ff 0%, #f0ebff 100%);
     }
-
+    
     body {
-        background: linear-gradient(180deg, #f5f7fb, #edf1f9);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #faf9ff;
+        color: #333;
     }
-
+    
     .dashboard-header {
-        background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
-        border-radius: 20px;
-        padding: 2rem;
-        color: white;
-        margin-bottom: 2.5rem;
-        box-shadow: var(--card-shadow);
-        background-size: 300% 300%;
-        animation: gradientShift 8s ease infinite;
-    }
+    background: var(--gradient-primary);
+    color: #e9d7ff; /* lighter lavender shade */
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2);
+}
 
-    @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
+    
     .welcome-badge {
-        background: rgba(255, 255, 255, 0.25);
-        padding: 0.5rem 1.2rem;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
         border-radius: 50px;
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        font-weight: 500;
-        animation: pulse 2.5s infinite;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
     }
+    .dashboard-header h1,
+.dashboard-header p,
+.dashboard-header span {
+    color: #e9d7ff !important;
+}
 
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 0.9; }
-        50% { transform: scale(1.05); opacity: 1; }
+    
+    h1, h2 {
+        color: var(--dark-blue);
+        font-weight: 700;
     }
-
+    
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--light-blue);
+    }
+    
     .test-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
     }
-
+    
     .test-card {
-        background: white;
-        border-radius: 18px;
-        overflow: hidden;
-        transition: var(--transition);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        background: var(--gradient-card);
         border: none;
-        display: flex;
-        flex-direction: column;
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    .test-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 12px 24px rgba(67, 97, 238, 0.25);
-    }
-
-    .test-card__header {
-        padding: 1rem 1.5rem;
-        background: linear-gradient(120deg, var(--primary), var(--success));
-        color: white;
-        font-weight: 600;
-    }
-
-    .badge {
-        background: white !important;
-        color: var(--secondary) !important;
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-        border-radius: 50px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .test-card__body {
+        border-radius: 15px;
         padding: 1.5rem;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .test-card__title {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
-        color: var(--dark);
-    }
-
-    .test-card__description {
-        color: var(--gray);
-        margin-bottom: 1.5rem;
-        flex-grow: 1;
-    }
-
-    .test-card__action {
-        margin-top: auto;
-    }
-
-    /* Gradient Buttons */
-    .btn-start {
-        background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-        background-size: 300% 300%;
-        color: white;
-        border: none;
-        padding: 0.6rem 1.5rem;
-        border-radius: 10px;
-        font-weight: 500;
-        transition: var(--transition);
-        width: 100%;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(106, 13, 173, 0.1);
+        display: block;
         position: relative;
         overflow: hidden;
-        animation: gradientShift 6s ease infinite;
     }
-
-    .btn-start::after {
-        content: "";
+    
+    .test-card::before {
+        content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: 0;
         width: 100%;
-        height: 100%;
-        background: rgba(255,255,255,0.2);
-        transition: all 0.4s ease;
+        height: 5px;
+        background: var(--gradient-primary);
     }
-
-    .btn-start:hover::after {
-        left: 100%;
+    
+    .test-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2);
+        text-decoration: none;
+        color: inherit;
     }
-
+    
+    .test-card__title {
+        color: var(--primary-purple);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .test-card__action {
+        margin-top: 1rem;
+    }
+    
+    .btn-start {
+        background: var(--gradient-secondary);
+        color: white;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
     .btn-start:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
     }
-
-    .no-tests-card {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 3rem;
-        background: white;
-        border-radius: 18px;
-        box-shadow: var(--card-shadow);
-        animation: fadeInUp 0.6s ease forwards;
+    
+    .list-group-item {
+        border: 1px solid var(--light-blue);
+        border-radius: 10px !important;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+        padding: 1rem 1.5rem;
     }
-
-    .no-tests-icon {
-        font-size: 4rem;
-        color: var(--gray);
-        margin-bottom: 1.5rem;
-        animation: bounce 1.5s infinite;
+    
+    .list-group-item:hover {
+        border-color: var(--light-purple);
+        transform: translateX(5px);
     }
-
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
+    
+    .badge {
+        background: var(--gradient-secondary) !important;
+        padding: 0.5rem 1rem;
     }
-
-    /* Fade-in staggered animation */
+    
+    .alert-info {
+        background-color: #f0ebff;
+        border-color: var(--light-purple);
+        color: var(--dark-blue);
+        border-radius: 10px;
+    }
+    
     .fade-in {
-        animation: fadeInUp 0.7s ease forwards;
+        animation: fadeIn 0.5s ease forwards;
+        opacity: 0;
     }
-
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(25px); }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
-    @media (max-width: 768px) {
-        .test-grid {
-            grid-template-columns: 1fr;
-        }
-        .dashboard-header {
-            padding: 1.5rem;
-        }
+    
+    .text-primary {
+        color: var(--primary-purple) !important;
     }
-.filter-bar {
-        margin-bottom: 2rem;
-        text-align: right;
-    }
-
-    .filter-select {
-        padding: 0.6rem 1rem;
-        border-radius: 8px;
-        border: 1px solid var(--gray);
-        font-weight: 500;
-        transition: var(--transition);
-    }
-
-    .filter-select:focus {
-        border-color: var(--primary);
-        outline: none;
-        box-shadow: 0 0 6px rgba(67, 97, 238, 0.4);
-    }
-
-    @media (max-width: 768px) {
-        .filter-bar {
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
+    
+    .text-muted {
+        color: #6c757d !important;
     }
 </style>
-{% endblock %}
 
-{% block content %}
 <div class="container py-4">
     <div class="dashboard-header">
         <div class="d-flex justify-content-between align-items-center flex-wrap">
             <div>
-                <h1 class="display-5 fw-bold">Test Dashboard</h1>
-                <p class="mb-0">Select a test below to begin your assessment</p>
+                <h1 class="display-5 fw-bold">Adaptive Test Modules</h1>
+                <p class="mb-0">Select a <strong>Topic</strong> below.</p>
             </div>
             <div class="welcome-badge mt-3 mt-md-0">
                 <span>Welcome, {{ current_user.username }}</span>
@@ -236,66 +177,82 @@
         </div>
     </div>
 
-    <!-- ✅ Filter Dropdown -->
-    <div class="filter-bar">
-        <label for="categoryFilter" class="me-2 fw-bold">Filter by:</label>
-       <select id="categoryFilter" class="filter-select">
-            <option value="all">All Categories</option>
-            <option value="CS">Computer Science</option>
-            <option value="GK">General Knowledge</option>
-            <option value="English">English</option>
-            <option value="Math">Math</option>
+    <!-- Topic Filter -->
+    <div class="mb-4">
+        <label for="topicFilter" class="form-label fw-semibold">Filter Topics:</label>
+        <select id="topicFilter" class="form-select w-auto d-inline-block ms-2">
+            <option value="all" selected>All</option>
+            <option value="cs">CS</option>
+            <option value="gk">GK</option>
+            <option value="math">Math</option>
+            <option value="english">English</option>
         </select>
     </div>
 
-    <div class="test-grid" id="testGrid">
-        {% for test in all_tests %}
-        <div class="test-card fade-in"
-             data-category="{{ test.category}}"
-             style="animation-delay: {{ loop.index0 * 0.15 }}s;">
-            <div class="test-card__header">
-                <span class="badge">Test {{ loop.index }}</span>
-            </div>
+    <!-- Topic Selection -->
+    <h2>Select a Topic</h2>
+    <div class="test-grid">
+        {% for topic in available_topics %}
+        <a href="{{ url_for('topic_detail', topic=topic) }}" 
+           class="test-card fade-in topic-card" 
+           data-topic="{{ topic|lower }}"
+           style="animation-delay: {{ loop.index0 * 0.15 }}s;">
             <div class="test-card__body">
-                <h3 class="test-card__title">{{ test.title }}</h3>
-                <p class="test-card__description">{{ test.description or 'No description provided.' }}</p>
+                <h3 class="test-card__title">{{ topic | title }}</h3>
+                <p class="text-muted">Click to choose difficulty</p>
                 <div class="test-card__action">
-                    <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-start">
-                        Start Test <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
+                    <span class="btn btn-start" style="width: auto;">
+                        Choose Difficulty <i class="fas fa-arrow-right ms-2"></i>
+                    </span>
                 </div>
             </div>
-        </div>
-        {% else %}
-        <div class="no-tests-card fade-in">
-            <div class="no-tests-icon">
-                <i class="fas fa-clipboard-list"></i>
-            </div>
-            <h3 class="text-muted">No Tests Available</h3>
-            <p class="text-muted">There are no tests created yet. Please check back later.</p>
-        </div>
+        </a>
         {% endfor %}
+    </div>
+
+    {% if not available_topics %}
+    <div class="alert alert-info mt-3">No topics available yet.</div>
+    {% endif %}
+
+    <!-- Recent Submissions -->
+    <h2 class="mt-5 mb-3">Recent Test Submissions</h2>
+    <div class="list-group">
+        {% if recent_submissions %}
+            {% for submission in recent_submissions %}
+            {% set test = submission.test %}
+            <a href="{{ url_for('show_results', submission_id=submission.id) }}" 
+               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <strong class="text-primary">{{ test.topic | title }}</strong> - {{ test.difficulty | title }} ({{ test.title }})
+                    <small class="text-muted d-block">Score: {{ submission.score }}/20</small>
+                </div>
+                <span class="badge bg-secondary rounded-pill">View Results</span>
+            </a>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-info">You haven't completed any tests yet.</div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script>
-    document.getElementById("categoryFilter").addEventListener("change", function() {
-        let selected = this.value.toLowerCase();
-        console.log("Selected value:", selected); // Check this value
-        let cards = document.querySelectorAll(".test-card");
+document.addEventListener('DOMContentLoaded', function () {
+    const filter = document.getElementById('topicFilter');
+    const topicCards = document.querySelectorAll('.topic-card');
 
-        cards.forEach(card => {
-            let category = card.getAttribute("data-category").toLowerCase();
-            console.log("Card category:", category); // Check this value
-            
-            if (selected === "all" || category === selected) {
+    filter.addEventListener('change', function () {
+        const selected = this.value;
+        topicCards.forEach(card => {
+            const topic = card.getAttribute('data-topic');
+            if (selected === "all" || topic.includes(selected)) {
                 card.style.display = "flex";
             } else {
                 card.style.display = "none";
             }
         });
     });
+});
 </script>
 {% endblock %}
