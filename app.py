@@ -427,6 +427,8 @@ def upload_json_test():
     return render_template('upload_json_test.html')
 
 
+from sqlalchemy import func
+
 @app.route('/dashboard/topic/<topic>')
 @login_required
 def topic_detail(topic):
@@ -434,17 +436,20 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Fetch tests for this topic (all difficulties)
-    tests = Test.query.filter_by(topic=topic).all()
+    tests = (
+        Test.query
+        .filter(func.trim(func.lower(Test.topic)) == topic.strip().lower())
+        .all()
+    )
+
+    print("🔍 Requested:", topic)
+    print("🔍 Found:", [(t.id, t.title, t.topic, t.difficulty) for t in tests])
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
 
-    return render_template(
-        'topic_detail.html',
-        topic=topic,
-        tests=tests
-    )
+    return render_template("topic_detail.html", topic=topic, tests=tests)
+
 
 
 
