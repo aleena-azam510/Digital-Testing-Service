@@ -77,21 +77,32 @@ class User(UserMixin, db.Model):
 
 class Test(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255), nullable=False) # Updated size
-    description = db.Column(db.Text) # Updated type
-    time_limit_minutes = db.Column(db.Integer, default=0) # NEW: Time limit from JSON
+    title = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.Text)
+    time_limit_minutes = db.Column(db.Integer, default=0)
     
-    # NEW FIELDS for topic/difficulty selection
     topic = db.Column(db.String(100), nullable=False, default='Uncategorized')
-    difficulty = db.Column(db.String(20), nullable=False, default='easy') # 'easy', 'moderate', 'hard'
+    difficulty = db.Column(db.String(20), nullable=False, default='easy')
     
     category = db.Column(db.String(50), nullable=False, default='Uncategorized')
     creator_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    submissions = db.relationship('Submission', lazy='dynamic') 
-
     
-    # Added cascade for clean deletion
-    questions = db.relationship('Question', backref='test', lazy=True, cascade="all, delete-orphan") 
+    # Use back_populates to avoid backref conflict
+    submissions = db.relationship('Submission', back_populates='test', lazy='dynamic') 
+
+    questions = db.relationship('Question', backref='test', lazy=True, cascade="all, delete-orphan")
+
+
+class Submission(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    test_id = db.Column(db.Integer, db.ForeignKey('test.id'))
+    participant_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    answers = db.Column(db.Text)
+    score = db.Column(db.Integer)
+    ai_feedback = db.Column(db.Text) 
+    
+    # Connect to Test using back_populates
+    test = db.relationship('Test', back_populates='submissions')
 
 
 class Question(db.Model):
@@ -107,14 +118,7 @@ class Question(db.Model):
     # RETAIN Question.topic for granular feedback (e.g., 'List Comprehensions')
     topic = db.Column(db.String(100), default='General') 
 
-class Submission(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    test_id = db.Column(db.Integer, db.ForeignKey('test.id'))
-    participant_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    answers = db.Column(db.Text)
-    score = db.Column(db.Integer)
-    ai_feedback = db.Column(db.Text) 
-    test = db.relationship('Test', backref='submissions')
+
 # -----------------------------
 # Flask-Admin
 # -----------------------------
