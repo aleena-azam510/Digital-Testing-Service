@@ -434,8 +434,8 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Fetch tests for this topic (all difficulties)
-    tests = Test.query.filter_by(topic=topic).all()
+    # Fetch tests for this category (topic)
+    tests = Test.query.filter_by(category=topic).all()  # <-- use category, not topic
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
@@ -445,6 +445,7 @@ def topic_detail(topic):
         topic=topic,
         tests=tests
     )
+
 
 
 @app.route('/start_test/<string:topic>/<string:difficulty_level>', methods=['GET'])
