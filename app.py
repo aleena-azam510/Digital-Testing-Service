@@ -218,10 +218,17 @@ def creator_dashboard():
 @app.route('/dashboard/participant')
 @login_required
 def participant_dashboard():
-    if current_user.role!='participant': flash("Unauthorized", 'error'); return redirect(url_for('dashboard_redirect'))
-    topics = [t for (t,) in Test.query.with_entities(Test.topic).distinct().all()]
-    recent_subs = Submission.query.filter_by(participant_id=current_user.id).order_by(Submission.id.desc()).limit(5).all()
-    return render_template('dashboard_participant.html', available_topics=topics, recent_submissions=recent_subs)
+    try:
+        if current_user.role!='participant':
+            flash("Unauthorized", 'error')
+            return redirect(url_for('dashboard_redirect'))
+        topics = [t for (t,) in Test.query.with_entities(Test.topic).distinct().all()]
+        recent_subs = Submission.query.filter_by(participant_id=current_user.id).order_by(Submission.id.desc()).limit(5).all()
+        return render_template('dashboard_participant.html', available_topics=topics, recent_submissions=recent_subs)
+    except Exception as e:
+        app.logger.error(f"Participant dashboard error: {e}")
+        flash("An error occurred while loading your dashboard.", 'error')
+        return redirect(url_for('index'))
 
 # -----------------------------
 # Test creation, upload, delete
