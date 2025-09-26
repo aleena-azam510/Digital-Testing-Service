@@ -434,8 +434,8 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Case-insensitive match
-    tests = Test.query.filter(func.lower(Test.topic) == topic.lower()).all()
+    # Fetch tests for this topic (all difficulties)
+    tests = Test.query.filter_by(topic=topic).all()
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
@@ -445,7 +445,6 @@ def topic_detail(topic):
         topic=topic,
         tests=tests
     )
-
 
 
 
