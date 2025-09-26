@@ -82,38 +82,32 @@
       <p class="lead text-secondary">Choose your challenge level 🚀</p>
     </div>
 
-   <div class="row g-4">
-  {% for level, test in difficulty_map.items() %}
-    <div class="col-md-4">
-      <div class="card shadow-lg border-0 h-100 text-center p-4">
-        <div class="card-body">
-          {% if test %}
-            {% if level == 'easy' %}
-              <div class="fs-1 mb-3">🌱</div>
-              <h5 class="card-title text-success">Easy Test</h5>
-              <p class="card-text">{{ test.description }}</p>
-              <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-success rounded-pill px-4">Start Easy</a>
-            {% elif level == 'moderate' %}
-              <div class="fs-1 mb-3">⚡</div>
-              <h5 class="card-title text-warning">Moderate Test</h5>
-              <p class="card-text">{{ test.description }}</p>
-              <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-warning rounded-pill px-4 text-white">Start Moderate</a>
-            {% elif level == 'hard' %}
-              <div class="fs-1 mb-3">🚀</div>
-              <h5 class="card-title text-danger">Hard Test</h5>
-              <p class="card-text">{{ test.description }}</p>
-              <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-danger rounded-pill px-4">Start Hard</a>
-            {% endif %}
-          {% else %}
-            <div class="fs-1 mb-3">❌</div>
-            <h5 class="card-title text-secondary">{{ level|title }} Test</h5>
-            <p class="card-text">No {{ level }} test available yet.</p>
-          {% endif %}
+    <div class="row g-4">
+      {% for test in tests %}
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0 h-100 text-center p-4">
+            <div class="card-body">
+              {% if test.difficulty == 'easy' %}
+                <div class="fs-1 mb-3">🌱</div>
+                <h5 class="card-title text-success">Easy Test</h5>
+                <p class="card-text">20 Questions – Basics, perfect for beginners.</p>
+                <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-success rounded-pill px-4">Start Easy</a>
+              {% elif test.difficulty == 'moderate' %}
+                <div class="fs-1 mb-3">⚡</div>
+                <h5 class="card-title text-warning">Moderate Test</h5>
+                <p class="card-text">20 Questions – Balanced challenge with core + applied concepts.</p>
+                <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-warning rounded-pill px-4 text-white">Start Moderate</a>
+              {% elif test.difficulty == 'hard' %}
+                <div class="fs-1 mb-3">🚀</div>
+                <h5 class="card-title text-danger">Hard Test</h5>
+                <p class="card-text">20 Questions – Advanced problem-solving and analysis.</p>
+                <a href="{{ url_for('take_test', test_id=test.id) }}" class="btn btn-danger rounded-pill px-4">Start Hard</a>
+              {% endif %}
+            </div>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
-  {% endfor %}
-</div>
   </main>
 
   <!-- Bootstrap JS -->
