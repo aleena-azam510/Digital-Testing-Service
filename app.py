@@ -434,29 +434,18 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Normalize topic for matching
-    normalized_topic = topic.strip().lower()
-
-    # Fetch tests where topic matches case-insensitively
-    tests = Test.query.filter(
-        Test.topic.ilike(normalized_topic)  # case-insensitive match
-    ).all()
+    # Case-insensitive match for Aiven MySQL
+    tests = Test.query.filter(Test.topic.ilike(topic)).all()
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
 
-    # Group tests by difficulty (easy, moderate, hard)
-    difficulty_map = {"easy": None, "moderate": None, "hard": None}
-    for test in tests:
-        diff = (test.difficulty or "easy").lower()  # fallback to easy
-        if diff in difficulty_map:
-            difficulty_map[diff] = test
-
     return render_template(
         'topic_detail.html',
         topic=topic,
-        difficulty_map=difficulty_map
+        tests=tests
     )
+
 
 
 
