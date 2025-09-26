@@ -330,10 +330,10 @@ def show_results(submission_id):
 # -----------------------------
 # Static pages
 # -----------------------------
-@app.route('/features'); 
+@app.route('/features')
 def features(): 
     return render_template('features.html')
-@app.route('/about');
+@app.route('/about')
 def about():
     return render_template('about.html')
 @app.route('/contact', methods=['GET','POST'])
