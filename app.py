@@ -12,6 +12,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Optional
 import pymysql
+from flask import Blueprint
+
 
 # -----------------------------
 # MySQLdb compatibility
