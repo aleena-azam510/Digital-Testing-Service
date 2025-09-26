@@ -14,6 +14,8 @@ from wtforms.validators import DataRequired, Optional
 import pymysql
 from flask import Blueprint
 
+from collections import defaultdict
+import random
 
 # -----------------------------
 # MySQLdb compatibility
