@@ -1,0 +1,144 @@
+{
+  "title": "Web Development Fundamentals - EASY Level",
+  "description": "🚀 Ready to start your web dev journey? This beginner-friendly test covers the building blocks of the web: HTML 🏗️, CSS 🎨, and basic structure. Perfect for freshers who want to shine online! 🌐 (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Web Development",
+  "questions": [
+    {
+      "text": "Which HTML tag is used to define the largest heading?",
+      "type": "mcq",
+      "options": { "a": "<h1>", "b": "<h6>", "c": "<head>", "d": "<title>" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which tag is used to insert an image in HTML?",
+      "type": "mcq",
+      "options": { "a": "<src>", "b": "<image>", "c": "<img>", "d": "<pic>" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does CSS stand for?",
+      "type": "mcq",
+      "options": {
+        "a": "Color Style Sheets",
+        "b": "Cascading Style Sheets",
+        "c": "Creative Style Sheets",
+        "d": "Computer Style Sheets"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML tag is used for creating a hyperlink?",
+      "type": "mcq",
+      "options": { "a": "<a>", "b": "<link>", "c": "<href>", "d": "<url>" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which attribute is used in <img> tag to define image source?",
+      "type": "mcq",
+      "options": { "a": "src", "b": "href", "c": "link", "d": "file" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the correct HTML element for inserting a line break?",
+      "type": "mcq",
+      "options": { "a": "<lb>", "b": "<br>", "c": "<break>", "d": "<newline>" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML tag is used to define a paragraph?",
+      "type": "mcq",
+      "options": { "a": "<pg>", "b": "<p>", "c": "<para>", "d": "<par>" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS property is used to change text color?",
+      "type": "mcq",
+      "options": { "a": "background-color", "b": "color", "c": "font-color", "d": "text-style" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML element is used for an ordered list?",
+      "type": "mcq",
+      "options": { "a": "<ul>", "b": "<ol>", "c": "<li>", "d": "<list>" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which tag is used to insert a table row?",
+      "type": "mcq",
+      "options": { "a": "<td>", "b": "<tr>", "c": "<row>", "d": "<th>" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML tag is used to display bold text?",
+      "type": "mcq",
+      "options": { "a": "<b>", "b": "<bold>", "c": "<strong>", "d": "Both <b> and <strong>" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which symbol is used before an ID selector in CSS?",
+      "type": "mcq",
+      "options": { "a": ".", "b": "#", "c": "*", "d": "&" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which tag is used for a numbered list?",
+      "type": "mcq",
+      "options": { "a": "<ol>", "b": "<ul>", "c": "<list>", "d": "<dl>" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which CSS property controls the size of text?",
+      "type": "mcq",
+      "options": { "a": "text-size", "b": "font-size", "c": "size", "d": "font-style" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML tag is used to make a checkbox?",
+      "type": "mcq",
+      "options": {
+        "a": "<input type='check'>",
+        "b": "<checkbox>",
+        "c": "<input type='checkbox'>",
+        "d": "<check>"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property sets the background color?",
+      "type": "mcq",
+      "options": { "a": "bgcolor", "b": "background", "c": "background-color", "d": "color" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which HTML element is used to insert JavaScript?",
+      "type": "mcq",
+      "options": { "a": "<js>", "b": "<javascript>", "c": "<script>", "d": "<code>" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property is used to center text?",
+      "type": "mcq",
+      "options": { "a": "text-center", "b": "align", "c": "text-align", "d": "horizontal-align" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which tag is used to define a list item?",
+      "type": "mcq",
+      "options": { "a": "<ol>", "b": "<li>", "c": "<ul>", "d": "<item>" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does HTML stand for?",
+      "type": "mcq",
+      "options": {
+        "a": "Hyperlinks and Text Markup Language",
+        "b": "Home Tool Markup Language",
+        "c": "HyperText Markup Language",
+        "d": "Hyper Transfer Markup Language"
+      },
+      "correct_answer": "c"
+    }
+  ]
+}

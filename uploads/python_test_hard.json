@@ -1,0 +1,215 @@
+{
+    "title": "Python Programming Fundamentals - HARD Level",
+    "description": "An advanced assessment challenging knowledge of complex Python features including generators, metaclasses, decorators, and advanced concurrency. (20 Questions - 30 Minutes)",
+    "time_limit_minutes": 30,
+    "difficulty": "hard",
+    "topic": "Python Programming",
+    "questions": [
+        {
+            "text": "What is the key difference between a Python `generator` and a standard function that returns a list?",
+            "type": "mcq",
+            "options": {
+                "a": "Generators can only yield strings.",
+                "b": "Generators use less memory because they yield items one at a time (lazy evaluation).",
+                "c": "Functions are faster than generators.",
+                "d": "Generators can only be used once."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which magic method (dunder method) is called when you use the `+` operator on two objects of a custom class?",
+            "type": "mcq",
+            "options": {
+                "a": "__add__",
+                "b": "__plus__",
+                "c": "__sum__",
+                "d": "__operator__"
+            },
+            "correct_answer": "a"
+        },
+        {
+            "text": "Explain the *Diamond Problem* in the context of Python's multiple inheritance and how Python resolves it.",
+            "type": "open_ended"
+        },
+        {
+            "text": "In Python concurrency, what is the primary purpose of the Global Interpreter Lock (GIL)?",
+            "type": "mcq",
+            "options": {
+                "a": "To allow true multi-threading for CPU-bound tasks.",
+                "b": "To ensure only one thread executes Python bytecode at a time, protecting memory.",
+                "c": "To prevent deadlocks between threads.",
+                "d": "To manage asynchronous I/O operations."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What does a *Decorator* fundamentally do?",
+            "type": "mcq",
+            "options": {
+                "a": "Defines a class-level variable.",
+                "b": "Adds functionality to an existing function or method without modifying its structure.",
+                "c": "Changes the return type of a function.",
+                "d": "Executes a function asynchronously."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is the difference between `@staticmethod` and `@classmethod`?",
+            "type": "mcq",
+            "options": {
+                "a": "Static methods receive `self`; Class methods receive the class `cls`.",
+                "b": "Static methods receive `cls`; Class methods receive `self`.",
+                "c": "Static methods receive neither `self` nor `cls`; Class methods receive the class `cls`.",
+                "d": "Static methods are inherited; Class methods are not."
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the output of `f = lambda x: x * 2; print(f(f(3)))`?",
+            "type": "mcq",
+            "options": {
+                "a": "6",
+                "b": "12",
+                "c": "9",
+                "d": "Error"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which of the following is *mutable*?",
+            "type": "mcq",
+            "options": {
+                "a": "String",
+                "b": "Frozen set",
+                "c": "List",
+                "d": "Tuple"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the primary function of `yield from` inside a generator?",
+            "type": "mcq",
+            "options": {
+                "a": "To yield multiple values from a list at once.",
+                "b": "To delegate to a sub-generator or iterable.",
+                "c": "To explicitly stop the generator.",
+                "d": "To perform asynchronous yielding."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What does Python's `MRO` (Method Resolution Order) dictate?",
+            "type": "mcq",
+            "options": {
+                "a": "The order of function execution in a module.",
+                "b": "The order in which base classes are searched when looking for a method.",
+                "c": "The priority of operators in an expression.",
+                "d": "The order in which objects are garbage collected."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is a closure in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "A function that has access to variables from its defining environment, even after the outer function has finished execution.",
+                "b": "A function that automatically closes files.",
+                "c": "A function that is imported from another module.",
+                "d": "A class method that closes an instance."
+            },
+            "correct_answer": "a"
+        },
+        {
+            "text": "What is a *metaclass* in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "The base class for all data types.",
+                "b": "A class used to inherit methods from the standard library.",
+                "c": "A class whose instances are classes.",
+                "d": "A class that is automatically generated by the interpreter."
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the function of the `async` and `await` keywords?",
+            "type": "mcq",
+            "options": {
+                "a": "To implement multi-threading for CPU-bound tasks.",
+                "b": "To facilitate cooperative multi-tasking and asynchronous I/O operations.",
+                "c": "To force code to run sequentially.",
+                "d": "To define parallel processing jobs."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "If a class implements the `__getitem__` method, what capability does this grant the objects of that class?",
+            "type": "mcq",
+            "options": {
+                "a": "They can be called like functions.",
+                "b": "They can be used with the `len()` function.",
+                "c": "They can be accessed using indexing (e.g., `obj[key]`).",
+                "d": "They can be iterated over in a `for` loop."
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the difference between `is` and `==` in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "`is` checks for value equality, `==` checks for identity.",
+                "b": "`is` checks for identity (same object in memory), `==` checks for value equality.",
+                "c": "`is` is for mutable types, `==` is for immutable types.",
+                "d": "They are identical for all built-in types."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "How do you achieve *data hiding* (or private members) in Python, given that there is no strict 'private' keyword?",
+            "type": "mcq",
+            "options": {
+                "a": "By prefixing the name with a single underscore (`_`).",
+                "b": "By prefixing the name with a double underscore (`__`).",
+                "c": "By using the `private` keyword.",
+                "d": "By using the `protected` keyword."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is the use of `*args` and `**kwargs` in a function signature?",
+            "type": "open_ended"
+        },
+        {
+            "text": "What is the output of `[x for x in 'abc'].append('d')`?",
+            "type": "mcq",
+            "options": {
+                "a": "['a', 'b', 'c', 'd']",
+                "b": "None",
+                "c": "Error",
+                "d": "'abcd'"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which module in Python is used for serialization and deserialization of objects (converting them to a byte stream)?",
+            "type": "mcq",
+            "options": {
+                "a": "json",
+                "b": "pickle",
+                "c": "marshal",
+                "d": "struct"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is the primary benefit of using `zip()` function?",
+            "type": "mcq",
+            "options": {
+                "a": "Compresses multiple files.",
+                "b": "Creates an iterator that aggregates elements from multiple iterables.",
+                "c": "Adds two numbers together.",
+                "d": "Converts integers to strings."
+            },
+            "correct_answer": "b"
+        }
+    ]
+}

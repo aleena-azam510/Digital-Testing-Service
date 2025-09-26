@@ -1,0 +1,116 @@
+{
+  "test_title": "Web Development Basics",
+  "description": "This test covers the fundamentals of HTML, CSS, and JavaScript that are essential for creating web pages.",
+  "questions": [
+    {
+      "question_text": "What does HTML stand for?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Hyperlinks and Text Markup Language",
+        "B": "Home Tool Markup Language",
+        "C": "Hyper Text Markup Language",
+        "D": "Hyper Transfer Markup Language"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which tag is used to insert an image in HTML?",
+      "is_open_ended": false,
+      "options": {
+        "A": "<image>",
+        "B": "<img>",
+        "C": "<src>",
+        "D": "<pic>"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which HTML element is used for creating an unordered list?",
+      "is_open_ended": false,
+      "options": {
+        "A": "<ol>",
+        "B": "<list>",
+        "C": "<ul>",
+        "D": "<li>"
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which property in CSS is used to change the background color?",
+      "is_open_ended": false,
+      "options": {
+        "A": "color",
+        "B": "background-color",
+        "C": "bgcolor",
+        "D": "bg-color"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which symbol is used for ID selectors in CSS?",
+      "is_open_ended": false,
+      "options": {
+        "A": ".",
+        "B": "#",
+        "C": "@",
+        "D": "%"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "Which JavaScript keyword is used to declare a variable?",
+      "is_open_ended": false,
+      "options": {
+        "A": "let",
+        "B": "var",
+        "C": "const",
+        "D": "All of the above"
+      },
+      "correct_option": "D"
+    },
+    {
+      "question_text": "Which attribute is used in HTML to provide a link destination?",
+      "is_open_ended": false,
+      "options": {
+        "A": "src",
+        "B": "href",
+        "C": "link",
+        "D": "target"
+      },
+      "correct_option": "B"
+    },
+    {
+      "question_text": "What does CSS stand for?",
+      "is_open_ended": false,
+      "options": {
+        "A": "Cascading Style Sheets",
+        "B": "Creative Style System",
+        "C": "Computer Style Sheets",
+        "D": "Colorful Style Sheets"
+      },
+      "correct_option": "A"
+    },
+    {
+      "question_text": "Which JavaScript symbol is used for strict equality comparison?",
+      "is_open_ended": false,
+      "options": {
+        "A": "==",
+        "B": "=",
+        "C": "===",
+        "D": "!=="
+      },
+      "correct_option": "C"
+    },
+    {
+      "question_text": "Which tag is used to define a table row in HTML?",
+      "is_open_ended": false,
+      "options": {
+        "A": "<tr>",
+        "B": "<td>",
+        "C": "<th>",
+        "D": "<row>"
+      },
+      "correct_option": "A"
+    }
+  ]
+}

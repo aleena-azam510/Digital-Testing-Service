@@ -1,0 +1,129 @@
+{
+  "title": "Web Development Concepts - MODERATE Level",
+  "description": "🔥 Step up your game! This test dives deeper into HTML5, CSS3, and a touch of JavaScript ⚡. Get ready to style, structure, and script like a real web dev ninja 🥷. Perfect for learners who want to go beyond the basics. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "moderate",
+  "topic": "Web Development",
+  "questions": [
+    {
+      "text": "Which HTML5 tag is used to represent self-contained content like a blog post?",
+      "type": "mcq",
+      "options": { "a": "<section>", "b": "<div>", "c": "<article>", "d": "<content>" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property is used to create space inside an element, between the content and the border?",
+      "type": "mcq",
+      "options": { "a": "margin", "b": "padding", "c": "spacing", "d": "border-spacing" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which attribute in <input> defines the type of control (text, password, etc.)?",
+      "type": "mcq",
+      "options": { "a": "kind", "b": "format", "c": "type", "d": "input" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property is used to change the font of text?",
+      "type": "mcq",
+      "options": { "a": "font-style", "b": "font-family", "c": "text-style", "d": "font-type" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the default position value of an HTML element in CSS?",
+      "type": "mcq",
+      "options": { "a": "absolute", "b": "relative", "c": "static", "d": "fixed" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which HTML element is used to play video files?",
+      "type": "mcq",
+      "options": { "a": "<video>", "b": "<media>", "c": "<movie>", "d": "<stream>" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which JavaScript keyword declares a block-scoped variable?",
+      "type": "mcq",
+      "options": { "a": "var", "b": "let", "c": "const", "d": "Both let and const" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which CSS property controls the visibility of an element?",
+      "type": "mcq",
+      "options": { "a": "display", "b": "visibility", "c": "opacity", "d": "show" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which pseudo-class selects the first child element?",
+      "type": "mcq",
+      "options": { "a": ":first", "b": ":first-child", "c": ":nth-child(1)", "d": ":start" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML attribute specifies an image's alternate text?",
+      "type": "mcq",
+      "options": { "a": "title", "b": "alt", "c": "src", "d": "description" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS layout uses rows and columns for alignment?",
+      "type": "mcq",
+      "options": { "a": "flexbox", "b": "grid", "c": "float", "d": "inline-block" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which JavaScript function is used to parse a string into an integer?",
+      "type": "mcq",
+      "options": { "a": "int()", "b": "parseInt()", "c": "toInt()", "d": "convert()" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS property makes text all uppercase?",
+      "type": "mcq",
+      "options": { "a": "font-transform", "b": "text-transform", "c": "text-style", "d": "case" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML5 element is used for navigation links?",
+      "type": "mcq",
+      "options": { "a": "<navigate>", "b": "<nav>", "c": "<links>", "d": "<menu>" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS unit is relative to the font-size of the element?",
+      "type": "mcq",
+      "options": { "a": "px", "b": "em", "c": "%", "d": "vh" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which JavaScript method writes to the browser console?",
+      "type": "mcq",
+      "options": { "a": "console.write()", "b": "console.log()", "c": "log()", "d": "print()" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS property creates rounded corners?",
+      "type": "mcq",
+      "options": { "a": "corner-radius", "b": "border-radius", "c": "round-corner", "d": "radius" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML tag is used to embed audio?",
+      "type": "mcq",
+      "options": { "a": "<sound>", "b": "<music>", "c": "<audio>", "d": "<media>" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property adds shadow to text?",
+      "type": "mcq",
+      "options": { "a": "box-shadow", "b": "shadow", "c": "text-shadow", "d": "font-shadow" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which HTML5 tag is used for drawing graphics via JavaScript?",
+      "type": "mcq",
+      "options": { "a": "<draw>", "b": "<canvas>", "c": "<paint>", "d": "<graphic>" },
+      "correct_answer": "b"
+    }
+  ]
+}

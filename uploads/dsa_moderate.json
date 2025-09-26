@@ -1,0 +1,229 @@
+{
+  "title": "Data Structures - MODERATE Level",
+  "description": "Intermediate data structures including trees, linked lists, and graph traversal. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Data Structures",
+  "questions": [
+    {
+      "text": "What is the time complexity of searching an element in a balanced binary search tree?",
+      "type": "mcq",
+      "options": {
+        "a": "O(1)",
+        "b": "O(log n)",
+        "c": "O(n)",
+        "d": "O(n log n)"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure is used to implement a recursive function?",
+      "type": "mcq",
+      "options": {
+        "a": "Queue",
+        "b": "Stack",
+        "c": "Array",
+        "d": "Linked List"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which traversal method is used in depth-first search on a graph?",
+      "type": "mcq",
+      "options": {
+        "a": "BFS",
+        "b": "DFS",
+        "c": "Level Order",
+        "d": "Post Order"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The minimum number of nodes in a binary tree of height 'h' (where root is height 0) is:",
+      "type": "mcq",
+      "options": {
+        "a": "h+1",
+        "b": "2h",
+        "c": "2h - 1",
+        "d": "2^(h-1)"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which collision resolution technique in a Hash Table involves calculating a secondary hash function?",
+      "type": "mcq",
+      "options": {
+        "a": "Chaining",
+        "b": "Linear Probing",
+        "c": "Quadratic Probing",
+        "d": "Double Hashing"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "In a Singly Linked List, inserting a node at the **end** requires traversing how many nodes in the worst case?",
+      "type": "mcq",
+      "options": {
+        "a": "O(1)",
+        "b": "O(log n)",
+        "c": "O(n)",
+        "d": "O(n^2)"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which of the following is NOT a common tree traversal algorithm?",
+      "type": "mcq",
+      "options": {
+        "a": "Inorder",
+        "b": "Preorder",
+        "c": "Postorder",
+        "d": "Lateralorder"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "A complete binary tree with 'n' nodes has a height of (using floor/ceiling notation for clarity):",
+      "type": "mcq",
+      "options": {
+        "a": "O(n)",
+        "b": "O(log n)",
+        "c": "O(n log n)",
+        "d": "O(sqrt(n))"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the time complexity of deleting the middle element from a Doubly Linked List (given a pointer to the element)?",
+      "type": "mcq",
+      "options": {
+        "a": "O(1)",
+        "b": "O(log n)",
+        "c": "O(n)",
+        "d": "O(n^2)"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "In graph theory, a path that visits every vertex exactly once is called a(n):",
+      "type": "mcq",
+      "options": {
+        "a": "Eulerian Path",
+        "b": "Hamiltonian Path",
+        "c": "Shortest Path",
+        "d": "Cycle"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure is typically used to implement an adjacency list for a graph?",
+      "type": "mcq",
+      "options": {
+        "a": "Array of Stacks",
+        "b": "Array of Queues",
+        "c": "Array of Linked Lists/Vectors",
+        "d": "Single Hash Table"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The process of moving through all the nodes of a Tree is called:",
+      "type": "mcq",
+      "options": {
+        "a": "Sorting",
+        "b": "Searching",
+        "c": "Traversal",
+        "d": "Rotation"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which of the following is an **advantage** of a Linked List over an Array?",
+      "type": "mcq",
+      "options": {
+        "a": "Better cache locality",
+        "b": "Faster random access",
+        "c": "Dynamic size and easier insertion/deletion",
+        "d": "Lower memory overhead"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the key difference between a Queue and a Deque (Double-Ended Queue)?",
+      "type": "mcq",
+      "options": {
+        "a": "Deque is non-linear",
+        "b": "Deque is infinite in size",
+        "c": "Deque allows insertion/deletion at both ends",
+        "d": "Queue is used for LIFO"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In Hash Table design, the load factor is defined as:",
+      "type": "mcq",
+      "options": {
+        "a": "Size of the table / Number of elements",
+        "b": "Number of collisions / Size of the table",
+        "c": "Number of elements / Size of the table",
+        "d": "Total memory used / Maximum memory"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The Postorder traversal of a Binary Search Tree (BST) is always: (Root is visited last)",
+      "type": "mcq",
+      "options": {
+        "a": "Sorted in ascending order",
+        "b": "Sorted in descending order",
+        "c": "Not necessarily sorted",
+        "d": "Sorted only if it's a perfect tree"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which structure is best for representing a network of cities and the roads connecting them?",
+      "type": "mcq",
+      "options": {
+        "a": "Array",
+        "b": "Stack",
+        "c": "Tree",
+        "d": "Graph"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "What does 'hashing' primarily achieve?",
+      "type": "mcq",
+      "options": {
+        "a": "Sorting data quickly",
+        "b": "Compressing data",
+        "c": "Mapping a large key space to a smaller address space",
+        "d": "Encrypting data"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The process of converting an expression from Infix to Postfix typically uses which data structure?",
+      "type": "mcq",
+      "options": {
+        "a": "Queue",
+        "b": "Stack",
+        "c": "Heap",
+        "d": "Circular List"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "When comparing an Array to a Linked List, the Array offers better performance for which operation?",
+      "type": "mcq",
+      "options": {
+        "a": "Insertion at a specific index",
+        "b": "Deletion at the start",
+        "c": "Random access (lookup by index)",
+        "d": "Merging two structures"
+      },
+      "correct_answer": "c"
+    }
+  ]
+}

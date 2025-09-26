@@ -1,0 +1,229 @@
+{
+  "title": "Data Structures - HARD Level",
+  "description": "Advanced data structures including heaps, graphs, and advanced tree operations. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Data Structures",
+  "questions": [
+    {
+      "text": "Which of the following is true about a max heap?",
+      "type": "mcq",
+      "options": {
+        "a": "Every parent node is smaller than its children",
+        "b": "Every parent node is greater than or equal to its children",
+        "c": "It is a type of linked list",
+        "d": "Heap does not allow duplicate elements"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a graph with V vertices and E edges, what is the worst-case time complexity of DFS?",
+      "type": "mcq",
+      "options": {
+        "a": "O(V + E)",
+        "b": "O(V^2)",
+        "c": "O(E^2)",
+        "d": "O(V * E)"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which of the following is NOT a self-balancing binary search tree?",
+      "type": "mcq",
+      "options": {
+        "a": "AVL Tree",
+        "b": "Red-Black Tree",
+        "c": "B-Tree",
+        "d": "Binary Heap"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "In an **Amortized Analysis** of an operation, the time complexity is averaged over:",
+      "type": "mcq",
+      "options": {
+        "a": "Worst-case scenario only",
+        "b": "A sequence of operations",
+        "c": "The size of the input (n)",
+        "d": "The height of the tree"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the maximum number of edges in a simple undirected graph with $V$ vertices?",
+      "type": "mcq",
+      "options": {
+        "a": "$V^2$",
+        "b": "$V(V-1)$",
+        "c": "$V(V-1)/2$",
+        "d": "$2V$"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Trie** (Prefix Tree) is primarily used for:",
+      "type": "mcq",
+      "options": {
+        "a": "Sorting integers",
+        "b": "Implementing a Max Heap",
+        "c": "Efficient string retrieval/prefix searching",
+        "d": "Shortest path finding"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which sorting algorithm's average-case time complexity is related to the heap data structure?",
+      "type": "mcq",
+      "options": {
+        "a": "Merge Sort",
+        "b": "Quick Sort",
+        "c": "Heap Sort",
+        "d": "Insertion Sort"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In Dijkstra's algorithm for shortest paths, the main data structure used for priority management is typically a:",
+      "type": "mcq",
+      "options": {
+        "a": "Stack",
+        "b": "Queue",
+        "c": "Priority Queue (Min Heap)",
+        "d": "Hash Table"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the defining property of a **B-Tree** of order $m$?",
+      "type": "mcq",
+      "options": {
+        "a": "It is a strictly binary tree",
+        "b": "All nodes except the root must have exactly $m$ children",
+        "c": "All leaves are at the same level",
+        "d": "It only allows a single key per node"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which graph algorithm is used to find the minimum spanning tree (MST)?",
+      "type": "mcq",
+      "options": {
+        "a": "Dijkstra's Algorithm",
+        "b": "Topological Sort",
+        "c": "Kruskal's or Prim's Algorithm",
+        "d": "Bellman-Ford Algorithm"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Disjoint Set Union** (DSU) data structure is most often optimized using path compression and:",
+      "type": "mcq",
+      "options": {
+        "a": "AVL Rotation",
+        "b": "Union by Rank/Size",
+        "c": "Linear Probing",
+        "d": "Binary Search"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which operation on an AVL Tree requires a tree rotation?",
+      "type": "mcq",
+      "options": {
+        "a": "Lookup/Search",
+        "b": "Preorder Traversal",
+        "c": "Insertion/Deletion that violates the balance factor",
+        "d": "Calculating the height"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The time complexity for building a Max Heap from an arbitrary array of $n$ elements is:",
+      "type": "mcq",
+      "options": {
+        "a": "O(n log n)",
+        "b": "O(log n)",
+        "c": "O(n)",
+        "d": "O(n^2)"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a Red-Black Tree, every path from a node to any of its descendant null nodes has the same number of:",
+      "type": "mcq",
+      "options": {
+        "a": "Red nodes",
+        "b": "Black nodes",
+        "c": "Total nodes",
+        "d": "Leaves"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of queue is suitable for situations where some elements must be processed before others?",
+      "type": "mcq",
+      "options": {
+        "a": "Circular Queue",
+        "b": "Priority Queue",
+        "c": "Dequeue",
+        "d": "Simple Queue"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The Bellman-Ford algorithm is preferred over Dijkstra's when the graph contains:",
+      "type": "mcq",
+      "options": {
+        "a": "Multiple disconnected components",
+        "b": "Negative edge weights",
+        "c": "A large number of edges",
+        "d": "A simple path"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A perfect binary tree with height $h$ (root at height 0) has a total number of nodes equal to:",
+      "type": "mcq",
+      "options": {
+        "a": "$2^{h+1} - 1$",
+        "b": "$2h + 1$",
+        "c": "$2^h$",
+        "d": "$h^2$"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the primary drawback of using an Adjacency Matrix representation for a **sparse** graph?",
+      "type": "mcq",
+      "options": {
+        "a": "Slower search time for edges",
+        "b": "High memory consumption (O(V^2))",
+        "c": "Difficulty in adding new vertices",
+        "d": "Slower traversal (DFS/BFS)"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure is the basis for implementing a Least Recently Used (LRU) Cache?",
+      "type": "mcq",
+      "options": {
+        "a": "Stack and Array",
+        "b": "Priority Queue and Array",
+        "c": "Hash Map and Doubly Linked List",
+        "d": "Trie and Queue"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The time complexity of the average-case insertion in a Hash Table using separate chaining is considered O(1), provided the load factor $\\alpha$ is:",
+      "type": "mcq",
+      "options": {
+        "a": "Less than 1",
+        "b": "Greater than V",
+        "c": "A small constant (e.g., $\\alpha \\le 1$)",
+        "d": "O(log n)"
+      },
+      "correct_answer": "c"
+    }
+  ]
+}

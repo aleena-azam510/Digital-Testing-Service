@@ -1,0 +1,139 @@
+{
+  "title": "Web Development Mastery - HARD Level",
+  "description": "💪 Ready for the boss fight of web dev? This test pushes you into advanced HTML5 APIs, modern CSS tricks 🎨, and JavaScript logic 🧑‍💻. Only true web warriors ⚔️ can ace this! (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "hard",
+  "topic": "Web Development",
+  "questions": [
+    {
+      "text": "Which CSS property enables grid items to span across multiple rows?",
+      "type": "mcq",
+      "options": { "a": "grid-row-span", "b": "grid-row", "c": "row-span", "d": "row-extend" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the purpose of the HTML5 'localStorage' API?",
+      "type": "mcq",
+      "options": {
+        "a": "Store data temporarily until browser is closed",
+        "b": "Store data permanently in user's browser",
+        "c": "Store data on the server",
+        "d": "Store session-only data"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS feature allows creating responsive designs using flexible layouts?",
+      "type": "mcq",
+      "options": { "a": "float", "b": "grid", "c": "flexbox", "d": "inline-block" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which JavaScript method is used to fetch data from an API?",
+      "type": "mcq",
+      "options": { "a": "XMLHttpRequest()", "b": "fetch()", "c": "getData()", "d": "apiCall()" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTTP status code represents 'Not Found'?",
+      "type": "mcq",
+      "options": { "a": "200", "b": "301", "c": "404", "d": "500" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS function is used to apply a transformation like rotation?",
+      "type": "mcq",
+      "options": { "a": "transform()", "b": "rotate()", "c": "animation()", "d": "matrix()" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which HTML5 API is used for real-time communication between browsers?",
+      "type": "mcq",
+      "options": { "a": "WebSockets", "b": "Service Workers", "c": "WebRTC", "d": "IndexedDB" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does the 'async' keyword in JavaScript functions do?",
+      "type": "mcq",
+      "options": {
+        "a": "Runs function synchronously",
+        "b": "Marks function to return a Promise",
+        "c": "Runs function in background thread",
+        "d": "Pauses function execution"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS property allows smooth transitions between states?",
+      "type": "mcq",
+      "options": { "a": "transition", "b": "animation", "c": "transform", "d": "effect" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which HTML attribute enables CORS in a script tag?",
+      "type": "mcq",
+      "options": { "a": "cross", "b": "allow-cors", "c": "crossorigin", "d": "cors" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property defines how an element is clipped when it overflows?",
+      "type": "mcq",
+      "options": { "a": "clip", "b": "overflow-clip", "c": "overflow", "d": "clip-path" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which HTML5 tag provides fallback content for browsers that do not support scripts?",
+      "type": "mcq",
+      "options": { "a": "<noscript>", "b": "<fallback>", "c": "<script alt>", "d": "<nosc>" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which CSS property controls stacking order of elements?",
+      "type": "mcq",
+      "options": { "a": "layer", "b": "stack", "c": "z-index", "d": "order" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which API is used to store large amounts of structured data locally?",
+      "type": "mcq",
+      "options": { "a": "Cookies", "b": "IndexedDB", "c": "SessionStorage", "d": "localStorage" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which CSS property lets you apply multiple background images?",
+      "type": "mcq",
+      "options": { "a": "background-list", "b": "backgrounds", "c": "background-image", "d": "multi-background" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which JavaScript method delays execution of a function?",
+      "type": "mcq",
+      "options": { "a": "delay()", "b": "setInterval()", "c": "setTimeout()", "d": "wait()" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which CSS property creates a sticky element?",
+      "type": "mcq",
+      "options": { "a": "sticky", "b": "position: sticky", "c": "fixed", "d": "float: sticky" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which HTML5 API is commonly used for offline applications?",
+      "type": "mcq",
+      "options": { "a": "Service Workers", "b": "WebSockets", "c": "WebRTC", "d": "Geolocation" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which CSS function is used to create gradients?",
+      "type": "mcq",
+      "options": { "a": "gradient()", "b": "linear-gradient()", "c": "color-mix()", "d": "shade()" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which JavaScript object represents the browser window?",
+      "type": "mcq",
+      "options": { "a": "document", "b": "window", "c": "browser", "d": "screen" },
+      "correct_answer": "b"
+    }
+  ]
+}

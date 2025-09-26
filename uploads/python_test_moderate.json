@@ -1,0 +1,222 @@
+{
+    "title": "Python Programming Fundamentals - MODERATE Level",
+    "description": "An intermediate assessment testing comprehension of complex data structures, functions, scope, and basic exception handling. (20 Questions - 30 Minutes)",
+    "time_limit_minutes": 30,
+    "difficulty": "moderate",
+    "topic": "Python Programming",
+    "questions": [
+        {
+            "text": "What is the output of the following list comprehension: `[x * 2 for x in [1, 2, 3]]`?",
+            "type": "mcq",
+            "options": {
+                "a": "[2, 4, 6]",
+                "b": "[1, 2, 3, 1, 2, 3]",
+                "c": "[x * 2]",
+                "d": "Error"
+            },
+            "correct_answer": "a"
+        },
+        {
+            "text": "Which exception is raised when you try to access an index that is outside the range of a list?",
+            "type": "mcq",
+            "options": {
+                "a": "KeyError",
+                "b": "ValueError",
+                "c": "IndexError",
+                "d": "TypeError"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What does `nonlocal` keyword do?",
+            "type": "mcq",
+            "options": {
+                "a": "Declares a variable outside all function scopes.",
+                "b": "Allows modification of a variable in the nearest enclosing scope (excluding the global scope).",
+                "c": "Declares a variable as global.",
+                "d": "Prevents a variable from being modified."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "In OOP, what concept describes bundling data and methods that operate on that data into a single unit?",
+            "type": "mcq",
+            "options": {
+                "a": "Inheritance",
+                "b": "Polymorphism",
+                "c": "Encapsulation",
+                "d": "Abstraction"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the result of `print('hello'[::-1])`?",
+            "type": "mcq",
+            "options": {
+                "a": "olleh",
+                "b": "h",
+                "c": "Error",
+                "d": "hello"
+            },
+            "correct_answer": "a"
+        },
+        {
+            "text": "Which method is primarily used to merge the keys and values of two dictionaries?",
+            "type": "mcq",
+            "options": {
+                "a": "dict.add()",
+                "b": "dict.append()",
+                "c": "dict.update()",
+                "d": "dict.combine()"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the purpose of the `__init__` method in a Python class?",
+            "type": "mcq",
+            "options": {
+                "a": "To define the class methods.",
+                "b": "To destroy the object.",
+                "c": "To initialize the object's attributes when an object is created.",
+                "d": "To define static variables."
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What keyword is used to handle exceptions in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "catch",
+                "b": "except",
+                "c": "try",
+                "d": "handle"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is a `set` in Python primarily used for?",
+            "type": "mcq",
+            "options": {
+                "a": "Storing ordered, indexed, mutable elements.",
+                "b": "Storing key-value pairs.",
+                "c": "Storing unique, unordered elements.",
+                "d": "Storing ordered, immutable elements."
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the result of the `sorted()` function on the list `[3, 1, 4]`?",
+            "type": "mcq",
+            "options": {
+                "a": "[3, 1, 4]",
+                "b": "[1, 3, 4]",
+                "c": "The list is sorted in place.",
+                "d": "Error, only numerical lists can be sorted."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Briefly explain when you would use a Python `list` over a `tuple`.",
+            "type": "open_ended"
+        },
+        {
+            "text": "What is a *lambda* function?",
+            "type": "mcq",
+            "options": {
+                "a": "A function that can only take one argument.",
+                "b": "A small anonymous function.",
+                "c": "A function defined inside another function.",
+                "d": "A function used for recursive calls."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "How can you get the value associated with the key 'color' from a dictionary `d = {'color': 'blue', 'type': 'sedan'}` without causing an error if the key doesn't exist?",
+            "type": "mcq",
+            "options": {
+                "a": "d.value('color')",
+                "b": "d.get('color')",
+                "c": "d['color'] if 'color' in d else None",
+                "d": "b and c"
+            },
+            "correct_answer": "d"
+        },
+        {
+            "text": "What does the statement `from math import sqrt` do?",
+            "type": "mcq",
+            "options": {
+                "a": "Imports all functions from the `math` module.",
+                "b": "Imports the `math` module and renames it `sqrt`.",
+                "c": "Imports only the `sqrt` function from the `math` module.",
+                "d": "Defines a new function named `sqrt`."
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the final value of `count`? \n```python\ncount = 0\nfor i in range(5):\n    if i % 2 == 0:\n        count += 1\n```",
+            "type": "mcq",
+            "options": {
+                "a": "2",
+                "b": "3",
+                "c": "4",
+                "d": "5"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which of these is NOT a valid way to define a list?",
+            "type": "mcq",
+            "options": {
+                "a": "list('abc')",
+                "b": "[1, 2, 3]",
+                "c": "{1, 2, 3}",
+                "d": "list((1, 2, 3))"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What will be printed? \n```python\nx = 10\ndef foo():\n    print(x)\nfoo()\n```",
+            "type": "mcq",
+            "options": {
+                "a": "10",
+                "b": "Error (x is not defined in foo)",
+                "c": "None",
+                "d": "0"
+            },
+            "correct_answer": "a"
+        },
+        {
+            "text": "If a file is opened using `with open('file.txt', 'w') as f:`, what happens to the file object `f` when the `with` block exits?",
+            "type": "mcq",
+            "options": {
+                "a": "It remains open.",
+                "b": "It is automatically closed.",
+                "c": "It is garbage collected but remains open in the OS.",
+                "d": "It raises a FileClosedError."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is the term for a function that returns another function?",
+            "type": "mcq",
+            "options": {
+                "a": "Callback function",
+                "b": "Higher-order function",
+                "c": "Decorator",
+                "d": "Generator"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is the purpose of the `pass` statement in a class definition?",
+            "type": "mcq",
+            "options": {
+                "a": "To skip execution of the entire class.",
+                "b": "To denote an empty block of code where code is expected.",
+                "c": "To inherit from a parent class.",
+                "d": "To define a constructor."
+            },
+            "correct_answer": "b"
+        }
+    ]
+}

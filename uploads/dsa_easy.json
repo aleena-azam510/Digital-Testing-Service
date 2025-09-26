@@ -1,0 +1,229 @@
+{
+  "title": "Data Structures - EASY Level",
+  "description": "Basic data structures concepts including arrays, lists, and stacks. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Data Structures",
+  "questions": [
+    {
+      "text": "Which of the following is a linear data structure?",
+      "type": "mcq",
+      "options": {
+        "a": "Tree",
+        "b": "Graph",
+        "c": "Array",
+        "d": "Binary Search Tree"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which data structure uses LIFO (Last In First Out) principle?",
+      "type": "mcq",
+      "options": {
+        "a": "Queue",
+        "b": "Stack",
+        "c": "Linked List",
+        "d": "Graph"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which operation adds an element at the end of a list?",
+      "type": "mcq",
+      "options": {
+        "a": "append()",
+        "b": "insert()",
+        "c": "push()",
+        "d": "add()"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the worst-case time complexity for accessing an element in an array by index?",
+      "type": "mcq",
+      "options": {
+        "a": "O(n)",
+        "b": "O(log n)",
+        "c": "O(1)",
+        "d": "O(n^2)"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The memory addresses of elements in a Linked List are:",
+      "type": "mcq",
+      "options": {
+        "a": "Contiguous",
+        "b": "Sequential",
+        "c": "Random",
+        "d": "Pre-defined"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which term describes removing an element from a Stack?",
+      "type": "mcq",
+      "options": {
+        "a": "enqueue",
+        "b": "pop",
+        "c": "dequeue",
+        "d": "insert"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure uses FIFO (First In First Out) principle?",
+      "type": "mcq",
+      "options": {
+        "a": "Stack",
+        "b": "Array",
+        "c": "Queue",
+        "d": "Hash Table"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A 'node' in a linked list typically contains two parts: data and a(n):",
+      "type": "mcq",
+      "options": {
+        "a": "Index",
+        "b": "Pointer/Reference",
+        "c": "Key",
+        "d": "Capacity"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure stores data in key-value pairs?",
+      "type": "mcq",
+      "options": {
+        "a": "Stack",
+        "b": "Queue",
+        "c": "Hash Table/Map",
+        "d": "Array"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the primary disadvantage of a static array?",
+      "type": "mcq",
+      "options": {
+        "a": "Slow access time",
+        "b": "Fixed size",
+        "c": "Non-contiguous memory",
+        "d": "Complexity of insertion"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure is best suited for implementing 'undo' functionality in a text editor?",
+      "type": "mcq",
+      "options": {
+        "a": "Queue",
+        "b": "Linked List",
+        "c": "Stack",
+        "d": "Array"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a Doubly Linked List, each node has how many pointers/references?",
+      "type": "mcq",
+      "options": {
+        "a": "One",
+        "b": "Two",
+        "c": "Three",
+        "d": "Zero"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which term describes inserting an element into a Queue?",
+      "type": "mcq",
+      "options": {
+        "a": "pop",
+        "b": "peek",
+        "c": "enqueue",
+        "d": "push"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the name of the top element in a Stack?",
+      "type": "mcq",
+      "options": {
+        "a": "Front",
+        "b": "Rear",
+        "c": "Top/Peek",
+        "d": "Root"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which data structure is typically used for Breadth-First Search (BFS) on a graph?",
+      "type": "mcq",
+      "options": {
+        "a": "Stack",
+        "b": "Queue",
+        "c": "Hash Table",
+        "d": "Heap"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the time complexity for inserting an element at the beginning of an array (in the worst case)?",
+      "type": "mcq",
+      "options": {
+        "a": "O(1)",
+        "b": "O(log n)",
+        "c": "O(n)",
+        "d": "O(n^2)"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which structure represents hierarchical data with a single root and child nodes?",
+      "type": "mcq",
+      "options": {
+        "a": "Array",
+        "b": "Linked List",
+        "c": "Tree",
+        "d": "Stack"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the worst-case time complexity for deleting an element from a Hash Table?",
+      "type": "mcq",
+      "options": {
+        "a": "O(1)",
+        "b": "O(log n)",
+        "c": "O(n)",
+        "d": "O(n^2)"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which property defines a Circular Linked List?",
+      "type": "mcq",
+      "options": {
+        "a": "The last node points to null",
+        "b": "The last node points to the first node",
+        "c": "The nodes are stored contiguously",
+        "d": "It only allows one pointer per node"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The process of converting a relative address to an absolute address in memory is called:",
+      "type": "mcq",
+      "options": {
+        "a": "Encapsulation",
+        "b": "Mapping",
+        "c": "Indexing",
+        "d": "Linking"
+      },
+      "correct_answer": "b"
+    }
+  ]
+}

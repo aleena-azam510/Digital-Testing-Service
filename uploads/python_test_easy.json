@@ -1,0 +1,229 @@
+{
+    "title": "Python Programming Fundamentals - EASY Level",
+    "description": "This test covers basic syntax, data types, and simple operations in Python. Focus on fundamental knowledge. (20 Questions - 30 Minutes)",
+    "time_limit_minutes": 30,
+    "difficulty": "easy",
+    "topic": "Python Programming",
+    "questions": [
+        {
+            "text": "Which of the following data types is used to store a sequence of characters?",
+            "type": "mcq",
+            "options": {
+                "a": "Integer",
+                "b": "Float",
+                "c": "Boolean",
+                "d": "String"
+            },
+            "correct_answer": "d"
+        },
+        {
+            "text": "What is the correct file extension for Python files?",
+            "type": "mcq",
+            "options": {
+                "a": ".pyt",
+                "b": ".py",
+                "c": ".p",
+                "d": ".python"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which symbol is used for single-line comments in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "//",
+                "b": "/* */",
+                "c": "#",
+                "d": "--"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the result of 10 % 3?",
+            "type": "mcq",
+            "options": {
+                "a": "3",
+                "b": "1",
+                "c": "0",
+                "d": "10"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which built-in function is used to print output to the console?",
+            "type": "mcq",
+            "options": {
+                "a": "write()",
+                "b": "output()",
+                "c": "print()",
+                "d": "display()"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "How do you create a variable with the value 5 in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "var x = 5",
+                "b": "x := 5",
+                "c": "x = 5",
+                "d": "int x = 5"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "Which keyword is used to define a function in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "function",
+                "b": "func",
+                "c": "define",
+                "d": "def"
+            },
+            "correct_answer": "d"
+        },
+        {
+            "text": "How do you start an 'if' statement in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "if (condition):",
+                "b": "if condition {",
+                "c": "if condition:",
+                "d": "if condition then"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "Which loop is best suited for iterating over a sequence (like a list or string)?",
+            "type": "mcq",
+            "options": {
+                "a": "do-while loop",
+                "b": "for loop",
+                "c": "loop until",
+                "d": "while loop"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What data type is the number `3.14`?",
+            "type": "mcq",
+            "options": {
+                "a": "Integer",
+                "b": "Complex",
+                "c": "Float",
+                "d": "Double"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What does the 'len()' function return?",
+            "type": "mcq",
+            "options": {
+                "a": "The size of the variable in bytes.",
+                "b": "The length (number of items) of an object.",
+                "c": "The last element of a sequence.",
+                "d": "The current line number."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "Which operator is used for exponentiation (power) in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "^",
+                "b": "**",
+                "c": "//",
+                "d": "pow()"
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "A list in Python is enclosed in which type of brackets?",
+            "type": "mcq",
+            "options": {
+                "a": "Parentheses ( )",
+                "b": "Curly braces { }",
+                "c": "Square brackets [ ]",
+                "d": "Angle brackets < >"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "Which value is considered 'False' in a boolean context?",
+            "type": "mcq",
+            "options": {
+                "a": "1",
+                "b": "'Hello'",
+                "c": "[1, 2]",
+                "d": "0"
+            },
+            "correct_answer": "d"
+        },
+        {
+            "text": "How can you access the first element of a list named `my_list`?",
+            "type": "mcq",
+            "options": {
+                "a": "my_list(1)",
+                "b": "my_list[1]",
+                "c": "my_list[0]",
+                "d": "my_list.first()"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "The statement `x += 5` is equivalent to which of the following?",
+            "type": "mcq",
+            "options": {
+                "a": "x = 5",
+                "b": "x = x * 5",
+                "c": "x = x + 5",
+                "d": "x + 5"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "In Python, what is used to signify a block of code (like in a function or loop)?",
+            "type": "mcq",
+            "options": {
+                "a": "Curly braces {}",
+                "b": "Parentheses ()",
+                "c": "Indentation",
+                "d": "Keywords like END"
+            },
+            "correct_answer": "c"
+        },
+        {
+            "text": "What is the purpose of the 'break' statement in a loop?",
+            "type": "mcq",
+            "options": {
+                "a": "To skip the current iteration.",
+                "b": "To exit the loop entirely.",
+                "c": "To end the program.",
+                "d": "To pause the loop."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is a characteristic of a 'dictionary' in Python?",
+            "type": "mcq",
+            "options": {
+                "a": "It is ordered and indexed numerically.",
+                "b": "It stores values in key:value pairs.",
+                "c": "It cannot be changed after creation.",
+                "d": "It only stores unique values."
+            },
+            "correct_answer": "b"
+        },
+        {
+            "text": "What is the output of 'Hello' + 'World'?",
+            "type": "mcq",
+            "options": {
+                "a": "Hello World",
+                "b": "HelloWorld",
+                "c": "Error",
+                "d": "2"
+            },
+            "correct_answer": "b"
+        }
+    ]
+}
