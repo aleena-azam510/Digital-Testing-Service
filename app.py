@@ -266,6 +266,8 @@ def creator_dashboard():
 
 # Participant dashboard
 # Participant dashboard
+from sqlalchemy.orm import joinedload 
+
 @app.route('/dashboard/participant')
 @login_required
 def participant_dashboard():
