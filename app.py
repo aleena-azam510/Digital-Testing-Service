@@ -114,7 +114,7 @@ class Submission(db.Model):
     answers = db.Column(db.Text)
     score = db.Column(db.Integer)
     ai_feedback = db.Column(db.Text) 
-    test = db.relationship('Test')
+    test = db.relationship('Test', backref='submissions')
 # -----------------------------
 # Flask-Admin
 # -----------------------------
@@ -259,31 +259,37 @@ def creator_dashboard():
     return render_template('dashboard_creator.html', my_tests=my_tests)
 
 # Participant dashboard
+# Participant dashboard
 @app.route('/dashboard/participant')
 @login_required
 def participant_dashboard():
     if current_user.role != 'participant':
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
-        
-    # Get unique topics
-    raw_available_topics = Test.query.with_entities(Test.topic) \
-                              .filter(Test.topic != '') \
-                              .distinct() \
-                              .all()
-    available_topics = [topic for (topic,) in raw_available_topics]
 
-    # Recent submissions
-    recent_submissions = Submission.query.filter_by(participant_id=current_user.id) \
-        .options(joinedload(Submission.test)) \
-        .order_by(Submission.id.desc()) \
-        .limit(5).all()
+    # Get unique topics safely
+    raw_available_topics = Test.query.with_entities(Test.topic) \
+                                     .filter(Test.topic.isnot(None), Test.topic != '') \
+                                     .distinct() \
+                                     .all()
+    available_topics = [topic for (topic,) in raw_available_topics if topic]
+
+    # Recent submissions with joinedload (ensure Submission.test relationship exists)
+    try:
+        recent_submissions = Submission.query.filter_by(participant_id=current_user.id) \
+            .options(joinedload(Submission.test)) \
+            .order_by(Submission.id.desc()) \
+            .limit(5).all()
+    except Exception as e:
+        flash(f"Error fetching recent submissions: {str(e)}", 'error')
+        recent_submissions = []
 
     return render_template(
         'dashboard_participant.html',
         available_topics=available_topics,
         recent_submissions=recent_submissions
     )
+
 
 # Create Test
 @app.route('/create_test', methods=['GET', 'POST'])
