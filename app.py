@@ -434,31 +434,28 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Try fetching by topic first
-    tests = Test.query.filter_by(topic=topic).all()
+    # Normalize topic for matching
+    normalized_topic = topic.strip().lower()
 
-    # If no tests found, fallback to category
-    if not tests:
-        tests = Test.query.filter_by(category=topic).all()
+    # Fetch tests where topic matches case-insensitively
+    tests = Test.query.filter(
+        Test.topic.ilike(normalized_topic)  # case-insensitive match
+    ).all()
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
 
-    # Group tests by difficulty
-    tests_by_difficulty = {
-        'easy': None,
-        'moderate': None,
-        'hard': None
-    }
-
+    # Group tests by difficulty (easy, moderate, hard)
+    difficulty_map = {"easy": None, "moderate": None, "hard": None}
     for test in tests:
-        if test.difficulty in tests_by_difficulty:
-            tests_by_difficulty[test.difficulty] = test
+        diff = (test.difficulty or "easy").lower()  # fallback to easy
+        if diff in difficulty_map:
+            difficulty_map[diff] = test
 
     return render_template(
         'topic_detail.html',
         topic=topic,
-        tests=tests_by_difficulty
+        difficulty_map=difficulty_map
     )
 
 
