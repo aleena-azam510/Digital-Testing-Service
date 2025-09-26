@@ -427,7 +427,7 @@ def upload_json_test():
     return render_template('upload_json_test.html')
 
 
-from sqlalchemy import func
+from urllib.parse import unquote # <--- Add this import
 
 @app.route('/dashboard/topic/<topic>')
 @login_required
@@ -436,28 +436,19 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Debug log - fetch everything
-    all_tests = Test.query.all()
-    print("✅ ALL TESTS IN DB:")
-    for t in all_tests:
-        print(f"- ID {t.id}: {t.title} | topic='{t.topic}' | difficulty='{t.difficulty}'")
+    # ⭐ FIX: Decode the URL-encoded topic string
+    decoded_topic = unquote(topic)
 
-    # Now filter case-insensitive, trimmed
-    tests = (
-        Test.query
-        .filter(func.trim(func.lower(Test.topic)) == topic.strip().lower())
-        .all()
-    )
-    print("✅ MATCHED TESTS:")
-    for t in tests:
-        print(f"- {t.id}: {t.title} | {t.topic} | {t.difficulty}")
+    # Fetch tests for this topic using the DECODED name
+    tests = Test.query.filter_by(topic=decoded_topic).all() # <--- Use decoded_topic here
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
 
     return render_template(
-        "topic_detail.html",
-        topic=topic,
+        'topic_detail.html',
+        # ⭐ IMPORTANT: Pass the DECODED name to the template for display
+        topic=decoded_topic,
         tests=tests
     )
 
