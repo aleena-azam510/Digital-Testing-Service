@@ -25,10 +25,10 @@ pymysql.install_as_MySQLdb()
 # -----------------------------
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
-UPLOAD_FOLDER = "uploads"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+# Use system temp folder for uploads (works on Vercel)
+UPLOAD_FOLDER = tempfile.gettempdir()
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB limit
 
 # -----------------------------
 # Database configuration
@@ -340,6 +340,21 @@ def about():
 def contact():
     if request.method=='POST': flash("Thanks for message", 'success'); return redirect(url_for('contact'))
     return render_template('contact.html')
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return "No file part", 400
+        file = request.files['file']
+        if file.filename == '':
+            return "No selected file", 400
+        if file:
+            # Save to temp folder
+            temp_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(temp_path)
+            # Do something with file here
+            return f"File saved temporarily at {temp_path}"
+    return render_template('upload.html')
 
 # -----------------------------
 # Run
