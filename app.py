@@ -434,17 +434,33 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Fetch tests for this category (topic)
-    tests = Test.query.filter_by(category=topic).all()  # <-- use category, not topic
+    # Try fetching by topic first
+    tests = Test.query.filter_by(topic=topic).all()
+
+    # If no tests found, fallback to category
+    if not tests:
+        tests = Test.query.filter_by(category=topic).all()
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
 
+    # Group tests by difficulty
+    tests_by_difficulty = {
+        'easy': None,
+        'moderate': None,
+        'hard': None
+    }
+
+    for test in tests:
+        if test.difficulty in tests_by_difficulty:
+            tests_by_difficulty[test.difficulty] = test
+
     return render_template(
         'topic_detail.html',
         topic=topic,
-        tests=tests
+        tests=tests_by_difficulty
     )
+
 
 
 
