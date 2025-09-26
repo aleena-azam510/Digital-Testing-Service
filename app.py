@@ -31,10 +31,9 @@ def from_json_filter(value):
 
 app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
 
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = "/tmp/uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
 
 # -----------------------------
 # Database configuration
