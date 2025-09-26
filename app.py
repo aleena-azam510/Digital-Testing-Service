@@ -330,8 +330,12 @@ def show_results(submission_id):
 # -----------------------------
 # Static pages
 # -----------------------------
-@app.route('/features'); def features(): return render_template('features.html')
-@app.route('/about'); def about(): return render_template('about.html')
+@app.route('/features'); 
+def features(): 
+    return render_template('features.html')
+@app.route('/about');
+def about():
+    return render_template('about.html')
 @app.route('/contact', methods=['GET','POST'])
 def contact():
     if request.method=='POST': flash("Thanks for message", 'success'); return redirect(url_for('contact'))
