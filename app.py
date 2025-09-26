@@ -434,8 +434,8 @@ def topic_detail(topic):
         flash("Unauthorized access.", 'error')
         return redirect(url_for('dashboard_redirect'))
 
-    # Case-insensitive match for Aiven MySQL
-    tests = Test.query.filter(Test.topic.ilike(topic)).all()
+    # Case-insensitive match
+    tests = Test.query.filter(func.lower(Test.topic) == topic.lower()).all()
 
     if not tests:
         flash("No tests available for this topic yet.", "warning")
