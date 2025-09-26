@@ -20,12 +20,16 @@ import random
 # -----------------------------
 # MySQLdb compatibility
 # -----------------------------
+# MySQLdb compatibility
+# -----------------------------
 pymysql.install_as_MySQLdb()
 
 # -----------------------------
 # Flask app config
 # -----------------------------
 app = Flask(__name__)
+
+# JSON filter for templates
 @app.template_filter('from_json')
 def from_json_filter(value):
     try:
@@ -33,8 +37,10 @@ def from_json_filter(value):
     except Exception:
         return {}
 
-app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
+# Secret key (from env)
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "supersecretkey")
 
+# Upload folder
 UPLOAD_FOLDER = "/tmp/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -42,25 +48,33 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 # -----------------------------
 # Database configuration
 # -----------------------------
-database_url = os.environ.get("DATABASE_URL")
-db_cert = os.environ.get("MYSQL_CERT_CA")  # PEM string from Vercel
+database_url = os.environ.get("DATABASE_URL")  # Your Aiven URI
+db_cert = os.environ.get("MYSQL_CERT_CA")     # Optional SSL PEM string from Vercel
 
 if database_url:
+    # SSL connection for Aiven
     connect_args = {"ssl": {"ssl_mode": "REQUIRED"}}
     if db_cert:
         ca_path = "/tmp/ca.pem"
         with open(ca_path, "w") as f:
             f.write(db_cert)
         connect_args["ssl"]["ca"] = ca_path
+
     app.config["SQLALCHEMY_DATABASE_URI"] = database_url
     app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"connect_args": connect_args}
 else:
+    # Local fallback (development)
     app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:password@localhost/dts_db"
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config['SQLALCHEMY_ECHO'] = True  # logs all SQL queries
+app.config['SQLALCHEMY_ECHO'] = False  # Turn off in production to reduce logs
+
+# -----------------------------
+# Initialize DB & Login
+# -----------------------------
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
