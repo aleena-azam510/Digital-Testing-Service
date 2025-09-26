@@ -266,31 +266,32 @@ def creator_dashboard():
 
 # Participant dashboard
 # Participant dashboard
-dashboard_bp = Blueprint('dashboard', __name__)
-
-@dashboard_bp.route('/dashboard/participant')
+@app.route('/dashboard/participant')
 @login_required
 def participant_dashboard():
     try:
-        # Fetch recent submissions
-        recent_submissions = current_user.submissions.order_by(Submission.id.desc()).limit(5).all()
+        if current_user.role != 'participant':
+            flash("Unauthorized access.", 'error')
+            return redirect(url_for('dashboard_redirect'))
 
-        # Collect available topics from tests (unique)
-        all_tests = [sub.test for sub in current_user.submissions if sub.test]
-        available_topics = sorted({test.topic for test in all_tests})
+        raw_available_topics = Test.query.with_entities(Test.topic) \
+                                  .filter(Test.topic != '') \
+                                  .distinct() \
+                                  .all()
+        available_topics = [topic for (topic,) in raw_available_topics]
+
+        recent_submissions = Submission.query.filter_by(participant_id=current_user.id) \
+            .options(joinedload(Submission.test)) \
+            .order_by(Submission.id.desc()) \
+            .limit(5).all()
 
         return render_template(
-            'participant_dashboard.html',
-            recent_submissions=recent_submissions,
-            available_topics=available_topics
+            'dashboard_participant.html',
+            available_topics=available_topics,
+            recent_submissions=recent_submissions
         )
-
     except Exception as e:
-        # Log error (in real app, use proper logging)
-        print(f"Error loading participant dashboard: {e}")
-        return "An error occurred while loading your dashboard.", 500
-
-
+        return f"Error: {e}"
 
 # Create Test
 @app.route('/create_test', methods=['GET', 'POST'])
