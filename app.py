@@ -806,7 +806,7 @@ def adaptive_feedback(submission_id):
 @login_required
 def adaptive_recommendations():
     latest_submission = Submission.query.filter_by(participant_id=current_user.id)\
-                                      .order_by(Submission.id.desc()).first()
+                                    .order_by(Submission.id.desc()).first()
     if not latest_submission:
         flash("Please complete a test first to get personalized recommendations.", "info")
         return redirect(url_for('participant_dashboard'))
@@ -818,7 +818,6 @@ def adaptive_recommendations():
 
     weak_topics = feedback_data.get('weak_topics', {})
 
-    # Load video tutorials from JSON
     # Load video tutorials from JSON file in 'data' folder
     data_path = os.path.join(os.path.dirname(__file__), 'data', 'tutorials.json')
     try:
@@ -841,8 +840,9 @@ def adaptive_recommendations():
             remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
             remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
 
-            # Get videos from JSON
-            videos = youtube_videos_recommendations.get(topic, [])
+            # FIX: Normalize the topic name (strip whitespace, apply Title Case) for robust lookup
+            normalized_topic = topic.strip().title()
+            videos = youtube_videos_recommendations.get(normalized_topic, [])
             
             # Only fallback to search tutorial if videos list is empty
             if not videos:
@@ -851,7 +851,7 @@ def adaptive_recommendations():
             recommendations[topic] = {
                 'mastery': mastery_score,
                 'questions': remedial_questions,
-                'videos': videos[:3]  # limit to top 2 videos
+                'videos': videos[:3]  # limit to top 3 videos
             }
 
     return render_template(
@@ -860,7 +860,6 @@ def adaptive_recommendations():
         last_test_title=latest_submission.test.title,
         has_weak_topics=bool(weak_topics)
     )
-
 
 
 
