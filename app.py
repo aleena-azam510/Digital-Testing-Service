@@ -354,6 +354,74 @@ def edit_test(test_id):
 
     return render_template("edit_test.html", test=test)
 
+@app.route('/edit_test_json/<int:test_id>', methods=['GET', 'POST'])
+@login_required
+def edit_test_json(test_id):
+    if current_user.role != 'creator':
+        flash("Unauthorized access.", "error")
+        return redirect(url_for('dashboard_redirect'))
+
+    test = Test.query.get_or_404(test_id)
+
+    if test.creator_id != current_user.id:
+        flash("You do not own this test.", "error")
+        return redirect(url_for('creator_dashboard'))
+
+    # Build JSON structure from DB
+    test_json = {
+        "title": test.title,
+        "description": test.description,
+        "time_limit_minutes": test.time_limit_minutes,
+        "difficulty": test.difficulty,
+        "topic": test.topic,
+        "questions": []
+    }
+
+    for q in test.questions:
+        q_data = {
+            "text": q.question_text,
+            "type": "open" if q.is_open_ended else "mcq",
+            "options": json.loads(q.options) if q.options else None,
+            "correct_answer": q.correct_answer_text if q.is_open_ended else q.correct_option
+        }
+        test_json["questions"].append(q_data)
+
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.form['test_json'])
+
+            # Update test metadata
+            test.title = data.get("title", test.title)
+            test.description = data.get("description", test.description)
+            test.time_limit_minutes = data.get("time_limit_minutes", test.time_limit_minutes)
+            test.difficulty = data.get("difficulty", test.difficulty)
+            test.topic = data.get("topic", test.topic)
+
+            # Clear old questions
+            for q in test.questions:
+                db.session.delete(q)
+
+            # Add new questions
+            for q in data.get("questions", []):
+                question = Question(
+                    test_id=test.id,
+                    question_text=q.get("text"),
+                    is_open_ended=(q.get("type") == "open"),
+                    options=json.dumps(q.get("options")) if q.get("type") == "mcq" else None,
+                    correct_option=q.get("correct_answer") if q.get("type") == "mcq" else None,
+                    correct_answer_text=q.get("correct_answer") if q.get("type") == "open" else None
+                )
+                db.session.add(question)
+
+            db.session.commit()
+            flash("Test JSON updated successfully!", "success")
+            return redirect(url_for('edit_test_json', test_id=test.id))
+
+        except Exception as e:
+            flash(f"Error parsing JSON: {e}", "danger")
+
+    return render_template("edit_test_json.html", test=test, test_json=json.dumps(test_json, indent=2))
+
 
 # Upload JSON Test
 # Upload JSON Test
