@@ -837,10 +837,12 @@ def adaptive_recommendations():
     else:
         for topic, mastery_score in weak_topics.items():
             # Fetch remedial questions
+            # NOTE: The Question model must also have an entry for topic='General' 
             remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
             remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
 
-            # FIX: Normalize the topic name (strip whitespace, apply Title Case) for robust lookup
+            # FIX 1: Normalize topic name (strip whitespace, apply Title Case) for robust lookup
+            # This is the line that requires 'General' to be a key in tutorials.json
             normalized_topic = topic.strip().title()
             videos = youtube_videos_recommendations.get(normalized_topic, [])
             
@@ -860,7 +862,6 @@ def adaptive_recommendations():
         last_test_title=latest_submission.test.title,
         has_weak_topics=bool(weak_topics)
     )
-
 
 
 
