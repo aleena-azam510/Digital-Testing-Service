@@ -10,74 +10,74 @@
     {"title": "Python Full Course", "video_id": "WGJJIrtnfpk"}
   ],
   "Data Structures": [
-    {"title": "Data Structures Easy Tutorial", "video_id": "RBSGKlAvoiM"},
-    {"title": "Learn Data Structures in C++", "video_id": "smhK3tsz3w0"},
-    {"title": "Data Structures Full Course", "video_id": "bum_19loj9A"}
+    {"title": "Data Structures Easy Course", "video_id": "RBSGKlAvoiM"},
+    {"title": "DS & Algorithms Full Course (Java)", "video_id": "CBYHwZcbD-s"},
+    {"title": "DS & Algorithms for Beginners", "video_id": "BBpAmxU_NQo"}
   ],
   "Linear Algebra": [
-    {"title": "Linear Algebra Full Course", "video_id": "rkB8JsvM8Fs"},
     {"title": "Essence of Linear Algebra", "video_id": "kjBOesZCoqc"},
-    {"title": "MIT Linear Algebra Lecture 1", "video_id": "ZK3O402wf1c"}
+    {"title": "MIT Linear Algebra Lecture 1", "video_id": "ZK3O402wf1c"},
+    {"title": "Linear Algebra Full Course", "video_id": "rkB8JsvM8Fs"}
   ],
   "Calculus": [
-    {"title": "Calculus 1 Full Course", "video_id": "4ZqX0q9d6MU"},
-    {"title": "Basic Introduction to Calculus", "video_id": "WUvTyaaNkzM"},
+    {"title": "Calculus 1 Full Course", "video_id": "WUvTyaaNkzM"},
+    {"title": "Calculus Made Easy", "video_id": "yH3kXOtfJRA"},
     {"title": "MIT Calculus Course", "video_id": "fYyARMqiaag"}
   ],
   "Computer Organization & Architecture": [
-    {"title": "Computer Organization Basics", "video_id": "vH6E2g2v-ME"},
-    {"title": "Computer Architecture Lecture", "video_id": "rRz9SgJ8VhM"},
-    {"title": "Computer Organization Full Course", "video_id": "XpYz-q1lxu8"}
+    {"title": "Computer Architecture Basics", "video_id": "FO6F3A6Zt3E"},
+    {"title": "Computer Organization Course", "video_id": "1I5ZMmrOfnA"},
+    {"title": "Computer Org Full Course", "video_id": "xY2wzdYpJZo"}
   ],
   "Operating Systems": [
-    {"title": "Operating System Full Course", "video_id": "j9QmMEWmcfo"},
-    {"title": "Basics of Operating Systems", "video_id": "xvAEdBHZpRg"},
-    {"title": "Operating System Concepts", "video_id": "L3T--ZQt0qs"}
+    {"title": "Operating Systems Course for Beginners", "video_id": "yK1uBHPdp30"},
+    {"title": "Complete OS in 1 Shot", "video_id": "3obEP8eLsCw"},
+    {"title": "OS Basics for Beginners", "video_id": "6-mdtMKfEYM"}
   ],
   "Computer Networks": [
-    {"title": "Computer Networks Full Course", "video_id": "qiQR5rTSshw"},
-    {"title": "Computer Networking Basics", "video_id": "3QhU9jd03a0"},
+    {"title": "Computer Networking Full Course", "video_id": "qiQR5rTSshw"},
+    {"title": "Networks Basics Tutorial", "video_id": "3QhU9jd03a0"},
     {"title": "Data Communication & Networking", "video_id": "XyDYj5wZ9IY"}
   ],
   "Databases": [
-    {"title": "Database Management Systems Full Course", "video_id": "HXV3zeQKqGY"},
+    {"title": "DBMS Full Course", "video_id": "HXV3zeQKqGY"},
     {"title": "SQL Tutorial for Beginners", "video_id": "HXV3zeQKqGY"},
     {"title": "Relational Databases Explained", "video_id": "z2kbsG8zsLM"}
   ],
   "Artificial Intelligence": [
     {"title": "Artificial Intelligence Full Course", "video_id": "JMUxmLyrhSk"},
-    {"title": "What is Artificial Intelligence?", "video_id": "2ePf9rue1Ao"},
+    {"title": "What is AI? Intro", "video_id": "2ePf9rue1Ao"},
     {"title": "AI Crash Course", "video_id": "3K9wUrQga3Q"}
   ],
   "Algorithms": [
-    {"title": "Algorithms Full Course", "video_id": "8hly31xKli0"},
-    {"title": "Introduction to Algorithms", "video_id": "rL8X2mlNHPM"},
+    {"title": "Algorithms & DS Full Course", "video_id": "8hly31xKli0"},
+    {"title": "Algorithms Explained & Animated", "video_id": "rL8X2mlNHPM"},
     {"title": "Sorting Algorithms Tutorial", "video_id": "kgBjXUE_Nwc"}
   ],
   "Machine Learning": [
     {"title": "Machine Learning Full Course", "video_id": "GwIo3gDZCVQ"},
-    {"title": "Machine Learning Crash Course", "video_id": "IpGxLWOIZy4"},
-    {"title": "Andrew Ng Machine Learning", "video_id": "UzxYlbK2c7E"}
+    {"title": "Machine Learning Crash Course", "video_id": "7eh4d6sabA0"},
+    {"title": "Andrew Ng’s ML Course", "video_id": "UzxYlbK2c7E"}
   ],
   "Grammar & Syntax": [
-    {"title": "English Grammar Full Course", "video_id": "gHbYkFt4HCc"},
-    {"title": "Basic English Grammar Tutorial", "video_id": "E0-Q0A5gRbU"},
-    {"title": "Grammar Lessons for Beginners", "video_id": "7LM3CjzH5-Q"}
+    {"title": "Basic English Grammar Course for Beginners", "video_id": "FI2OKNMWGc4"},
+    {"title": "English Grammar Course for Beginners", "video_id": "AVYfyTvc9KY"},
+    {"title": "Complete English Grammar Full Course", "video_id": "aOsILFNgtIo"}
   ],
   "Vocabulary & Word Usage": [
-    {"title": "Build English Vocabulary Fast", "video_id": "9sS1z4eO2lM"},
-    {"title": "Learn 1000 Common English Words", "video_id": "0xtVj6q7kGs"},
-    {"title": "English Vocabulary Builder", "video_id": "1Y7sQxA9N_M"}
+    {"title": "Learn English Vocabulary", "video_id": "0xtVj6q7kGs"},
+    {"title": "English Vocabulary Builder", "video_id": "1Y7sQxA9N_M"},
+    {"title": "1000 Common English Words", "video_id": "0xtVj6q7kGs"}
   ],
   "Reading Comprehension": [
     {"title": "Reading Comprehension Strategies", "video_id": "BqF0NR7QF7M"},
-    {"title": "Improve Your Reading Skills", "video_id": "CYcFZ8jJXAE"},
+    {"title": "Improve Reading Skills", "video_id": "CYcFZ8jJXAE"},
     {"title": "Practice Reading Comprehension", "video_id": "yNjp7YFxz54"}
   ],
   "Writing Skills (Essays, Letters, Reports)": [
-    {"title": "Essay Writing Tips", "video_id": "iB2_qM0pVdA"},
-    {"title": "How to Write a Formal Letter", "video_id": "fkvYch-uJt0"},
-    {"title": "Report Writing Tutorial", "video_id": "oFEj7ZVt3PQ"}
+    {"title": "Essay Writing Tips", "video_id": "yltyRufw9Sk"},
+    {"title": "How to Write a Formal Letter", "video_id": "Lj10Z_ap3cg"},
+    {"title": "Report Writing Tutorial", "video_id": "T3CZe5Rj_bI"}
   ],
   "Literary Devices & Poetry": [
     {"title": "Literary Devices Explained", "video_id": "u6w7I1PC5uQ"},
@@ -91,17 +91,17 @@
   ],
   "World History & Geography": [
     {"title": "World History Crash Course", "video_id": "yA6Z3B3p8vE"},
-    {"title": "Geography of the World Explained", "video_id": "kUv7RfwU6nY"},
+    {"title": "World Geography Explained", "video_id": "kUv7RfwU6nY"},
     {"title": "World Geography Basics", "video_id": "0Zn_KaV7KQw"}
   ],
   "Pakistan History & Culture": [
-    {"title": "History of Pakistan Documentary", "video_id": "cZV9KUswZ3k"},
-    {"title": "Pakistan Studies Lecture Series", "video_id": "vXcBzM91O1E"},
-    {"title": "Culture of Pakistan Explained", "video_id": "FfnFPC9KX5E"}
+    {"title": "Complete History of Pakistan in One Video", "video_id": "58YW_25I-QU"},
+    {"title": "Comprehensive Pakistan Studies", "video_id": "JugYq6H-lmk"},
+    {"title": "History of Pakistan Documentary", "video_id": "91LgmpFD4FQ"}
   ],
   "Science & Technology": [
     {"title": "Latest Innovations in Science & Technology", "video_id": "aJ8k6jz3wLQ"},
-    {"title": "Basics of Science and Technology", "video_id": "bQgPqPzL72A"},
+    {"title": "Basics of Science & Technology", "video_id": "bQgPqPzL72A"},
     {"title": "Future of Technology Explained", "video_id": "1i0fS53dM9E"}
   ],
   "Current Affairs & Politics of Pakistan": [
