@@ -822,7 +822,6 @@ def adaptive_recommendations():
     weak_topics = feedback_data.get('weak_topics', {}) 
 
     # Load video tutorials from JSON file in 'data' folder
-    # NOTE: Assuming your project structure has 'data/tutorials.json'
     data_path = os.path.join(os.path.dirname(__file__), 'data', 'tutorials.json')
     try:
         with open(data_path, 'r') as f:
@@ -840,31 +839,37 @@ def adaptive_recommendations():
             'videos': [{"title": "🎉 Excellent work! No weak topics detected.", "video_id": None}]
         }
     else:
-        for topic, mastery_score in weak_topics.items():
-        normalized_topic = topic.strip().lower()
-    
-        # Remedial questions
-        remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
-        remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
-    
-        # Case-insensitive lookup for videos
+        # Build a lowercase lookup dict for case-insensitive matching
         videos_dict = {k.strip().lower(): v for k, v in youtube_videos_recommendations.items()}
-        videos = videos_dict.get(normalized_topic, [])
 
-        if not videos:
-            videos = [{"title": f"Search tutorials for '{topic}' on YouTube", "video_id": None}]
+        for topic, mastery_score in weak_topics.items():
+            normalized_topic = topic.strip().lower()
 
-            
+            # Fetch remedial questions (safe fallback if none exist)
+            try:
+                remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
+                remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
+            except Exception as e:
+                print(f"DEBUG RECOM: Failed fetching questions for '{topic}': {e}")
+                remedial_questions = []
+
+            # Fetch videos using normalized topic name
+            videos = videos_dict.get(normalized_topic, [])
+
+            # Fallback if no videos found
+            if not videos:
+                videos = [{"title": f"Search tutorials for '{topic}' on YouTube", "video_id": None}]
+
+            # Always add to recommendations
             recommendations[topic] = {
                 'mastery': mastery_score,
                 'questions': remedial_questions,
-                'videos': videos[:3] # limit to top 3 videos
+                'videos': videos[:3]  # limit to top 3 videos
             }
-            
-            # --- DEBUGGING LOG (Monitor this after running a test!) ---
+
+            # Debug logs
             print(f"DEBUG RECOM: Processing weak topic: '{topic}' -> Normalized: '{normalized_topic}'")
             print(f"DEBUG RECOM: Found {len(videos)} videos for '{normalized_topic}'")
-            # -----------------------------------------------------------
 
     return render_template(
         'adaptive_recommendations.html',
