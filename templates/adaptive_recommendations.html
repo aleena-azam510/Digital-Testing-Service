@@ -393,7 +393,7 @@ body {
                             </div>
                         </a>
                         {% else %}
-                        {# Render Fallback Search Card #}
+                        {# Render Fallback Search Card with a link to YouTube search for the topic #}
                         <a href="https://www.youtube.com/results?search_query={{ topic | urlencode }}" target="_blank" class="video-card-link" style="border: 2px dashed var(--light-purple);">
                             <div class="video-card" style="background: var(--light-blue); height: 100%;">
                                 <div class="video-card-body" style="height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
