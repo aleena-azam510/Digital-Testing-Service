@@ -6,457 +6,467 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* ... Your complete existing CSS styles ... */
+/* ... Your existing CSS variables ... */
 :root {
-    --primary-purple: #6a0dad;
-    --secondary-purple: #8a2be2;
-    --light-purple: #9370db;
-    --dark-blue: #4b0082;
-    --light-blue: #e6e6fa;
-    --gradient-primary: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
-    --gradient-secondary: linear-gradient(135deg, #8a2be2 0%, #6a0dad 100%);
-    --gradient-card: linear-gradient(135deg, #f8f4ff 0%, #f0ebff 100%);
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-    --card-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.15);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-purple: #6a0dad;
+    --secondary-purple: #8a2be2;
+    --light-purple: #9370db;
+    --dark-blue: #4b0082;
+    --light-blue: #e6e6fa;
+    --gradient-primary: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
+    --gradient-secondary: linear-gradient(135deg, #8a2be2 0%, #6a0dad 100%);
+    --gradient-card: linear-gradient(135deg, #f8f4ff 0%, #f0ebff 100%);
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --card-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f0ff 0%, #e6e6fa 100%);
-    color: #333;
-    min-height: 100vh;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f0ff 0%, #e6e6fa 100%);
+    color: #333;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .header-card {
-    background: var(--gradient-primary);
-    color: white;
-    text-align: center;
-    padding: 3rem 2rem;
-    border-radius: 20px;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 2.5rem;
-    position: relative;
-    overflow: hidden;
+    background: var(--gradient-primary);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .header-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='2' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat;
-    animation: float 20s linear infinite;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='2' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat;
+    animation: float 20s linear infinite;
 }
 
 .header-card h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
 }
 
 .header-card p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    max-width: 700px;
-    margin: 0 auto;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .weak-topic-card {
-    background: var(--gradient-card);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 2rem;
-    transition: var(--transition);
-    border-left: 5px solid var(--danger);
-    position: relative;
-    overflow: hidden;
+    background: var(--gradient-card);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+    border-left: 5px solid var(--danger);
+    position: relative;
+    overflow: hidden;
 }
 
 .weak-topic-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: 0.8s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.8s;
 }
 
 .weak-topic-card:hover::before {
-    left: 100%;
+    left: 100%;
 }
 
 .weak-topic-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2);
 }
 
 .weak-topic-card h3 {
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--light-blue);
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--light-blue);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .mastery-badge {
-    background: var(--gradient-primary);
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .weak-topic-card h4 {
-    color: var(--primary-purple);
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
+    color: var(--primary-purple);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .weak-topic-card h4 i {
-    margin-right: 10px;
+    margin-right: 10px;
 }
 
 .video-card-link {
-    display: block;
-    text-decoration: none;
-    transition: var(--transition);
-    overflow: hidden;
-    border-radius: 15px;
-    height: 100%;
+    display: block;
+    text-decoration: none;
+    transition: var(--transition);
+    overflow: hidden;
+    border-radius: 15px;
+    height: 100%;
 }
 
 .video-card-link:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 25px rgba(106, 13, 173, 0.2);
-    text-decoration: none;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(106, 13, 173, 0.2);
+    text-decoration: none;
 }
 
+/* --- CORRECTED VIDEO CARD STYLES --- */
 .video-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    display: flex; /* Enable flex for vertical stacking */
+    flex-direction: column; /* Stack image and body vertically */
 }
 
 .video-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: var(--transition);
+    /* Kept original size */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: var(--transition);
 }
 
 .video-card-link:hover .video-card img {
-    transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .video-card-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 140px;
+    /* REMOVED FIXED HEIGHT */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Allows the body to take up remaining height if needed */
 }
 
-.video-card-body p {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+/* Added specific class to ensure title styling */
+p.video-title-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits title to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .video-play-icon {
-    color: var(--primary-purple);
-    font-size: 2rem;
-    text-align: center;
-    transition: var(--transition);
+    color: var(--primary-purple);
+    font-size: 2rem;
+    text-align: center;
+    transition: var(--transition);
 }
 
 .video-card-link:hover .video-play-icon {
-    color: var(--secondary-purple);
-    transform: scale(1.1);
+    color: var(--secondary-purple);
+    transform: scale(1.1);
 }
+/* --- END CORRECTED VIDEO CARD STYLES --- */
+
 
 .practice-questions {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .question-item {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: var(--light-blue);
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-purple);
-    transition: var(--transition);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--light-blue);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-purple);
+    transition: var(--transition);
 }
 
 .question-item:hover {
-    background: #e0d6ff;
-    transform: translateX(5px);
+    background: #e0d6ff;
+    transform: translateX(5px);
 }
 
 .question-item:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .btn-dashboard {
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    background: var(--gradient-primary);
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    box-shadow: var(--card-shadow);
-    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+    border: none;
 }
 
 .btn-dashboard:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
-    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
+    color: white;
 }
 
 .btn-dashboard i {
-    margin-right: 10px;
+    margin-right: 10px;
 }
 
 .alert {
-    border: none;
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 2rem;
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
 }
 
 .alert-success {
-    background: var(--gradient-card);
-    color: var(--dark-blue);
-    border-left: 5px solid var(--success);
+    background: var(--gradient-card);
+    color: var(--dark-blue);
+    border-left: 5px solid var(--success);
 }
 
 .alert-warning {
-    background: var(--gradient-card);
-    color: var(--dark-blue);
-    border-left: 5px solid var(--warning);
+    background: var(--gradient-card);
+    color: var(--dark-blue);
+    border-left: 5px solid var(--warning);
 }
 
 .alert h3 {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .alert h3 i {
-    margin-right: 10px;
-    font-size: 1.5rem;
+    margin-right: 10px;
+    font-size: 1.5rem;
 }
 
 .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
 .floating {
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .header-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .header-card h2 {
-        font-size: 2rem;
-    }
-    
-    .weak-topic-card {
-        padding: 1.5rem;
-    }
-    
-    .weak-topic-card h3 {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .mastery-badge {
-        margin-top: 10px;
-        align-self: flex-start;
-    }
-    
-    .video-card-body {
-        height: auto;
-    }
+    .container {
+        padding: 15px;
+    }
+    
+    .header-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .header-card h2 {
+        font-size: 2rem;
+    }
+    
+    .weak-topic-card {
+        padding: 1.5rem;
+    }
+    
+    .weak-topic-card h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .mastery-badge {
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+    
+    .video-card-body {
+        /* Removed fixed height for mobile */
+        height: auto;
+    }
 }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="container mt-4">
-    <div class="header-card fade-in">
-        <h2>Personalized Learning Recommendations</h2>
-        <p class="lead">Based on your performance on <strong>{{ last_test_title }}</strong></p>
-    </div>
+    <div class="header-card fade-in">
+        <h2>Personalized Learning Recommendations</h2>
+        <p class="lead">Based on your performance on <strong>{{ last_test_title }}</strong></p>
+    </div>
 
-    {% if not has_weak_topics %}
-        <div class="alert alert-success fade-in">
-            <h3><i class="fas fa-trophy"></i> Excellent Work! Mastery Achieved</h3>
-            <p>You've demonstrated high proficiency across all topics. Keep up the great work!</p>
-            <a href="{{ url_for('participant_dashboard') }}" class="btn-dashboard mt-3">
-                <i class="fas fa-chart-line"></i> Return to Dashboard
-            </a>
-        </div>
-    {% else %}
-        <div class="alert alert-warning fade-in">
-            <h3><i class="fas fa-lightbulb"></i> Personalized Improvement Plan</h3>
-            <p>We've identified areas where you can strengthen your knowledge. Review the resources below.</p>
-        </div>
-        
-        {% for topic, data in recommendations.items() %}
-        <div class="weak-topic-card fade-in">
-            <h3>
-                {{ topic }} 
-                <span class="mastery-badge">{{ data.mastery }}% Mastery</span>
-            </h3>
-            
-            {% if data.videos %}
-                <h4><i class="fas fa-play-circle"></i> Recommended Video Tutorials</h4>
-                <div class="row mt-3">
-                    {% for video in data.videos %}
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        
-                        {# FIX 2: Check if a video_id exists. If not, render the fallback search card. #}
-                        {% if video.video_id %}
-                        <a href="https://www.youtube.com/watch?v={{ video.video_id }}" target="_blank" class="video-card-link">
-                            <div class="video-card">
-                                <img src="https://img.youtube.com/vi/{{ video.video_id }}/hqdefault.jpg" alt="{{ video.title }}">
-                                <div class="video-card-body">
-                                    <p>{{ video.title }}</p>
-                                    <div class="video-play-icon">
-                                        <i class="fas fa-play-circle"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        {% else %}
-                        {# Render Fallback Search Card with a link to YouTube search for the topic #}
-                        <a href="https://www.youtube.com/results?search_query={{ topic | urlencode }}" target="_blank" class="video-card-link" style="border: 2px dashed var(--light-purple);">
-                            <div class="video-card" style="background: var(--light-blue); height: 100%;">
-                                <div class="video-card-body" style="height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                                    <i class="fas fa-search-plus" style="font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 0.5rem;"></i>
-                                    <p style="font-weight: 700; color: var(--dark-blue); margin-bottom: 0;">{{ video.title }}</p>
-                                    <small class="text-muted">Click here to search YouTube for tutorials.</small>
-                                </div>
-                            </div>
-                        </a>
-                        {% endif %}
+    {% if not has_weak_topics %}
+        <div class="alert alert-success fade-in">
+            <h3><i class="fas fa-trophy"></i> Excellent Work! Mastery Achieved</h3>
+            <p>You've demonstrated high proficiency across all topics. Keep up the great work!</p>
+            <a href="{{ url_for('participant_dashboard') }}" class="btn-dashboard mt-3">
+                <i class="fas fa-chart-line"></i> Return to Dashboard
+            </a>
+        </div>
+    {% else %}
+        <div class="alert alert-warning fade-in">
+            <h3><i class="fas fa-lightbulb"></i> Personalized Improvement Plan</h3>
+            <p>We've identified areas where you can strengthen your knowledge. Review the resources below.</p>
+        </div>
+        
+        {% for topic, data in recommendations.items() %}
+        <div class="weak-topic-card fade-in">
+            <h3>
+                {{ topic }} 
+                <span class="mastery-badge">{{ data.mastery }}% Mastery</span>
+            </h3>
+            
+{% if data.videos %}
+    <h4><i class="fas fa-play-circle"></i> Recommended Video Tutorials</h4>
+    <div class="row mt-3">
+        {% for video in data.videos %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            
+            {% if video.video_id %}
+            <a href="https://www.youtube.com/watch?v={{ video.video_id }}" target="_blank" class="video-card-link">
+                <div class="video-card">
+                    {# The Image tag now uses the 'video-thumbnail' class (optional, but good practice) #}
+                    <img src="https://img.youtube.com/vi/{{ video.video_id }}/hqdefault.jpg" alt="{{ video.title }}" class="video-thumbnail">
+                    
+                    <div class="video-card-body">
+                        {# The Paragraph tag now uses the 'video-title-text' class #}
+                        <p class="video-title-text">{{ video.title }}</p> 
+                        <div class="video-play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% else %}
+            {# Fallback Search Card (Keep as is) #}
+            <a href="https://www.youtube.com/results?search_query={{ topic | urlencode }}" target="_blank" class="video-card-link" style="border: 2px dashed var(--light-purple);">
+                <div class="video-card" style="background: var(--light-blue); height: 100%;">
+                    <div class="video-card-body" style="height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <i class="fas fa-search-plus" style="font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 0.5rem;"></i>
+                        <p style="font-weight: 700; color: var(--dark-blue); margin-bottom: 0;">{{ video.title }}</p>
+                        <small class="text-muted">Click here to search YouTube for tutorials.</small>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
 
-                    </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            {% if data.questions %}
-                <h4><i class="fas fa-question-circle"></i> Practice Questions</h4>
-                <div class="practice-questions mt-3">
-                    {% for question in data.questions %}
-                    <div class="question-item">
-                        <strong>Q{{ loop.index }}:</strong> {{ question.text }}
-                    </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-        {% endfor %}
-        
-        <div class="text-center mt-5">
-            <a href="{{ url_for('participant_dashboard') }}" class="btn-dashboard">
-                <i class="fas fa-arrow-left"></i> Back to Dashboard
-            </a>
-        </div>
-    {% endif %}
+            {% if data.questions %}
+                <h4><i class="fas fa-question-circle"></i> Practice Questions</h4>
+                <div class="practice-questions mt-3">
+                    {% for question in data.questions %}
+                    <div class="question-item">
+                        <strong>Q{{ loop.index }}:</strong> {{ question.text }}
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('participant_dashboard') }}" class="btn-dashboard">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+    {% endif %}
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    const fadeInOnScroll = function() {
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('visible');
-            }
-        });
-    };
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInOnScroll = function() {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    };
 
-    // Initial check
-    fadeInOnScroll();
-    
-    // Check on scroll
-    window.addEventListener('scroll', fadeInOnScroll);
-    
-    // Add animation delay to cards for staggered effect
-    const cards = document.querySelectorAll('.weak-topic-card');
-    cards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.2}s`;
-    });
+    // Initial check
+    fadeInOnScroll();
+    
+    // Check on scroll
+    window.addEventListener('scroll', fadeInOnScroll);
+    
+    // Add animation delay to cards for staggered effect
+    const cards = document.querySelectorAll('.weak-topic-card');
+    cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.2}s`;
+    });
 });
 </script>
 {% endblock %}
