@@ -803,11 +803,12 @@ def adaptive_feedback(submission_id):
     )
 
 
+
 @app.route('/adaptive_recommendations')
 @login_required
 def adaptive_recommendations():
     latest_submission = Submission.query.filter_by(participant_id=current_user.id)\
-                                    .order_by(Submission.id.desc()).first()
+                                     .order_by(Submission.id.desc()).first()
     if not latest_submission:
         flash("Please complete a test first to get personalized recommendations.", "info")
         return redirect(url_for('participant_dashboard'))
@@ -817,9 +818,11 @@ def adaptive_recommendations():
     except json.JSONDecodeError:
         feedback_data = {}
 
-    weak_topics = feedback_data.get('weak_topics', {})
+    # This contains the weak topics (e.g., {'Web Development': 40.0, 'General': 50.0})
+    weak_topics = feedback_data.get('weak_topics', {}) 
 
     # Load video tutorials from JSON file in 'data' folder
+    # NOTE: Assuming your project structure has 'data/tutorials.json'
     data_path = os.path.join(os.path.dirname(__file__), 'data', 'tutorials.json')
     try:
         with open(data_path, 'r') as f:
@@ -830,6 +833,7 @@ def adaptive_recommendations():
     recommendations = {}
 
     if not weak_topics:
+        # User has mastery > 60% in all areas
         recommendations['Success'] = {
             'mastery': 100,
             'questions': [],
@@ -837,25 +841,34 @@ def adaptive_recommendations():
         }
     else:
         for topic, mastery_score in weak_topics.items():
+            
+            # --- CRITICAL FIX: Topic Name Normalization ---
+            # Ensures 'web development', 'Web Development', and 'WEB DEVELOPMENT' all match the JSON key.
+            normalized_topic = topic.strip().title() 
+            
             # Fetch remedial questions
-            # NOTE: The Question model must also have an entry for topic='General' 
-            remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
+            # NOTE: Assuming 'q.question_text' is the correct attribute for question text
+            remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all() 
             remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
 
-            # FIX 1: Normalize topic name (strip whitespace, apply Title Case) for robust lookup
-            # This is the line that requires 'General' to be a key in tutorials.json
-            normalized_topic = topic.strip().title()
+            # Fetch videos using the normalized topic name
             videos = youtube_videos_recommendations.get(normalized_topic, [])
             
-            # Only fallback to search tutorial if videos list is empty
+            # Only fallback to a search card if videos list is empty for this topic
             if not videos:
+                # This fallback will prevent a blank video section if a specific topic key is missing
                 videos = [{"title": f"Search tutorials for '{topic}' on YouTube", "video_id": None}]
             
             recommendations[topic] = {
                 'mastery': mastery_score,
                 'questions': remedial_questions,
-                'videos': videos[:3]  # limit to top 3 videos
+                'videos': videos[:3] # limit to top 3 videos
             }
+            
+            # --- DEBUGGING LOG (Monitor this after running a test!) ---
+            print(f"DEBUG RECOM: Processing weak topic: '{topic}' -> Normalized: '{normalized_topic}'")
+            print(f"DEBUG RECOM: Found {len(videos)} videos for '{normalized_topic}'")
+            # -----------------------------------------------------------
 
     return render_template(
         'adaptive_recommendations.html',
@@ -863,6 +876,7 @@ def adaptive_recommendations():
         last_test_title=latest_submission.test.title,
         has_weak_topics=bool(weak_topics)
     )
+
 
 
 
