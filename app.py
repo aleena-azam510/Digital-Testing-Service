@@ -818,7 +818,6 @@ def adaptive_recommendations():
 
     weak_topics = feedback_data.get('weak_topics', {})
 
-    # Load video tutorials from JSON
     # Load video tutorials from JSON file in 'data' folder
     data_path = os.path.join(os.path.dirname(__file__), 'data', 'tutorials.json')
     try:
@@ -837,21 +836,24 @@ def adaptive_recommendations():
         }
     else:
         for topic, mastery_score in weak_topics.items():
+            # Normalize topic key (strip difficulty suffix like " - EASY Level")
+            normalized_topic = topic.split(" -")[0].strip()
+
             # Fetch remedial questions
-            remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
+            remedial_questions_objs = Question.query.filter_by(topic=normalized_topic).limit(3).all()
             remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
 
             # Get videos from JSON
-            videos = youtube_videos_recommendations.get(topic, [])
+            videos = youtube_videos_recommendations.get(normalized_topic, [])
             
             # Only fallback to search tutorial if videos list is empty
             if not videos:
-                videos = [{"title": f"Search tutorials for '{topic}' on YouTube", "video_id": None}]
+                videos = [{"title": f"Search tutorials for '{normalized_topic}' on YouTube", "video_id": None}]
             
             recommendations[topic] = {
                 'mastery': mastery_score,
                 'questions': remedial_questions,
-                'videos': videos[:3]  # limit to top 2 videos
+                'videos': videos[:3]  # limit to top 3 videos
             }
 
     return render_template(
@@ -860,6 +862,7 @@ def adaptive_recommendations():
         last_test_title=latest_submission.test.title,
         has_weak_topics=bool(weak_topics)
     )
+
 
 
 
