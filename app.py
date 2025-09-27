@@ -805,7 +805,7 @@ def adaptive_feedback(submission_id):
 @app.route('/adaptive_recommendations')
 @login_required
 def adaptive_recommendations():
-    latest_submission = Submission.query.filter_by(participant_id=current_user.id)\
+    latest_submission = Submission.query.filter_by(participant_id=current_user.id) \
                                       .order_by(Submission.id.desc()).first()
     if not latest_submission:
         flash("Please complete a test first to get personalized recommendations.", "info")
@@ -818,7 +818,7 @@ def adaptive_recommendations():
 
     weak_topics = feedback_data.get('weak_topics', {})
 
-    # Load video tutorials from JSON file in 'data' folder
+    # Load video tutorials from JSON
     data_path = os.path.join(os.path.dirname(__file__), 'data', 'tutorials.json')
     try:
         with open(data_path, 'r') as f:
@@ -832,24 +832,35 @@ def adaptive_recommendations():
         recommendations['Success'] = {
             'mastery': 100,
             'questions': [],
-            'videos': [{"title": "🎉 Excellent work! No weak topics detected.", "video_id": None}]
+            'videos': [
+                {"title": "🎉 Excellent work! No weak topics detected.", "video_id": None}
+            ]
         }
     else:
         for topic, mastery_score in weak_topics.items():
-            # Normalize topic key (strip difficulty suffix like " - EASY Level")
+            # Normalize topic (remove difficulty levels, trim spaces)
             normalized_topic = topic.split(" -")[0].strip()
 
             # Fetch remedial questions
             remedial_questions_objs = Question.query.filter_by(topic=normalized_topic).limit(3).all()
             remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
 
-            # Get videos from JSON
-            videos = youtube_videos_recommendations.get(normalized_topic, [])
-            
-            # Only fallback to search tutorial if videos list is empty
+            # Case-insensitive + partial topic lookup for videos
+            videos = []
+            for key, val in youtube_videos_recommendations.items():
+                if key.strip().lower() == normalized_topic.lower() or key.strip().lower() in normalized_topic.lower():
+                    videos = val
+                    break
+
+            # Fallback if no videos found
             if not videos:
                 videos = [{"title": f"Search tutorials for '{normalized_topic}' on YouTube", "video_id": None}]
-            
+
+            # Debugging logs
+            print("Weak topic:", topic)
+            print("Normalized topic:", normalized_topic)
+            print("Videos found:", videos)
+
             recommendations[topic] = {
                 'mastery': mastery_score,
                 'questions': remedial_questions,
@@ -862,6 +873,7 @@ def adaptive_recommendations():
         last_test_title=latest_submission.test.title,
         has_weak_topics=bool(weak_topics)
     )
+
 
 
 
