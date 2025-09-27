@@ -648,7 +648,8 @@ def submit_test(test_id):
             continue
 
         # Normalize answers
-        question_topic = q.topic if q.topic else 'Unknown Topic'
+        # FIXED CODE: Uses 'General' if q.topic is empty. Ensure 'General' is in tutorials.json
+        question_topic = q.topic if q.topic and q.topic.strip() else 'General'
         is_correct = False
 
         if q.is_open_ended:
