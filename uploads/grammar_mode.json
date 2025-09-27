@@ -1,0 +1,129 @@
+{
+  "title": "Grammar & Syntax - MODERATE Level",
+  "description": "✍️ Move beyond the basics! This quiz tests your understanding of $\\text{verb \\, mood}$ 🎭, **complex sentence structures** ⛓️, **subordinating conjunctions**, and common $\\text{syntactic \\, errors}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Grammar & Syntax",
+  "questions": [
+    {
+      "text": "A sentence containing one independent clause and one or more dependent clauses is called a $\\mathbf{...}$ sentence.",
+      "type": "mcq",
+      "options": { "a": "Simple", "b": "Compound", "c": "Complex", "d": "Compound-Complex" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which type of clause can stand alone as a complete sentence?",
+      "type": "mcq",
+      "options": { "a": "Dependent clause", "b": "Subordinate clause", "c": "Independent clause", "d": "Adverbial clause" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Identify the error in the following sentence: 'Running quickly, the bus was missed.'",
+      "type": "mcq",
+      "options": { "a": "Run-on sentence", "b": "Comma splice", "c": "Dangling Modifier", "d": "Subject-verb disagreement" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Subjunctive \\, Mood}$ is most often used to express...",
+      "type": "mcq",
+      "options": { "a": "A simple fact", "b": "A command", "c": "A wish, hypothetical situation, or necessity", "d": "A certainty" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In the sentence, 'I wish $\\mathbf{I \\, were}$ taller,' the verb 'were' is an example of which mood?",
+      "type": "mcq",
+      "options": { "a": "Indicative", "b": "Imperative", "c": "Subjunctive", "d": "Conditional" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A common error where two independent clauses are joined only by a comma is known as a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Sentence Fragment", "b": "Fused Sentence", "c": "Comma Splice", "d": "Run-on Fragment" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word is a $\\mathbf{Subordinating \\, Conjunction}$?",
+      "type": "mcq",
+      "options": { "a": "And", "b": "For", "c": "Although", "d": "So" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the function of the $\\mathbf{gerund}$ phrase in the sentence: 'She enjoys $\\mathbf{reading \\, books}$.'?",
+      "type": "mcq",
+      "options": { "a": "Subject", "b": "Direct Object", "c": "Adjective", "d": "Adverb" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A pronoun that refers to an earlier noun (the antecedent) must agree with it in...",
+      "type": "mcq",
+      "options": { "a": "Voice and Mood", "b": "Case only", "c": "Person, Number, and Gender", "d": "Tense only" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In the sentence, 'The box was carried by the student,' the verb is in the $\\mathbf{...}$ voice.",
+      "type": "mcq",
+      "options": { "a": "Active Voice", "b": "Passive Voice", "c": "Subjunctive Voice", "d": "Indicative Voice" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which verb form is used to create the $\\mathbf{perfect \\, tenses}$ (e.g., 'have eaten')?",
+      "type": "mcq",
+      "options": { "a": "Base Form", "b": "Past Simple", "c": "Present Participle", "d": "Past Participle" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "A sentence that combines two or more independent clauses and one or more dependent clauses is called $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Complex", "b": "Compound", "c": "Simple", "d": "Compound-Complex" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which punctuation mark is used to join two independent clauses without a coordinating conjunction?",
+      "type": "mcq",
+      "options": { "a": "Comma", "b": "Colon", "c": "Semicolon", "d": "Dash" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the function of the phrase $\\mathbf{to \\, run}$ in the sentence: 'He likes $\\mathbf{to \\, run}$.'?",
+      "type": "mcq",
+      "options": { "a": "Gerund", "b": "Participle", "c": "Infinitive", "d": "Prepositional Phrase" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word is a $\\mathbf{Coordinating \\, Conjunction}$ (FANBOYS)?",
+      "type": "mcq",
+      "options": { "a": "Since", "b": "Unless", "c": "Yet", "d": "When" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A sentence that gives a direct command or instruction is in the $\\mathbf{...}$ mood.",
+      "type": "mcq",
+      "options": { "a": "Indicative", "b": "Subjunctive", "c": "Interrogative", "d": "Imperative" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "In the sentence, 'The woman $\\mathbf{who \\, is \\, wearing \\, a \\, blue \\, hat}$ is my aunt,' the bold part is what kind of clause?",
+      "type": "mcq",
+      "options": { "a": "Noun Clause", "b": "Adverb Clause", "c": "Adjective Clause (or Relative Clause)", "d": "Independent Clause" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{possessive \\, form}$ of the plural noun 'students' is:",
+      "type": "mcq",
+      "options": { "a": "student's", "b": "students", "c": "students'", "d": "student'es" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{Fused \\, Sentence}$ is when two independent clauses are joined with...",
+      "type": "mcq",
+      "options": { "a": "No punctuation", "b": "A comma", "c": "A semicolon", "d": "A coordinating conjunction" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which tense is formed by using 'will have' plus the past participle?",
+      "type": "mcq",
+      "options": { "a": "Future Continuous", "b": "Future Perfect", "c": "Future Simple", "d": "Present Perfect" },
+      "correct_answer": "b"
+    }
+  ]
+}

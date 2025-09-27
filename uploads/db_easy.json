@@ -1,0 +1,129 @@
+{
+  "title": "Databases - EASY Level",
+  "description": "🗄️ Begin your data journey! This quiz covers basic **Database** concepts: the structure of $\\text{tables}$ 📊, different types of **keys** 🔑, and the core $\\mathbf{SQL \\, commands}$. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Databases",
+  "questions": [
+    {
+      "text": "Which language is used to query databases?",
+      "type": "mcq",
+      "options": { "a": "HTML", "b": "SQL", "c": "C", "d": "Python" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which key uniquely identifies each record in a table?",
+      "type": "mcq",
+      "options": { "a": "Foreign Key", "b": "Primary Key", "c": "Candidate Key", "d": "Composite Key" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does DML stand for?",
+      "type": "mcq",
+      "options": { "a": "Data Machine Language", "b": "Data Manipulation Language", "c": "Database Management Language", "d": "Data Markup Language" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The vertical entity in a table, representing a specific attribute, is called a...",
+      "type": "mcq",
+      "options": { "a": "Row", "b": "Column (or Field)", "c": "Tuple", "d": "Index" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What SQL command is used to retrieve data from a database?",
+      "type": "mcq",
+      "options": { "a": "UPDATE", "b": "INSERT", "c": "DELETE", "d": "SELECT" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "A $\\mathbf{Foreign \\, Key}$ is used to establish a relationship between...",
+      "type": "mcq",
+      "options": { "a": "Rows in the same table", "b": "Columns in the same table", "c": "Two different tables", "d": "Two different databases" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The term **tuple** is synonymous with which part of a relational table?",
+      "type": "mcq",
+      "options": { "a": "Column", "b": "Row (or Record)", "c": "Schema", "d": "View" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does $\\mathbf{DDL}$ stand for?",
+      "type": "mcq",
+      "options": { "a": "Data Definition Logic", "b": "Data Description Language", "c": "Data Definition Language", "d": "Database Development Library" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which type of database stores data in tables with rows and columns?",
+      "type": "mcq",
+      "options": { "a": "NoSQL", "b": "Object-Oriented", "c": "Relational", "d": "Hierarchical" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The `WHERE` clause in SQL is used for what purpose?",
+      "type": "mcq",
+      "options": { "a": "To sort the output", "b": "To group the results", "c": "To filter the records", "d": "To define a new column" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which SQL command is used to add new rows of data to a table?",
+      "type": "mcq",
+      "options": { "a": "ADD", "b": "UPDATE", "c": "INSERT INTO", "d": "CREATE TABLE" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The structure (names and types of columns) of a table is called its...",
+      "type": "mcq",
+      "options": { "a": "Instance", "b": "Constraint", "c": "Schema", "d": "Relation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Candidate Key** must satisfy which two properties?",
+      "type": "mcq",
+      "options": { "a": "Null and Unique", "b": "Unique and Redundant", "c": "Unique and Minimal", "d": "Minimal and Null" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{DDL}$ command is used to remove an entire table from the database?",
+      "type": "mcq",
+      "options": { "a": "DELETE", "b": "REMOVE", "c": "DROP TABLE", "d": "ALTER TABLE" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does $\\mathbf{DBMS}$ stand for?",
+      "type": "mcq",
+      "options": { "a": "Data Backup Management System", "b": "Database Building Management System", "c": "Database Management System", "d": "Data Based Memory System" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **View** in SQL is a...",
+      "type": "mcq",
+      "options": { "a": "Physical table stored on disk", "b": "Virtual table based on a query result", "c": "Type of index", "d": "Data type" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which clause is used to sort the result set of a query?",
+      "type": "mcq",
+      "options": { "a": "GROUP BY", "b": "ORDER BY", "c": "SORT", "d": "LIMIT" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The constraint that ensures every value of a foreign key references an existing primary key is called...",
+      "type": "mcq",
+      "options": { "a": "Domain Integrity", "b": "Entity Integrity", "c": "Referential Integrity", "d": "Unique Constraint" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{NULL}$ value in a database column means the data is...",
+      "type": "mcq",
+      "options": { "a": "Zero", "b": "Empty string", "c": "Unknown or inapplicable", "d": "Boolean False" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{DML}$ command is used to modify existing data in a table?",
+      "type": "mcq",
+      "options": { "a": "ALTER TABLE", "b": "MODIFY", "c": "UPDATE", "d": "INSERT" },
+      "correct_answer": "c"
+    }
+  ]
+}

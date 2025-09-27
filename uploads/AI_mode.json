@@ -1,0 +1,129 @@
+{
+  "title": "Artificial Intelligence - MODERATE Level",
+  "description": "📈 Level up your knowledge! This quiz delves into $\\mathbf{search \\, algorithms}$ 🗺️, **Machine Learning** paradigms 📊, and the architecture of $\\text{Artificial \\, Neural \\, Networks \\, (ANNs)}$ 🕸️. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Artificial Intelligence",
+  "questions": [
+    {
+      "text": "Which **search algorithm** uses a $\\mathbf{heuristic}$ function to guide its path from the current node to the goal?",
+      "type": "mcq",
+      "options": { "a": "Breadth-First Search (BFS)", "b": "Depth-First Search (DFS)", "c": "A* Search Algorithm", "d": "Iterative Deepening Search" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Machine \\, Learning}$, what is the process of adjusting the weights of a neural network based on the error rate called?",
+      "type": "mcq",
+      "options": { "a": "Forward Propagation", "b": "Backpropagation", "c": "Clustering", "d": "Sampling" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of learning involves training a system to make a sequence of decisions to maximize a cumulative reward?",
+      "type": "mcq",
+      "options": { "a": "Supervised Learning", "b": "Unsupervised Learning", "c": "Reinforcement Learning", "d": "Transfer Learning" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Adversarial \\, Search \\, Algorithm}$ commonly used in games like chess is...",
+      "type": "mcq",
+      "options": { "a": "Hill Climbing", "b": "Minimax", "c": "Simulated Annealing", "d": "Genetic Algorithm" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Unsupervised \\, Learning}$, the primary goal is to find...",
+      "type": "mcq",
+      "options": { "a": "A relationship between input and output labels", "b": "The optimal sequence of actions", "c": "Hidden patterns or structures in unlabeled data", "d": "The probability of a single event" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which machine learning model can suffer from **vanishing or exploding gradients** during training?",
+      "type": "mcq",
+      "options": { "a": "Decision Tree", "b": "Support Vector Machine (SVM)", "c": "Deep Neural Networks (DNNs)", "d": "K-Nearest Neighbors (KNN)" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The concept of **Completeness** in a search algorithm means that it is guaranteed to...",
+      "type": "mcq",
+      "options": { "a": "Find the optimal solution", "b": "Terminate quickly", "c": "Find a solution if one exists", "d": "Use minimal memory" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the output of the $\\mathbf{Sigmoid \\, Activation \\, Function}$ typically mapped to?",
+      "type": "mcq",
+      "options": { "a": "Any real number", "b": "An integer (0 or 1)", "c": "A value between 0 and 1 (a probability)", "d": "A negative number" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Decision \\, Tree}$ algorithm primarily uses which metric to determine the best feature for splitting data?",
+      "type": "mcq",
+      "options": { "a": "Euclidean Distance", "b": "Mean Squared Error (MSE)", "c": "Information Gain (or Gini Impurity)", "d": "Discount Factor" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the major drawback of $\\mathbf{Minimax}$ without $\\text{Alpha-Beta \\, Pruning}$?",
+      "type": "mcq",
+      "options": { "a": "It can't handle complex games", "b": "It is not guaranteed to find the best move", "c": "It explores too many irrelevant branches, leading to high time complexity", "d": "It requires a large dataset" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Natural \\, Language \\, Processing \\, (NLP)}$, what is $\\mathbf{Tokenization}$?",
+      "type": "mcq",
+      "options": { "a": "Converting text to speech", "b": "Breaking text into smaller units (words, phrases, symbols)", "c": "Determining the sentiment of the text", "d": "Translating the text" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Bias-Variance \\, Tradeoff}$ in Machine Learning relates to balancing...",
+      "type": "mcq",
+      "options": { "a": "Speed and memory", "b": "Underfitting (high bias) and Overfitting (high variance)", "c": "Training time and deployment time", "d": "Accuracy and precision" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Perceptron}$ is a fundamental unit of a neural network that is primarily used for...",
+      "type": "mcq",
+      "options": { "a": "Clustering", "b": "Non-linear classification", "c": "Linear classification", "d": "Dimensionality reduction" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{probabilistic \\, model}$ assumes that the presence of a particular feature in a class is independent of the presence of any other feature?",
+      "type": "mcq",
+      "options": { "a": "Support Vector Machine", "b": "K-Means Clustering", "c": "Hidden Markov Model", "d": "Naive Bayes Classifier" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The **Discount Factor** ($\\gamma$) in Reinforcement Learning controls the importance of...",
+      "type": "mcq",
+      "options": { "a": "Immediate rewards versus future rewards", "b": "Exploration versus Exploitation", "c": "The size of the state space", "d": "The learning rate" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The primary disadvantage of $\\mathbf{Greedy \\, Best-First \\, Search}$ compared to A* search is that Greedy Search is not...",
+      "type": "mcq",
+      "options": { "a": "Complete", "b": "Optimal (guaranteed to find the shortest path)", "c": "Fast", "d": "Applicable to graphs" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the goal of $\\mathbf{Dimensionality \\, Reduction}$ techniques like Principal Component Analysis (PCA)?",
+      "type": "mcq",
+      "options": { "a": "Increase the number of features", "b": "Reduce the number of features while preserving essential information", "c": "Improve the visual design of the data", "d": "Encrypt the data" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{Multi-Layer \\, Perceptron \\, (MLP)}$, the layers between the input and output are called...",
+      "type": "mcq",
+      "options": { "a": "Feature layers", "b": "Hidden layers", "c": "Activation layers", "d": "Bias layers" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Decision \\, Boundary}$ in a classification problem is the surface that separates...",
+      "type": "mcq",
+      "options": { "a": "Training data from testing data", "b": "Different classes or categories", "c": "Input features from output labels", "d": "Linear data from non-linear data" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which metric evaluates the percentage of positive instances correctly identified by a model?",
+      "type": "mcq",
+      "options": { "a": "Accuracy", "b": "Precision", "c": "Recall (or Sensitivity)", "d": "F1 Score" },
+      "correct_answer": "c"
+    }
+  ]
+}

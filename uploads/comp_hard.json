@@ -1,0 +1,129 @@
+{
+  "title": "Computer Organization & Architecture - HARD Level",
+  "description": "🔬 Advanced concepts only! This quiz dives into **ILP** (Instruction-Level Parallelism) 🔄, **microprogramming** 🤖, **advanced cache coherence** 🌐, and the complexities of $\\text{superscalar}$ architecture. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Computer Organization & Architecture",
+  "questions": [
+    {
+      "text": "Which technique resolves data hazards in pipelining?",
+      "type": "mcq",
+      "options": { "a": "Branch Prediction", "b": "Forwarding (Data Bypassing)", "c": "Speculative Execution", "d": "Virtual Memory" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does the control memory in a microprogrammed control unit store?",
+      "type": "mcq",
+      "options": { "a": "Machine code", "b": "Microinstructions", "c": "Cache lines", "d": "Registers" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which cache mapping technique allows a block to be placed in any line of cache?",
+      "type": "mcq",
+      "options": { "a": "Direct Mapping", "b": "Set Associative Mapping", "c": "Fully Associative Mapping", "d": "Static Mapping" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a $\\mathbf{Superscalar}$ processor, what is the key feature that enables the execution of multiple instructions per clock cycle?",
+      "type": "mcq",
+      "options": { "a": "Larger cache size", "b": "Multiple execution units", "c": "Slower clock speed", "d": "Smaller instruction set" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary role of the $\\mathbf{TLB}$ (Translation Lookaside Buffer)?",
+      "type": "mcq",
+      "options": { "a": "Store frequently used data", "b": "Translate virtual addresses to physical addresses", "c": "Buffer I/O requests", "d": "Store microinstructions" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which cache write policy immediately updates main memory after a write operation to the cache?",
+      "type": "mcq",
+      "options": { "a": "Write Back", "b": "Write Allocate", "c": "Write Through", "d": "No Write" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Maximum \\, speedup}$ achievable by a pipeline with $k$ stages is bounded by $k$, assuming no hazards. This is an application of...",
+      "type": "mcq",
+      "options": { "a": "Moore's Law", "b": "Amdahl's Law", "c": "Gustafson's Law", "d": "The Principle of Locality" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which hazard is specifically addressed by techniques like Branch Prediction and Delayed Branching?",
+      "type": "mcq",
+      "options": { "a": "Data Hazard", "b": "Structural Hazard", "c": "Control Hazard", "d": "Memory Hazard" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Modified, Exclusive, Shared, Invalid (MESI)** protocol is a common standard for ensuring...",
+      "type": "mcq",
+      "options": { "a": "Virtual memory access", "b": "Cache coherence in multiprocessors", "c": "Bus arbitration", "d": "Instruction decoding" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Minimum \\, number \\, of \\, microinstructions}$ required for a machine is equal to the number of...",
+      "type": "mcq",
+      "options": { "a": "Registers", "b": "Machine Instructions (Opcodes)", "c": "Execution Units", "d": "Memory Blocks" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary function of **DMA** (Direct Memory Access)?",
+      "type": "mcq",
+      "options": { "a": "Manage the cache hierarchy", "b": "Allow I/O devices to transfer data to/from memory without CPU intervention", "c": "Handle ALU operations", "d": "Store the program's stack" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The process of renaming registers to remove false data dependencies is known as...",
+      "type": "mcq",
+      "options": { "a": "Pipelining", "b": "Register Renaming", "c": "Stalling", "d": "Bus Arbitration" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\text{set-associative}$ mapping, the index field of the address determines the...",
+      "type": "mcq",
+      "options": { "a": "Specific line within a set", "b": "Specific set within the cache", "c": "Specific block within a line", "d": "The tag value" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of control unit provides more flexibility and ease of modification?",
+      "type": "mcq",
+      "options": { "a": "Hardwired Control Unit", "b": "Microprogrammed Control Unit", "c": "RISC Control Unit", "d": "Pipeline Control Unit" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **page fault** occurs when...",
+      "type": "mcq",
+      "options": { "a": "The processor tries to execute an illegal instruction", "b": "A memory access attempts to use a virtual address not currently in physical memory", "c": "The cache is full", "d": "A data hazard is detected" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The term for a situation where a memory block is simultaneously present in both L1 and L2 cache is...",
+      "type": "mcq",
+      "options": { "a": "Exclusive", "b": "Inclusion", "c": "Coherence", "d": "Write Miss" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The **maximum number of instructions** that can be in flight (in various stages of execution) in a $k$-stage pipeline is...",
+      "type": "mcq",
+      "options": { "a": "$1$", "b": "Determined by the cache size", "c": "$k$", "d": "Depends only on the clock frequency" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which addressing mode uses the value in a register plus an offset contained within the instruction to form the effective address?",
+      "type": "mcq",
+      "options": { "a": "Immediate", "b": "Register Direct", "c": "Relative/Indexed", "d": "Stack" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The goal of **Out-of-Order Execution (OOE)** in modern CPUs is to mitigate which type of hazard?",
+      "type": "mcq",
+      "options": { "a": "Structural Hazards", "b": "Control Hazards", "c": "Data Hazards (RAW, WAR, WAW)", "d": "Bus Contention" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the $\\mathbf{Miss \\, Penalty}$ in the context of cache memory?",
+      "type": "mcq",
+      "options": { "a": "The time spent performing a write operation", "b": "The time required to retrieve a block from a lower level memory after a miss", "c": "The number of cache lines that must be invalidated", "d": "The total access time for a cache hit" },
+      "correct_answer": "b"
+    }
+  ]
+}

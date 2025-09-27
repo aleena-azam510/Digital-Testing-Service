@@ -1,0 +1,129 @@
+{
+  "title": "Machine Learning - MODERATE Level",
+  "description": "⚙️ Sharpen your model skills! This quiz explores $\\mathbf{model \\, evaluation}$ 📐, $\\text{optimization \\, algorithms}$ 📉, $\\text{ensemble \\, methods}$ 🌳, and the critical **Bias-Variance Tradeoff** $\\mathbf{B-V}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Machine Learning",
+  "questions": [
+    {
+      "text": "The $\\mathbf{Bias-Variance \\, Tradeoff}$ aims to balance the errors due to underfitting (high bias) and what other factor?",
+      "type": "mcq",
+      "options": { "a": "Low complexity", "b": "Overfitting (high variance)", "c": "Low accuracy", "d": "Small dataset size" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which optimization algorithm is used to find the minimum of a function by iteratively moving in the direction of the steepest descent?",
+      "type": "mcq",
+      "options": { "a": "Simulated Annealing", "b": "Genetic Algorithm", "c": "Gradient Descent", "d": "A* Search" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does the $\\mathbf{F1 \\, Score}$ represent?",
+      "type": "mcq",
+      "options": { "a": "Average of Accuracy and Precision", "b": "Harmonic mean of Precision and Recall", "c": "Geometric mean of Precision and Recall", "d": "Difference between True Positives and False Positives" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which technique combines predictions from multiple Decision Trees to improve robustness and reduce overfitting?",
+      "type": "mcq",
+      "options": { "a": "Single Decision Tree", "b": "Linear Regression", "c": "Random Forest (an ensemble method)", "d": "Support Vector Machine" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The process of scaling features to have zero mean and unit variance is called $\\mathbf{Z-Score}$ or...",
+      "type": "mcq",
+      "options": { "a": "Min-Max Normalization", "b": "Standardization", "c": "Quantile Normalization", "d": "Binarization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which loss function is commonly used for **classification** tasks involving probabilities (like in Logistic Regression)?",
+      "type": "mcq",
+      "options": { "a": "Mean Squared Error (MSE)", "b": "Root Mean Squared Error (RMSE)", "c": "Cross-Entropy Loss (or Log Loss)", "d": "Mean Absolute Error (MAE)" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Support \\, Vector \\, Machines \\, (SVM)}$, the $\\mathbf{Kernel \\, Trick}$ is used to effectively classify data that is...",
+      "type": "mcq",
+      "options": { "a": "Linearly separable", "b": "Non-linearly separable in the input space", "c": "Normally distributed", "d": "Sequential" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Learning \\, Rate}$ in Gradient Descent determines the size of the...",
+      "type": "mcq",
+      "options": { "a": "Dataset", "b": "Batch size", "c": "Step taken towards the minimum of the loss function", "d": "Number of epochs" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does $\\mathbf{PCA \\, (Principal \\, Component \\, Analysis)}$ primarily achieve?",
+      "type": "mcq",
+      "options": { "a": "Classification", "b": "Dimensionality Reduction (Unsupervised)", "c": "Outlier Detection", "d": "Feature Engineering" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{ROC \\, curve \\, (Receiver \\, Operating \\, Characteristic)}$ plots which two metrics against each other?",
+      "type": "mcq",
+      "options": { "a": "Precision and Recall", "b": "Accuracy and Loss", "c": "True Positive Rate (Sensitivity) and False Positive Rate (1-Specificity)", "d": "Bias and Variance" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which technique is used to prevent overfitting by adding a penalty term to the loss function based on the magnitude of the model's weights?",
+      "type": "mcq",
+      "options": { "a": "Feature Scaling", "b": "Regularization (e.g., L1 or L2)", "c": "Cross-Validation", "d": "Batch Normalization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{hyperparameter}$ $\\mathbf{k}$ in the $\\text{K-Means \\, algorithm}$ represents the number of...",
+      "type": "mcq",
+      "options": { "a": "Features", "b": "Iterations", "c": "Clusters", "d": "Neighbors" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Ensemble \\, Learning}$, **Bagging** (Bootstrap Aggregating) aims to reduce which type of error?",
+      "type": "mcq",
+      "options": { "a": "Bias", "b": "Variance", "c": "Irreducible error", "d": "Overfitting" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary characteristic of $\\mathbf{Stochastic \\, Gradient \\, Descent \\, (SGD)}$?",
+      "type": "mcq",
+      "options": { "a": "Uses the entire dataset for each update", "b": "Uses only one training example (or small batch) for each update", "c": "Only works on linear models", "d": "Does not use a loss function" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Cross-Validation}$ technique used to ensure all samples are used for both training and validation exactly once is called...",
+      "type": "mcq",
+      "options": { "a": "Holdout", "b": "K-Fold Cross-Validation", "c": "Leave-One-Out", "d": "Time Series Split" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The problem of **vanishing gradients** occurs primarily in which type of model?",
+      "type": "mcq",
+      "options": { "a": "Simple Linear Regression", "b": "Shallow Decision Trees", "c": "Deep Neural Networks (using Sigmoid/Tanh activations)", "d": "K-Means Clustering" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does the $\\mathbf{p}$-value in $\\mathbf{Statistical \\, Modeling}$ indicate?",
+      "type": "mcq",
+      "options": { "a": "The accuracy of the model", "b": "The probability that the observed result occurred by chance", "c": "The number of features", "d": "The model's complexity" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which measure is used to evaluate the error for a **regression** model and is sensitive to large errors/outliers?",
+      "type": "mcq",
+      "options": { "a": "Accuracy", "b": "Mean Squared Error (MSE)", "c": "Gini Impurity", "d": "Precision" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In the $\\mathbf{K-Nearest \\, Neighbors \\, (KNN)}$ algorithm, what distance metric is most commonly used?",
+      "type": "mcq",
+      "options": { "a": "Manhattan Distance", "b": "Chebyshev Distance", "c": "Euclidean Distance", "d": "Cosine Similarity" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Bootstrap \\, samples}$ used in Random Forest are created by sampling the original data $\\mathbf{with \\, replacement}$. This results in some data points being repeated and some left out (out-of-bag).",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False", "c": "Only for classification", "d": "Only for regression" },
+      "correct_answer": "a"
+    }
+  ]
+}

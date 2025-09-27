@@ -1,0 +1,134 @@
+{
+  "title": "Calculus - MODERATE Level",
+  "description": "⚙️ Intermediate mastery unlocked! This quiz focuses on the mechanics of differentiation (Chain, Product, Quotient Rules) and the application of **definite integrals** $\\int_a^b$ to find **areas** $\\mathcal{A}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Calculus",
+  "questions": [
+    {
+      "text": "What is the derivative of $\\sin(x) \\cdot \\cos(x)$?",
+      "type": "mcq",
+      "options": { "a": "$\\cos^2(x) - \\sin^2(x)$", "b": "$\\sin^2(x) + \\cos^2(x)$", "c": "$2\\sin(x)\\cos(x)$", "d": "$-\\sin(x)\\cos(x)$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which rule is applied to differentiate $f(g(x))$?",
+      "type": "mcq",
+      "options": { "a": "Product Rule", "b": "Quotient Rule", "c": "Chain Rule", "d": "Power Rule" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The definite integral of $x$ from $0$ to $2$ is?",
+      "type": "mcq",
+      "options": { "a": "$2$", "b": "$4$", "c": "$1$", "d": "$0$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the derivative of $\\frac{x^2}{x+1}$?",
+      "type": "mcq",
+      "options": {
+        "a": "$\\frac{2x}{1}$",
+        "b": "$\\frac{2x(x+1) - x^2}{(x+1)^2}$",
+        "c": "$2x(x+1) - x^2$",
+        "d": "$\\frac{2x(x+1) + x^2}{(x+1)^2}$"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The integral $\\int \\ln(x) \\, dx$ is solved using which technique?",
+      "type": "mcq",
+      "options": { "a": "U-Substitution", "b": "Integration by Parts", "c": "Partial Fractions", "d": "Trigonometric Substitution" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "According to L'Hôpital's Rule, if $\\lim_{x \\to a} \\frac{f(x)}{g(x)}$ is of the form $\\frac{0}{0}$, the limit is equal to...",
+      "type": "mcq",
+      "options": { "a": "$\\lim_{x \\to a} \\frac{f(x)}{g'(x)}$", "b": "$\\lim_{x \\to a} \\frac{f'(x)}{g(x)}$", "c": "$\\lim_{x \\to a} \\frac{f'(x)}{g'(x)}$", "d": "$0$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "If $f(x) = e^{5x}$, what is $f'(x)$?",
+      "type": "mcq",
+      "options": { "a": "$e^{5x}$", "b": "$5e^{5x}$", "c": "$5x e^{5x}$", "d": "$\\frac{1}{5} e^{5x}$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The average value of a function $f(x)$ over the interval $[a, b]$ is given by...",
+      "type": "mcq",
+      "options": { "a": "$f(b) - f(a)$", "b": "$\\frac{f(a) + f(b)}{2}$", "c": "$\\frac{1}{b-a} \\int_a^b f(x) \\, dx$", "d": "$\\int_a^b \\frac{f(x)}{x} \\, dx$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the derivative of $\\tan(x)$?",
+      "type": "mcq",
+      "options": { "a": "$\\cot(x)$", "b": "$\\sec^2(x)$", "c": "$\\sec(x) \\tan(x)$", "d": "$-\\cot(x)$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "To calculate the volume of a solid of revolution using the disk/washer method, one integrates an expression involving...",
+      "type": "mcq",
+      "options": { "a": "Length", "b": "Area of a circle ($\\pi r^2$)", "c": "Surface area", "d": "Circumference" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The second derivative $f''(x)$ is used to determine which property of the function $f(x)$?",
+      "type": "mcq",
+      "options": { "a": "Slope", "b": "Area", "c": "Concavity", "d": "Continuity" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the definite integral of $1/x^2$ from $1$ to $\\infty$?",
+      "type": "mcq",
+      "options": { "a": "$1$", "b": "$0$", "c": "$\\infty$", "d": "$2$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "If $f(x) = \\sqrt{x}$, what is the domain of $f'(x)$?",
+      "type": "mcq",
+      "options": { "a": "$x \\ge 0$", "b": "$x > 0$", "c": "All real numbers", "d": "$x \\ne 0$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The Substitution Rule (u-sub) is the integral equivalent of which differentiation rule?",
+      "type": "mcq",
+      "options": { "a": "Product Rule", "b": "Chain Rule", "c": "Quotient Rule", "d": "Inverse Rule" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the derivative of $e^{x^2}$?",
+      "type": "mcq",
+      "options": { "a": "$e^{x^2}$", "b": "$2x$", "c": "$2x e^{x^2}$", "d": "$x^2 e^{x^2 - 1}$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The point where the concavity of a function changes is called an...",
+      "type": "mcq",
+      "options": { "a": "Absolute maximum", "b": "Critical point", "c": "Inflection point", "d": "Removable discontinuity" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which method is used to integrate rational functions by breaking the integrand into simpler fractions?",
+      "type": "mcq",
+      "options": { "a": "Integration by Parts", "b": "Trigonometric Substitution", "c": "Partial Fractions", "d": "U-Substitution" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The geometric meaning of the definite integral $\\int_a^b f(x) \\, dx$ when $f(x) \\ge 0$ is...",
+      "type": "mcq",
+      "options": { "a": "Slope of the tangent line", "b": "Volume of revolution", "c": "Area under the curve", "d": "Instantaneous rate of change" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the limit of $\\frac{\\sin(x)}{x}$ as $x \\to 0$?",
+      "type": "mcq",
+      "options": { "a": "$0$", "b": "$1$", "c": "$\\infty$", "d": "$-1$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a function is differentiable at $x=a$, it must also be...",
+      "type": "mcq",
+      "options": { "a": "Odd", "b": "Continuous at $x=a$", "c": "Integrable on $(-\\infty, \\infty)$", "d": "Defined as a polynomial" },
+      "correct_answer": "b"
+    }
+  ]
+}

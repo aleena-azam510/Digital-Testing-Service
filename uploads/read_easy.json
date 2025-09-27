@@ -1,0 +1,129 @@
+{
+  "title": "Reading Comprehension - EASY Level",
+  "description": "📖 Test your ability to grasp explicit information and main ideas from short, simple passages. Focus on **identifying stated facts** and **understanding the central topic** 🎯. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Reading Comprehension",
+  "questions": [
+    {
+      "text": "The primary goal of reading comprehension is to understand the meaning of a text. (True/False)",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The main idea of a paragraph is usually found in the...",
+      "type": "mcq",
+      "options": { "a": "Middle sentence", "b": "Concluding sentence", "c": "Topic sentence (often the first)", "d": "Last word" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What are **supporting details** in a paragraph?",
+      "type": "mcq",
+      "options": { "a": "Sentences that contradict the main idea", "b": "Sentences that provide evidence, examples, or explanations for the main idea", "c": "Sentences that introduce a new topic", "d": "The title and subtitle" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a text is about 'Dogs are great pets because they are loyal and playful,' the main idea is about:",
+      "type": "mcq",
+      "options": { "a": "How dogs play", "b": "Why dogs are good pets", "c": "The loyalty of pets", "d": "All pets" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **setting** in a story refers to the...",
+      "type": "mcq",
+      "options": { "a": "Main character", "b": "Problem of the story", "c": "Time and place of the action", "d": "Ending" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the purpose of $\\mathbf{sequencing}$ events in a narrative?",
+      "type": "mcq",
+      "options": { "a": "To confuse the reader", "b": "To explain the main idea", "c": "To arrange them in the order they happened (chronology)", "d": "To list supporting details" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When you $\\mathbf{summarize}$ a passage, you should include every single detail. (True/False)",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a word is $\\mathbf{unfamiliar}$, the best place to find its meaning is usually by using the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Index", "b": "Glossary or Dictionary", "c": "Table of Contents", "d": "Bibliography" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{fiction}$ text, the characters and events are usually...",
+      "type": "mcq",
+      "options": { "a": "Based on real historical facts", "b": "Imaginary or invented", "c": "Mathematical formulas", "d": "Always true" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{author's \\, purpose}$ in writing a funny story is most likely to:",
+      "type": "mcq",
+      "options": { "a": "Persuade", "b": "Inform", "c": "Entertain", "d": "Describe" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When an author writes a text to convince the reader of a certain viewpoint, the purpose is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Explain", "b": "Describe", "c": "Persuade", "d": "Narrate" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which of these is a $\\mathbf{signal \\, word}$ for chronology (sequence)?",
+      "type": "mcq",
+      "options": { "a": "However", "b": "For example", "c": "First, next, finally", "d": "Therefore" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{paragraph}$ is a group of sentences that share...",
+      "type": "mcq",
+      "options": { "a": "Different topics", "b": "A single main idea", "c": "The same verb tense only", "d": "No common purpose" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a sentence states a fact directly from the text, it is an $\\mathbf{...}$ detail.",
+      "type": "mcq",
+      "options": { "a": "Inferred", "b": "Implied", "c": "Explicit", "d": "Assumed" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{topic}$ of a reading passage is...",
+      "type": "mcq",
+      "options": { "a": "The author's opinion", "b": "The moral of the story", "c": "The general subject the text is about", "d": "The specific ending" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does it mean to $\\mathbf{identify \\, the \\, context}$ of a word?",
+      "type": "mcq",
+      "options": { "a": "To check its spelling", "b": "To look up its etymology", "c": "To use surrounding words and sentences to figure out its meaning", "d": "To ignore it" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A comparison using 'like' or 'as' is called a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Metaphor", "b": "Simile", "c": "Hyperbole", "d": "Personification" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which question helps you find the $\\mathbf{main \\, idea}$?",
+      "type": "mcq",
+      "options": { "a": "What is the author trying to say about the topic?", "b": "What is the author's favorite color?", "c": "How many sentences are there?", "d": "When was the story written?" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "If a passage is written in the order of events, it uses a $\\mathbf{...}$ structure.",
+      "type": "mcq",
+      "options": { "a": "Compare/Contrast", "b": "Cause/Effect", "c": "Sequential (or Chronological)", "d": "Problem/Solution" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{non-fiction}$ texts, the information presented is generally...",
+      "type": "mcq",
+      "options": { "a": "Fictional", "b": "Factual and real", "c": "Always biased", "d": "Narrative poetry" },
+      "correct_answer": "b"
+    }
+  ]
+}

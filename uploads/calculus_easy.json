@@ -1,0 +1,129 @@
+{
+  "title": "Calculus - EASY Level",
+  "description": "🌊 Dive into the fundamentals of Calculus! This quiz covers the core concepts: **limits** $\\lim$, **basic differentiation** $f'(x)$, and **simple integration** $\\int$. Get ready to master the basics! (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Calculus",
+  "questions": [
+    {
+      "text": "What is the derivative of $x^2$?",
+      "type": "mcq",
+      "options": { "a": "$x$", "b": "$2x$", "c": "$x^2$", "d": "$2$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The integral of $1/x \\, dx$ is?",
+      "type": "mcq",
+      "options": { "a": "$x$", "b": "$\\ln|x| + C$", "c": "$1/x^2$", "d": "$e^x$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the limit of $(1 + 1/n)^n$ as $n$ approaches infinity?",
+      "type": "mcq",
+      "options": { "a": "$0$", "b": "$1$", "c": "$e$", "d": "$\\infty$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The slope of the tangent line to a curve at a point is given by the...",
+      "type": "mcq",
+      "options": { "a": "Integral", "b": "Limit", "c": "Derivative", "d": "Area under the curve" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The integral $\\int f(x) \\, dx$ that does not have limits of integration is called an...",
+      "type": "mcq",
+      "options": { "a": "Definite integral", "b": "Improper integral", "c": "Indefinite integral", "d": "Fundamental integral" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The derivative of a constant $C$ is always...",
+      "type": "mcq",
+      "options": { "a": "$C$", "b": "$1$", "c": "$0$", "d": "$x$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the derivative of $f(x) = 5x$?",
+      "type": "mcq",
+      "options": { "a": "$5x^2$", "b": "$x^5$", "c": "$5$", "d": "$1$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the integral of $e^x \\, dx$?",
+      "type": "mcq",
+      "options": { "a": "$e^x + C$", "b": "$x e^{x-1} + C$", "c": "$\\ln|x| + C$", "d": "$e^{-x} + C$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The limit of a continuous function $f(x)$ as $x \\to a$ is equal to...",
+      "type": "mcq",
+      "options": { "a": "$0$", "b": "$1$", "c": "$f(a)$", "d": "$f'(a)$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "If $f(x) = x^n$, what is the formula for the power rule of differentiation?",
+      "type": "mcq",
+      "options": { "a": "$n x^{n+1}$", "b": "$x^{n-1}$", "c": "$n x^{n-1}$", "d": "$n!$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the derivative of $\\sin(x)$?",
+      "type": "mcq",
+      "options": { "a": "$\\cos(x)$", "b": "$-\\cos(x)$", "c": "$\\sec^2(x)$", "d": "$-\\sin(x)$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which of the following represents the area under a curve?",
+      "type": "mcq",
+      "options": { "a": "Limit", "b": "Definite integral", "c": "Derivative", "d": "Chain Rule" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The limit of $5x$ as $x$ approaches $2$ is?",
+      "type": "mcq",
+      "options": { "a": "$5$", "b": "$2$", "c": "$10$", "d": "$\\infty$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the integral of $0 \\, dx$?",
+      "type": "mcq",
+      "options": { "a": "$x + C$", "b": "$0$", "c": "$\\frac{x^2}{2} + C$", "d": "$C$ (a constant)" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The derivative of $\\cos(x)$ is?",
+      "type": "mcq",
+      "options": { "a": "$\\sin(x)$", "b": "$-\\sin(x)$", "c": "$\\tan(x)$", "d": "$\\sec(x)$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "To find the maximum or minimum value of a function, you typically set the first derivative to...",
+      "type": "mcq",
+      "options": { "a": "The function itself", "b": "$1$", "c": "The second derivative", "d": "$0$" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The Fundamental Theorem of Calculus links which two concepts?",
+      "type": "mcq",
+      "options": { "a": "Limits and Series", "b": "Derivatives and Integrals", "c": "Vectors and Scalars", "d": "Algebra and Geometry" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the limit of $\\frac{x^2 - 4}{x - 2}$ as $x \\to 2$?",
+      "type": "mcq",
+      "options": { "a": "$0$", "b": "$4$", "c": "$2$", "d": "Undefined" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The constant of integration, $C$, must be added to the result of which type of integral?",
+      "type": "mcq",
+      "options": { "a": "Definite integral", "b": "Indefinite integral", "c": "Improper integral", "d": "Line integral" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the integral of $x^3 \\, dx$?",
+      "type": "mcq",
+      "options": { "a": "$3x^2 + C$", "b": "$\\frac{x^4}{4} + C$", "c": "$x^4 + C$", "d": "$\\frac{x^3}{3} + C$" },
+      "correct_answer": "b"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Operating Systems - MODERATE Level",
+  "description": "🚧 Tackle the core challenges of modern OS design! This quiz focuses on **deadlocks** 🛑, comparative **scheduling algorithms** ⏱️, and $\\mathbf{memory \\, management}$ techniques like $\\text{paging}$ and $\\text{segmentation}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Operating Systems",
+  "questions": [
+    {
+      "text": "Which scheduling algorithm may cause **starvation**?",
+      "type": "mcq",
+      "options": { "a": "Round Robin", "b": "First Come First Serve", "c": "Shortest Job Next", "d": "Priority Scheduling" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Banker’s Algorithm is used for?",
+      "type": "mcq",
+      "options": { "a": "CPU Scheduling", "b": "Deadlock Avoidance", "c": "Page Replacement", "d": "File Allocation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In demand paging, what does a **page fault** mean?",
+      "type": "mcq",
+      "options": { "a": "Page is in memory", "b": "Page is not in memory and must be fetched from disk", "c": "Page is corrupted", "d": "Page has been swapped out" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of the four necessary conditions for deadlock is broken by **preemption**?",
+      "type": "mcq",
+      "options": { "a": "Mutual Exclusion", "b": "Hold and Wait", "c": "No Preemption", "d": "Circular Wait" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a preemptive scheduling algorithm, the CPU can be taken away from a process...",
+      "type": "mcq",
+      "options": { "a": "Only when it completes", "b": "At any time, by the OS", "c": "Only during I/O", "d": "Only if the process requests it" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which memory management scheme suffers from **external fragmentation**?",
+      "type": "mcq",
+      "options": { "a": "Paging", "b": "Segmentation", "c": "Demand Paging", "d": "Virtual Memory" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Critical \\, Section}$ problem relates to the need to synchronize access to...",
+      "type": "mcq",
+      "options": { "a": "The CPU scheduler", "b": "Shared resources (data)", "c": "Private process data", "d": "The file system index" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{LRU}$ (Least Recently Used) page replacement algorithm is an attempt to exploit...",
+      "type": "mcq",
+      "options": { "a": "Temporal locality", "b": "Spatial locality", "c": "Process concurrency", "d": "Disk latency" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "In **paging**, a logical address is divided into which two parts?",
+      "type": "mcq",
+      "options": { "a": "Segment and Offset", "b": "Page number and Page offset", "c": "Block and Sector", "d": "Base and Limit" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which scheduling algorithm assigns a fixed time quantum to each process?",
+      "type": "mcq",
+      "options": { "a": "FCFS", "b": "SJN", "c": "Priority", "d": "Round Robin" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The phenomenon where a process spends more time paging than executing is called...",
+      "type": "mcq",
+      "options": { "a": "Deadlock", "b": "Starvation", "c": "Thrashing", "d": "Fragmentation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which process synchronisation primitive is essentially an integer variable used for controlling access to a common resource?",
+      "type": "mcq",
+      "options": { "a": "Monitor", "b": "Mutex", "c": "Semaphore", "d": "Condition Variable" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Turnaround \\, Time}$ for a process is defined as the time from its submission to its...",
+      "type": "mcq",
+      "options": { "a": "First execution", "b": "Completion", "c": "Waiting start", "d": "Next I/O request" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which addressing method allows a program's code and data to be placed non-contiguously in physical memory?",
+      "type": "mcq",
+      "options": { "a": "Contiguous Allocation", "b": "Simple Segmentation", "c": "Paging", "d": "Swapping" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The difference between **user-level threads** and **kernel-level threads** is that user-level threads are managed by the...",
+      "type": "mcq",
+      "options": { "a": "OS kernel", "b": "Application library", "c": "Hardware", "d": "Compiler" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary goal of the **FIFO** (First-In, First-Out) page replacement algorithm?",
+      "type": "mcq",
+      "options": { "a": "Minimize page faults", "b": "Simplicity of implementation", "c": "Exploit temporal locality", "d": "Maximize CPU utilization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The technique of combining several small, free memory blocks into one larger block is called...",
+      "type": "mcq",
+      "options": { "a": "Swapping", "b": "Compaction", "c": "Paging", "d": "Segmentation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **device driver** acts as an interface between the operating system and the...",
+      "type": "mcq",
+      "options": { "a": "User", "b": "File system", "c": "Hardware device", "d": "Application program" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the key mechanism used in $\\mathbf{Multilevel \\, Feedback \\, Queue}$ scheduling?",
+      "type": "mcq",
+      "options": { "a": "Static priority assignment", "b": "Time-sharing fixed quantum", "c": "Dynamic priority adjustment", "d": "Longest job first" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which data structure is essential for the OS to maintain the free and allocated memory blocks in a memory partition scheme?",
+      "type": "mcq",
+      "options": { "a": "Hash table", "b": "Bitmap or Linked List", "c": "Stack", "d": "Queue" },
+      "correct_answer": "b"
+    }
+  ]
+}

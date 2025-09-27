@@ -1,0 +1,129 @@
+{
+  "title": "Literary Devices & Poetry - MODERATE Level",
+  "description": "🧠 Dig deeper into poetic forms and literary meaning! This quiz explores $\\text{rhythmic \\, patterns}$ 🥁, $\\text{advanced \\, figures \\, of \\, speech}$ 🎭, the $\\text{Sonnets \\, structure}$ 📜, and $\\text{symbolism}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Literary Devices & Poetry",
+  "questions": [
+    {
+      "text": "A $\\mathbf{paradox}$ is a statement that seems $\\mathbf{...}$ but expresses a truth.",
+      "type": "mcq",
+      "options": { "a": "Simple", "b": "Contradictory or absurd", "c": "Factual", "d": "Always rhyming" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary $\\mathbf{rhythmic \\, unit}$ of a line of poetry, composed of stressed and unstressed syllables?",
+      "type": "mcq",
+      "options": { "a": "Stanza", "b": "Foot (or Metrical Foot)", "c": "Rhyme Scheme", "d": "Caesura" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The standard meter for a Shakespearean $\\mathbf{sonnet}$ (14 lines) is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Trochaic Tetrameter", "b": "Dactylic Hexameter", "c": "Iambic Pentameter", "d": "Anapestic Dimeter" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "$\\mathbf{Situational \\, Irony}$ occurs when the $\\mathbf{...}$ of an event is contrary to what was expected.",
+      "type": "mcq",
+      "options": { "a": "Setting", "b": "Outcome", "c": "Theme", "d": "Meter" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which literary device involves the substitution of the name of an attribute or adjunct for that of the thing meant (e.g., $\\text{'suit'}$ for a businessman)?",
+      "type": "mcq",
+      "options": { "a": "Synecdoche", "b": "Metonymy", "c": "Allusion", "d": "Apostrophe" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A poem that does $\\mathbf{not}$ follow a regular meter or rhyme scheme is called $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Ballad", "b": "Ode", "c": "Free Verse", "d": "Haiku" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The repetition of $\\mathbf{consonant \\, sounds}$ within or at the end of words (e.g., 'stra**n**gely $\\mathbf{n}$ow $\\mathbf{n}$o $\\mathbf{n}$oisy $\\mathbf{n}$ecklaced') is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Alliteration", "b": "Assonance", "c": "Consonance", "d": "Meter" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{pun}$ is a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Serious comparison", "b": "Play on words that suggests two or more meanings", "c": "Type of simile", "d": "Long metaphor" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Volta}$ in a sonnet refers to the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Final couplet", "b": "Rhythmic pattern", "c": "Turn or shift in thought or argument", "d": "First line" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The use of an object or idea to hint at events that will occur later in the story is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Flashback", "b": "Foreshadowing", "c": "Climax", "d": "Resolution" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The literal, primary meaning of a word, in contrast to the feelings or ideas that the word suggests, is the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Connotation", "b": "Denotation", "c": "Tone", "d": "Ambiguity" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{couplet}$ that is part of a longer poem and expresses a complete thought, often used to close a scene, is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Free Verse", "b": "Heroic Couplet", "c": "Blank Verse", "d": "Quatrain" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "$\\mathbf{Anaphora}$ is the repetition of a word or phrase at the $\\mathbf{...}$ of successive clauses.",
+      "type": "mcq",
+      "options": { "a": "End", "b": "Middle", "c": "Beginning", "d": "Conclusion" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In poetry, $\\mathbf{enjambment}$ is the continuation of a sentence without a $\\mathbf{...}$ beyond the end of a line.",
+      "type": "mcq",
+      "options": { "a": "Rhyme", "b": "Metaphor", "c": "Pause or punctuation mark", "d": "Foot" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which term describes a figure of speech in which a part is made to represent the whole or vice versa (e.g., $\\text{'wheels'}$ for a car)?",
+      "type": "mcq",
+      "options": { "a": "Metonymy", "b": "Synecdoche", "c": "Allusion", "d": "Oxymoron" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{euphemism}$ is used to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Exaggerate a truth", "b": "Make a harsh or unpleasant idea sound milder or less offensive", "c": "Create alliteration", "d": "End a poem" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{Dramatic \\, Monologue}$ is a type of poem where $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "The author speaks directly to the reader", "b": "A single speaker addresses a silent listener, often revealing their own character", "c": "Two characters argue", "d": "The poem has no speaker" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the term for two successive lines of verse that rhyme and have the same meter?",
+      "type": "mcq",
+      "options": { "a": "Quatrain", "b": "Tercet", "c": "Couplet", "d": "Octave" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Haiku}$ is a Japanese poetic form that traditionally uses how many lines?",
+      "type": "mcq",
+      "options": { "a": "Four", "b": "Five", "c": "Three", "d": "Six" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "An $\\mathbf{ode}$ is a formal, often elaborate lyric poem that is serious in subject and $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Very short", "b": "Narrative in nature", "c": "Elevated in style", "d": "Always about love" },
+      "correct_answer": "c"
+    }
+  ]
+}

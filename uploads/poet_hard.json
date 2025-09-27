@@ -1,0 +1,129 @@
+{
+  "title": "Literary Devices & Poetry - HARD Level",
+  "description": "👑 Prove your literary genius! This quiz delves into $\\text{complex \\, metrical \\, variations}$ 🎶, $\\text{rhetorical \\, schemes}$ 🗣️, advanced poetic forms (like the $\\text{Villanelle}$), and $\\text{subtle \\, ironic \\, devices}$ 🎭. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Literary Devices & Poetry",
+  "questions": [
+    {
+      "text": "What is the term for a logical error where a premise is assumed true and used to support an argument, creating a circular statement?",
+      "type": "mcq",
+      "options": { "a": "Ad Hominem", "b": "Begging the Question (or Petitio Principii)", "c": "Straw Man", "d": "Red Herring" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Villanelle}$ is a 19-line poem with two rhymes and two refrains (repeated lines). It uses how many quatrains and how many concluding couplets?",
+      "type": "mcq",
+      "options": { "a": "Three quatrains and one couplet", "b": "Four quatrains and one tercet", "c": "Five quatrains and one couplet", "d": "Six tercets and one couplet" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{rhetorical \\, scheme}$ involves the inversion of the grammatical structure, but not necessarily the repetition of words, of a sentence ($\\text{e.g., \\, 'I \\, ran \\, fast; \\, slowly \\, I \\, walked'}$)?",
+      "type": "mcq",
+      "options": { "a": "Antithesis", "b": "Chiasmus", "c": "Anaphora", "d": "Litotes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The substitution of an inoffensive term for one considered offensive or explicit is called $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Paradox", "b": "Cacophony", "c": "Euphemism", "d": "Hyperbole" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In poetry, $\\mathbf{scansion}$ is the process of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Finding the theme", "b": "Analyzing a poem's meter and rhythmic pattern by marking stressed and unstressed syllables", "c": "Identifying the author's tone", "d": "Counting the number of stanzas" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{Caesura}$ is a $\\mathbf{...}$ within a line of verse, often indicated by punctuation.",
+      "type": "mcq",
+      "options": { "a": "Rhyme", "b": "Foot", "c": "Metaphor", "d": "Pause or break" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which term describes a figure of speech in which abstract ideas and principles are represented by characters, figures, or events?",
+      "type": "mcq",
+      "options": { "a": "Allusion", "b": "Allegory", "c": "Irony", "d": "Apostrophe" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Sprung \\, Rhythm}$ meter, developed by Gerard Manley Hopkins, is based on counting $\\mathbf{...}$ syllables in a line, with varying numbers of $\\mathbf{...}$ syllables.",
+      "type": "mcq",
+      "options": { "a": "Unstressed; stressed", "b": "Stressed; unstressed", "c": "Long; short", "d": "Short; long" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{Pastiche}$ is a work of art that $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Is entirely original", "b": "Imitates the style or character of the work of one or more other artists, often without satire", "c": "Is purely autobiographical", "d": "Is written in iambic pentameter only" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "$\\mathbf{Litotes}$ is a figure of speech that employs $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Direct statement", "b": "Understatement by using double negatives (e.g., 'not bad' for 'good')", "c": "Overstatement", "d": "Only rhetorical questions" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{blank \\, verse}$ poem has $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Regular rhyme but no meter", "b": "No rhyme and no meter", "c": "Iambic pentameter but no rhyme", "d": "Rhyme and Iambic pentameter" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which term denotes a speaker's address to an absent person or an inanimate object?",
+      "type": "mcq",
+      "options": { "a": "Apostrophe", "b": "Allusion", "c": "Alliteration", "d": "Assonance" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The $\\mathbf{pathetic \\, fallacy}$ is a specific type of $\\mathbf{...}$ where nature/inanimate things reflect human emotion (e.g., $\\text{The \\, sky \\, weeps}$).",
+      "type": "mcq",
+      "options": { "a": "Simile", "b": "Metaphor", "c": "Personification", "d": "Oxymoron" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "An $\\mathbf{epigram}$ is best described as $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "A long narrative poem", "b": "A short, witty, and often paradoxical statement or saying", "c": "A list of facts", "d": "An emotional speech" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a narrative poem, $\\mathbf{in \\, media \\, res}$ means the story begins $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "At the beginning", "b": "In the middle of the action", "c": "At the end", "d": "With a summary" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which term refers to the deliberate use of harsh, jarring, or discordant sounds for literary effect?",
+      "type": "mcq",
+      "options": { "a": "Euphony", "b": "Cacophony", "c": "Assonance", "d": "Alliteration" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{terza \\, rima}$ poem is composed of tercets (three-line stanzas) linked by the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Same end-rhyme for all lines", "b": "Second line of one tercet rhyming with the first and third lines of the next (ABA BCB CDC...)", "c": "Alternating meter", "d": "Absence of rhyme" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{connotation}$ of a word is its $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Dictionary definition", "b": "Implied or associative meaning, emotional shading", "c": "Spelling", "d": "Part of speech" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{trochaic \\, foot}$ (in meter) consists of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Two unstressed syllables", "b": "One stressed syllable followed by one unstressed syllable (DA-dum)", "c": "One unstressed syllable followed by one stressed syllable (da-DUM)", "d": "Three syllables" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which poetic device is the counterpart of $\\mathbf{Anaphora}$ (repetition at the beginning) and involves the repetition of a word or phrase at the $\\mathbf{end}$ of successive clauses?",
+      "type": "mcq",
+      "options": { "a": "Antimetabole", "b": "Epistrophe", "c": "Synesthesia", "d": "Zeugma" },
+      "correct_answer": "b"
+    }
+  ]
+}

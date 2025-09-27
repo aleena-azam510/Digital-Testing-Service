@@ -1,0 +1,129 @@
+{
+  "title": "Vocabulary & Word Usage - MODERATE Level",
+  "description": "📚 Elevate your speech! This quiz focuses on intermediate $\\text{academic \\, vocabulary}$ 🎓, tricky $\\text{confusables}$ 🧐 (like $\\text{lie/lay}$ and $\\text{imply/infer}$), and using words correctly in $\\text{context}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Vocabulary & Word Usage",
+  "questions": [
+    {
+      "text": "Choose the correct word: 'The company decided to $\\mathbf{...}$ a new policy.'",
+      "type": "mcq",
+      "options": { "a": "effect", "b": "affect", "c": "affekt", "d": "effact" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is a $\\mathbf{synonym}$ for $\\mathbf{AMBIGUOUS}$?",
+      "type": "mcq",
+      "options": { "a": "Clear", "b": "Precise", "c": "Vague (or unclear)", "d": "Certain" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word means 'to suggest or hint without explicitly stating'?",
+      "type": "mcq",
+      "options": { "a": "Infer", "b": "Imply", "c": "Declare", "d": "Conclude" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Choose the correct word: 'Please $\\mathbf{...}$ the book on the table.' (Transitive verb)",
+      "type": "mcq",
+      "options": { "a": "lie", "b": "lay", "c": "lied", "d": "laid" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "An $\\mathbf{Antonym}$ for $\\mathbf{BENEVOLENT}$ is:",
+      "type": "mcq",
+      "options": { "a": "Kind", "b": "Generous", "c": "Malevolent (or unkind)", "d": "Charitable" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{denotation}$ of a word refers to its...",
+      "type": "mcq",
+      "options": { "a": "Implied feeling or association", "b": "Literal, dictionary definition", "c": "Historical origin", "d": "Pronunciation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word is a $\\mathbf{homograph}$ (same spelling, different meaning/pronunciation)?",
+      "type": "mcq",
+      "options": { "a": "Rain/Reign", "b": "Affect/Effect", "c": "Lead (metal)/Lead (to guide)", "d": "Two/Too" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word means 'to make something less severe, serious, or painful'?",
+      "type": "mcq",
+      "options": { "a": "Exacerbate", "b": "Mitigate", "c": "Aggravate", "d": "Intensify" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{connotation}$ of the word 'childish' is generally considered...",
+      "type": "mcq",
+      "options": { "a": "Neutral", "b": "Positive", "c": "Negative", "d": "Ambiguous" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Choose the correct word: 'The principal provided $\\mathbf{...}$ to the staff.'",
+      "type": "mcq",
+      "options": { "a": "counsel", "b": "council", "c": "councel", "d": "consul" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which word means 'to avoid making a direct statement'?",
+      "type": "mcq",
+      "options": { "a": "Confront", "b": "Eschew", "c": "Evade", "d": "Decide" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{suffix}$ $\\mathbf{-ology}$ means the $\\mathbf{study \\, of}$. What does $\\mathbf{Dermatology}$ study?",
+      "type": "mcq",
+      "options": { "a": "Insects", "b": "The skin", "c": "The earth", "d": "Birds" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word correctly completes the comparison: 'He has $\\mathbf{...}$ books than I do.'",
+      "type": "mcq",
+      "options": { "a": "less", "b": "fewer", "c": "least", "d": "much" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The word $\\mathbf{CENSURE}$ means...",
+      "type": "mcq",
+      "options": { "a": "To count the population", "b": "To express severe disapproval", "c": "To approve officially", "d": "To organize" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word means 'to accept, endorse, or permit something'?",
+      "type": "mcq",
+      "options": { "a": "Proscribe", "b": "Prescribe", "c": "Allow", "d": "Sanction" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Choose the correct word for the verb: 'The bird was $\\mathbf{...}$ in the air.'",
+      "type": "mcq",
+      "options": { "a": "flying", "b": "fleeing", "c": "flown", "d": "fled" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The $\\mathbf{antonym}$ for $\\mathbf{PROMPT}$ (meaning quick/on time) is:",
+      "type": "mcq",
+      "options": { "a": "Immediate", "b": "Punctual", "c": "Delayed", "d": "Quick" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which phrase is correct usage?",
+      "type": "mcq",
+      "options": { "a": "Comprised of", "b": "Consists of", "c": "Is comprised of", "d": "Comprises of" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The prefix $\\mathbf{mal-}$ (e.g., $\\text{malfunction}$) typically means...",
+      "type": "mcq",
+      "options": { "a": "Many", "b": "Good or well", "c": "Bad, evil, or ill", "d": "Against" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which verb means 'to gather or accumulate (especially a debt or responsibility)'?",
+      "type": "mcq",
+      "options": { "a": "Incur", "b": "Concur", "c": "Transfer", "d": "Remit" },
+      "correct_answer": "a"
+    }
+  ]
+}

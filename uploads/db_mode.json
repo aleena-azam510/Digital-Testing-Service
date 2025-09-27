@@ -1,0 +1,124 @@
+{
+  "title": "Databases - MODERATE Level",
+  "description": "🔗 Delve into data integrity! This quiz covers database **normalization** $\\text{NF}$, the different types of **SQL Joins** 🤝, and the critical **ACID properties** $\\mathbf{A-C-I-D}$ that govern reliable $\\text{transactions}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Databases",
+  "questions": [
+    {
+      "text": "Which normal form removes **partial dependency**?",
+      "type": "mcq",
+      "options": { "a": "1NF", "b": "2NF", "c": "3NF", "d": "BCNF" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which SQL clause is used to combine rows from two or more tables?",
+      "type": "mcq",
+      "options": { "a": "UNION", "b": "JOIN", "c": "INTERSECT", "d": "SELECT" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which property of a transaction ensures changes are **permanent**?",
+      "type": "mcq",
+      "options": { "a": "Atomicity", "b": "Consistency", "c": "Isolation", "d": "Durability" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "An $\\mathbf{Inner \\, Join}$ returns rows only when...",
+      "type": "mcq",
+      "options": { "a": "There is a match in the first table", "b": "There is a match in both tables", "c": "There is no match in either table", "d": "All rows are returned" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{ACID}$ property states that a transaction is treated as a single, indivisible unit?",
+      "type": "mcq",
+      "options": { "a": "Atomicity", "b": "Consistency", "c": "Isolation", "d": "Durability" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which normal form is violated if a non-prime attribute is transitively dependent on the primary key?",
+      "type": "mcq",
+      "options": { "a": "1NF", "b": "2NF", "c": "3NF", "d": "BCNF" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{HAVING}$ clause in SQL is always used in conjunction with which other clause?",
+      "type": "mcq",
+      "options": { "a": "WHERE", "b": "ORDER BY", "c": "GROUP BY", "d": "LIMIT" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does a **Deadlock** in database concurrency control refer to?",
+      "type": "mcq",
+      "options": { "a": "A query timeout", "b": "Two or more transactions waiting indefinitely for locks held by each other", "c": "A database crash", "d": "A failed commit" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{Left \\, Join}$ returns all rows from the left table and the matched rows from the right table?",
+      "type": "mcq",
+      "options": { "a": "INNER JOIN", "b": "RIGHT JOIN", "c": "LEFT (OUTER) JOIN", "d": "FULL JOIN" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **First Normal Form (1NF)** primarily addresses which issue?",
+      "type": "mcq",
+      "options": { "a": "Transitive dependencies", "b": "Multi-valued attributes and composite attributes", "c": "Partial dependencies", "d": "Lossless joins" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a database transaction, the **Isolation** property means...",
+      "type": "mcq",
+      "options": { "a": "The transaction only runs alone", "b": "The effect of a transaction is invisible to other concurrent transactions until it commits", "c": "The transaction cannot be rolled back", "d": "Data cannot be updated" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{aggregate \\, function}$ is used to count the number of rows in a table?",
+      "type": "mcq",
+      "options": { "a": "SUM()", "b": "AVG()", "c": "COUNT()", "d": "MAX()" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which type of join returns the Cartesian product of two tables?",
+      "type": "mcq",
+      "options": { "a": "Theta Join", "b": "Natural Join", "c": "Cross Join", "d": "Self Join" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The goal of $\\mathbf{Normalization}$ is to minimize data...",
+      "type": "mcq",
+      "options": { "a": "Size", "b": "Security", "c": "Redundancy and Anomalies", "d": "Access Time" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{TRUNCATE \\, TABLE}$ command is faster than $\\text{DELETE}$ because...",
+      "type": "mcq",
+      "options": { "a": "It deletes rows one by one", "b": "It drops and recreates the table, bypassing logging", "c": "It does not require a WHERE clause", "d": "It is a DML command" },
+      "correct_answer": "b"
+    },
+  
+    {
+      "text": "Which technique is commonly used to ensure **Isolation** by protecting data from concurrent access?",
+      "type": "mcq",
+      "options": { "a": "Paging", "b": "Locking (e.g., Two-Phase Locking)", "c": "Indexing", "d": "Denormalization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is an **Index** primarily used for in a relational database?",
+      "type": "mcq",
+      "options": { "a": "Ensuring data uniqueness", "b": "Speeding up data retrieval (queries)", "c": "Enforcing foreign key constraints", "d": "Storing large binary objects" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{ACID}$ property ensures that a transaction, if completed, leaves the database in a valid state?",
+      "type": "mcq",
+      "options": { "a": "Atomicity", "b": "Consistency", "c": "Isolation", "d": "Durability" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{Self \\, Join}$, a table is joined with...",
+      "type": "mcq",
+      "options": { "a": "An external file", "b": "Itself", "c": "A different database", "d": "A view" },
+      "correct_answer": "b"
+    }
+  ]
+}

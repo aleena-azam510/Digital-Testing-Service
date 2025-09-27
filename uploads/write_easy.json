@@ -1,0 +1,129 @@
+{
+  "title": "Writing Skills - EASY Level",
+  "description": "📝 Master the fundamentals of clear writing! This quiz covers the core structure of $\\text{paragraphs}$ 🧱, $\\text{simple \\, sentence \\, construction}$ 🔨, and the basic $\\text{components \\, of \\, an \\, essay}$ 📜. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Writing Skills (Essays, Letters, Reports)",
+  "questions": [
+    {
+      "text": "The sentence that expresses the main idea of a paragraph is called the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Concluding Sentence", "b": "Topic Sentence", "c": "Thesis Statement", "d": "Hook" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{introduction}$ of an essay should end with the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "First body paragraph", "b": "Conclusion", "c": "Thesis Statement", "d": "Counterargument" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The purpose of a $\\mathbf{transition \\, word}$ (like $\\text{However}$ or $\\text{Therefore}$) is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Add punctuation", "b": "Connect ideas logically", "c": "Introduce a quote", "d": "End a paragraph" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which element is $\\mathbf{NOT}$ typically found in the $\\mathbf{heading}$ of a formal business letter?",
+      "type": "mcq",
+      "options": { "a": "Sender's address", "b": "Recipient's address", "c": "Date", "d": "Recipient's signature" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "In a $\\mathbf{report}$, the $\\mathbf{Executive \\, Summary}$ is usually found at the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Very end", "b": "Start (before the main body)", "c": "Middle", "d": "Bibliography" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary function of the $\\mathbf{body \\, paragraphs}$ in an essay?",
+      "type": "mcq",
+      "options": { "a": "Introduce the topic", "b": "Restate the thesis", "c": "Develop and support the thesis statement", "d": "Provide the final thought" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{sentence \\, fragment}$ is a group of words that lacks a $\\mathbf{...}$ or $\\mathbf{...}$, or both, and cannot stand alone.",
+      "type": "mcq",
+      "options": { "a": "Adjective and Adverb", "b": "Comma and Period", "c": "Subject and Predicate (Verb)", "d": "Proper noun and conjunction" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which closure is appropriate for a $\\mathbf{formal \\, letter}$ (e.g., a job application)?",
+      "type": "mcq",
+      "options": { "a": "See ya soon", "b": "Best", "c": "Sincerely", "d": "Yours truly" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{purpose \\, of \\, an \\, expository \\, essay}$ is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Tell a story", "b": "Persuade the reader", "c": "Explain or inform the reader", "d": "Describe a place" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which tense is most commonly used in $\\mathbf{reports \\, and \\, academic \\, essays}$?",
+      "type": "mcq",
+      "options": { "a": "Future Tense", "b": "Past Continuous", "c": "Present Tense", "d": "Future Perfect" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When you $\\mathbf{proofread}$, you are mainly looking for errors in $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Overall ideas", "b": "Logical flow", "c": "Spelling, punctuation, and grammar", "d": "Thesis statement clarity" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A sentence that uses a $\\mathbf{coordinating \\, conjunction}$ ($\text{FANBOYS}$) to join two independent clauses is a $\\mathbf{...}$ sentence.",
+      "type": "mcq",
+      "options": { "a": "Simple", "b": "Compound", "c": "Complex", "d": "Fragment" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the goal of the $\\mathbf{conclusion}$ of an essay?",
+      "type": "mcq",
+      "options": { "a": "Introduce new evidence", "b": "Restate the main points and provide a final thought", "c": "Ask a question", "d": "Provide definitions" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{narrative \\, essay}$, the author's primary goal is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Analyze data", "b": "Tell a story or recount an event", "c": "Argue a point", "d": "Describe a process" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Using $\\mathbf{jargon}$ (technical language) should generally be avoided unless the audience is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "General", "b": "Unfamiliar with the topic", "c": "Specialized or professional", "d": "Very young" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the purpose of the $\\mathbf{salutation}$ in a letter (e.g., 'Dear Mr. Smith')?",
+      "type": "mcq",
+      "options": { "a": "To provide the date", "b": "To sign off", "c": "To greet the recipient", "d": "To introduce the topic" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{revision}$ process primarily focuses on improving the essay's $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Grammar and spelling only", "b": "Punctuation only", "c": "Clarity, organization, and strength of ideas", "d": "Font size" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a formal $\\mathbf{report}$, data collected from a survey would typically be presented in the $\\mathbf{...}$ section.",
+      "type": "mcq",
+      "options": { "a": "Introduction", "b": "Methodology or Findings", "c": "Recommendation", "d": "Appendix" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{personal \\, pronoun}$ should be used sparingly, if at all, in formal academic essays?",
+      "type": "mcq",
+      "options": { "a": "They", "b": "It", "c": "I (First Person)", "d": "She" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{memorandum \\, (memo)}$ is usually used for communication $\\mathbf{...}$ an organization.",
+      "type": "mcq",
+      "options": { "a": "Outside", "b": "Between two different countries", "c": "Inside", "d": "Only to the public" },
+      "correct_answer": "c"
+    }
+  ]
+}

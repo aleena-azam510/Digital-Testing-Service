@@ -1,0 +1,129 @@
+{
+  "title": "Artificial Intelligence - EASY Level",
+  "description": "🧠 Begin your journey into **AI**! This quiz covers the core definition of **Artificial Intelligence**, common **AI applications** 🤖, and the distinction between **Weak and Strong AI**. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Artificial Intelligence",
+  "questions": [
+    {
+      "text": "The main goal of Artificial Intelligence is to enable machines to...",
+      "type": "mcq",
+      "options": { "a": "Perform physical labor", "b": "Simulate human intelligence", "c": "Store large amounts of data", "d": "Connect to the internet" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which test is used to determine if a machine can exhibit intelligent behavior indistinguishable from a human?",
+      "type": "mcq",
+      "options": { "a": "IQ Test", "b": "Turing Test", "c": "Feigenbaum Test", "d": "Alan Test" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of these is a subset of **AI** that involves giving systems the ability to learn from data without explicit programming?",
+      "type": "mcq",
+      "options": { "a": "Data Science", "b": "Machine Learning (ML)", "c": "Cloud Computing", "d": "Web Development" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "An **Expert System** is a program designed to mimic the decision-making ability of a...",
+      "type": "mcq",
+      "options": { "a": "Programmer", "b": "Human expert", "c": "Database", "d": "Robot" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "AI focused on a single, narrow task (like playing chess) is known as...",
+      "type": "mcq",
+      "options": { "a": "Strong AI", "b": "General AI", "c": "Weak AI (or Narrow AI)", "d": "Super AI" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which component is essential for Machine Learning models to function?",
+      "type": "mcq",
+      "options": { "a": "A high-speed internet connection", "b": "Training Data", "c": "A large screen", "d": "A specialized printer" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of AI application is a virtual assistant like Siri or Alexa?",
+      "type": "mcq",
+      "options": { "a": "Image Recognition", "b": "Natural Language Processing (NLP)", "c": "Robotics", "d": "Planning" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The simplest form of problem-solving search that examines every possibility is called...",
+      "type": "mcq",
+      "options": { "a": "Heuristic Search", "b": "Informed Search", "c": "Brute-Force Search (or Uninformed Search)", "d": "Optimized Search" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The ability of a system to recognize objects or people in images or videos is called...",
+      "type": "mcq",
+      "options": { "a": "Speech Recognition", "b": "Computer Vision", "c": "Data Mining", "d": "Machine Translation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of the following is NOT typically considered a component of a **Rational Agent** in AI?",
+      "type": "mcq",
+      "options": { "a": "Percepts", "b": "Actions", "c": "Predefined emotions", "d": "Performance measure" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Rule-Based System** relies on a set of 'if-then' statements known as...",
+      "type": "mcq",
+      "options": { "a": "Algorithms", "b": "Knowledge Base (or rules)", "c": "Datasets", "d": "Hardware" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The use of computers to translate text or speech from one language to another is called...",
+      "type": "mcq",
+      "options": { "a": "Natural Language Generation", "b": "Machine Translation", "c": "Sentiment Analysis", "d": "Text Summarization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which data structure is typically used to represent the possible moves in a game like chess for AI search?",
+      "type": "mcq",
+      "options": { "a": "Queue", "b": "Linked List", "c": "Search Tree", "d": "Hash Map" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In **Supervised Learning**, the training data includes...",
+      "type": "mcq",
+      "options": { "a": "Only input features", "b": "Input features and corresponding output labels", "c": "Only random data", "d": "A mix of labeled and unlabeled data" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The field of **Robotics** primarily involves the intersection of AI with...",
+      "type": "mcq",
+      "options": { "a": "Economics", "b": "Mechanical and electrical engineering", "c": "Astronomy", "d": "Philosophy" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the term for an agent's senses that inform its decisions?",
+      "type": "mcq",
+      "options": { "a": "Actions", "b": "Percepts", "c": "Goals", "d": "Inference" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The concept of an AI having human-level **consciousness and self-awareness** is related to...",
+      "type": "mcq",
+      "options": { "a": "Weak AI", "b": "Narrow AI", "c": "Strong AI (or Artificial General Intelligence)", "d": "AI Ethics" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **chatbot** is an example of an AI application in...",
+      "type": "mcq",
+      "options": { "a": "Computer Vision", "b": "Natural Language Processing (NLP)", "c": "Reinforcement Learning", "d": "Robotics" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which algorithm finds the path from a start state to a goal state by exploring one branch completely before backtracking?",
+      "type": "mcq",
+      "options": { "a": "Breadth-First Search (BFS)", "b": "Depth-First Search (DFS)", "c": "Best-First Search", "d": "A*" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A machine that can adapt its behavior and improve its performance based on previous outcomes is exhibiting...",
+      "type": "mcq",
+      "options": { "a": "Static programming", "b": "Learning", "c": "Randomness", "d": "Data entry" },
+      "correct_answer": "b"
+    }
+  ]
+}

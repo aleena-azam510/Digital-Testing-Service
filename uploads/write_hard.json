@@ -1,0 +1,129 @@
+{
+  "title": "Writing Skills - HARD Level",
+  "description": "👑 Achieve writing mastery! This quiz focuses on $\\text{sophisticated \\, stylistic \\, choices}$ 🖋️, advanced $\\text{rhetorical \\, techniques}$ 🗣️, $\\text{complex \\, logical \\, structuring}$ 🧩 (warrants, enthymemes), and $\\text{document \\, design \\, principles}$ 📐. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Writing Skills (Essays, Letters, Reports)",
+  "questions": [
+    {
+      "text": "The $\\mathbf{Toulmin \\, Model \\, of \\, Argumentation}$ specifies a $\\mathbf{Warrant}$ as the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Final conclusion", "b": "Data or evidence", "c": "Unstated assumption or principle that connects the data to the claim", "d": "Counterargument" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the $\\mathbf{rhetorical \\, effect}$ of using a $\\mathbf{periodic \\, sentence}$ (main clause at the end)?",
+      "type": "mcq",
+      "options": { "a": "To create a sense of simplicity and speed", "b": "To build tension and suspense before revealing the main idea", "c": "To distract the reader with complexity", "d": "To ensure correct punctuation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In persuasive writing, $\\mathbf{Logos}$ refers to the appeal to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Emotion", "b": "Credibility", "c": "Logic and Reason", "d": "Ethics" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "An $\\mathbf{Enthymeme}$ is a form of syllogism (a deductive argument) in which $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "All premises are explicitly stated", "b": "One premise is left unstated or implied (relies on audience assumption)", "c": "The conclusion is false", "d": "It uses only statistics" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{stylistic \\, choice}$ involves the deliberate omission of conjunctions ($\text{and, \\, or, \\, but}$) between parts of a sentence ($\\text{e.g., \\, 'I \\, came, \\, I \\, saw, \\, I \\, conquered'}$)?",
+      "type": "mcq",
+      "options": { "a": "Polysyndeton", "b": "Anaphora", "c": "Asyndeton", "d": "Ellipsis" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Hedge \\, (or \\, qualifier)}$ in an academic statement serves to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Make the statement sound more certain", "b": "Lessen the certainty, acknowledging limitations or exceptions (e.g., $\\text{It \\, may, \\, it \\, seems}$)", "c": "Introduce a new topic", "d": "Provide a definitive fact" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{Technical \\, Report}$, the $\\mathbf{Abstract}$ should concisely summarize the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Author's personal life", "b": "Full content of the report (purpose, methods, results, conclusion)", "c": "Cost of the project", "d": "Bibliography" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "$\\mathbf{Document \\, Design \\, principles}$ (e.g., use of white space, headings, font) are crucial because they directly impact the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Author's credibility", "b": "Content's objectivity", "c": "Reader's comprehension and usability of the text", "d": "Grammar" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The concept of $\\mathbf{coherence \\, and \\, cohesion}$ in advanced writing primarily focuses on $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Spelling consistency", "b": "The logical and grammatical connectivity between sentences and paragraphs", "c": "The length of the paper", "d": "The number of footnotes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which rhetorical term refers to a figure of speech in which a part is made to represent the whole or vice versa (e.g., $\\text{The \\, crown}$ for the monarchy)?",
+      "type": "mcq",
+      "options": { "a": "Hyperbole", "b": "Synecdoche", "c": "Apostrophe", "d": "Litotes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A sentence that begins with an introductory phrase or dependent clause and saves the main idea for the end is a $\\mathbf{...}$ sentence.",
+      "type": "mcq",
+      "options": { "a": "Loose", "b": "Simple", "c": "Cumulative", "d": "Periodic" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "When writing $\\mathbf{Standard \\, Operating \\, Procedures \\, (SOPs)}$, the writing style should be $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Narrative and descriptive", "b": "Persuasive and emotional", "c": "Imperative, direct, and unambiguous", "d": "Abstract and philosophical" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The phrase $\\mathbf{The \\, fact \\, that}$ often signals $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "A simple sentence", "b": "A noun clause that is unnecessarily wordy (or a nominalization)", "c": "A perfect transition", "d": "A logical fallacy" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The concept of $\\mathbf{Tone}$ in professional writing must be carefully managed to align with the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Writer's mood", "b": "Specific audience and purpose of the document", "c": "Length of the paper", "d": "Nearest deadline" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{Proposal \\, Report}$, the $\\mathbf{budget \\, and \\, timeline}$ are typically presented as $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Justification", "b": "Constraints and resources needed for the proposed solution", "c": "Historical background", "d": "Optional details" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{logical \\, fallacy}$ attempts to divert an argument's attention by introducing an irrelevant topic?",
+      "type": "mcq",
+      "options": { "a": "False Dichotomy", "b": "Red Herring", "c": "Appeal to Authority", "d": "Hasty Generalization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{rhetorical \\, concept \\, of \\, Kairos}$ refers to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Ethical appeal", "b": "The timeliness and appropriateness of an argument or appeal", "c": "Logical structure", "d": "Emotional content" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "When revising for $\\mathbf{voice}$, shifting from $\\mathbf{passive}$ to $\\mathbf{active}$ voice means ensuring the $\\mathbf{...}$ performs the action.",
+      "type": "mcq",
+      "options": { "a": "Object", "b": "Adverb", "c": "Subject", "d": "Auxiliary Verb" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{Discursive \\, Essay}$ is one that explores a topic or argument in a $\\mathbf{...}$ way.",
+      "type": "mcq",
+      "options": { "a": "One-sided, definitive", "b": "Digressive and rambling", "c": "Detailed, thoughtful, and often open-ended/exploratory", "d": "Purely statistical" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the primary function of $\\mathbf{transitional \\, paragraphs}$ in a very long report or essay?",
+      "type": "mcq",
+      "options": { "a": "To provide only quotes", "b": "To act as a bridge between major sections, summarizing the preceding part and introducing the next", "c": "To end the paper prematurely", "d": "To introduce new, unrelated ideas" },
+      "correct_answer": "b"
+    }
+  ]
+}

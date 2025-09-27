@@ -1,0 +1,129 @@
+{
+  "title": "Computer Networks - HARD Level",
+  "description": "🚀 Challenge the cutting edge of networking! This quiz explores **congestion control** 📉, $\\mathbf{Quality \\, of \\, Service \\, (QoS)}$ models 🏆, advanced $\\text{security \\, techniques}$ 🛡️, and complex $\\text{inter-domain \\, routing}$. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Computer Networks",
+  "questions": [
+    {
+      "text": "Which $\\mathbf{congestion \\, control \\, algorithm}$ is used in TCP?",
+      "type": "mcq",
+      "options": { "a": "Sliding Window", "b": "Slow Start (along with Congestion Avoidance, Fast Retransmit, and Fast Recovery)", "c": "Round Robin", "d": "Token Bucket" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of cryptography uses two keys: public and private?",
+      "type": "mcq",
+      "options": { "a": "Symmetric", "b": "Asymmetric", "c": "Hashing", "d": "Block Cipher" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{QoS \\, model}$ provides absolute guarantees for bandwidth and latency?",
+      "type": "mcq",
+      "options": { "a": "Best Effort", "b": "Integrated Services (IntServ)", "c": "Differentiated Services (DiffServ)", "d": "FIFO" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary role of the $\\mathbf{Autonomous \\, System \\, (AS)}$ in the Internet architecture?",
+      "type": "mcq",
+      "options": { "a": "Manage local area networks", "b": "A collection of IP networks managed by a single administrative entity", "c": "Resolve DNS queries", "d": "Control the flow of data inside a router" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{RSA \\, algorithm}$ is used for which purpose?",
+      "type": "mcq",
+      "options": { "a": "Hashing", "b": "Symmetric encryption", "c": "Asymmetric encryption and digital signatures", "d": "Error correction" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{inter-domain \\, routing \\, protocol}$ is the de facto standard for exchanging routing information between autonomous systems on the Internet?",
+      "type": "mcq",
+      "options": { "a": "RIP", "b": "OSPF", "c": "BGP (Border Gateway Protocol)", "d": "EIGRP" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The term $\\mathbf{Jitter}$ in networking refers to the variation in...",
+      "type": "mcq",
+      "options": { "a": "Bandwidth availability", "b": "Packet delay", "c": "Packet loss rate", "d": "Signal strength" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **Tunneling** protocol (like $\\text{IPsec}$ or $\\text{GRE}$) primarily creates a way to...",
+      "type": "mcq",
+      "options": { "a": "Encrypt data at the application layer", "b": "Encapsulate one protocol's packet within another's for transmission across an incompatible network", "c": "Improve DNS resolution", "d": "Allocate IP addresses" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{CSMA/CD}$ (Carrier Sense Multiple Access with Collision Detection), a station that detects a collision must do what?",
+      "type": "mcq",
+      "options": { "a": "Immediately retransmit the frame", "b": "Ignore the collision and continue sending", "c": "Transmit a jamming signal and then stop and wait (Binary Exponential Backoff)", "d": "Send a request to the server" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the primary security goal achieved by a $\\mathbf{Digital \\, Signature}$?",
+      "type": "mcq",
+      "options": { "a": "Confidentiality", "b": "Authentication and Non-repudiation", "c": "Availability", "d": "Traffic filtering" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which protocol is used for secure transmission of data over the World Wide Web, operating above TCP?",
+      "type": "mcq",
+      "options": { "a": "HTTP", "b": "FTP", "c": "TLS/SSL", "d": "SNMP" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Leaky \\, Bucket}$ and $\\mathbf{Token \\, Bucket}$ algorithms are used for...",
+      "type": "mcq",
+      "options": { "a": "Routing updates", "b": "Error correction", "c": "Traffic shaping and policing", "d": "Wireless access control" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the name for the security vulnerability where an attacker captures a data unit and retransmits it later?",
+      "type": "mcq",
+      "options": { "a": "Man-in-the-Middle", "b": "Replay Attack", "c": "Denial of Service (DoS)", "d": "Port Scanning" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{DiffServ \\, (Differentiated \\, Services)}$ model classifies packets using which field in the IP header?",
+      "type": "mcq",
+      "options": { "a": "TTL", "b": "Source Address", "c": "DS Field (or DSCP)", "d": "Protocol Number" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{IPv6}$, how many bits are used for the address space?",
+      "type": "mcq",
+      "options": { "a": "32 bits", "b": "48 bits", "c": "64 bits", "d": "128 bits" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The problem of having two routers sending routing updates to each other in an infinite loop is known as...",
+      "type": "mcq",
+      "options": { "a": "Collision", "b": "Route summarization", "c": "Routing loop (Count to Infinity)", "d": "Split horizon" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which layer in the OSI model is responsible for format conversion, data encryption, and decryption?",
+      "type": "mcq",
+      "options": { "a": "Application", "b": "Presentation", "c": "Session", "d": "Transport" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{SACK \\, (Selective \\, Acknowledgment)}$ mechanism in TCP aims to improve efficiency by addressing the issue of...",
+      "type": "mcq",
+      "options": { "a": "High latency", "b": "Multiple packet drops in a single window", "c": "Slow RTT", "d": "Initial connection setup" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the purpose of $\\mathbf{VPN}$ (Virtual Private Network) technology?",
+      "type": "mcq",
+      "options": { "a": "Increase internet speed", "b": "Extend a private network across a public network and ensure secure data transmission", "c": "Reduce network latency", "d": "Assign dynamic IP addresses" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the term for a logical grouping of network devices that are in the same broadcast domain, regardless of their physical location?",
+      "type": "mcq",
+      "options": { "a": "Subnet", "b": "VLAN (Virtual LAN)", "c": "WAN", "d": "AS" },
+      "correct_answer": "b"
+    }
+  ]
+}

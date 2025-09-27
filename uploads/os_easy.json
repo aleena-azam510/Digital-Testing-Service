@@ -1,0 +1,129 @@
+{
+  "title": "Operating Systems - EASY Level",
+  "description": "🖥️ Master the fundamentals of OS! This quiz covers the core roles of an OS: managing **processes** $\\text{P}$, $\\mathbf{memory}$ 🧠, and the organization of **file systems** 📂. Get started with the brain of the computer! (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Operating Systems",
+  "questions": [
+    {
+      "text": "Which of the following is an example of an operating system?",
+      "type": "mcq",
+      "options": { "a": "MS Word", "b": "Windows", "c": "Oracle", "d": "Chrome" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the smallest unit of CPU scheduling?",
+      "type": "mcq",
+      "options": { "a": "Process", "b": "Thread", "c": "Job", "d": "Instruction" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which memory is managed by the operating system?",
+      "type": "mcq",
+      "options": { "a": "Virtual Memory", "b": "ROM", "c": "Cache", "d": "Flash" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The primary function of an operating system is to act as a manager for...",
+      "type": "mcq",
+      "options": { "a": "Application software only", "b": "Hardware and software resources", "c": "User interface only", "d": "Web browsing" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "When a program is loaded into memory and executing, it is called a...",
+      "type": "mcq",
+      "options": { "a": "File", "b": "Thread", "c": "Process", "d": "Program Counter" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which state describes a process waiting for an I/O operation to complete?",
+      "type": "mcq",
+      "options": { "a": "Running", "b": "Ready", "c": "Waiting (or Blocked)", "d": "Terminated" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **system call** is used to request a service from the...",
+      "type": "mcq",
+      "options": { "a": "Application program", "b": "Operating system kernel", "c": "Compiler", "d": "Graphics card" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of memory is used to extend the physical RAM using hard disk space?",
+      "type": "mcq",
+      "options": { "a": "Cache Memory", "b": "Virtual Memory", "c": "Solid State Drive", "d": "Registers" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{PCB}$ (Process Control Block) is used by the OS to store...",
+      "type": "mcq",
+      "options": { "a": "File data", "b": "Process state and context", "c": "System binaries", "d": "Hardware drivers" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The mechanism that saves the state of a currently running process and restores the state of the next process is called...",
+      "type": "mcq",
+      "options": { "a": "Context Switch", "b": "System Call", "c": "I/O Interrupt", "d": "Deadlock" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which module of the OS is responsible for managing the allocation and deallocation of processor time?",
+      "type": "mcq",
+      "options": { "a": "Memory Manager", "b": "File Manager", "c": "Process Manager (Scheduler)", "d": "I/O Manager" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "FAT, NTFS, and ext4 are examples of different types of...",
+      "type": "mcq",
+      "options": { "a": "Scheduling algorithms", "b": "File systems", "c": "Kernel types", "d": "Memory addressing schemes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which operation is typically performed using a system call in a privileged mode?",
+      "type": "mcq",
+      "options": { "a": "Adding two numbers", "b": "Reading data from a file", "c": "Calling a local function", "d": "Looping a process" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The main goal of CPU scheduling is to...",
+      "type": "mcq",
+      "options": { "a": "Minimize disk usage", "b": "Maximize CPU utilization and fairness", "c": "Manage I/O devices", "d": "Prevent errors in applications" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The part of the OS that resides permanently in memory is the...",
+      "type": "mcq",
+      "options": { "a": "Shell", "b": "Applications", "c": "Kernel", "d": "Utilities" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which process communication mechanism uses a shared block of memory?",
+      "type": "mcq",
+      "options": { "a": "Pipes", "b": "Shared Memory", "c": "Message Passing", "d": "Sockets" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does $\\mathbf{GUI}$ stand for?",
+      "type": "mcq",
+      "options": { "a": "General User Interface", "b": "Graphical Universal Interface", "c": "Graphical User Interface", "d": "Global Utility Index" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When a process completes execution, it moves to which state?",
+      "type": "mcq",
+      "options": { "a": "Ready", "b": "New", "c": "Terminated", "d": "Suspended" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which command is used in Linux/Unix to view currently running processes?",
+      "type": "mcq",
+      "options": { "a": "ls", "b": "cat", "c": "ps", "d": "mkdir" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **directory** in a file system is essentially a mapping between file names and their...",
+      "type": "mcq",
+      "options": { "a": "Content", "b": "Physical locations (inodes/blocks)", "c": "Access times", "d": "File types" },
+      "correct_answer": "b"
+    }
+  ]
+}

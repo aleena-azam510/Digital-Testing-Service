@@ -1,0 +1,129 @@
+{
+  "title": "Machine Learning - EASY Level",
+  "description": "🚀 Get started with $\\mathbf{ML}$ basics! This quiz covers the fundamental $\\text{learning \\, types}$ 🧠, core components of a dataset 📊, and simple concepts like $\\text{classification \\, and \\, regression}$. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Machine Learning",
+  "questions": [
+    {
+      "text": "Which type of Machine Learning uses **labeled data** for training?",
+      "type": "mcq",
+      "options": { "a": "Unsupervised Learning", "b": "Reinforcement Learning", "c": "Supervised Learning", "d": "Deep Learning" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the term for the characteristic or property used as input to a model?",
+      "type": "mcq",
+      "options": { "a": "Label", "b": "Feature", "c": "Target", "d": "Algorithm" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A model predicting a **continuous value** (like house price) is performing...",
+      "type": "mcq",
+      "options": { "a": "Clustering", "b": "Classification", "c": "Regression", "d": "Dimensionality Reduction" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which algorithm finds the best-fit line to model the relationship between variables?",
+      "type": "mcq",
+      "options": { "a": "K-Means", "b": "Decision Tree", "c": "Linear Regression", "d": "Naive Bayes" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does a model suffer from if it performs very well on **training data** but poorly on **new data**?",
+      "type": "mcq",
+      "options": { "a": "Underfitting", "b": "Overfitting", "c": "Clustering", "d": "Normalization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Unsupervised \\, Learning}$, the data typically lacks what?",
+      "type": "mcq",
+      "options": { "a": "Input features", "b": "Target labels", "c": "Numerical values", "d": "High dimensionality" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which algorithm groups similar data points together without prior labels?",
+      "type": "mcq",
+      "options": { "a": "Logistic Regression", "b": "K-Nearest Neighbors (KNN)", "c": "K-Means Clustering", "d": "Random Forest" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Confusion Matrix** is used to evaluate the performance of which type of ML task?",
+      "type": "mcq",
+      "options": { "a": "Regression", "b": "Clustering", "c": "Classification", "d": "Reinforcement Learning" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{accuracy}$ of a classification model is defined as the ratio of correctly predicted samples to the...",
+      "type": "mcq",
+      "options": { "a": "Number of positive samples", "b": "Total number of samples", "c": "Number of negative samples", "d": "Number of features" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The simplest model of an artificial neuron, used for linear classification, is the...",
+      "type": "mcq",
+      "options": { "a": "Recurrent Unit", "b": "Perceptron", "c": "Kernel", "d": "Support Vector" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the process of converting raw data into a clean, usable format for ML?",
+      "type": "mcq",
+      "options": { "a": "Modeling", "b": "Deployment", "c": "Pre-processing (or Data Preparation)", "d": "Scaling" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The goal of $\\mathbf{Reinforcement \\, Learning}$ is to train an $\\mathbf{agent}$ to maximize its...",
+      "type": "mcq",
+      "options": { "a": "Memory", "b": "Cumulative Reward", "c": "Accuracy", "d": "Speed" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which algorithm is a non-parametric method that classifies a new data point based on the majority vote of its neighbors?",
+      "type": "mcq",
+      "options": { "a": "Linear Regression", "b": "K-Nearest Neighbors (KNN)", "c": "K-Means", "d": "Gradient Descent" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{Decision \\, Tree}$, the final outcome or prediction is made at which part of the tree?",
+      "type": "mcq",
+      "options": { "a": "Root node", "b": "Intermediate nodes", "c": "Leaf nodes", "d": "Branches" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the name for the mathematical function that quantifies the error between a model's prediction and the actual value?",
+      "type": "mcq",
+      "options": { "a": "Activation Function", "b": "Learning Rate", "c": "Loss Function (or Cost Function)", "d": "Optimizer" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which component is NOT a core part of a basic Artificial Neural Network?",
+      "type": "mcq",
+      "options": { "a": "Input Layer", "b": "Hidden Layers", "c": "Output Layer", "d": "Database Layer" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The purpose of splitting a dataset into **Training** and **Testing** sets is to...",
+      "type": "mcq",
+      "options": { "a": "Increase the training time", "b": "Ensure the model generalizes to unseen data", "c": "Reduce the number of features", "d": "Perform dimensionality reduction" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which term refers to the process of giving the model a slightly smaller amount of information at a time to update its weights?",
+      "type": "mcq",
+      "options": { "a": "Epoch", "b": "Batch Size", "c": "Gradient", "d": "Regularization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Logistic \\, Regression}$, the final output is transformed using the $\\text{Sigmoid \\, function}$ to produce...",
+      "type": "mcq",
+      "options": { "a": "A continuous value", "b": "A binary label (0 or 1)", "c": "A probability value between 0 and 1", "d": "A categorical label" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which type of variable represents categories (e.g., 'Red', 'Green', 'Blue')?",
+      "type": "mcq",
+      "options": { "a": "Numerical", "b": "Continuous", "c": "Categorical", "d": "Ordinal" },
+      "correct_answer": "c"
+    }
+  ]
+}

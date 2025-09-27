@@ -1,0 +1,129 @@
+{
+  "title": "Computer Networks - EASY Level",
+  "description": "🌐 Connect the dots! This quiz covers the basics of **Computer Networks**: common $\\text{devices}$ 💻, fundamental **protocols** (like $\\text{HTTP}$) 📧, and simple network **topologies**. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Computer Networks",
+  "questions": [
+    {
+      "text": "Which device connects multiple computers in a LAN?",
+      "type": "mcq",
+      "options": { "a": "Router", "b": "Hub", "c": "Switch", "d": "Modem" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which protocol is used to send emails?",
+      "type": "mcq",
+      "options": { "a": "HTTP", "b": "SMTP", "c": "FTP", "d": "DNS" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does IP stand for?",
+      "type": "mcq",
+      "options": { "a": "Internet Process", "b": "Internal Protocol", "c": "Internet Protocol", "d": "Integrated Program" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is a set of rules that governs data communication?",
+      "type": "mcq",
+      "options": { "a": "Topology", "b": "Network", "c": "Protocol", "d": "Server" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In the **Star Topology**, what happens if the central device fails?",
+      "type": "mcq",
+      "options": { "a": "Only one link fails", "b": "The whole network fails", "c": "The network slows down", "d": "Nothing" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which device connects a local network to the internet?",
+      "type": "mcq",
+      "options": { "a": "Repeater", "b": "Router", "c": "Bridge", "d": "Hub" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which address is used to uniquely identify a host on the Internet?",
+      "type": "mcq",
+      "options": { "a": "MAC Address", "b": "Port Number", "c": "IP Address", "d": "Socket" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does LAN stand for?",
+      "type": "mcq",
+      "options": { "a": "Long Area Network", "b": "Local Area Network", "c": "Large Access Node", "d": "Logical Area Network" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which protocol is primarily used for retrieving web pages?",
+      "type": "mcq",
+      "options": { "a": "FTP", "b": "TCP", "c": "HTTP", "d": "POP3" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Media Access Control (MAC)** address operates at which layer of the OSI model?",
+      "type": "mcq",
+      "options": { "a": "Physical", "b": "Data Link", "c": "Network", "d": "Transport" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The process of converting a domain name (like google.com) to an IP address is done by...",
+      "type": "mcq",
+      "options": { "a": "ARP", "b": "DHCP", "c": "DNS", "d": "ICMP" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which transmission medium is commonly used for long-distance, high-bandwidth communication?",
+      "type": "mcq",
+      "options": { "a": "Twisted Pair Cable", "b": "Coaxial Cable", "c": "Fiber Optic Cable", "d": "Bluetooth" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In networking, a **frame** is the data unit at which layer?",
+      "type": "mcq",
+      "options": { "a": "Network", "b": "Application", "c": "Data Link", "d": "Physical" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the function of a **Repeater**?",
+      "type": "mcq",
+      "options": { "a": "Filter network traffic", "b": "Amplify and regenerate the signal", "c": "Connect different protocols", "d": "Assign IP addresses" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which standard defines the rules for Wireless LANs (Wi-Fi)?",
+      "type": "mcq",
+      "options": { "a": "Ethernet", "b": "Token Ring", "c": "IEEE 802.3", "d": "IEEE 802.11" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which type of network spans a large geographical area and connects multiple smaller networks?",
+      "type": "mcq",
+      "options": { "a": "LAN", "b": "WAN", "c": "MAN", "d": "PAN" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which layer of the OSI model is closest to the end user?",
+      "type": "mcq",
+      "options": { "a": "Physical", "b": "Network", "c": "Application", "d": "Transport" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which mechanism assigns IP addresses dynamically to devices on a network?",
+      "type": "mcq",
+      "options": { "a": "ARP", "b": "DNS", "c": "DHCP", "d": "ICMP" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Data in the Physical Layer is transmitted as...",
+      "type": "mcq",
+      "options": { "a": "Segments", "b": "Packets", "c": "Bits (or signals)", "d": "Frames" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The process of wrapping a packet with header and trailer information at each layer is called...",
+      "type": "mcq",
+      "options": { "a": "Fragmentation", "b": "Encapsulation", "c": "Multiplexing", "d": "Routing" },
+      "correct_answer": "b"
+    }
+  ]
+}

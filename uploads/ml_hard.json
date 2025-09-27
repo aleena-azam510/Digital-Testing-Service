@@ -1,0 +1,129 @@
+{
+  "title": "Machine Learning - HARD Level",
+  "description": "💡 Master the complexities! This quiz focuses on **Deep Learning** architectures 🕸️, advanced $\\text{optimization \\, strategies}$ 🏎️, $\\mathbf{Ensemble \\, methods}$ 👑, and the theoretical underpinnings of $\\text{ML}$. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Machine Learning",
+  "questions": [
+    {
+      "text": "Which $\\mathbf{Deep \\, Learning \\, architecture}$ introduced the $\\mathbf{Attention \\, Mechanism}$ and forms the backbone of modern large language models?",
+      "type": "mcq",
+      "options": { "a": "Recurrent Neural Network (RNN)", "b": "Long Short-Term Memory (LSTM)", "c": "Transformer", "d": "Convolutional Neural Network (CNN)" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Consistence \\, property}$ of a heuristic $h(n)$ in $\\mathbf{A* \\, Search}$ guarantees that the path cost from $n$ to the goal is no less than the sum of the cost from $n$ to a neighbor $n'$ plus the heuristic value of $n'$. This property also guarantees...",
+      "type": "mcq",
+      "options": { "a": "Completeness", "b": "Optimality when using the $A^*$ algorithm", "c": "Suboptimality", "d": "Faster convergence" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{Ensemble \\, Method}$ trains sequential models where each subsequent model attempts to correct the errors of the previous ones?",
+      "type": "mcq",
+      "options": { "a": "Bagging (Bootstrap Aggregating)", "b": "Stacking", "c": "Boosting (e.g., AdaBoost, Gradient Boosting)", "d": "Random Forest" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Softmax \\, function}$ is typically used in the output layer of a neural network for which type of problem?",
+      "type": "mcq",
+      "options": { "a": "Binary Classification", "b": "Regression", "c": "Multi-class Classification", "d": "Clustering" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does the $\\mathbf{Kernel \\, $\\text{function}$}$ in SVM primarily compute?",
+      "type": "mcq",
+      "options": { "a": "The maximum margin", "b": "The distance between support vectors", "c": "The dot product of input vectors in a high-dimensional feature space", "d": "The regularization parameter" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{ReLU \\, (Rectified \\, Linear \\, Unit)}$ activation function helps address the vanishing gradient problem because its derivative is always $\\text{1}$ for positive inputs, avoiding saturation.",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False, only for negative inputs", "c": "False, only for zero input", "d": "Only when combined with L2 regularization" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which metric evaluates a classification model's ability to discriminate between positive and negative classes across all possible classification thresholds?",
+      "type": "mcq",
+      "options": { "a": "F1 Score", "b": "Area Under the ROC Curve (AUC-ROC)", "c": "Accuracy", "d": "Mean Absolute Error" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Deep \\, Learning}$, which technique introduces noise by randomly setting a fraction of neurons to zero during training?",
+      "type": "mcq",
+      "options": { "a": "Batch Normalization", "b": "L1 Regularization", "c": "Dropout", "d": "Weight Initialization" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Q-Learning \\, algorithm}$ is a $\\mathbf{model-free \\, Reinforcement \\, Learning}$ technique used to estimate what function?",
+      "type": "mcq",
+      "options": { "a": "Reward function", "b": "State value function $V(s)$", "c": "Action-value function $Q(s, a)$", "d": "Policy function $\\pi(a|s)$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the primary function of $\\mathbf{Batch \\, Normalization}$ in Deep Neural Networks?",
+      "type": "mcq",
+      "options": { "a": "Reduce the number of layers", "b": "Scale the gradients", "c": "Normalize the activations of the hidden layers, stabilizing and speeding up training", "d": "Select the best learning rate" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{DBSCAN}$ clustering algorithm finds arbitrarily shaped clusters and does not require predefining the number of clusters ($\\text{k}$). It uses which two parameters instead?",
+      "type": "mcq",
+      "options": { "a": "Number of centers and variance", "b": "Number of trees and depth", "c": "Epsilon (radius) and MinPts (minimum number of points)", "d": "Bias and Variance" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which technique is used to improve the generalizability of a model by adding copies of the original data that have been slightly modified (e.g., rotating images)?",
+      "type": "mcq",
+      "options": { "a": "Feature Scaling", "b": "Transfer Learning", "c": "Data Augmentation", "d": "Synthetic Sampling" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Adam \\, optimization \\, algorithm}$ combines the best aspects of which two simpler optimization algorithms?",
+      "type": "mcq",
+      "options": { "a": "SGD and Batch Gradient Descent", "b": "Momentum and RMSProp", "c": "Adagrad and Adadelta", "d": "L1 and L2 Regularization" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Recurrent \\, Neural \\, Networks \\, (RNNs)}$, what term describes the issue where gradients become extremely large and cause oscillations during training?",
+      "type": "mcq",
+      "options": { "a": "Vanishing Gradient", "b": "Exploding Gradient", "c": "Overfitting", "d": "Underfitting" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the term for training a model on data from one task and then using its pre-trained weights as a starting point for a different, but related, task?",
+      "type": "mcq",
+      "options": { "a": "Ensemble Learning", "b": "Transfer Learning", "c": "Zero-Shot Learning", "d": "Unsupervised Learning" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Curse \\, of \\, Dimensionality}$ makes high-dimensional spaces sparse, affecting the performance of distance-based algorithms like KNN. This is because...",
+      "type": "mcq",
+      "options": { "a": "The data becomes linearly separable", "b": "All data points become equidistant (distances converge)", "c": "The model becomes too simple", "d": "The model runs faster" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of $\\mathbf{Autoencoder}$ is designed to learn robust representations by training the network to reconstruct the input from a corrupted version of it?",
+      "type": "mcq",
+      "options": { "a": "Undercomplete Autoencoder", "b": "Sparse Autoencoder", "c": "Denoising Autoencoder", "d": "Variational Autoencoder" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Manifold \\, Hypothesis}$ in ML states that natural data (like images or text) often lies on a lower-dimensional manifold embedded in a high-dimensional space. This supports the use of...",
+      "type": "mcq",
+      "options": { "a": "Linear Regression", "b": "Dimensionality Reduction techniques (like $\\text{PCA}$ or $\\text{t-SNE}$)", "c": "Brute-force search", "d": "Simple feature counting" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{Reinforcement \\, Learning \\, method}$ learns the optimal policy without explicitly estimating the policy function?",
+      "type": "mcq",
+      "options": { "a": "Policy Gradients", "b": "Value Iteration", "c": "Q-Learning (a value-based method)", "d": "Monte Carlo Tree Search" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the term for the set of weights and biases in a neural network that minimizes the loss function?",
+      "type": "mcq",
+      "options": { "a": "Hyperparameters", "b": "Local Minimum (or Global Minimum)", "c": "Features", "d": "Activation Functions" },
+      "correct_answer": "b"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Writing Skills - MODERATE Level",
+  "description": "✍️ Develop complexity and precision! This quiz challenges your understanding of $\\text{thesis \\, development}$ 💡, $\\text{compound-complex \\, sentences}$ ⛓️, formal $\\text{report \\, structure}$ 📊, and $\\text{effective \\, use \\, of \\, evidence}$ 🎯. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Writing Skills (Essays, Letters, Reports)",
+  "questions": [
+    {
+      "text": "A strong $\\mathbf{thesis \\, statement}$ must be $\\mathbf{debatable}$ or $\\mathbf{arguable}$, meaning it $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Is a simple, universally accepted fact", "b": "Presents an opinion or argument that requires proof", "c": "Must be exactly three sentences long", "d": "Has no supporting evidence" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{academic \\, writing}$, citing an external source using a specific format (e.g., $\\text{APA, \\, MLA}$) is known as $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Plagiarism", "b": "Brainstorming", "c": "Documentation (or Citation)", "d": "Proofreading" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which sentence structure contains $\\mathbf{two \\, or \\, more \\, independent \\, clauses}$ and $\\mathbf{one \\, or \\, more \\, dependent \\, clauses}$?",
+      "type": "mcq",
+      "options": { "a": "Simple", "b": "Compound", "c": "Complex", "d": "Compound-Complex" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The $\\mathbf{primary \\, difference}$ between a $\\mathbf{business \\, report}$ and an $\\mathbf{academic \\, essay}$ lies in their $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Use of nouns", "b": "Objective (reports solve problems/recommend action; essays argue a thesis)", "c": "Sentence length", "d": "Requirement for commas" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In an $\\mathbf{argumentative \\, essay}$, the $\\mathbf{counterargument}$ section serves to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Ignore opposing views", "b": "Acknowledge and then refute opposing views", "c": "Introduce the main argument", "d": "Restate the conclusion" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The term for when an independent clause is followed by a series of modifying phrases or subordinate clauses is a $\\mathbf{...}$ sentence.",
+      "type": "mcq",
+      "options": { "a": "Periodic", "b": "Loose (or Cumulative)", "c": "Fragment", "d": "Simple" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{research \\, report}$, the $\\mathbf{Methodology \\, section}$ explains $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "The final results", "b": "How the research was conducted (procedures, materials, etc.)", "c": "The author's feelings", "d": "The cost of the research" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Using $\\mathbf{passive \\, voice}$ ($\text{e.g., \\, 'The \\, ball \\, was \\, thrown}$ by her') is generally discouraged in formal writing because it often $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Is always grammatically incorrect", "b": "Makes the writing too complex", "c": "Obscures the agent (who performed the action)", "d": "Is too informal" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The goal of $\\mathbf{paragraph \\, coherence}$ is to ensure that $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Every sentence has a quote", "b": "All sentences flow logically and are relevant to the topic sentence", "c": "The paragraph is very long", "d": "It uses only simple sentences" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{white \\, paper}$ is a type of report primarily intended to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Tell a personal story", "b": "Sell a product directly", "c": "Inform readers concisely about a complex issue or solution and often advocate a position", "d": "Provide a daily log of activities" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "To achieve $\\mathbf{parallelism}$ in a list, all items must be in the same $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Tense and Mood", "b": "Number", "c": "Grammatical form (e.g., all nouns, all gerunds)", "d": "Color" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{logical \\, fallacy}$ attacks the person making the argument instead of the argument itself?",
+      "type": "mcq",
+      "options": { "a": "Slippery Slope", "b": "Ad Hominem", "c": "Straw Man", "d": "Circular Reasoning" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{formal \\, letter}$ of complaint, the $\\mathbf{recipient's \\, address}$ (inside address) should appear $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Only at the end", "b": "Above the date and salutation", "c": "Only in the envelope", "d": "After the body of the letter" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The phrase $\\mathbf{in \\, conclusion}$ should be avoided in favor of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "More subtle transition phrases or logical wrapping up", "b": "A question mark", "c": "Starting a new body paragraph", "d": "A direct quote" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The $\\mathbf{Works \\, Cited}$ page in an $\\text{MLA \\, essay}$ is an example of a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Draft", "b": "Bibliography (or list of references)", "c": "Body paragraph", "d": "Topic sentence" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the function of an $\\mathbf{explanatory \\, footnote}$ in a report?",
+      "type": "mcq",
+      "options": { "a": "To replace the conclusion", "b": "To provide tangential or supplementary information without disrupting the main text flow", "c": "To state the thesis", "d": "To introduce the topic" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{purpose \\, of \\, a \\, feasibility \\, report}$ is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Tell an anecdote", "b": "Assess whether a project or plan is practical and viable", "c": "Describe a historical event", "d": "Write poetry" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A sentence that is grammatically correct but $\\mathbf{wordy \\, and \\, unclear}$ suffers from a lack of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Punctuation", "b": "Syntax", "c": "Conciseness and Precision", "d": "Proper nouns" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When writing about literature, using the $\\mathbf{historical \\, present \\, tense}$ (e.g., 'Hamlet $\\mathbf{contemplates}$ his fate') helps establish $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "A past action", "b": "A continuous, timeless analysis of the text", "c": "Future possibility", "d": "Conditional probability" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{rhetorical \\, situation}$ of a piece of writing involves the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Color of the ink", "b": "Context, audience, purpose, and author's persona", "c": "Length of the sentences", "d": "Number of commas" },
+      "correct_answer": "b"
+    }
+  ]
+}

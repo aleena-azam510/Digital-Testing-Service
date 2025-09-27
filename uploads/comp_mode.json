@@ -1,0 +1,129 @@
+{
+  "title": "Computer Organization & Architecture - MODERATE Level",
+  "description": "🧠 Dig deeper into the architecture! This quiz covers $\\mathbf{CPU}$ $\\text{registers}$ 🗄️, **instruction sets** ⚙️, the role of **cache memory** $\\text{L1/L2}$, and basic **pipelining** concepts. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Computer Organization & Architecture",
+  "questions": [
+    {
+      "text": "Which register holds the address of the next instruction to be executed?",
+      "type": "mcq",
+      "options": { "a": "MAR", "b": "PC (Program Counter)", "c": "IR", "d": "AC" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of the following is the fastest memory?",
+      "type": "mcq",
+      "options": { "a": "Cache", "b": "RAM", "c": "ROM", "d": "Hard Disk" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Pipelining improves CPU performance by?",
+      "type": "mcq",
+      "options": { "a": "Reducing instruction count", "b": "Executing multiple instructions simultaneously (overlapping stages)", "c": "Reducing clock speed", "d": "Increasing memory size" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The main advantage of **RISC** architecture over CISC is...",
+      "type": "mcq",
+      "options": { "a": "Fewer registers", "b": "Simpler and faster instruction decoding", "c": "More complex instructions", "d": "Less memory usage" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which cache replacement policy removes the line that has not been used for the longest time?",
+      "type": "mcq",
+      "options": { "a": "FIFO", "b": "LFU", "c": "LRU (Least Recently Used)", "d": "Random" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The concept of **locality of reference** is exploited by which component of the memory hierarchy?",
+      "type": "mcq",
+      "options": { "a": "Registers", "b": "Hard Drive", "c": "Cache Memory", "d": "I/O Ports" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which instruction format requires only the opcode and a single operand address?",
+      "type": "mcq",
+      "options": { "a": "Three-address", "b": "Two-address", "c": "One-address (Accumulator)", "d": "Zero-address (Stack)" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The time required to position the read/write head over the correct track on a disk is called...",
+      "type": "mcq",
+      "options": { "a": "Latency time", "b": "Transfer time", "c": "Seek time", "d": "Access time" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **Direct Mapped Cache** has the disadvantage of high conflict misses due to...",
+      "type": "mcq",
+      "options": { "a": "High miss penalty", "b": "Only one possible location for a block", "c": "Expensive hardware", "d": "Slow write policies" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary role of the **Memory Address Register (MAR)**?",
+      "type": "mcq",
+      "options": { "a": "Store data being written to memory", "b": "Hold the address of the memory location being accessed", "c": "Store the fetched instruction", "d": "Perform addition and subtraction" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In pipelining, a situation where an instruction needs the result of a preceding, unfinished instruction is called a...",
+      "type": "mcq",
+      "options": { "a": "Control Hazard", "b": "Structural Hazard", "c": "Data Hazard", "d": "Branch Misprediction" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The instruction that loads data from memory into a register is an example of which type of instruction?",
+      "type": "mcq",
+      "options": { "a": "Arithmetic", "b": "Logical", "c": "Data Transfer", "d": "Control" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which addressing mode uses the value in a register as the effective address of the operand?",
+      "type": "mcq",
+      "options": { "a": "Immediate", "b": "Direct", "c": "Register Indirect", "d": "Indexed" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Hit \\, Ratio}$ for a cache is defined as...",
+      "type": "mcq",
+      "options": { "a": "Misses / Total Accesses", "b": "Hits / Total Accesses", "c": "Hits / Misses", "d": "Misses / (Hits + Misses)" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The technique used to handle multiple inputs/outputs simultaneously by checking their status is known as...",
+      "type": "mcq",
+      "options": { "a": "DMA", "b": "Interrupt-driven I/O", "c": "Programmed I/O (Polling)", "d": "Memory Mapping" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **datapath** in a CPU includes which two main units?",
+      "type": "mcq",
+      "options": { "a": "Cache and RAM", "b": "ALU and Register File", "c": "Control Unit and I/O", "d": "Hard Disk and Motherboard" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "How many clock cycles does it take to execute a $\\mathbf{k}$-stage pipeline with $\\mathbf{n}$ instructions (after the first instruction)?",
+      "type": "mcq",
+      "options": { "a": "$n \\times k$", "b": "$n + k$", "c": "$n + k - 1$", "d": "$n$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which memory access method involves refreshing the memory cells periodically?",
+      "type": "mcq",
+      "options": { "a": "SRAM", "b": "DRAM (Dynamic RAM)", "c": "Flash Memory", "d": "ROM" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does a **CISC** instruction set architecture typically feature?",
+      "type": "mcq",
+      "options": { "a": "Few, simple instructions", "b": "Fixed instruction format", "c": "Many complex instructions", "d": "Load/store only architecture" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Instruction Register (IR)** temporarily stores the...",
+      "type": "mcq",
+      "options": { "a": "Address of the current instruction", "b": "Data being read from memory", "c": "Instruction currently being executed", "d": "Result of the ALU operation" },
+      "correct_answer": "c"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Calculus - HARD Level",
+  "description": "🌌 Venture into the complex world of advanced Calculus! This quiz challenges your knowledge of **multivariable differentiation** $\\nabla$, **line/surface integrals** $\\iint$, and **transformations** (Laplace/Fourier). Prepare for vector fields! (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Calculus",
+  "questions": [
+    {
+      "text": "What is the partial derivative of $f(x,y) = x^2y$ with respect to $x$?",
+      "type": "mcq",
+      "options": { "a": "$2xy$", "b": "$x^2$", "c": "$y$", "d": "$2x$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Green’s Theorem relates a line integral around a curve to what?",
+      "type": "mcq",
+      "options": { "a": "Double integral over the region bounded by the curve", "b": "Single integral along x-axis", "c": "Definite integral from 0 to $\\infty$", "d": "Triple integral of a scalar field" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the Laplace transform of $1$?",
+      "type": "mcq",
+      "options": { "a": "$1/s$", "b": "$s$", "c": "$e^s$", "d": "$\\ln(s)$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The **Gradient** of a scalar field $f(x, y, z)$ is a **vector** that points in the direction of...",
+      "type": "mcq",
+      "options": { "a": "Zero change", "b": "Maximum rate of decrease", "c": "Maximum rate of increase", "d": "The origin" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the value of $\\frac{\\partial^2 f}{\\partial x \\partial y}$ (mixed partial) for a 'nice' function $f(x,y)$?",
+      "type": "mcq",
+      "options": { "a": "Always 0", "b": "Depends on $x$ only", "c": "Equal to $\\frac{\\partial^2 f}{\\partial y \\partial x}$ (Clairaut's Theorem)", "d": "Undefined" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Stokes' Theorem relates the integral of the **curl** of a vector field over a surface $S$ to what?",
+      "type": "mcq",
+      "options": { "a": "The flux across the surface", "b": "The divergence of the field", "c": "The line integral around the boundary curve $\\partial S$", "d": "The volume enclosed by $S$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Jacobian** determinant of a transformation is used in multivariable integration for...",
+      "type": "mcq",
+      "options": { "a": "Finding the tangent plane", "b": "Changing the variables (like $dx \\, dy \\to r \\, dr \\, d\\theta$)", "c": "Calculating the flux", "d": "Determining concavity" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "An **Exact Differential Equation** $M \\, dx + N \\, dy = 0$ requires that...",
+      "type": "mcq",
+      "options": { "a": "$M = N$", "b": "$\\frac{\\partial M}{\\partial x} = \\frac{\\partial N}{\\partial y}$", "c": "$\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$", "d": "$M$ and $N$ are constants" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "To find the surface area of a surface defined by $z = f(x, y)$, the integration involves a factor called...",
+      "type": "mcq",
+      "options": { "a": "The divergence", "b": "The magnitude of the gradient", "c": "The length of the curve", "d": "The magnitude of the normal vector (or a component of it)" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The **Divergence Theorem** (Gauss's Theorem) relates the integral of the **divergence** over a volume $V$ to what?",
+      "type": "mcq",
+      "options": { "a": "The volume of $V$", "b": "The line integral over the surface", "c": "The flux across the boundary surface $\\partial V$", "d": "The area of the surface" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a series $\\sum a_n$, if $\\lim_{n \\to \\infty} |\\frac{a_{n+1}}{a_n}| = L$, the series converges if...",
+      "type": "mcq",
+      "options": { "a": "$L > 1$", "b": "$L = 1$", "c": "$L < 1$ (Ratio Test)", "d": "$L = \\infty$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **radius of convergence** of a power series $\\sum c_n (x-a)^n$ is the distance from $a$ such that...",
+      "type": "mcq",
+      "options": { "a": "The series diverges", "b": "The series converges", "c": "The limit is zero", "d": "The derivative is $1$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The **directional derivative** $D_{\\mathbf{u}} f(x, y)$ gives the rate of change of $f$ in the direction of...",
+      "type": "mcq",
+      "options": { "a": "The $x$-axis", "b": "The $y$-axis", "c": "The unit vector $\\mathbf{u}$", "d": "The tangent plane" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which integral form is typically used to calculate **Work** done by a force field $\\mathbf{F}$ along a curve $C$?",
+      "type": "mcq",
+      "options": { "a": "Surface integral", "b": "Volume integral", "c": "Line integral $\\int_C \\mathbf{F} \\cdot d\\mathbf{r}$", "d": "Definite integral" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Taylor Series** expansion of $f(x)$ centered at $a$ uses which general formula for its coefficients $c_n$?",
+      "type": "mcq",
+      "options": { "a": "$\\frac{f(a)}{n!}$", "b": "$f^{(n)}(a)$", "c": "$\\frac{f^{(n)}(a)}{n!}$", "d": "$\\frac{f(x^n)}{n!}$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Fourier Transform** converts a function from the time domain $f(t)$ to which domain?",
+      "type": "mcq",
+      "options": { "a": "Spatial domain", "b": "Frequency domain (or $\\omega$/$k$ space)", "c": "Laplace domain", "d": "Energy domain" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the domain of the function $f(x, y) = \\frac{1}{\\sqrt{x^2 + y^2 - 1}}$?",
+      "type": "mcq",
+      "options": { "a": "$x^2 + y^2 > 1$", "b": "$x^2 + y^2 \\ge 1$", "c": "All $\\mathbb{R}^2$", "d": "The origin only" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The **Mean Value Theorem for Integrals** guarantees the existence of a point $c \\in [a, b]$ such that $\\int_a^b f(x) \\, dx$ equals...",
+      "type": "mcq",
+      "options": { "a": "$f'(c)$", "b": "$f(c)(b-a)$", "c": "$\\frac{f(b)-f(a)}{b-a}$", "d": "$f(c) \\cdot c$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a vector field $\\mathbf{F}$ has $\\mathbf{curl} \\mathbf{F} = \\mathbf{0}$, the field is considered...",
+      "type": "mcq",
+      "options": { "a": "Solenoidal", "b": "Irrotational (or conservative)", "c": "Divergent", "d": "Uniform" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The concept of **path independence** in line integrals is directly linked to the existence of a...",
+      "type": "mcq",
+      "options": { "a": "Vector function", "b": "Scalar potential function", "c": "Surface integral", "d": "Constant divergence" },
+      "correct_answer": "b"
+    }
+  ]
+}

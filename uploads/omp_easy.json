@@ -1,0 +1,129 @@
+{
+  "title": "Computer Organization & Architecture - EASY Level",
+  "description": "💡 Discover the hardware basics! This quiz covers the ABCs of COA: **number systems** 🔢, simple **logic gates** $\\wedge \\vee$, and fundamental **memory types** 💾. Start decoding the computer! (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Computer Organization & Architecture",
+  "questions": [
+    {
+      "text": "Which number system uses base 2?",
+      "type": "mcq",
+      "options": { "a": "Decimal", "b": "Octal", "c": "Binary", "d": "Hexadecimal" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which logic gate outputs TRUE only when all inputs are TRUE?",
+      "type": "mcq",
+      "options": { "a": "OR", "b": "AND", "c": "XOR", "d": "NOR" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which memory is volatile?",
+      "type": "mcq",
+      "options": { "a": "ROM", "b": "Hard Disk", "c": "RAM", "d": "Flash" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the decimal equivalent of the binary number $101_2$?",
+      "type": "mcq",
+      "options": { "a": "3", "b": "4", "c": "5", "d": "10" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The main circuit board of a computer is called the...",
+      "type": "mcq",
+      "options": { "a": "CPU", "b": "Motherboard", "c": "RAM Stick", "d": "Bus" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the symbol for the unit of storage equal to 8 bits?",
+      "type": "mcq",
+      "options": { "a": "Bit", "b": "Byte", "c": "Nibble", "d": "Word" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which component performs arithmetic and logical operations in the CPU?",
+      "type": "mcq",
+      "options": { "a": "Control Unit (CU)", "b": "Arithmetic Logic Unit (ALU)", "c": "Register Array", "d": "Cache Memory" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which logic gate is an inverter, having one input and one output?",
+      "type": "mcq",
+      "options": { "a": "OR", "b": "AND", "c": "NOT", "d": "XOR" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which bus carries the addresses of memory locations?",
+      "type": "mcq",
+      "options": { "a": "Data Bus", "b": "Control Bus", "c": "Address Bus", "d": "I/O Bus" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "ROM stands for...",
+      "type": "mcq",
+      "options": { "a": "Random Only Memory", "b": "Read On Motherboard", "c": "Read Only Memory", "d": "Run Operations Memory" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "How many bits are typically in a single Hexadecimal digit?",
+      "type": "mcq",
+      "options": { "a": "2", "b": "4", "c": "8", "d": "16" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The sequence of steps a CPU takes to execute an instruction is called the...",
+      "type": "mcq",
+      "options": { "a": "Fetch cycle", "b": "Clock cycle", "c": "Instruction cycle", "d": "Write back" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The speed of the CPU is primarily measured in...",
+      "type": "mcq",
+      "options": { "a": "Megabytes (MB)", "b": "Hertz (Hz)", "c": "Volts (V)", "d": "Watts (W)" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In two's complement, what does the leftmost bit usually represent?",
+      "type": "mcq",
+      "options": { "a": "Magnitude", "b": "Sign", "c": "Overflow", "d": "Parity" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which component manages the timing and control signals for the CPU's operations?",
+      "type": "mcq",
+      "options": { "a": "ALU", "b": "Memory", "c": "Control Unit (CU)", "d": "Registers" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The logic expression $A + B$ represents which gate?",
+      "type": "mcq",
+      "options": { "a": "AND", "b": "OR", "c": "NOT", "d": "NAND" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which level in the memory hierarchy is the fastest but smallest?",
+      "type": "mcq",
+      "options": { "a": "RAM", "b": "Registers", "c": "Cache", "d": "Hard Disk" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which type of memory is used to permanently store the BIOS startup instructions?",
+      "type": "mcq",
+      "options": { "a": "DRAM", "b": "SRAM", "c": "ROM", "d": "Registers" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The term used for a collection of wires through which data is transferred between computer components is...",
+      "type": "mcq",
+      "options": { "a": "Port", "b": "Bus", "c": "Channel", "d": "Pipeline" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "How many unique values can be represented by 4 bits?",
+      "type": "mcq",
+      "options": { "a": "4", "b": "8", "c": "16", "d": "32" },
+      "correct_answer": "c"
+    }
+  ]
+}

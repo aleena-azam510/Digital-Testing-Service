@@ -1,0 +1,129 @@
+{
+  "title": "Algorithms - HARD Level",
+  "description": "💡 Face the toughest computational challenges! This quiz explores **Dynamic Programming** $\\mathbf{DP}$, the theory of $\\mathbf{NP-completeness}$ 🤯, advanced **shortest path** algorithms, and concepts of computational $\\text{intractability}$. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Algorithms",
+  "questions": [
+    {
+      "text": "Which famous problem is $\\mathbf{NP-complete}$?",
+      "type": "mcq",
+      "options": { "a": "Binary Search", "b": "Sorting", "c": "Travelling Salesman Problem (TSP)", "d": "Matrix Multiplication" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Bellman-Ford algorithm can handle which type of graph edges?",
+      "type": "mcq",
+      "options": { "a": "Positive only", "b": "Negative but no negative cycles", "c": "No edges", "d": "Self-loops only" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which technique is central to **Dynamic Programming**?",
+      "type": "mcq",
+      "options": { "a": "Divide and Conquer", "b": "Greedy Approach", "c": "Overlapping Subproblems and Optimal Substructure", "d": "Randomization" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Floyd-Warshall \\, algorithm}$ is used to find...",
+      "type": "mcq",
+      "options": { "a": "Single source shortest path", "b": "Minimum spanning tree", "c": "All-pairs shortest path", "d": "Maximum flow" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A problem is in the class $\\mathbf{P}$ if it can be solved by a deterministic Turing machine in...",
+      "type": "mcq",
+      "options": { "a": "Exponential time", "b": "Polynomial time", "c": "Logarithmic time", "d": "Super-exponential time" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Longest \\, Common \\, Subsequence \\, (LCS)}$ problem is typically solved using which algorithmic technique?",
+      "type": "mcq",
+      "options": { "a": "Greedy", "b": "Dynamic Programming", "c": "Backtracking", "d": "Randomized" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a decision problem is $\\mathbf{NP-Hard}$, it means...",
+      "type": "mcq",
+      "options": { "a": "It can be solved in polynomial time", "b": "It is in $\\text{NP}$", "c": "Every problem in $\\text{NP}$ can be reduced to it in polynomial time", "d": "It cannot be verified quickly" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does the $\\mathbf{Cut \\, Set}$ refer to in network flow algorithms?",
+      "type": "mcq",
+      "options": { "a": "The set of all vertices", "b": "A partition of the vertices into two sets, one containing the source and one the sink", "c": "The set of edges forming a cycle", "d": "The shortest path" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Max \\, Flow \\, Min \\, Cut \\, Theorem}$ connects which two quantities in a flow network?",
+      "type": "mcq",
+      "options": { "a": "Shortest path and MST", "b": "Maximum capacity flow and minimum capacity cut", "c": "Time complexity and space complexity", "d": "BFS and DFS" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which graph algorithm is based on the idea of iterative **relaxation** of edges?",
+      "type": "mcq",
+      "options": { "a": "BFS", "b": "Kruskal's", "c": "Dijkstra's (and Bellman-Ford)", "d": "Topological Sort" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Amortized \\, Analysis}$, the time required to perform a sequence of operations is averaged over...",
+      "type": "mcq",
+      "options": { "a": "All possible inputs", "b": "The total number of operations", "c": "Only the most expensive operation", "d": "Only the cheapest operation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which algorithm finds the $\\mathbf{Maximum \\, Bipartite \\, Matching}$?",
+      "type": "mcq",
+      "options": { "a": "Prim's", "b": "Ford-Fulkerson (or Hopcroft-Karp)", "c": "A*", "d": "Trie Search" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A problem is in the class $\\mathbf{NP}$ if a solution can be $\\mathbf{verified}$ by a deterministic Turing machine in...",
+      "type": "mcq",
+      "options": { "a": "Linear time", "b": "Polynomial time", "c": "Exponential time", "d": "Non-deterministic time" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{0/1 \\, Knapsack \\, Problem}$ is a classic example of a problem solved efficiently using...",
+      "type": "mcq",
+      "options": { "a": "Greedy approach", "b": "Divide and conquer", "c": "Dynamic Programming", "d": "Randomized algorithms" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which algorithm is used for $\\mathbf{Topological \\, Sorting}$ of a Directed Acyclic Graph (DAG)?",
+      "type": "mcq",
+      "options": { "a": "Prim's", "b": "Kruskal's", "c": "Kahn's Algorithm (or DFS-based)", "d": "A*" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The condition of $\\mathbf{Optimal \\, Substructure}$ for Dynamic Programming requires that...",
+      "type": "mcq",
+      "options": { "a": "Subproblems must be independent", "b": "The optimal solution to the problem contains within it the optimal solutions to subproblems", "c": "Subproblems overlap significantly", "d": "The solution must be unique" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Approximate \\, algorithm}$ technique is used primarily for solving problems that are...",
+      "type": "mcq",
+      "options": { "a": "In $\\text{P}$", "b": "Easily solved", "c": "NP-Hard", "d": "Linear" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which searching algorithm uses a $\\mathbf{heuristic \\, function}$ to guide its search?",
+      "type": "mcq",
+      "options": { "a": "BFS", "b": "DFS", "c": "A* Search Algorithm", "d": "Iterative Deepening" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the complexity of multiplying two $n \\times n$ matrices using the standard definition?",
+      "type": "mcq",
+      "options": { "a": "$O(n^2)$", "b": "$O(n^3)$", "c": "$O(n \\log n)$", "d": "$O(n!)$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The process of reducing one problem $\\mathbf{A}$ to another problem $\\mathbf{B}$ such that a solution to $\\mathbf{B}$ provides a solution to $\\mathbf{A}$ is called...",
+      "type": "mcq",
+      "options": { "a": "Transformation", "b": "Reduction", "c": "Approximation", "d": "Verification" },
+      "correct_answer": "b"
+    }
+  ]
+}

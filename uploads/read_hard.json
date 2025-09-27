@@ -1,0 +1,129 @@
+{
+  "title": "Reading Comprehension - HARD Level",
+  "description": "🚀 Master critical reading! This quiz focuses on analyzing $\\mathbf{rhetorical \\, strategies}$ 🗣️, discerning $\\text{nuanced \\, argumentation}$ ⚖️, interpreting **abstract or philosophical** concepts, and $\\mathbf{evaluating \\, authorial \\, authority}$. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Reading Comprehension",
+  "questions": [
+    {
+      "text": "Which of $\\mathbf{Aristotle's \\, rhetorical \\, appeals}$ primarily seeks to establish the author's credibility and authority?",
+      "type": "mcq",
+      "options": { "a": "Pathos (emotion)", "b": "Logos (logic)", "c": "Ethos (credibility)", "d": "Kairos (timing)" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a philosophical text, interpreting an $\\mathbf{abstract \\, noun}$ (e.g., 'Justice' or 'Truth') requires discerning the author's $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Simple dictionary definition", "b": "Specific, implied conceptual definition within the text's framework", "c": "Etymology only", "d": "Grammatical function" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "An author employs $\\mathbf{juxtaposition}$ when they place two contrasting concepts or images side-by-side to highlight their $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Similarity", "b": "Mutual dependence", "c": "Difference and comparison", "d": "Sequential order" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The term for a logical error in reasoning, often used to undermine an argument, is a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Thesis statement", "b": "Rhetorical question", "c": "Fallacy", "d": "Axiom" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "If a text is highly $\\mathbf{didactic}$, the author's primary purpose is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Be entertaining", "b": "Instruct or teach a moral lesson", "c": "Make a profit", "d": "Describe a historical event" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the key difference between $\\mathbf{denotation}$ and $\\mathbf{connotation}$?",
+      "type": "mcq",
+      "options": { "a": "Denotation is positive; connotation is negative.", "b": "Denotation is the literal definition; connotation is the implied meaning or feeling.", "c": "Denotation is for nouns; connotation is for verbs.", "d": "Denotation is for fiction; connotation is for non-fiction." },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{premise}$ of an argument is a statement that $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Summarizes the conclusion", "b": "Is assumed to be true or used as evidence to support the conclusion", "c": "Contradicts the main idea", "d": "Is always an appeal to emotion" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "When assessing the $\\mathbf{relevance}$ of an external source, a critical reader must determine if the information $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Is very popular", "b": "Directly supports or refutes the claims in the primary text", "c": "Is written in an academic journal", "d": "Is very old" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{rhetorical \\, device}$ is defined by the repetition of a word or phrase at the beginning of successive clauses?",
+      "type": "mcq",
+      "options": { "a": "Alliteration", "b": "Anaphora", "c": "Chiasmus", "d": "Metonymy" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "To $\\mathbf{evaluate \\, the \\, sufficiency}$ of evidence means to decide if there is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Any evidence at all", "b": "Enough relevant evidence to fully support the author's claim", "c": "Contradictory evidence", "d": "Only one type of evidence" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A text with an $\\mathbf{Acerbic \\, tone}$ is characterized by being $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Sweet and kind", "b": "Mellow and calm", "c": "Sharp, forthright, and bitter in style or comment", "d": "Objective and unbiased" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The purpose of a $\\mathbf{straw \\, man \\, fallacy}$ is to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Strengthen the original argument", "b": "Misrepresent an opponent's argument to make it easier to attack", "c": "Use emotional appeals", "d": "Provide statistical data" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a literary critic discusses the $\\mathbf{narrative \\, reliability}$ of a first-person narrator, they are questioning the narrator's $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Grammar skills", "b": "Trustworthiness and objectivity in telling the story", "c": "Speed of speech", "d": "Physical appearance" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{colloquialism}$ used in a text refers to the use of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Formal, academic language", "b": "Slang or informal language appropriate for ordinary conversation", "c": "Obscure Latin phrases", "d": "Technical jargon" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{paradox}$ is a statement that seems $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Perfectly logical and clear", "b": "Contradictory but may nevertheless be true", "c": "Always funny", "d": "A direct comparison" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{argument \\, analysis}$, a $\\mathbf{warrant}$ is the logical connection that links the $\\mathbf{...}$ to the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Title to the summary", "b": "Evidence/Data to the Claim/Conclusion", "c": "Subject to the verb", "d": "Introduction to the conclusion" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{subtext}$ of a dialogue or passage is the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Literal words spoken", "b": "Directly stated main idea", "c": "Underlying message or implied meaning", "d": "Punctuation marks" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "To identify the $\\mathbf{rhetorical \\, effect}$ of an author's stylistic choice (e.g., using short, clipped sentences) means asking $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "What is the sentence length?", "b": "How does this choice influence the reader or the flow of the argument?", "c": "Is the grammar correct?", "d": "Is it a declarative sentence?" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If an author uses $\\mathbf{allusion}$, they are making a direct or indirect reference to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Themselves", "b": "A well-known person, event, or work of art/literature", "c": "The dictionary", "d": "Their footnotes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The term $\\mathbf{verisimilitude}$ in a fictional work refers to the quality of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Being completely untrue", "b": "Appearing to be true or real; the illusion of reality", "c": "Exaggeration", "d": "Purely abstract thought" },
+      "correct_answer": "b"
+    }
+  ]
+}

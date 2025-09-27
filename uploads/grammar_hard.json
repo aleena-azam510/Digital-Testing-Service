@@ -1,0 +1,129 @@
+{
+  "title": "Grammar & Syntax - HARD Level",
+  "description": "📝 Tackle advanced linguistic challenges! This quiz covers complex concepts like $\\text{verbals \\, and \\, their \\, functions}$ 🎯, **parallelism** and $\\text{rhetorical \\, syntax}$, advanced **modifier placement**, and $\\text{elliptical \\, constructions}$. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Grammar & Syntax",
+  "questions": [
+    {
+      "text": "Which verbal acts as a noun, verb, and adjective?",
+      "type": "mcq",
+      "options": { "a": "Gerund (acts as a noun)", "b": "Participle (acts as an adjective)", "c": "Infinitive (can act as noun, adjective, or adverb)", "d": "Only the main verb" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the primary function of the phrase $\\mathbf{the \\, fact \\, that \\, he \\, resigned}$ in the sentence: 'The committee debated $\\mathbf{the \\, fact \\, that \\, he \\, resigned}$'?",
+      "type": "mcq",
+      "options": { "a": "Adverbial Clause", "b": "Adjective Clause", "c": "Noun Clause (Direct Object of 'debated')", "d": "Independent Clause" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The use of grammatically similar constructions to express corresponding ideas ($\\text{e.g., \\, 'running, \\, jumping, \\, and \\, swimming'}$) is known as $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Anaphora", "b": "Parallelism (Parallel Structure)", "c": "Antithesis", "d": "Chiasmus" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{verb \\, mood}$ is typically used to express factual statements or opinions?",
+      "type": "mcq",
+      "options": { "a": "Imperative", "b": "Subjunctive", "c": "Conditional", "d": "Indicative" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The phrase $\\mathbf{seeing \\, the \\, evidence}$ in '$\\mathbf{Seeing \\, the \\, evidence}$, the jury delivered its verdict' is an example of a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Gerund Phrase", "b": "Infinitive Phrase", "c": "Participial Phrase", "d": "Prepositional Phrase" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the term for a sentence structure where the main clause or main point is held until the end?",
+      "type": "mcq",
+      "options": { "a": "Loose Sentence", "b": "Simple Sentence", "c": "Periodic Sentence", "d": "Compound Sentence" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In the sentence, 'He is older $\\mathbf{than \\, I}$ $\\mathbf{(am)}$,' the missing word 'am' illustrates which figure of speech or syntactical construction?",
+      "type": "mcq",
+      "options": { "a": "Apostrophe", "b": "Tautology", "c": "Ellipsis (or Elliptical Construction)", "d": "Metaphor" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{restrictive \\, relative \\, clause}$ (e.g., 'The book that $\\mathbf{I \\, read}$...') is essential to the meaning and is not usually punctuated with $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Periods", "b": "Semicolons", "c": "Commas", "d": "Dashes" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which of the following is an example of a $\\mathbf{reciprocal \\, pronoun}$?",
+      "type": "mcq",
+      "options": { "a": "Themselves", "b": "Whose", "c": "Each other", "d": "That" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The error $\\mathbf{faulty \\, predication}$ occurs when the predicate of a sentence does not logically fit with the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Direct Object", "b": "Prepositional Phrase", "c": "Subject", "d": "Tense" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The phrase $\\mathbf{known \\, as \\, the \\, Great \\, One}$ in 'Wayne Gretzky, $\\mathbf{known \\, as \\, the \\, Great \\, One}$, was a hockey legend' is an example of a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Gerund phrase", "b": "Independent clause", "c": "Appositive phrase (specifically, a non-restrictive one)", "d": "Adverbial clause" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the term for the deliberate repetition of a word or phrase at the beginning of successive clauses?",
+      "type": "mcq",
+      "options": { "a": "Epistrophe", "b": "Asyndeton", "c": "Anaphora", "d": "Zeugma" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{split \\, infinitive}$ is generally considered poor style when an $\\mathbf{adverb}$ is placed between which two parts?",
+      "type": "mcq",
+      "options": { "a": "Subject and Verb", "b": "Auxiliary Verb and Main Verb", "c": "To and the Base Verb (e.g., $\\text{to \\, boldly \\, go}$)", "d": "Noun and Adjective" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which of these is $\\mathbf{correct \\, usage}$ for the semicolon?",
+      "type": "mcq",
+      "options": { "a": "To separate a dependent clause from an independent clause.", "b": "To introduce a list.", "c": "To join two closely related independent clauses without a coordinating conjunction.", "d": "To indicate a pause within a dependent clause." },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Future \\, Perfect \\, Continuous}$ tense is used to describe an action that will continue up until $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Some time in the past", "b": "The present moment", "c": "A specified point in the future", "d": "An unspecified future time" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The term for two or more words that are identical in spelling but differ in meaning and often pronunciation (e.g., 'bow' and 'bow') is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Homophones", "b": "Homonyms", "c": "Heteronyms", "d": "Synonyms" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of the following demonstrates $\\mathbf{correct \\, parallelism}$?",
+      "type": "mcq",
+      "options": { "a": "He enjoys hiking, biking, and to swim.", "b": "He enjoys hiking, biking, and swimming.", "c": "He enjoys hiking, to bike, and swimming.", "d": "He enjoys to hike, biking, and to swim." },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The omission of a word or phrase that is grammatically necessary but can be deduced from the context is known as...",
+      "type": "mcq",
+      "options": { "a": "Tautology", "b": "Apposition", "c": "Ellipsis", "d": "Parenthesis" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{non-restrictive \\, relative \\, clause}$ (e.g., 'My brother, $\\mathbf{who \\, lives \\, in \\, Texas}$,...') should always be set off by $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Dashes", "b": "Commas", "c": "Semicolons", "d": "Colons" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What type of error is present when a possessive pronoun refers to a noun that is only implied and not explicitly stated in the sentence?",
+      "type": "mcq",
+      "options": { "a": "Vague Reference", "b": "Ambiguous Reference", "c": "Implied Antecedent", "d": "Faulty Subject" },
+      "correct_answer": "c"
+    }
+  ]
+}

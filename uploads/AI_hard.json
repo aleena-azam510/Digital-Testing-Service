@@ -1,0 +1,129 @@
+{
+  "title": "Artificial Intelligence - HARD Level",
+  "description": "🔬 Engage with the frontiers of $\\mathbf{Deep \\, Learning}$ 🧠, $\\text{advanced \\, search \\, heuristics}$ 🚀, $\\mathbf{probabilistic \\, reasoning}$ 🎲, and the complex challenge of $\\text{Artificial \\, General \\, Intelligence \\, (AGI)}$ 🌌. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Artificial Intelligence",
+  "questions": [
+    {
+      "text": "Which type of **Neural Network** is primarily designed to process sequential data, such as time series or natural language?",
+      "type": "mcq",
+      "options": { "a": "Convolutional Neural Network (CNN)", "b": "Recurrent Neural Network (RNN)", "c": "Feedforward Network", "d": "Autoencoder" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Reinforcement \\, Learning}$, the problem of the agent having insufficient data to estimate the optimal action-value function is known as the $\\mathbf{curse \\, of}$...",
+      "type": "mcq",
+      "options": { "a": "Dimensionality", "b": "Optimization", "c": "Exploration", "d": "Knowledge" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The primary component that gives a **Convolutional Neural Network (CNN)** its ability to capture spatial hierarchies of features is the...",
+      "type": "mcq",
+      "options": { "a": "Dropout Layer", "b": "Convolutional Layer (using filters/kernels)", "c": "Softmax Layer", "d": "Input Layer" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Admissibility \\, property}$ of a heuristic function $h(n)$ in A* search means that it must never...",
+      "type": "mcq",
+      "options": { "a": "Be zero", "b": "Be non-monotonic", "c": "Overestimate the cost to reach the goal", "d": "Underestimate the cost to reach the goal" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{probabilistic \\, graphical \\, model}$ represents dependencies among random variables using a Directed Acyclic Graph (DAG)?",
+      "type": "mcq",
+      "options": { "a": "Markov Random Field", "b": "Hidden Markov Model", "c": "Bayesian Network", "d": "K-Nearest Neighbors" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the key mechanism introduced in $\\mathbf{LSTMs \\, (Long \\, Short-Term \\, Memory)}$ networks to mitigate the vanishing gradient problem?",
+      "type": "mcq",
+      "options": { "a": "Batch Normalization", "b": "Skip Connections", "c": "Gating Mechanisms (Input, Forget, Output gates)", "d": "ReLU activation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Game \\, Theory}$, what is the point where no player can benefit by unilaterally changing their strategy, assuming other players keep theirs unchanged?",
+      "type": "mcq",
+      "options": { "a": "Optimal Substructure", "b": "Nash Equilibrium", "c": "Saddle Point", "d": "Decision Boundary" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Transformer}$ architecture, widely used in modern $\\text{NLP}$, fundamentally replaced which previous mechanism with the $\\mathbf{Attention \\, Mechanism}$?",
+      "type": "mcq",
+      "options": { "a": "Feedforward Layers", "b": "Recurrent Layers (RNNs/LSTMs)", "c": "Embedding Layers", "d": "Softmax" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{Knowledge \\, Representation}$ method uses first-order logic to infer new facts from existing knowledge?",
+      "type": "mcq",
+      "options": { "a": "Semantic Networks", "b": "Frames", "c": "Logical Inference (e.g., Prolog)", "d": "Production Rules" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the primary objective of a $\\mathbf{Generative \\, Adversarial \\, Network \\, (GAN)}$?",
+      "type": "mcq",
+      "options": { "a": "Perform classification", "b": "Generate new data instances that resemble the training data", "c": "Reduce dimensionality", "d": "Cluster data points" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{A* \\, Search}$, the total estimated cost $f(n)$ is defined as...",
+      "type": "mcq",
+      "options": { "a": "$h(n)$ (heuristic cost only)", "b": "$g(n) + h(n)$ (actual cost + estimated cost)", "c": "$g(n)$ (actual cost only)", "d": "$h(n) - g(n)$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which technique is used to create uncertainty in a neural network during training to prevent **overfitting**?",
+      "type": "mcq",
+      "options": { "a": "Batch Normalization", "b": "Learning Rate Decay", "c": "Dropout", "d": "ReLU Activation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Computer \\, Vision}$, $\\mathbf{Image \\, Segmentation}$ aims to...",
+      "type": "mcq",
+      "options": { "a": "Label the entire image", "b": "Assign a label to every pixel in the image", "c": "Detect bounding boxes around objects", "d": "Compress the image size" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Policy \\, Gradient \\, Method}$ in Reinforcement Learning aims to directly optimize the agent's...",
+      "type": "mcq",
+      "options": { "a": "Value function", "b": "Transition probabilities", "c": "Policy (mapping from state to action)", "d": "Reward signal" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Monte \\, Carlo \\, Tree \\, Search \\, (MCTS)}$ algorithm balances $\\mathbf{Exploration \\, and \\, Exploitation}$ using the concept of...",
+      "type": "mcq",
+      "options": { "a": "Epsilon-greedy", "b": "Upper Confidence Bound (UCT)", "c": "Q-Learning", "d": "Genetic Algorithms" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the term for an AI system's lack of transparent, understandable reasoning behind its decisions?",
+      "type": "mcq",
+      "options": { "a": "Bias", "b": "Non-determinism", "c": "Black Box Problem (or Lack of Explainability)", "d": "Generalization Error" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The process of using a pre-trained model on a new, related task is called...",
+      "type": "mcq",
+      "options": { "a": "Ensemble Learning", "b": "Transfer Learning", "c": "Active Learning", "d": "Meta Learning" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{logic \\, system}$ allows for truth values to be degrees of truth between $\\text{0}$ and $\\text{1}$?",
+      "type": "mcq",
+      "options": { "a": "First-Order Logic", "b": "Propositional Logic", "c": "Fuzzy Logic", "d": "Modal Logic" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Curse \\, of \\, Dimensionality}$ makes many ML algorithms perform poorly when the number of $\\mathbf{features}$ becomes...",
+      "type": "mcq",
+      "options": { "a": "Very small", "b": "Correlated", "c": "Very large", "d": "Only binary" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{Semi-Supervised \\, Learning}$, the model is trained using a combination of...",
+      "type": "mcq",
+      "options": { "a": "Labeled and Unlabeled Data", "b": "Only positive examples", "c": "Only synthetic data", "d": "Rewards and penalties" },
+      "correct_answer": "a"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Reading Comprehension - MODERATE Level",
+  "description": "🧠 Advance your comprehension skills! This quiz focuses on **making inferences** 💡, analyzing $\\text{text \\, structure}$ 🧱 (Cause/Effect, Compare/Contrast), and $\\text{evaluating \\, tone \\, and \\, purpose}$ in moderate-length texts. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Reading Comprehension",
+  "questions": [
+    {
+      "text": "What is an $\\mathbf{inference}$ in reading comprehension?",
+      "type": "mcq",
+      "options": { "a": "A fact explicitly stated in the text", "b": "An educated guess or conclusion reached on the basis of evidence and reasoning", "c": "The author's name", "d": "The total word count" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A text structure that explains why something happened and what the results were is called $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Description", "b": "Cause and Effect", "c": "Comparison", "d": "Problem and Solution" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a passage uses words like 'similarly,' 'unlike,' and 'both,' the text structure is likely:",
+      "type": "mcq",
+      "options": { "a": "Chronological", "b": "Problem/Solution", "c": "Compare and Contrast", "d": "Enumeration" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{tone}$ of a reading passage refers to the author's $\\mathbf{...}$ toward the subject matter.",
+      "type": "mcq",
+      "options": { "a": "Explicit opinion", "b": "Attitude or feeling", "c": "Logical reasoning", "d": "Number of arguments" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "When an author presents two different subjects and discusses their similarities and differences, they are using $\\mathbf{...}$ structure.",
+      "type": "mcq",
+      "options": { "a": "Definition", "b": "Compare/Contrast", "c": "Sequence", "d": "Classification" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of these is a $\\mathbf{signal \\, word}$ for $\\mathbf{Cause \\, and \\, Effect}$?",
+      "type": "mcq",
+      "options": { "a": "Moreover", "b": "Consequently", "c": "Although", "d": "Meanwhile" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "To identify the $\\mathbf{author's \\, point \\, of \\, view}$ in an argumentative text, you must look for their $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Objective facts", "b": "Central argument or thesis statement", "c": "List of references", "d": "Use of similes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{bias}$ in a text indicates that the author is showing a strong $\\mathbf{...}$ preference for one side over another.",
+      "type": "mcq",
+      "options": { "a": "Factual", "b": "Balanced", "c": "Prejudiced or one-sided", "d": "Logical" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "If a piece of writing describes a character as having 'a face like thunder,' this is a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Allusion", "b": "Simile (comparing a face to thunder using 'like')", "c": "Hyperbole", "d": "Irony" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{rhetorical \\, question}$ is a question asked for effect rather than to elicit a direct answer. (True/False)",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The $\\mathbf{theme}$ of a story is usually the underlying $\\mathbf{...}$ or $\\mathbf{message}$ the author wants to convey.",
+      "type": "mcq",
+      "options": { "a": "Plot events", "b": "Setting", "c": "Moral or central insight", "d": "Punctuation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When evaluating an argument, checking the $\\mathbf{validity}$ of the supporting evidence means assessing if the evidence is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Very long", "b": "Logically sound and relevant to the claim", "c": "Contradictory", "d": "Only based on personal opinion" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The structure of a text that introduces a problem and then discusses ways to overcome it is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Descriptive", "b": "Chronological", "c": "Problem and Solution", "d": "Classification" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "When a character says the opposite of what they mean, this is an example of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Foreshadowing", "b": "Verbal Irony", "c": "Situational Irony", "d": "Metonymy" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{transition \\, word}$ like $\\mathbf{furthermore}$ typically signals the author is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Contrasting two ideas", "b": "Adding more information or evidence", "c": "Concluding the argument", "d": "Showing a cause" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "To $\\mathbf{synthesize}$ information from two different sources means to $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Read them separately", "b": "Find the differences between them", "c": "Combine ideas from both sources to create a new, integrated understanding", "d": "Cite one source only" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{metaphor}$ is a figure of speech that $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Uses 'like' or 'as' for comparison", "b": "Directly compares two unlike things without using 'like' or 'as'", "c": "Gives human qualities to non-human things", "d": "Exaggerates for effect" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a text is highly formal and uses specialized terminology, its likely $\\mathbf{audience}$ is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "General public", "b": "Children", "c": "Specialists or academics in the field", "d": "Mystery readers" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{climax}$ of a story is usually the point of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Introduction", "b": "Resolution", "c": "Highest tension or turning point", "d": "Setting description" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "An argument is logically $\\mathbf{sound}$ if its premises are true and $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "The conclusion is false", "b": "The conclusion is false but convincing", "c": "The argument is valid (conclusion follows logically from premises)", "d": "The author is famous" },
+      "correct_answer": "c"
+    }
+  ]
+}

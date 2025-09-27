@@ -1,0 +1,129 @@
+{
+  "title": "Vocabulary & Word Usage - HARD Level",
+  "description": "💡 Unlock linguistic mastery! This quiz features $\\text{advanced \\, esoteric \\, vocabulary}$ 🧐, complex $\\text{idiomatic \\, expressions}$ 🗣️, distinctions between highly $\\text{confused \\, word \\, pairs}$ (e.g., $\\text{disinterested/uninterested}$), and subtle $\\text{shades \\, of \\, meaning}$. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Vocabulary & Word Usage",
+  "questions": [
+    {
+      "text": "Which word means 'a sudden, large, and violent event; a destructive flood'?",
+      "type": "mcq",
+      "options": { "a": "Apotheosis", "b": "Inundation", "c": "Ubiquity", "d": "Panacea" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A person who is $\\mathbf{DISINTERESTED}$ is...",
+      "type": "mcq",
+      "options": { "a": "Bored and unconcerned", "b": "Impartial and unbiased", "c": "Hostile and aggressive", "d": "Eager and excited" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word is the correct term for 'a word that is pronounced the same as another but differs in meaning and spelling'?",
+      "type": "mcq",
+      "options": { "a": "Homograph", "b": "Homonym", "c": "Homophone", "d": "Antonym" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The word $\\mathbf{IGNOMINY}$ is a $\\mathbf{synonym}$ for which word?",
+      "type": "mcq",
+      "options": { "a": "Prestige", "b": "Honor", "c": "Disgrace (or shame)", "d": "Wisdom" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The correct $\\mathbf{plural}$ of the noun $\\mathbf{phenomenon}$ is:",
+      "type": "mcq",
+      "options": { "a": "phenomena", "b": "phenomenons", "c": "phenomeni", "d": "phenomenum" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which word means 'to renounce or retract a formal belief or statement'?",
+      "type": "mcq",
+      "options": { "a": "Affirm", "b": "Reiterate", "c": "Recant", "d": "Maintain" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The word $\\mathbf{SUPERFLUOUS}$ means...",
+      "type": "mcq",
+      "options": { "a": "Necessary", "b": "Essential", "c": "Exceeding what is sufficient or necessary", "d": "High quality" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In the sentence, 'The $\\mathbf{complement}$ of a right angle is $\\text{90 \\, degrees minus the measure of the angle}$', $\\mathbf{complement}$ means:",
+      "type": "mcq",
+      "options": { "a": "To praise", "b": "To complete or match well", "c": "Something that completes or makes up a whole (used mathematically or linguistically)", "d": "An effect" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{idiomatic \\, expression}$ means 'to be extremely happy'?",
+      "type": "mcq",
+      "options": { "a": "Under the weather", "b": "On cloud nine", "c": "Bite the bullet", "d": "Break a leg" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "An $\\mathbf{antonym}$ for $\\mathbf{EPHEMERAL}$ is:",
+      "type": "mcq",
+      "options": { "a": "Transitory", "b": "Fleeting", "c": "Permanent (or lasting)", "d": "Momentary" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The word $\\mathbf{PROSCRIBE}$ means...",
+      "type": "mcq",
+      "options": { "a": "To recommend something", "b": "To forbid or prohibit", "c": "To write a prescription", "d": "To speak in favor of" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the specialized meaning of $\\mathbf{literally}$ in standard, non-figurative usage?",
+      "type": "mcq",
+      "options": { "a": "In a figurative way", "b": "Almost or nearly", "c": "In the actual sense of the word", "d": "Exaggerating for emphasis" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word means 'to speak ill of; slander; malign'?",
+      "type": "mcq",
+      "options": { "a": "Extol", "b": "Eulogize", "c": "Vilify", "d": "Commend" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{phrasal \\, verb}$ $\\mathbf{call \\, off}$ means:",
+      "type": "mcq",
+      "options": { "a": "To make a phone call", "b": "To postpone", "c": "To cancel", "d": "To announce" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The adjective $\\mathbf{MERETRICIOUS}$ means...",
+      "type": "mcq",
+      "options": { "a": "Having merit and value", "b": "Attractive but having no real value; falsely alluring", "c": "Humble and modest", "d": "Highly praised" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word should be used to describe an amount that $\\mathbf{cannot \\, be \\, counted}$ (e.g., 'water')?",
+      "type": "mcq",
+      "options": { "a": "Fewer", "b": "Many", "c": "Less", "d": "Number" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{pleonasm}$ is a $\\mathbf{redundancy}$ of expression, such as $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Simile", "b": "Burning fire", "c": "Oxymoron", "d": "Metaphor" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word means 'a difficult or perplexing problem or situation'?",
+      "type": "mcq",
+      "options": { "a": "Conundrum", "b": "Elucidation", "c": "Facilitation", "d": "Resolution" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The adjective $\\mathbf{SALUTARY}$ means...",
+      "type": "mcq",
+      "options": { "a": "Very loud", "b": "Harmful or damaging", "c": "Producing good effects; beneficial", "d": "Containing salt" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the term for a word formed from the first letters of other words (e.g., $\\text{NASA}$)?",
+      "type": "mcq",
+      "options": { "a": "Portmanteau", "b": "Acronym", "c": "Neologism", "d": "Contraction" },
+      "correct_answer": "b"
+    }
+  ]
+}

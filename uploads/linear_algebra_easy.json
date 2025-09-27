@@ -1,0 +1,179 @@
+{
+  "title": "Linear Algebra - EASY Level",
+  "description": "📐 Start your journey into the world of Linear Algebra! This quiz covers the basics: **vectors** ➡️, **matrices** 🧱, and essential **arithmetic operations** $\\times$ $\\div$. Build your foundation! (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Linear Algebra",
+  "questions": [
+    {
+      "text": "Which of the following is a vector?",
+      "type": "mcq",
+      "options": { "a": "$[1, 2, 3]$", "b": "$3x + 2 = 0$", "c": "Matrix $A$", "d": "Scalar $5$" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the size of a $2 \\times 3$ matrix?",
+      "type": "mcq",
+      "options": { "a": "2", "b": "3", "c": "6", "d": "5" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The dot product of two vectors results in which type of value?",
+      "type": "mcq",
+      "options": { "a": "Vector", "b": "Matrix", "c": "Scalar", "d": "Tensor" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the result of the vector addition $\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix} + \\begin{pmatrix} 4 \\\\ 5 \\\\ 6 \\end{pmatrix}$?",
+      "type": "mcq",
+      "options": {
+        "a": "$\\begin{pmatrix} 5 \\\\ 7 \\\\ 9 \\end{pmatrix}$",
+        "b": "$\\begin{pmatrix} 4 \\\\ 10 \\\\ 18 \\end{pmatrix}$",
+        "c": "$\\begin{pmatrix} 5 \\ 7 \\ 9 \\end{pmatrix}$",
+        "d": "$\\begin{pmatrix} 3 \\\\ 3 \\\\ 3 \\end{pmatrix}$"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the transpose of the matrix $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$?",
+      "type": "mcq",
+      "options": {
+        "a": "$\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$",
+        "b": "$\\begin{pmatrix} 1 & 3 \\\\ 2 & 4 \\end{pmatrix}$",
+        "c": "$\\begin{pmatrix} -1 & -2 \\\\ -3 & -4 \\end{pmatrix}$",
+        "d": "$\\begin{pmatrix} 4 & 3 \\\\ 2 & 1 \\end{pmatrix}$"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A matrix where all elements are zero is called the...",
+      "type": "mcq",
+      "options": { "a": "Identity Matrix", "b": "Diagonal Matrix", "c": "Scalar Matrix", "d": "Zero Matrix" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "What is the result of the scalar multiplication $2 \\begin{pmatrix} 5 \\\\ -1 \\end{pmatrix}$?",
+      "type": "mcq",
+      "options": {
+        "a": "$\\begin{pmatrix} 5 \\\\ -2 \\end{pmatrix}$",
+        "b": "$\\begin{pmatrix} 7 \\\\ 1 \\end{pmatrix}$",
+        "c": "$\\begin{pmatrix} 10 \\\\ -2 \\end{pmatrix}$",
+        "d": "$\\begin{pmatrix} 10 \\ -1 \\end{pmatrix}$"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "For a matrix $A$ to be added to matrix $B$, what must be true?",
+      "type": "mcq",
+      "options": {
+        "a": "They must have the same dimensions.",
+        "b": "They must be square matrices.",
+        "c": "They must have non-zero determinants.",
+        "d": "One must be the inverse of the other."
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the name of a square matrix where all diagonal elements are $1$ and all other elements are $0$?",
+      "type": "mcq",
+      "options": {
+        "a": "Zero Matrix",
+        "b": "Identity Matrix",
+        "c": "Diagonal Matrix",
+        "d": "Scalar Matrix"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If a matrix has $m$ rows and $n$ columns, its dimension is written as...",
+      "type": "mcq",
+      "options": { "a": "$m+n$", "b": "$n \\times m$", "c": "$m \\times n$", "d": "$m$ divided by $n$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which operation is defined between a scalar $k$ and a matrix $A$?",
+      "type": "mcq",
+      "options": {
+        "a": "Matrix addition ($k+A$)",
+        "b": "Matrix inversion ($k^{-1}A$)",
+        "c": "Matrix division ($A/k$)",
+        "d": "Scalar multiplication ($kA$)"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The inner product of two vectors is another name for the...",
+      "type": "mcq",
+      "options": { "a": "Dot product", "b": "Cross product", "c": "Matrix product", "d": "Vector sum" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The length or magnitude of a vector $\\mathbf{v}$ is denoted by...",
+      "type": "mcq",
+      "options": { "a": "$|\\mathbf{v}|$", "b": "$||\\mathbf{v}||$", "c": "$\\mathbf{v} \\cdot \\mathbf{v}$", "d": "$\\mathbf{v}^T$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the negative of the vector $\\mathbf{v} = \\begin{pmatrix} -3 \\\\ 7 \\end{pmatrix}$?",
+      "type": "mcq",
+      "options": {
+        "a": "$\\begin{pmatrix} 3 \\\\ -7 \\end{pmatrix}$",
+        "b": "$\\begin{pmatrix} -3 \\\\ -7 \\end{pmatrix}$",
+        "c": "$\\begin{pmatrix} 3 \\\\ 7 \\end{pmatrix}$",
+        "d": "$\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "In the matrix $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$, what is the element $a_{21}$?",
+      "type": "mcq",
+      "options": { "a": "$1$", "b": "$2$", "c": "$3$", "d": "$4$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The process of changing a matrix's rows into columns and columns into rows is called...",
+      "type": "mcq",
+      "options": { "a": "Inversion", "b": "Transposition", "c": "Diagonalization", "d": "Decomposition" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the result of the vector subtraction $\\begin{pmatrix} 5 \\\\ 8 \\end{pmatrix} - \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$?",
+      "type": "mcq",
+      "options": {
+        "a": "$\\begin{pmatrix} 7 \\\\ 11 \\end{pmatrix}$",
+        "b": "$\\begin{pmatrix} -3 \\\\ -5 \\end{pmatrix}$",
+        "c": "$\\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$",
+        "d": "$\\begin{pmatrix} 3 \\\\ 5 \\end{pmatrix}$"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The matrix $A = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ is an example of an...",
+      "type": "mcq",
+      "options": {
+        "a": "Identity matrix",
+        "b": "Upper triangular matrix",
+        "c": "Symmetric matrix",
+        "d": "Diagonal matrix"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the definition of a $1 \\times n$ matrix?",
+      "type": "mcq",
+      "options": { "a": "Column vector", "b": "Square matrix", "c": "Row vector", "d": "Scalar" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a system of linear equations $A\\mathbf{x} = \\mathbf{b}$, the matrix $A$ is called the...",
+      "type": "mcq",
+      "options": {
+        "a": "Augmented matrix",
+        "b": "Coefficient matrix",
+        "c": "Identity matrix",
+        "d": "Solution matrix"
+      },
+      "correct_answer": "b"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Operating Systems - HARD Level",
+  "description": "🔬 Engage with the intricate challenges of modern distributed and concurrent systems! This quiz covers $\\mathbf{advanced \\, concurrency}$ protocols 🔒, $\\text{distributed \\, consistency}$ models 🌐, and $\\mathbf{kernel \\, design}$ choices. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Operating Systems",
+  "questions": [
+    {
+      "text": "Which consistency model is the strongest in distributed systems?",
+      "type": "mcq",
+      "options": { "a": "Eventual Consistency", "b": "Causal Consistency", "c": "Sequential Consistency", "d": "Linearizability" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which mechanism ensures **mutual exclusion** in concurrency?",
+      "type": "mcq",
+      "options": { "a": "Semaphores", "b": "Paging", "c": "Segmentation", "d": "Thrashing" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which type of kernel provides minimal functionality, delegating services to user space?",
+      "type": "mcq",
+      "options": { "a": "Monolithic Kernel", "b": "Hybrid Kernel", "c": "Microkernel", "d": "Exokernel" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Two \\, Phase \\, Locking \\, (2PL)}$ protocol primarily aims to achieve...",
+      "type": "mcq",
+      "options": { "a": "High concurrency", "b": "Deadlock avoidance", "c": "Serializability (transaction consistency)", "d": "Low latency" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{distributed \\, operating \\, system \\, model}$ views the entire system as a single pool of resources managed by a single OS?",
+      "type": "mcq",
+      "options": { "a": "Network OS", "b": "Distributed OS (DOS)", "c": "Client-Server OS", "d": "Multikernel OS" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **race condition** occurs when the output of a concurrent operation depends on the...",
+      "type": "mcq",
+      "options": { "a": "Number of CPUs", "b": "Relative order of execution (timing)", "c": "Memory size", "d": "Operating system version" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{working \\, set \\, model}$ is a concept used to limit thrashing by ensuring...",
+      "type": "mcq",
+      "options": { "a": "Every process has a fixed number of frames", "b": "The total number of processes is constant", "c": "A process's active pages are kept in memory", "d": "Disk I/O is minimized" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Dining Philosophers Problem** is a classic synchronisation problem used to illustrate...",
+      "type": "mcq",
+      "options": { "a": "Deadlock and starvation", "b": "Memory fragmentation", "c": "Priority inversion", "d": "Context switching overhead" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the main drawback of a $\\mathbf{Monolithic \\, Kernel}$ architecture?",
+      "type": "mcq",
+      "options": { "a": "Slow system calls", "b": "Large size and low reliability (crash risk)", "c": "Lack of drivers", "d": "Poor performance" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which clock synchronisation algorithm is designed for systems where one machine is designated as the time server?",
+      "type": "mcq",
+      "options": { "a": "Lamport's Algorithm", "b": "Vector Clocks", "c": "Berkeley Algorithm", "d": "Ricart-Agrawala Algorithm" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **monitor** is a high-level synchronisation construct that encapsulates shared data and procedures, primarily to enforce...",
+      "type": "mcq",
+      "options": { "a": "Preemption", "b": "Mutual exclusion", "c": "Fragmentation", "d": "Paging" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Address \\, Space \\, Layout \\, Randomization \\, (ASLR)}$ security technique is used to prevent...",
+      "type": "mcq",
+      "options": { "a": "Page faults", "b": "Buffer overflow attacks", "c": "Deadlocks", "d": "Starvation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which scheduling metric measures how long a process has been in the ready queue?",
+      "type": "mcq",
+      "options": { "a": "Burst Time", "b": "Response Time", "c": "Waiting Time", "d": "Throughput" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The difference between **concurrency** and **parallelism** is that parallelism requires...",
+      "type": "mcq",
+      "options": { "a": "Single CPU", "b": "Multiple cores or processors", "c": "Shared memory", "d": "Virtual memory" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which file allocation method stores file blocks non-contiguously, using pointers in an index block for each file?",
+      "type": "mcq",
+      "options": { "a": "Contiguous Allocation", "b": "Linked Allocation", "c": "Indexed Allocation (e.g., inode)", "d": "Sequential Allocation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Capability \\, List}$ approach to protection focuses on the object, defining which processes can perform operations on it. This is based on the principle of...",
+      "type": "mcq",
+      "options": { "a": "Least Privilege", "b": "Best Effort", "c": "Highest Priority", "d": "Mutual Exclusion" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "In the $\\mathbf{SJF \\, (Shortest \\, Job \\, First)}$ scheduling algorithm, the true implementation challenge is...",
+      "type": "mcq",
+      "options": { "a": "Estimating burst time", "b": "Handling I/O requests", "c": "Context switching overhead", "d": "Preventing deadlock" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is the primary disadvantage of using **busy waiting** for mutual exclusion?",
+      "type": "mcq",
+      "options": { "a": "High latency", "b": "Wastes CPU cycles", "c": "Causes deadlock", "d": "Difficulty in implementation" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The **Distributed File System (DFS)** protocol that allows clients to access files transparently across a network is built on the concept of...",
+      "type": "mcq",
+      "options": { "a": "Remote Procedure Call (RPC)", "b": "Local Area Network (LAN)", "c": "Demand Paging", "d": "Monolithic Kernel" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which $\\mathbf{page \\, replacement \\, anomaly}$ occurs when increasing the number of available page frames actually increases the page fault rate?",
+      "type": "mcq",
+      "options": { "a": "Thrashing", "b": "Belady's Anomaly", "c": "Starvation", "d": "Deadlock" },
+      "correct_answer": "b"
+    }
+  ]
+}

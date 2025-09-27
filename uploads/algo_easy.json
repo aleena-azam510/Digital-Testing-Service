@@ -1,0 +1,129 @@
+{
+  "title": "Algorithms - EASY Level",
+  "description": "🧩 The first step in problem-solving! This quiz covers **basic algorithm** concepts: fundamental $\\text{searching}$ 🔎 and $\\text{sorting}$ 📋 techniques, and introductory concepts of **time complexity** $\\mathbf{O(n)}$. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Algorithms",
+  "questions": [
+    {
+      "text": "Which algorithm is used to find an element in a **sorted array** by repeatedly halving the search interval?",
+      "type": "mcq",
+      "options": { "a": "Linear Search", "b": "Binary Search", "c": "Bubble Sort", "d": "Selection Sort" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which sorting algorithm repeatedly swaps adjacent elements if they are in the wrong order?",
+      "type": "mcq",
+      "options": { "a": "Merge Sort", "b": "Quick Sort", "c": "Bubble Sort", "d": "Insertion Sort" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the worst-case **time complexity** of **Linear Search**?",
+      "type": "mcq",
+      "options": { "a": "$O(1)$", "b": "$O(\\log n)$", "c": "$O(n)$", "d": "$O(n \\log n)$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which sorting algorithm selects the smallest element from the unsorted part and places it at the beginning?",
+      "type": "mcq",
+      "options": { "a": "Bubble Sort", "b": "Selection Sort", "c": "Insertion Sort", "d": "Quick Sort" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Best \\, Case \\, complexity}$ for searching an element in an array using Linear Search is...",
+      "type": "mcq",
+      "options": { "a": "$O(n)$", "b": "$O(\\log n)$", "c": "$O(1)$", "d": "$O(n^2)$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "An **Algorithm** is a set of well-defined steps to...",
+      "type": "mcq",
+      "options": { "a": "Design hardware", "b": "Solve a particular problem", "c": "Compile a program", "d": "Run an operating system" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which sorting technique is similar to sorting a deck of playing cards by inserting a card into its correct position?",
+      "type": "mcq",
+      "options": { "a": "Selection Sort", "b": "Insertion Sort", "c": "Merge Sort", "d": "Heap Sort" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The maximum amount of time an algorithm will take to complete is defined by its...",
+      "type": "mcq",
+      "options": { "a": "Best Case", "b": "Average Case", "c": "Worst Case", "d": "Amortized Cost" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which symbol is used to represent **Big O Notation**?",
+      "type": "mcq",
+      "options": { "a": "$\\Omega$", "b": "$\\Theta$", "c": "$O$", "d": "$o$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A **stable sorting** algorithm is one that preserves the relative order of...",
+      "type": "mcq",
+      "options": { "a": "All elements", "b": "Equal elements", "c": "Distinct elements", "d": "Unsorted elements" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The total number of comparisons in the worst case for **Bubble Sort** on $n$ items is proportional to...",
+      "type": "mcq",
+      "options": { "a": "$n$", "b": "$n \\log n$", "c": "$n^2$", "d": "$2^n$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the **space complexity** for most simple sorting algorithms (like Bubble, Selection, Insertion) that sort in place?",
+      "type": "mcq",
+      "options": { "a": "$O(n)$", "b": "$O(\\log n)$", "c": "$O(1)$", "d": "$O(n^2)$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which type of algorithm involves making the locally optimal choice at each stage with the hope of finding a global optimum?",
+      "type": "mcq",
+      "options": { "a": "Dynamic Programming", "b": "Greedy Algorithm", "c": "Divide and Conquer", "d": "Brute Force" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Binary \\, Search}$, the array must be...",
+      "type": "mcq",
+      "options": { "a": "Unsorted", "b": "Reverse sorted", "c": "Sorted", "d": "Empty" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which data structure is typically used to implement a $\\mathbf{Breadth \\, First \\, Search \\, (BFS)}$?",
+      "type": "mcq",
+      "options": { "a": "Stack", "b": "Queue", "c": "Linked List", "d": "Tree" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The process of repeatedly applying a function until a base condition is met is called...",
+      "type": "mcq",
+      "options": { "a": "Iteration", "b": "Recursion", "c": "Hashing", "d": "Pipelining" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Asymptotic \\, notation}$ that provides a tight bound (both upper and lower) for an algorithm's running time is...",
+      "type": "mcq",
+      "options": { "a": "$O$", "b": "$\\Omega$", "c": "$\\Theta$", "d": "$o$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which type of sorting algorithm is generally considered the simplest to implement for small lists?",
+      "type": "mcq",
+      "options": { "a": "Heap Sort", "b": "Insertion Sort", "c": "Quick Sort", "d": "Radix Sort" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If an algorithm's complexity is $O(n^3)$, adding one more input element will increase the running time by a factor proportional to...",
+      "type": "mcq",
+      "options": { "a": "Linear", "b": "Quadratic", "c": "Cubic", "d": "Logarithmic" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a $\\mathbf{Worst \\, Case \\, Analysis}$, the input size $n$ is chosen to ensure the algorithm executes the...",
+      "type": "mcq",
+      "options": { "a": "Minimum number of steps", "b": "Maximum number of steps", "c": "Average number of steps", "d": "Fixed number of steps" },
+      "correct_answer": "b"
+    }
+  ]
+}

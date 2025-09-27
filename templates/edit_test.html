@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Edit Test{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Edit Test: {{ test.title }}</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" name="title" class="form-control" value="{{ test.title }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea name="description" class="form-control">{{ test.description }}</textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Time Limit (minutes)</label>
+      <input type="number" name="time_limit_minutes" class="form-control" value="{{ test.time_limit_minutes }}">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Topic</label>
+      <input type="text" name="topic" class="form-control" value="{{ test.topic }}">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Difficulty</label>
+      <select name="difficulty" class="form-select">
+        <option value="easy" {% if test.difficulty == "easy" %}selected{% endif %}>Easy</option>
+        <option value="moderate" {% if test.difficulty == "moderate" %}selected{% endif %}>Moderate</option>
+        <option value="hard" {% if test.difficulty == "hard" %}selected{% endif %}>Hard</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <input type="text" name="category" class="form-control" value="{{ test.category }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="{{ url_for('creator_dashboard') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{
+  "title": "Literary Devices & Poetry - EASY Level",
+  "description": "✨ Uncover the magic of language! This quiz covers **basic literary devices** 🖼️ (like $\\text{simile \\, and \\, metaphor}$), common $\\text{poetry \\, elements}$ 🎶, and simple $\\text{figure \\, of \\, speech}$ definitions. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Literary Devices & Poetry",
+  "questions": [
+    {
+      "text": "A comparison between two unlike things using 'like' or 'as' is a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Metaphor", "b": "Hyperbole", "c": "Simile", "d": "Personification" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The repetition of the same sound at the beginning of words in a sentence or phrase (e.g., 'Peter Piper picked...') is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Assonance", "b": "Alliteration", "c": "Consonance", "d": "Onomatopoeia" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Giving human qualities or characteristics to non-human things (like objects or animals) is called $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Simile", "b": "Metaphor", "c": "Personification", "d": "Irony" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A direct comparison between two unlike things **without** using 'like' or 'as' is a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Simile", "b": "Metaphor", "c": "Rhyme", "d": "Imagery" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Words whose sounds suggest their meaning (e.g., $\\text{buzz, \\, hiss, \\, bang}$) are examples of $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Rhyme", "b": "Rhythm", "c": "Onomatopoeia", "d": "Stanza" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The use of descriptive language to create vivid pictures in the reader's mind, often appealing to the five senses, is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Theme", "b": "Plot", "c": "Imagery", "d": "Tone" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A group of lines forming the basic recurring metrical unit in a poem is called a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Line", "b": "Word", "c": "Stanza", "d": "Paragraph" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The repeating pattern of stressed and unstressed syllables in a line of poetry is the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Meter (or Rhythm)", "b": "Rhyme Scheme", "c": "Theme", "d": "Plot" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "An $\\mathbf{exaggeration}$ of a statement for emphasis or effect is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Understatement", "b": "Hyperbole", "c": "Irony", "d": "Allusion" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The overall mood or atmosphere of a text is the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Plot", "b": "Setting", "c": "Mood (or Atmosphere)", "d": "Theme" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{AABBC}$ pattern describes a poem's $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Meter", "b": "Line Length", "c": "Rhyme Scheme", "d": "Stanza Type" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A $\\mathbf{symbol}$ is an object or idea that represents $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Only itself", "b": "Something else (a deeper, abstract idea)", "c": "The author's name", "d": "A line break" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which device uses a word or phrase that, literally, means the $\\mathbf{opposite}$ of what is intended for emphasis or humor?",
+      "type": "mcq",
+      "options": { "a": "Simile", "b": "Irony (Verbal Irony)", "c": "Allusion", "d": "Foreshadowing" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{rhyme}$ that occurs within a single line of poetry is called $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "End Rhyme", "b": "Internal Rhyme", "c": "Slant Rhyme", "d": "Eye Rhyme" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "$\\mathbf{Figurative \\, language}$ is language that $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Only states facts", "b": "Uses words in ways that deviate from their literal meaning to achieve a special effect", "c": "Is always literal", "d": "Only uses similes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The repetition of $\\mathbf{vowel \\, sounds}$ within words (e.g., 'fl**ea**se the sh**ee**p') is $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Alliteration", "b": "Consonance", "c": "Assonance", "d": "Meter" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{Speaker}$ of a poem is always the $\\mathbf{author}$. (True/False)",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False (The speaker is the voice or persona, not necessarily the writer)", "c": "Only in sonnets", "d": "Only in free verse" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which device involves using an object or idea to hint at events that will occur later in the story?",
+      "type": "mcq",
+      "options": { "a": "Flashback", "b": "Foreshadowing", "c": "Climax", "d": "Resolution" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A $\\mathbf{couplet}$ is a $\\mathbf{...}$ line stanza.",
+      "type": "mcq",
+      "options": { "a": "Three", "b": "Two", "c": "Four", "d": "Five" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The main lesson or moral of a story or poem is called the $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Setting", "b": "Theme", "c": "Conflict", "d": "Genre" },
+      "correct_answer": "b"
+    }
+  ]
+}

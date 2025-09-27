@@ -1,0 +1,129 @@
+{
+  "title": "Databases - HARD Level",
+  "description": "⚙️ Optimise and scale! This quiz challenges your understanding of **indexing** structures $\\text{B-Trees}$, $\\mathbf{distributed \\, transactions}$ 🌐, $\\text{query \\, optimization}$ 🚀, and $\\text{advanced \\, concurrency}$ issues. (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Databases",
+  "questions": [
+    {
+      "text": "Which indexing method uses a tree structure that is balanced, minimizing disk I/O for range and exact searches?",
+      "type": "mcq",
+      "options": { "a": "Hash Index", "b": "B-Tree Index", "c": "Bitmap Index", "d": "Clustered Index" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Two-Phase \\, Commit \\, (2PC)}$ protocol is used in?",
+      "type": "mcq",
+      "options": { "a": "Query Optimization", "b": "Concurrency Control", "c": "Distributed Transactions", "d": "Normalization" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which join algorithm is most efficient for large datasets with indexes on the join columns?",
+      "type": "mcq",
+      "options": { "a": "Nested Loop Join", "b": "Hash Join", "c": "Merge Join", "d": "Index Nested Loop Join" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "What is the primary drawback of the $\\mathbf{Two-Phase \\, Commit}$ protocol?",
+      "type": "mcq",
+      "options": { "a": "Low overhead", "b": "Requires high bandwidth", "c": "Blocking (if the coordinator fails)", "d": "Lack of security" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{concurrency \\, issue}$ occurs when a transaction reads data that has been modified by another transaction that has not yet committed?",
+      "type": "mcq",
+      "options": { "a": "Lost Update", "b": "Dirty Read", "c": "Phantom Read", "d": "Non-Repeatable Read" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **Clustered Index** physically organizes data in the table based on the index key. A table can typically have how many clustered indexes?",
+      "type": "mcq",
+      "options": { "a": "Zero", "b": "One", "c": "Multiple", "d": "As many as non-clustered indexes" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The process where the $\\mathbf{Query \\, Optimizer}$ chooses the most efficient execution plan for a SQL statement is based on...",
+      "type": "mcq",
+      "options": { "a": "Random choice", "b": "The user's preference", "c": "Cost-based estimation (using statistics)", "d": "The time of day" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{concurrency \\, control \\, method}$ is optimistic, allowing transactions to proceed without checking for conflicts until the commit phase?",
+      "type": "mcq",
+      "options": { "a": "Two-Phase Locking (2PL)", "b": "Timestamp Ordering", "c": "Validation (Optimistic Concurrency Control)", "d": "Multi-version Concurrency Control (MVCC)" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The term $\\mathbf{Sharding}$ in distributed databases refers to...",
+      "type": "mcq",
+      "options": { "a": "Creating indexes", "b": "Vertical partitioning of a table's columns", "c": "Horizontal partitioning of a table's rows across multiple servers", "d": "Backing up data" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a $\\mathbf{Multi-version \\, Concurrency \\, Control \\, (MVCC)}$ system, read operations do not block writes because...",
+      "type": "mcq",
+      "options": { "a": "Reads use the oldest version of the data", "b": "Reads use the most recent committed version of the data", "c": "Writes are always delayed", "d": "Reads only need one lock" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{locking \\, granularity}$ is most prone to deadlock and low concurrency?",
+      "type": "mcq",
+      "options": { "a": "Field-level", "b": "Row-level", "c": "Page-level", "d": "Table-level" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "What is the primary purpose of a $\\mathbf{Non-Clustered \\, Index}$?",
+      "type": "mcq",
+      "options": { "a": "To sort the physical data", "b": "To provide additional search paths without changing data order", "c": "To enforce primary key constraints", "d": "To store BLOB data" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{relational \\, algebra \\, operation}$ is equivalent to the SQL $\\text{WHERE}$ clause?",
+      "type": "mcq",
+      "options": { "a": "Projection ($\\pi$)", "b": "Selection ($\\sigma$)", "c": "Union ($\\cup$)", "d": "Join ($\\bowtie$)" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the $\\mathbf{Lost \\, Update}$ problem?",
+      "type": "mcq",
+      "options": { "a": "A transaction fails to commit", "b": "An update made by one transaction is overwritten by another concurrent transaction", "c": "A row is deleted unexpectedly", "d": "A foreign key constraint is violated" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{distributed \\, databases}$, what is the term for having copies of data at multiple sites?",
+      "type": "mcq",
+      "options": { "a": "Fragmentation", "b": "Sharding", "c": "Replication", "d": "Segmentation" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{Join \\, Algorithm}$ is generally efficient when one table is significantly smaller than the other and can fit in memory?",
+      "type": "mcq",
+      "options": { "a": "Merge Join", "b": "Block Nested Loop Join", "c": "Hash Join", "d": "Symmetric Hash Join" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Isolation \\, Level}$ that allows only **Dirty Reads** but prevents **Non-Repeatable Reads** is generally...",
+      "type": "mcq",
+      "options": { "a": "Read Uncommitted", "b": "Read Committed", "c": "Repeatable Read", "d": "Serializable" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary function of the $\\mathbf{Buffer \\, Manager}$ in a DBMS?",
+      "type": "mcq",
+      "options": { "a": "Handle network connections", "b": "Manage the transfer of data pages between disk and main memory", "c": "Execute SQL statements", "d": "Handle backups" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The **Phantom Read** problem is specifically addressed by moving to which Isolation Level?",
+      "type": "mcq",
+      "options": { "a": "Read Committed", "b": "Repeatable Read", "c": "Serializable", "d": "Read Uncommitted" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In a $\\mathbf{B \\, + \\, Tree}$, all data pointers (records) are stored in which part of the tree?",
+      "type": "mcq",
+      "options": { "a": "Root node only", "b": "Internal nodes only", "c": "Leaf nodes only", "d": "All nodes" },
+      "correct_answer": "c"
+    }
+  ]
+}

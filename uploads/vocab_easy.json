@@ -1,0 +1,129 @@
+{
+  "title": "Vocabulary & Word Usage - EASY Level",
+  "description": "🗣️ Build your foundational word bank! This quiz covers common $\\text{synonyms \\, and \\, antonyms}$ 🔄, basic $\\text{homophones}$ 👂, and everyday words often $\\text{misused \\, in \\, simple \\, sentences}$. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Vocabulary & Word Usage",
+  "questions": [
+    {
+      "text": "Choose the correct word to complete the sentence: 'I want to go $\\mathbf{...}$ the movies with you.'",
+      "type": "mcq",
+      "options": { "a": "to", "b": "too", "c": "two", "d": "too too" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is a **synonym** for the word $\\mathbf{HAPPY}$?",
+      "type": "mcq",
+      "options": { "a": "Sad", "b": "Joyful", "c": "Angry", "d": "Tired" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word is the correct $\\mathbf{homophone}$ in the sentence: 'The horse ate some $\\mathbf{...}$.'",
+      "type": "mcq",
+      "options": { "a": "hay", "b": "hey", "c": "hei", "d": "hae" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What is an **antonym** for the word $\\mathbf{BIG}$?",
+      "type": "mcq",
+      "options": { "a": "Huge", "b": "Large", "c": "Small", "d": "Great" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Choose the word that means 'a person who travels to a sacred place for religious reasons.'",
+      "type": "mcq",
+      "options": { "a": "Tourist", "b": "Pilgrim", "c": "Nomad", "d": "Explorer" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Fill in the blank: 'We watched the play $\\mathbf{...}$ a long time.'",
+      "type": "mcq",
+      "options": { "a": "for", "b": "four", "c": "fore", "d": "fur" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "A $\\mathbf{Synonym}$ is a word that has the same or nearly the same meaning as another word. (True/False)",
+      "type": "mcq",
+      "options": { "a": "True", "b": "False" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which word means 'to begin or start'?",
+      "type": "mcq",
+      "options": { "a": "End", "b": "Finish", "c": "Commence", "d": "Cease" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word means the **opposite** of $\\mathbf{NEAT}$?",
+      "type": "mcq",
+      "options": { "a": "Tidy", "b": "Messy", "c": "Clean", "d": "Orderly" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The correct form of the plural noun $\\mathbf{mouse}$ is:",
+      "type": "mcq",
+      "options": { "a": "mouses", "b": "mice", "c": "mouzes", "d": "mous" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Choose the correct word: '$\\mathbf{...}$ book is this?'",
+      "type": "mcq",
+      "options": { "a": "Whose", "b": "Who's", "c": "Whos", "d": "Hoo's" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "A word used to describe a sharp, strong, and sudden taste or smell is:",
+      "type": "mcq",
+      "options": { "a": "Dull", "b": "Bland", "c": "Pungent", "d": "Soft" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the $\\mathbf{root \\, word}$ of 'unbelievable'?",
+      "type": "mcq",
+      "options": { "a": "un", "b": "believe", "c": "able", "d": "unbeliev" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word should be used when comparing $\\mathbf{two}$ items?",
+      "type": "mcq",
+      "options": { "a": "Best", "b": "Better", "c": "Good", "d": "Most" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Choose the word that means 'to stop working or functioning suddenly and completely.'",
+      "type": "mcq",
+      "options": { "a": "Improve", "b": "Breakdown", "c": "Maintain", "d": "Assemble" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The word $\\mathbf{Affect}$ is generally used as a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Noun", "b": "Verb", "c": "Adjective", "d": "Adverb" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the $\\mathbf{antonym}$ for $\\mathbf{WET}$?",
+      "type": "mcq",
+      "options": { "a": "Moist", "b": "Damp", "c": "Dry", "d": "Soaked" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word is a $\\mathbf{homophone}$ of 'write'?",
+      "type": "mcq",
+      "options": { "a": "Right", "b": "Writ", "c": "Rate", "d": "Rote" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The prefix $\\mathbf{un-}$ typically means...",
+      "type": "mcq",
+      "options": { "a": "Before", "b": "Again", "c": "Not or opposite of", "d": "Under" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Complete the sentence: 'The team worked $\\mathbf{...}$ to finish the project.'",
+      "type": "mcq",
+      "options": { "a": "together", "b": "to gather", "c": "togetheir", "d": "two gether" },
+      "correct_answer": "a"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Computer Networks - MODERATE Level",
+  "description": "🚦 Navigate the network stack! This quiz focuses on the $\\mathbf{OSI}$ and $\\mathbf{TCP/IP}$ models, **routing** 🗺️, $\\text{port \\, numbers}$ 🚪, and methods for $\\mathbf{error \\, detection}$ and $\\text{reliable \\, transfer}$. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Computer Networks",
+  "questions": [
+    {
+      "text": "Which layer of the OSI model is responsible for **routing**?",
+      "type": "mcq",
+      "options": { "a": "Transport", "b": "Network", "c": "Data Link", "d": "Physical" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the port number for HTTP?",
+      "type": "mcq",
+      "options": { "a": "20", "b": "21", "c": "25", "d": "80" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "Which protocol provides **reliable** data transfer?",
+      "type": "mcq",
+      "options": { "a": "UDP", "b": "TCP", "c": "IP", "d": "ICMP" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{ARP}$ (Address Resolution Protocol) maps which two addresses?",
+      "type": "mcq",
+      "options": { "a": "Port to IP", "b": "IP to MAC", "c": "Domain to IP", "d": "Port to MAC" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a subnet mask like 255.255.255.0, what does the '255' represent?",
+      "type": "mcq",
+      "options": { "a": "The host portion of the address", "b": "The network portion of the address", "c": "The broadcast address", "d": "The gateway address" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which layer of the OSI model is responsible for $\\mathbf{segmentation}$ and $\\mathbf{reassembly}$ of data?",
+      "type": "mcq",
+      "options": { "a": "Session", "b": "Presentation", "c": "Transport", "d": "Data Link" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the purpose of the $\\mathbf{Three-Way \\, Handshake}$ in TCP?",
+      "type": "mcq",
+      "options": { "a": "Data transfer confirmation", "b": "Connection termination", "c": "Connection establishment", "d": "Flow control" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which $\\mathbf{routing \\, algorithm}$ uses the number of hops as the metric?",
+      "type": "mcq",
+      "options": { "a": "Link State", "b": "Distance Vector", "c": "BGP", "d": "OSPF" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What does $\\mathbf{NAT}$ (Network Address Translation) allow a network to do?",
+      "type": "mcq",
+      "options": { "a": "Dynamically assign IP addresses", "b": "Translate private IP addresses to a single public IP address", "c": "Resolve domain names", "d": "Encrypt data" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The maximum number of hops a packet can traverse before being discarded is controlled by which field in the IP header?",
+      "type": "mcq",
+      "options": { "a": "Fragment Offset", "b": "Header Checksum", "c": "Time to Live (TTL)", "d": "Protocol" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The difference between a **Hub** and a **Switch** is that a Switch operates at the Data Link layer and...",
+      "type": "mcq",
+      "options": { "a": "Broadcasts all frames", "b": "Only works with TCP", "c": "Forwards frames based on MAC addresses", "d": "Connects different networks" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which class of IPv4 addresses is intended for multicasting?",
+      "type": "mcq",
+      "options": { "a": "Class A", "b": "Class B", "c": "Class C", "d": "Class D" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "What is the primary function of the $\\mathbf{Cyclic \\, Redundancy \\, Check \\, (CRC)}$?",
+      "type": "mcq",
+      "options": { "a": "Data compression", "b": "Error detection", "c": "Encryption", "d": "Flow control" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which error control mechanism is used by TCP to handle lost segments?",
+      "type": "mcq",
+      "options": { "a": "Parity Check", "b": "Go-Back-N (or Selective Repeat)", "c": "Checksum", "d": "Flow Control" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{payload}$ of a TCP segment is passed up to which layer of the TCP/IP model?",
+      "type": "mcq",
+      "options": { "a": "Internet", "b": "Network Interface", "c": "Application", "d": "Transport" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In $\\mathbf{full-duplex}$ communication, data flows...",
+      "type": "mcq",
+      "options": { "a": "In one direction only", "b": "In both directions, but not simultaneously", "c": "In both directions simultaneously", "d": "Only from client to server" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The primary role of $\\mathbf{ICMP}$ (Internet Control Message Protocol) is for...",
+      "type": "mcq",
+      "options": { "a": "Routing data", "b": "Error reporting and network diagnostics (e.g., ping)", "c": "Reliable data transfer", "d": "DNS resolution" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the term for the process of dividing a large network into smaller, more manageable sub-networks?",
+      "type": "mcq",
+      "options": { "a": "Supernetting", "b": "Bridging", "c": "Subnetting", "d": "Tunneling" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which protocol does $\\mathbf{Telnet}$ use for remote terminal access?",
+      "type": "mcq",
+      "options": { "a": "UDP", "b": "IP", "c": "TCP", "d": "FTP" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{window \\, size}$ in TCP primarily controls...",
+      "type": "mcq",
+      "options": { "a": "The maximum segment size", "b": "The amount of data that can be sent before an acknowledgment is required (Flow Control)", "c": "The routing path", "d": "The encryption level" },
+      "correct_answer": "b"
+    }
+  ]
+}

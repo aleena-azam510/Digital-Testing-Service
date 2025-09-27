@@ -1,0 +1,129 @@
+{
+  "title": "Algorithms - MODERATE Level",
+  "description": "🌲 Expand your algorithmic toolkit! This quiz focuses on intermediate topics: **Divide and Conquer** techniques, the use of **recursion** 🔁, comparative $\\mathbf{sorting \\, performance}$, and core **graph algorithms** 🧭. (20 Questions - 40 Minutes)",
+  "time_limit_minutes": 40,
+  "difficulty": "moderate",
+  "topic": "Algorithms",
+  "questions": [
+    {
+      "text": "What is the **time complexity** of **Merge Sort** in the worst case?",
+      "type": "mcq",
+      "options": { "a": "$O(n^2)$", "b": "$O(n \\log n)$", "c": "$O(n)$", "d": "$O(\\log n)$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which algorithm is used to find the **shortest path** in a weighted graph without negative edges?",
+      "type": "mcq",
+      "options": { "a": "DFS", "b": "BFS", "c": "Dijkstra's Algorithm", "d": "Kruskal's Algorithm" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which data structure is used to implement $\\mathbf{Depth \\, First \\, Search \\, (DFS)}$?",
+      "type": "mcq",
+      "options": { "a": "Queue", "b": "Stack", "c": "Heap", "d": "Graph" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Recurrence \\, Relation}$ $T(n) = 2T(n/2) + O(n)$ is characteristic of which algorithm?",
+      "type": "mcq",
+      "options": { "a": "Binary Search", "b": "Insertion Sort", "c": "Merge Sort", "d": "Linear Search" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which sorting algorithm is **unstable** in its typical implementation?",
+      "type": "mcq",
+      "options": { "a": "Merge Sort", "b": "Insertion Sort", "c": "Quick Sort", "d": "Bubble Sort" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The technique of breaking a problem into smaller subproblems, solving them, and combining the results is called...",
+      "type": "mcq",
+      "options": { "a": "Greedy", "b": "Dynamic Programming", "c": "Divide and Conquer", "d": "Brute Force" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the key process in $\\mathbf{Quick \\, Sort}$?",
+      "type": "mcq",
+      "options": { "a": "Merging sorted subarrays", "b": "Partitioning the array around a pivot element", "c": "Building a heap", "d": "Swapping adjacent elements" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which $\\mathbf{graph \\, traversal \\, algorithm}$ guarantees finding the shortest path in an unweighted graph?",
+      "type": "mcq",
+      "options": { "a": "DFS", "b": "BFS", "c": "Dijkstra's", "d": "Prim's" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Master \\, Theorem}$ is used to solve...",
+      "type": "mcq",
+      "options": { "a": "Linear equations", "b": "Recurrence relations for divide and conquer algorithms", "c": "Graph connectivity", "d": "Optimization problems" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In $\\mathbf{Prim's \\, Algorithm}$, the goal is to find the...",
+      "type": "mcq",
+      "options": { "a": "Shortest path", "b": "All pairs shortest path", "c": "Minimum Spanning Tree (MST)", "d": "Hamiltonian cycle" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The technique of using a $\\mathbf{hash \\, table}$ to check for duplicate subproblem solutions in recursion is called...",
+      "type": "mcq",
+      "options": { "a": "Tabulation", "b": "Memoization", "c": "Backtracking", "d": "Greedy" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Average \\, Case \\, complexity}$ of Quick Sort is...",
+      "type": "mcq",
+      "options": { "a": "$O(n^2)$", "b": "$O(n \\log n)$", "c": "$O(n)$", "d": "$O(1)$" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "A **recursive algorithm** must always have a defined...",
+      "type": "mcq",
+      "options": { "a": "Loop", "b": "Base case (termination condition)", "c": "Greedy choice", "d": "Memoization table" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which sorting algorithm's worst-case time complexity is $O(n \\log n)$ but is typically slower than Quick Sort in practice due to higher constant factors?",
+      "type": "mcq",
+      "options": { "a": "Bubble Sort", "b": "Selection Sort", "c": "Heap Sort", "d": "Insertion Sort" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The complexity $O(n^2)$ is considered what kind of growth rate?",
+      "type": "mcq",
+      "options": { "a": "Linear", "b": "Logarithmic", "c": "Quadratic", "d": "Exponential" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which algorithm is based on the $\\mathbf{Greedy}$ technique for finding the Minimum Spanning Tree (MST)?",
+      "type": "mcq",
+      "options": { "a": "Dijkstra's", "b": "Floyd-Warshall", "c": "Kruskal's Algorithm", "d": "Bellman-Ford" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What does a $\\mathbf{strongly \\, connected \\, component}$ imply in a directed graph?",
+      "type": "mcq",
+      "options": { "a": "All vertices are connected by a path", "b": "Every vertex is reachable from every other vertex in the component", "c": "The graph is a tree", "d": "The graph has no cycles" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The $\\mathbf{Worst \\, Case \\, complexity}$ of Quick Sort occurs when the pivot selection leads to partitions that are...",
+      "type": "mcq",
+      "options": { "a": "Evenly balanced", "b": "Always highly unbalanced ($O(1)$ and $O(n)$)", "c": "Always in reverse order", "d": "Always sorted" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What is the primary characteristic of a $\\mathbf{Complete \\, Graph}$?",
+      "type": "mcq",
+      "options": { "a": "It has no cycles", "b": "Every pair of distinct vertices is connected by a unique edge", "c": "It is bipartite", "d": "It has $n-1$ edges for $n$ vertices" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a $\\mathbf{Counting \\, Sort}$ algorithm, which assumption must be true about the input elements?",
+      "type": "mcq",
+      "options": { "a": "They must be strings", "b": "They must be fully sorted", "c": "They must be integers within a small, known range", "d": "They must be floating-point numbers" },
+      "correct_answer": "c"
+    }
+  ]
+}

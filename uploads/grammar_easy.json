@@ -1,0 +1,129 @@
+{
+  "title": "Grammar & Syntax - EASY Level",
+  "description": "✍️ Sharpen your language fundamentals! This quiz covers the **basic parts of speech** 🏷️ (nouns, verbs, adjectives), simple $\\text{sentence \\, structure}$ 🧱, and common **punctuation** rules. (20 Questions - 30 Minutes)",
+  "time_limit_minutes": 30,
+  "difficulty": "easy",
+  "topic": "Grammar & Syntax",
+  "questions": [
+    {
+      "text": "Which part of speech names a person, place, thing, or idea?",
+      "type": "mcq",
+      "options": { "a": "Verb", "b": "Adjective", "c": "Noun", "d": "Adverb" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What is the simple subject in the sentence: 'The swift runner quickly crossed the finish line.'?",
+      "type": "mcq",
+      "options": { "a": "swift runner", "b": "runner", "c": "quickly crossed", "d": "finish line" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word in the sentence 'She sings beautifully.' is an $\\mathbf{adverb}$?",
+      "type": "mcq",
+      "options": { "a": "She", "b": "sings", "c": "beautifully", "d": "The sentence has no adverb" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "What punctuation mark is used to separate items in a list?",
+      "type": "mcq",
+      "options": { "a": "Period", "b": "Colon", "c": "Semicolon", "d": "Comma" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The $\\mathbf{plural}$ form of the noun 'child' is:",
+      "type": "mcq",
+      "options": { "a": "childs", "b": "children", "c": "child's", "d": "childen" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which verb tense describes an action that happened in the past and is now completed?",
+      "type": "mcq",
+      "options": { "a": "Present Tense", "b": "Future Tense", "c": "Past Tense", "d": "Present Perfect Tense" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A word used to describe or modify a noun or pronoun is called an $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Adverb", "b": "Preposition", "c": "Adjective", "d": "Conjunction" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word is a $\\mathbf{preposition}$ in the phrase 'walked around the corner'?",
+      "type": "mcq",
+      "options": { "a": "walked", "b": "around", "c": "the", "d": "corner" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The correct contraction for 'it is' is:",
+      "type": "mcq",
+      "options": { "a": "its'", "b": "it's", "c": "its", "d": "i'ts" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "What kind of sentence asks a question?",
+      "type": "mcq",
+      "options": { "a": "Declarative", "b": "Exclamatory", "c": "Interrogative", "d": "Imperative" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Identify the **proper noun** in the following list:",
+      "type": "mcq",
+      "options": { "a": "city", "b": "country", "c": "river", "d": "Paris" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The $\\mathbf{subject}$ and $\\mathbf{verb}$ of a sentence must agree in...",
+      "type": "mcq",
+      "options": { "a": "Tense", "b": "Mood", "c": "Number", "d": "Gender" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which word is a $\\mathbf{conjunction}$?",
+      "type": "mcq",
+      "options": { "a": "Quickly", "b": "Under", "c": "Because", "d": "Run" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The punctuation mark used at the end of a declarative sentence is a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Question mark", "b": "Exclamation mark", "c": "Period", "d": "Colon" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The $\\mathbf{possessive \\, form}$ of the noun 'dog' is:",
+      "type": "mcq",
+      "options": { "a": "dogs", "b": "dog's", "c": "dogs'", "d": "dogg" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which of these is a $\\mathbf{transitive \\, verb}$ (one that takes a direct object)?",
+      "type": "mcq",
+      "options": { "a": "Sleep", "b": "Run", "c": "Eat", "d": "Exist" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A group of words that contains a subject and a predicate is called a $\\mathbf{...}$?",
+      "type": "mcq",
+      "options": { "a": "Phrase", "b": "Clause", "c": "Fragment", "d": "Preposition" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word is an $\\mathbf{article}$?",
+      "type": "mcq",
+      "options": { "a": "Into", "b": "Maybe", "c": "The", "d": "Write" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "In the sentence 'He gave her a book', 'book' is the...",
+      "type": "mcq",
+      "options": { "a": "Indirect Object", "b": "Direct Object", "c": "Subject", "d": "Predicate" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which word is the $\\mathbf{auxiliary \\, verb}$ in 'They $\\mathbf{have}$ finished their work'?",
+      "type": "mcq",
+      "options": { "a": "They", "b": "have", "c": "finished", "d": "work" },
+      "correct_answer": "b"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "title": "Linear Algebra - HARD Level",
+  "description": "🤯 Ready for the ultimate challenge? This quiz tests your knowledge of **matrix decomposition** $\\lambda$, **vector spaces** $\\mathbb{V}$, **basis/dimension**, and **linear transformations** $T$. Master the core of advanced LA! (20 Questions - 50 Minutes)",
+  "time_limit_minutes": 50,
+  "difficulty": "hard",
+  "topic": "Linear Algebra",
+  "questions": [
+    {
+      "text": "Which decomposition is used to factor a matrix into lower and upper triangular matrices?",
+      "type": "mcq",
+      "options": { "a": "LU Decomposition", "b": "QR Decomposition", "c": "Cholesky Decomposition", "d": "Eigen Decomposition" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The rank of a matrix is defined as?",
+      "type": "mcq",
+      "options": { "a": "Number of rows", "b": "Number of columns", "c": "Number of linearly independent rows or columns", "d": "Determinant" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "A linear transformation preserves which property?",
+      "type": "mcq",
+      "options": { "a": "Matrix size", "b": "Vector addition and scalar multiplication", "c": "Determinant only", "d": "Eigenvalues only" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The **Kernel** (or Null Space) of a linear transformation $T: V \\rightarrow W$ is defined as...",
+      "type": "mcq",
+      "options": {
+        "a": "The set of all vectors $\\mathbf{v} \\in V$ that are non-zero.",
+        "b": "The set of all vectors $\\mathbf{w} \\in W$ that are mapped to.",
+        "c": "The set of all vectors $\\mathbf{w} \\in W$ such that $T(\\mathbf{v}) = \\mathbf{w}$.",
+        "d": "The set of all vectors $\\mathbf{v} \\in V$ such that $T(\\mathbf{v}) = \\mathbf{0}_W$"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "According to the **Rank-Nullity Theorem**, for a matrix $A$ with $n$ columns, $\\text{rank}(A) + \\text{nullity}(A)$ is equal to...",
+      "type": "mcq",
+      "options": { "a": "$n$", "b": "$m$ (number of rows)", "c": "The determinant of $A$", "d": "The number of non-zero eigenvalues" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "A set of vectors $B = \\{\\mathbf{v}_1, \\ldots, \\mathbf{v}_n\\}$ is a **basis** for a vector space $V$ if...",
+      "type": "mcq",
+      "options": {
+        "a": "$B$ is linearly dependent and spans $V$",
+        "b": "$B$ is linearly independent only",
+        "c": "$B$ is linearly independent and spans $V$",
+        "d": "The size of $B$ is greater than the dimension of $V$"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "Which matrix decomposition is fundamentally used to solve the **least squares** problem?",
+      "type": "mcq",
+      "options": { "a": "LU Decomposition", "b": "QR Decomposition", "c": "Cholesky Decomposition", "d": "Singular Value Decomposition (SVD)" },
+      "correct_answer": "b"
+    },
+    {
+      "text": "If $A$ is a real **symmetric** matrix, which property is always true about its eigenvectors?",
+      "type": "mcq",
+      "options": {
+        "a": "Eigenvectors are always $\\mathbf{0}$.",
+        "b": "Eigenvectors are linearly dependent.",
+        "c": "Eigenvectors are always identical.",
+        "d": "Eigenvectors corresponding to distinct eigenvalues are orthogonal"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "The **dimension** of a vector space is defined as...",
+      "type": "mcq",
+      "options": {
+        "a": "The number of vectors in any basis for the space",
+        "b": "The number of rows in any matrix representing the space",
+        "c": "The largest number of linearly dependent vectors in the space",
+        "d": "The total number of elements in all vectors"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "Which decomposition factors a matrix $A$ into $U\\Sigma V^T$, where $U$ and $V$ are orthogonal matrices and $\\Sigma$ is a diagonal matrix?",
+      "type": "mcq",
+      "options": {
+        "a": "LU Decomposition",
+        "b": "Singular Value Decomposition (SVD)",
+        "c": "Jordan Canonical Form",
+        "d": "Cholesky Decomposition"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "In a linear transformation $T(\\mathbf{x}) = A\\mathbf{x}$, the column space of $A$ is equivalent to the transformation's...",
+      "type": "mcq",
+      "options": { "a": "Kernel", "b": "Nullity", "c": "Image (or Range)", "d": "Domain" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **Change of Basis** matrix $P_{B \\leftarrow C}$ transforms coordinates from basis $C$ to basis $B$. What is $P_{C \\leftarrow B}$?",
+      "type": "mcq",
+      "options": { "a": "$(P_{B \\leftarrow C})^{-1}$", "b": "$P_{B \\leftarrow C}$", "c": "$P_{B \\leftarrow C}^T$", "d": "The zero matrix" },
+      "correct_answer": "a"
+    },
+    {
+      "text": "The **spectral theorem** applies to which type of matrix?",
+      "type": "mcq",
+      "options": { "a": "Upper triangular matrices", "b": "Invertible matrices", "c": "Non-square matrices", "d": "Symmetric matrices" },
+      "correct_answer": "d"
+    },
+    {
+      "text": "What must be true for a **Cholesky decomposition** ($A = LL^T$) to exist?",
+      "type": "mcq",
+      "options": {
+        "a": "$A$ must be invertible",
+        "b": "$A$ must be symmetric and positive definite",
+        "c": "$A$ must have all $1$s on the diagonal",
+        "d": "$A$ must be orthogonal"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "The **Nullity** of a matrix $A$ is the dimension of which space?",
+      "type": "mcq",
+      "options": { "a": "Column space of $A$", "b": "Row space of $A$", "c": "Null space of $A$", "d": "Image of $A$" },
+      "correct_answer": "c"
+    },
+    {
+      "text": "The **condition number** of a matrix $A$ is a measure of its sensitivity to...",
+      "type": "mcq",
+      "options": {
+        "a": "The number of zero entries",
+        "b": "Matrix addition",
+        "c": "The time it takes to compute the inverse",
+        "d": "Small changes in input (stability)"
+      },
+      "correct_answer": "d"
+    },
+    {
+      "text": "If $W$ is a subspace of $\\mathbb{R}^n$, the set $W^{\\perp}$ (W-perp) is called the **orthogonal complement**. What is its relationship with $W$?",
+      "type": "mcq",
+      "options": {
+        "a": "$W$ is a subset of $W^{\\perp}$",
+        "b": "$W \\cap W^{\\perp} = \\{\\mathbf{0}\\}$",
+        "c": "They must have the same dimension",
+        "d": "$W = W^{\\perp}$"
+      },
+      "correct_answer": "b"
+    },
+    {
+      "text": "Which method uses Householder reflections or Givens rotations?",
+      "type": "mcq",
+      "options": {
+        "a": "QR Decomposition",
+        "b": "Gram-Schmidt Process",
+        "c": "Gaussian Elimination",
+        "d": "Inverse Power Method"
+      },
+      "correct_answer": "a"
+    },
+    {
+      "text": "What does it mean for a square matrix $A$ to be **diagonalizable**?",
+      "type": "mcq",
+      "options": {
+        "a": "$A$ is a diagonal matrix itself",
+        "b": "$A$ is a symmetric matrix",
+        "c": "$A$ is similar to a diagonal matrix $D$ ($A = PDP^{-1}$)",
+        "d": "$A$ has only positive eigenvalues"
+      },
+      "correct_answer": "c"
+    },
+    {
+      "text": "If $T$ is a linear transformation from $\\mathbb{R}^3$ to $\\mathbb{R}^2$, what is the maximum possible rank of $T$?",
+      "type": "mcq",
+      "options": { "a": "$3$", "b": "$2$", "c": "$1$", "d": "$5$" },
+      "correct_answer": "b"
+    }
+  ]
+}
