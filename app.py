@@ -841,23 +841,19 @@ def adaptive_recommendations():
         }
     else:
         for topic, mastery_score in weak_topics.items():
-            
-            # --- CRITICAL FIX: Topic Name Normalization ---
-            # Ensures 'web development', 'Web Development', and 'WEB DEVELOPMENT' all match the JSON key.
-            normalized_topic = topic.strip().title() 
-            
-            # Fetch remedial questions
-            # NOTE: Assuming 'q.question_text' is the correct attribute for question text
-            remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all() 
-            remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
+        normalized_topic = topic.strip().lower()
+    
+        # Remedial questions
+        remedial_questions_objs = Question.query.filter_by(topic=topic).limit(3).all()
+        remedial_questions = [{'text': q.question_text} for q in remedial_questions_objs]
+    
+        # Case-insensitive lookup for videos
+        videos_dict = {k.strip().lower(): v for k, v in youtube_videos_recommendations.items()}
+        videos = videos_dict.get(normalized_topic, [])
 
-            # Fetch videos using the normalized topic name
-            videos = youtube_videos_recommendations.get(normalized_topic, [])
-            
-            # Only fallback to a search card if videos list is empty for this topic
-            if not videos:
-                # This fallback will prevent a blank video section if a specific topic key is missing
-                videos = [{"title": f"Search tutorials for '{topic}' on YouTube", "video_id": None}]
+        if not videos:
+            videos = [{"title": f"Search tutorials for '{topic}' on YouTube", "video_id": None}]
+
             
             recommendations[topic] = {
                 'mastery': mastery_score,
