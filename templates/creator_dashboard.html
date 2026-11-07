@@ -1,0 +1,424 @@
+
+{% extends "base.html" %}
+
+{% block title %}Creator Dashboard | Digital Testing Service{% endblock %}
+
+{% block content %}
+<style>
+    .creator-dashboard {
+        --cd-primary: #2563eb;
+        --cd-secondary: #0891b2;
+        --cd-dark: #10213f;
+        --cd-muted: #64748b;
+        --cd-border: #e2e8f0;
+        color: var(--cd-dark);
+        padding-bottom: 3rem;
+    }
+
+    .creator-dashboard .dashboard-hero {
+        padding: 2.4rem;
+        margin-bottom: 2rem;
+        border-radius: 22px;
+        color: white;
+        background: linear-gradient(120deg, #10213f, #1d4ed8 65%, #0891b2);
+        box-shadow: 0 15px 35px rgba(37,99,235,.15);
+    }
+
+    .creator-dashboard .hero-label {
+        display: inline-block;
+        padding: 7px 13px;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 30px;
+        background: rgba(255,255,255,.12);
+        color: #dbeafe;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    .creator-dashboard .dashboard-hero h1 {
+        color: #fff;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 800;
+    }
+
+    .creator-dashboard .dashboard-hero p {
+        color: #dbeafe;
+        margin-bottom: 0;
+    }
+
+    .creator-dashboard .welcome-card {
+        padding: 1rem 1.25rem;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 14px;
+        background: rgba(255,255,255,.12);
+    }
+
+    .creator-dashboard .welcome-card small {
+        display: block;
+        color: #bfdbfe;
+    }
+
+    .creator-dashboard .welcome-card strong {
+        color: #fff;
+    }
+
+    .creator-dashboard .section-heading {
+        margin: 2rem 0 1.2rem;
+    }
+
+    .creator-dashboard .section-heading h2 {
+        color: var(--cd-dark);
+        font-size: 1.4rem;
+        font-weight: 800;
+    }
+
+    .creator-dashboard .section-heading p {
+        color: var(--cd-muted);
+        font-size: .9rem;
+        margin-bottom: 0;
+    }
+
+    .creator-dashboard .action-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+    .creator-dashboard .action-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.3rem;
+        min-height: 115px;
+        border: 1px solid var(--cd-border);
+        border-radius: 16px;
+        background: #fff;
+        text-decoration: none;
+        box-shadow: 0 5px 18px rgba(15,23,42,.035);
+        transition: .25s ease;
+    }
+
+    .creator-dashboard .action-card:hover {
+        transform: translateY(-5px);
+        border-color: #bfdbfe;
+        box-shadow: 0 12px 25px rgba(37,99,235,.10);
+    }
+
+    .creator-dashboard .action-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 13px;
+        color: var(--cd-primary);
+        background: #eff6ff;
+        font-size: 1.2rem;
+    }
+
+    .creator-dashboard .action-card h3 {
+        color: var(--cd-dark);
+        font-size: 1rem;
+        font-weight: 750;
+        margin-bottom: 5px;
+    }
+
+    .creator-dashboard .action-card p {
+        color: var(--cd-muted);
+        font-size: .83rem;
+        margin: 0;
+    }
+
+    .creator-dashboard .tests-panel {
+        overflow: hidden;
+        border: 1px solid var(--cd-border);
+        border-radius: 17px;
+        background: #fff;
+        box-shadow: 0 5px 18px rgba(15,23,42,.035);
+    }
+
+    .creator-dashboard .tests-panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.2rem 1.4rem;
+        border-bottom: 1px solid var(--cd-border);
+    }
+
+    .creator-dashboard .tests-panel-header h3 {
+        color: var(--cd-dark);
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .creator-dashboard .test-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.3rem 1.4rem;
+        border-bottom: 1px solid #edf2f7;
+    }
+
+    .creator-dashboard .test-item:last-child {
+        border-bottom: none;
+    }
+
+    .creator-dashboard .test-item h4 {
+        color: var(--cd-dark);
+        font-size: 1rem;
+        font-weight: 750;
+        margin-bottom: 5px;
+    }
+
+    .creator-dashboard .test-description {
+        color: var(--cd-muted);
+        font-size: .88rem;
+        margin-bottom: 0;
+    }
+
+    .creator-dashboard .test-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .creator-dashboard .test-actions .btn {
+        border-radius: 8px;
+        font-size: .82rem;
+        font-weight: 650;
+        padding: 7px 12px;
+    }
+
+    .creator-dashboard .btn-view {
+        color: #1d4ed8;
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+    }
+
+    .creator-dashboard .btn-view:hover {
+        background: #dbeafe;
+    }
+
+    .creator-dashboard .btn-edit {
+        color: #a16207;
+        background: #fef9c3;
+        border: 1px solid #fde68a;
+    }
+
+    .creator-dashboard .btn-edit:hover {
+        background: #fef08a;
+    }
+
+    .creator-dashboard .btn-delete {
+        color: #b91c1c;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+    }
+
+    .creator-dashboard .btn-delete:hover {
+        background: #fee2e2;
+    }
+
+    .creator-dashboard .empty-state {
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+
+    .creator-dashboard .empty-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1rem;
+        border-radius: 17px;
+        color: var(--cd-primary);
+        background: #eff6ff;
+        font-size: 1.5rem;
+    }
+
+    .creator-dashboard .empty-state h3 {
+        color: var(--cd-dark);
+        font-size: 1.1rem;
+        font-weight: 750;
+    }
+
+    .creator-dashboard .empty-state p {
+        color: var(--cd-muted);
+        font-size: .9rem;
+    }
+
+    @media (max-width: 768px) {
+        .creator-dashboard .dashboard-hero {
+            padding: 1.7rem;
+        }
+
+        .creator-dashboard .welcome-card {
+            margin-top: 1.2rem;
+            width: 100%;
+        }
+
+        .creator-dashboard .test-item {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .creator-dashboard .test-actions {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="creator-dashboard">
+
+    <!-- Header -->
+    <section class="dashboard-hero">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <span class="hero-label">
+                    <i class="fas fa-chalkboard-teacher me-2"></i>
+                    TEST CREATOR DASHBOARD
+                </span>
+
+                <h1>Manage Your Assessments</h1>
+
+                <p>
+                    Create tests, manage your existing assessments,
+                    and organize your digital testing content.
+                </p>
+            </div>
+
+            <div class="welcome-card">
+                <small>Welcome back</small>
+                <strong>
+                    <i class="fas fa-user-circle me-2"></i>
+                    {{ current_user.username }}
+                </strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creation Actions -->
+    <div class="section-heading">
+        <h2>Assessment Tools</h2>
+        <p>Choose how you want to create your next assessment.</p>
+    </div>
+
+    <div class="action-grid">
+
+        <a href="{{ url_for('create_test') }}" class="action-card">
+            <div class="action-icon">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div>
+                <h3>Create New Test</h3>
+                <p>Build an assessment manually.</p>
+            </div>
+        </a>
+
+        <a href="{{ url_for('upload_json_test') }}" class="action-card">
+            <div class="action-icon">
+                <i class="fas fa-file-code"></i>
+            </div>
+            <div>
+                <h3>Import JSON Test</h3>
+                <p>Upload an assessment using a JSON file.</p>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- Your Tests -->
+    <div class="section-heading">
+        <h2><i class="fas fa-folder-open text-primary me-2"></i>Your Tests</h2>
+        <p>View, edit, or remove assessments you have created.</p>
+    </div>
+
+    <div class="tests-panel">
+
+        <div class="tests-panel-header">
+            <h3>
+                <i class="fas fa-clipboard-list text-primary me-2"></i>
+                Your Assessment Library
+            </h3>
+
+            <span class="text-muted small">
+                {{ my_tests|length }} test(s)
+            </span>
+        </div>
+
+        {% if my_tests %}
+            {% for test in my_tests %}
+            <div class="test-item">
+
+                <div>
+                    <h4>{{ test.title }}</h4>
+
+                    <p class="test-description">
+                        {{ test.description or 'No description provided.' }}
+                    </p>
+                </div>
+
+                <div class="test-actions">
+
+                    <a href="{{ url_for('take_test', test_id=test.id) }}"
+                       class="btn btn-view">
+                        <i class="fas fa-eye me-1"></i>
+                        View
+                    </a>
+
+                    <a href="{{ url_for('edit_test', test_id=test.id) }}"
+                       class="btn btn-edit">
+                        <i class="fas fa-pen me-1"></i>
+                        Edit
+                    </a>
+
+                    <form action="{{ url_for('delete_test', test_id=test.id) }}"
+                          method="POST"
+                          class="d-inline"
+                          onsubmit="return confirm('Are you sure you want to delete this test? This action cannot be undone.');">
+
+                        <button type="submit" class="btn btn-delete">
+                            <i class="fas fa-trash-alt me-1"></i>
+                            Delete
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-file-circle-plus"></i>
+                </div>
+
+                <h3>No Assessments Created Yet</h3>
+
+                <p>
+                    You haven't created any tests. Start by creating
+                    an assessment manually or importing a JSON file.
+                </p>
+
+                <a href="{{ url_for('create_test') }}"
+                   class="btn btn-primary mt-2">
+                    <i class="fas fa-plus me-2"></i>
+                    Create Your First Test
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+{% endblock %}

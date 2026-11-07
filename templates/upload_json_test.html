@@ -1,0 +1,230 @@
+ 
+{% extends "base.html" %}
+
+{% block title %}Upload JSON Test | Digital Testing Service{% endblock %}
+
+{% block content %}
+
+<style>
+    .upload-page {
+        min-height: 75vh;
+        padding: 55px 15px;
+        background: linear-gradient(135deg, #f4f8ff, #eef7ff);
+    }
+
+    .upload-card {
+        max-width: 760px;
+        margin: auto;
+        background: #fff;
+        border: 1px solid #e5edf8;
+        border-radius: 20px;
+        box-shadow: 0 15px 45px rgba(20, 50, 90, 0.09);
+        overflow: hidden;
+    }
+
+    .upload-header {
+        padding: 35px 30px;
+        text-align: center;
+        color: white;
+        background: linear-gradient(120deg, #102c57, #1769c2, #08a6c9);
+    }
+
+    .upload-icon {
+        width: 76px;
+        height: 76px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background: rgba(255,255,255,.16);
+        font-size: 32px;
+    }
+
+    .upload-header h2 {
+        font-weight: 750;
+        margin-bottom: 10px;
+    }
+
+    .upload-header p {
+        margin: 0;
+        color: #e4f2ff;
+    }
+
+    .upload-body {
+        padding: 35px;
+    }
+
+    .upload-zone {
+        border: 2px dashed #a9c9ee;
+        border-radius: 15px;
+        padding: 35px 20px;
+        text-align: center;
+        background: #f8fbff;
+        transition: .25s ease;
+    }
+
+    .upload-zone:hover {
+        border-color: #1769c2;
+        background: #f0f7ff;
+    }
+
+    .upload-zone i {
+        font-size: 42px;
+        color: #1769c2;
+        margin-bottom: 15px;
+    }
+
+    .upload-zone label {
+        display: block;
+        font-weight: 650;
+        color: #18345c;
+        margin-bottom: 12px;
+    }
+
+    .upload-zone input {
+        max-width: 100%;
+    }
+
+    .upload-hint {
+        color: #718096;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+
+    .upload-btn {
+        border: none;
+        border-radius: 10px;
+        padding: 13px 25px;
+        color: white;
+        font-weight: 650;
+        background: linear-gradient(120deg, #1769c2, #08a6c9);
+        transition: .2s ease;
+    }
+
+    .upload-btn:hover {
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 7px 18px rgba(23, 105, 194, .25);
+    }
+
+    .upload-btn:disabled {
+        opacity: .6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .format-note {
+        margin-top: 25px;
+        padding: 16px;
+        border-radius: 10px;
+        background: #eef7ff;
+        color: #355477;
+        font-size: 14px;
+    }
+
+    .format-note strong {
+        color: #163e70;
+    }
+
+    @media(max-width: 576px) {
+        .upload-body {
+            padding: 22px;
+        }
+
+        .upload-header {
+            padding: 28px 18px;
+        }
+    }
+</style>
+
+<div class="upload-page">
+    <div class="upload-card">
+
+        <div class="upload-header">
+            <div class="upload-icon">
+                <i class="fas fa-file-upload"></i>
+            </div>
+            <h2>Upload Your Test</h2>
+            <p>Import questions automatically using a JSON file.</p>
+        </div>
+
+        <div class="upload-body">
+
+            <form method="POST"
+                  action="{{ url_for('upload_json_test') }}"
+                  enctype="multipart/form-data"
+                  id="jsonUploadForm">
+
+                {% if csrf_token is defined %}
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                {% endif %}
+
+                <div class="upload-zone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+
+                    <label for="file">Choose your JSON test file</label>
+
+                    <input
+                        type="file"
+                        class="form-control"
+                        id="file"
+                        name="file"
+                        accept=".json,application/json"
+                        required
+                    >
+
+                    <div class="upload-hint" id="fileName">
+                        Supported format: .json
+                    </div>
+                </div>
+
+                <div class="format-note">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Before uploading:</strong>
+                    Make sure your JSON file contains a test title, topic,
+                    difficulty level, and questions with their corresponding answers.
+                </div>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <button type="submit" class="btn upload-btn flex-grow-1" id="uploadButton">
+                        <i class="fas fa-upload me-2"></i>
+                        Upload and Create Test
+                    </button>
+
+                    <a href="{{ url_for('creator_dashboard') }}"
+                       class="btn btn-outline-secondary px-4">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Back
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const fileInput = document.getElementById("file");
+    const fileName = document.getElementById("fileName");
+    const uploadForm = document.getElementById("jsonUploadForm");
+    const uploadButton = document.getElementById("uploadButton");
+
+    fileInput.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (file) {
+            fileName.textContent = "Selected file: " + file.name;
+        } else {
+            fileName.textContent = "Supported format: .json";
+        }
+    });
+
+    uploadForm.addEventListener("submit", function () {
+        uploadButton.disabled = true;
+        uploadButton.innerHTML =
+            '<i class="fas fa-spinner fa-spin me-2"></i>Uploading...';
+    });
+</script>
+
+{% endblock %}

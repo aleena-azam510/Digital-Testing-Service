@@ -1,0 +1,971 @@
+ 
+{% extends "base.html" %}
+
+{% block title %}{{ test.title }} | Digital Testing Service{% endblock %}
+
+{% block head %}
+<style>
+:root {
+    --test-primary: #1769c2;
+    --test-dark: #102c57;
+    --test-cyan: #08a6c9;
+    --test-light: #f3f7fc;
+    --test-border: #e3ebf5;
+    --test-success: #15945b;
+    --test-danger: #dc4545;
+    --test-shadow: 0 8px 28px rgba(16, 44, 87, .07);
+}
+
+.test-page {
+    background: var(--test-light);
+    min-height: 85vh;
+    padding: 35px 0 60px;
+}
+
+.test-wrapper {
+    max-width: 900px;
+    margin: auto;
+}
+
+.test-header {
+    background: linear-gradient(120deg, #102c57, #1769c2, #08a6c9);
+    color: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    margin-bottom: 22px;
+    box-shadow: var(--test-shadow);
+}
+
+.test-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.test-description {
+    color: #e4f2ff;
+    margin-bottom: 18px;
+}
+
+.test-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.info-item {
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.timer-container,
+.progress-container,
+.question-container,
+.question-indicators {
+    background: white;
+    border: 1px solid var(--test-border);
+    border-radius: 16px;
+    box-shadow: var(--test-shadow);
+}
+
+.timer-container {
+    padding: 17px 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--test-dark);
+    font-weight: 650;
+}
+
+.timer {
+    font-size: 25px;
+    color: var(--test-primary);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer.warning {
+    color: var(--test-danger);
+}
+
+.progress-container {
+    padding: 18px 22px;
+    margin-bottom: 25px;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    color: var(--test-dark);
+    font-size: 14px;
+    font-weight: 650;
+    margin-bottom: 10px;
+}
+
+.progress-bar-custom {
+    height: 11px;
+    background: #e9eff7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--test-primary), var(--test-cyan));
+    border-radius: 20px;
+    transition: width .3s ease;
+}
+
+.question-container {
+    position: relative;
+    padding: 32px;
+    margin-bottom: 22px;
+    min-height: 300px;
+}
+
+.question-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.question-badge {
+    background: #eaf3ff;
+    color: var(--test-primary);
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.question-type {
+    color: #718096;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.question-text {
+    color: var(--test-dark);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    overflow-wrap: anywhere;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 17px;
+    border: 2px solid var(--test-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.option-item:hover {
+    border-color: var(--test-primary);
+    background: #f5f9ff;
+}
+
+.option-item.selected {
+    border-color: var(--test-primary);
+    background: #edf5ff;
+}
+
+.option-item input {
+    accent-color: var(--test-primary);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.option-label {
+    cursor: pointer;
+    color: #33445d;
+    font-size: 15px;
+    flex: 1;
+}
+
+.text-answer {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    padding: 16px;
+    border: 2px solid var(--test-border);
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.text-answer:focus {
+    border-color: var(--test-primary);
+    box-shadow: 0 0 0 3px rgba(23,105,194,.1);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.test-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-weight: 650;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.test-btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.btn-previous {
+    color: var(--test-primary);
+    background: #edf5ff;
+    border: 1px solid #d5e6fa;
+}
+
+.btn-next {
+    background: linear-gradient(120deg, var(--test-primary), var(--test-cyan));
+    color: white;
+}
+
+.btn-submit {
+    background: var(--test-success);
+    color: white;
+}
+
+.test-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(16,44,87,.12);
+}
+
+.question-indicators {
+    padding: 20px;
+}
+
+.indicator-heading {
+    font-size: 14px;
+    color: var(--test-dark);
+    font-weight: 750;
+    margin-bottom: 15px;
+}
+
+.indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.indicator {
+    width: 39px;
+    height: 39px;
+    border-radius: 9px;
+    border: 1px solid var(--test-border);
+    background: white;
+    color: #52647c;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.indicator.current {
+    background: var(--test-primary);
+    color: white;
+    border-color: var(--test-primary);
+}
+
+.indicator.answered {
+    background: #e3f7ed;
+    border-color: #a6dfbf;
+    color: var(--test-success);
+}
+
+.indicator.current.answered {
+    background: var(--test-primary);
+    color: white;
+    border-color: var(--test-primary);
+}
+
+.indicator-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 16px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.submitting-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(16,44,87,.72);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.submitting-box {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+}
+
+.submitting-box i {
+    font-size: 35px;
+    color: var(--test-primary);
+    margin-bottom: 15px;
+}
+
+@media(max-width: 600px) {
+    .test-page {
+        padding-top: 20px;
+    }
+
+    .test-header {
+        padding: 24px 16px;
+    }
+
+    .question-container {
+        padding: 23px 17px;
+    }
+
+    .question-text {
+        font-size: 17px;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .test-btn {
+        width: 100%;
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="test-page">
+    <div class="container test-wrapper">
+
+        <!-- Test Header -->
+        <div class="test-header">
+            <h1>{{ test.title }}</h1>
+
+            {% if test.description %}
+            <p class="test-description">{{ test.description }}</p>
+            {% endif %}
+
+            <div class="test-info">
+                <div class="info-item">
+                    <i class="fas fa-question-circle me-2"></i>
+                    {{ questions|length }} Questions
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-book me-2"></i>
+                    {{ test.topic or 'General' }}
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-signal me-2"></i>
+                    {{ test.difficulty|title }}
+                </div>
+
+                {% if test.time_limit_minutes %}
+                <div class="info-item">
+                    <i class="fas fa-clock me-2"></i>
+                    {{ test.time_limit_minutes }} Minutes
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if questions %}
+
+        <!-- Timer -->
+        <div class="timer-container">
+            <i class="fas fa-stopwatch"></i>
+            <span>Time Remaining:</span>
+            <span class="timer" id="timer">00:00</span>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-container">
+            <div class="progress-heading">
+                <span>Test Progress</span>
+                <span id="current-question-text">Question 1 of {{ questions|length }}</span>
+            </div>
+
+            <div class="progress-bar-custom">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Test Data -->
+        <div id="test-form-container"
+             data-test-id="{{ test.id }}"
+             data-time-limit="{{ test.time_limit_minutes|default(15) }}">
+
+            {% set initial_answers_data = initial_answers|default({})|tojson %}
+
+            <input type="hidden"
+                   id="initial-answers"
+                   value="{{ initial_answers_data|forceescape }}">
+
+            {% for question in questions %}
+
+            <div class="question-container"
+                 data-question-id="{{ question.id }}"
+                 data-question-index="{{ loop.index0 }}"
+                 style="display:{% if loop.first %}block{% else %}none{% endif %};">
+
+                <div class="question-top">
+                    <span class="question-badge">
+                        Question {{ loop.index }}
+                    </span>
+
+                    <span class="question-type">
+                        {% if question.is_open_ended %}
+                            <i class="fas fa-pen me-1"></i> Written Answer
+                        {% else %}
+                            <i class="fas fa-list-ul me-1"></i> Multiple Choice
+                        {% endif %}
+                    </span>
+                </div>
+
+                <div class="question-text">
+                    {{ question.question_text }}
+                </div>
+
+                {% if not question.is_open_ended %}
+
+                    <div class="options-container">
+
+                        {% set options = question.options|default('{}', true) %}
+
+                        {% if options is string %}
+                            {% set options = options|from_json %}
+                        {% endif %}
+
+                        {% if options is mapping %}
+
+                            {% for key, value in options.items() %}
+
+                            <label class="option-item"
+                                   for="q{{ question.id }}_option_{{ key }}">
+
+                                <input
+                                    type="radio"
+                                    id="q{{ question.id }}_option_{{ key }}"
+                                    name="question_{{ question.id }}"
+                                    value="{{ key }}"
+                                >
+
+                                <span class="option-label">
+                                    <strong>{{ key }}.</strong> {{ value }}
+                                </span>
+                            </label>
+
+                            {% endfor %}
+
+                        {% endif %}
+
+                    </div>
+
+                {% else %}
+
+                    <textarea
+                        class="text-answer"
+                        name="question_{{ question.id }}"
+                        placeholder="Write your answer here..."
+                    ></textarea>
+
+                {% endif %}
+
+                <div class="navigation-buttons">
+
+                    <button type="button"
+                            class="test-btn btn-previous"
+                            {% if loop.first %}disabled{% endif %}>
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Previous
+                    </button>
+
+                    {% if loop.last %}
+
+                    <button type="button"
+                            class="test-btn btn-submit">
+                        Submit Test
+                        <i class="fas fa-check ms-2"></i>
+                    </button>
+
+                    {% else %}
+
+                    <button type="button"
+                            class="test-btn btn-next">
+                        Next
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+
+                    {% endif %}
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <!-- Question Navigation -->
+        <div class="question-indicators">
+
+            <div class="indicator-heading">
+                <i class="fas fa-th-large me-2"></i>
+                Question Navigator
+            </div>
+
+            <div class="indicators">
+
+                {% for question in questions %}
+
+                <button type="button"
+                        class="indicator"
+                        data-question-index="{{ loop.index0 }}"
+                        aria-label="Go to question {{ loop.index }}">
+                    {{ loop.index }}
+                </button>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="indicator-legend">
+                <span>
+                    <span class="legend-dot" style="background:#1769c2"></span>
+                    Current
+                </span>
+
+                <span>
+                    <span class="legend-dot" style="background:#15945b"></span>
+                    Answered
+                </span>
+
+                <span>
+                    <span class="legend-dot" style="background:#e3ebf5"></span>
+                    Not answered
+                </span>
+            </div>
+        </div>
+
+        {% else %}
+
+        <div class="question-container text-center">
+            <i class="fas fa-folder-open fa-3x text-secondary mb-3"></i>
+            <h4>No Questions Available</h4>
+            <p class="text-muted">
+                This test does not contain any questions yet.
+                Please contact your test creator.
+            </p>
+            <a href="{{ url_for('participant_dashboard') }}"
+               class="btn btn-primary">
+                Back to Dashboard
+            </a>
+        </div>
+
+        {% endif %}
+
+    </div>
+</div>
+
+<!-- Submission Overlay -->
+<div class="submitting-overlay" id="submitting-overlay">
+    <div class="submitting-box">
+        <i class="fas fa-spinner fa-spin"></i>
+        <h5>Submitting Your Test</h5>
+        <p class="text-muted mb-0">Please wait while we save your answers.</p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% if questions %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const container = document.getElementById('test-form-container');
+
+    const testId = container.dataset.testId;
+    const questionElements = Array.from(
+        document.querySelectorAll('.question-container[data-question-id]')
+    );
+
+    const indicators = Array.from(
+        document.querySelectorAll('.indicator')
+    );
+
+    const totalQuestions = questionElements.length;
+
+    if (!totalQuestions) return;
+
+    let currentIndex = 0;
+    let isSubmitting = false;
+
+    const answers = {};
+
+    // Restore previously saved answers
+    try {
+        const initial = JSON.parse(
+            document.getElementById('initial-answers').value || '{}'
+        );
+
+        Object.assign(answers, initial);
+    } catch (error) {
+        console.error('Could not restore saved answers:', error);
+    }
+
+    const progressFill = document.getElementById('progress-fill');
+    const currentQuestionText = document.getElementById('current-question-text');
+    const timerElement = document.getElementById('timer');
+    const overlay = document.getElementById('submitting-overlay');
+
+    const timeLimit = parseInt(container.dataset.timeLimit, 10) || 15;
+    let timeLeft = timeLimit * 60;
+    let timerInterval;
+
+    function getQuestionId(index) {
+        return questionElements[index].dataset.questionId;
+    }
+
+    function saveAnswer(index) {
+
+        const question = questionElements[index];
+        const questionId = getQuestionId(index);
+
+        const textarea = question.querySelector('textarea');
+        const selected = question.querySelector('input[type="radio"]:checked');
+
+        if (textarea) {
+            const value = textarea.value.trim();
+
+            if (value) {
+                answers[questionId] = value;
+            } else {
+                delete answers[questionId];
+            }
+
+        } else if (selected) {
+            answers[questionId] = selected.value;
+
+        } else {
+            delete answers[questionId];
+        }
+
+        updateIndicators();
+    }
+
+    function loadAnswer(index) {
+
+        const question = questionElements[index];
+        const questionId = getQuestionId(index);
+        const savedAnswer = answers[questionId];
+
+        question.querySelectorAll('input[type="radio"]').forEach(input => {
+            input.checked = String(input.value) === String(savedAnswer ?? '');
+        });
+
+        question.querySelectorAll('.option-item').forEach(item => {
+            const radio = item.querySelector('input[type="radio"]');
+
+            item.classList.toggle(
+                'selected',
+                radio ? radio.checked : false
+            );
+        });
+
+        const textarea = question.querySelector('textarea');
+
+        if (textarea) {
+            textarea.value = savedAnswer || '';
+        }
+    }
+
+    function updateIndicators() {
+
+        indicators.forEach((indicator, index) => {
+
+            const questionId = getQuestionId(index);
+            const answered = Object.prototype.hasOwnProperty.call(
+                answers,
+                questionId
+            );
+
+            indicator.classList.toggle('current', index === currentIndex);
+            indicator.classList.toggle('answered', answered);
+
+        });
+    }
+
+    function showQuestion(index) {
+
+        if (index < 0 || index >= totalQuestions) return;
+
+        currentIndex = index;
+
+        questionElements.forEach((question, i) => {
+            question.style.display = i === index ? 'block' : 'none';
+        });
+
+        loadAnswer(index);
+        updateIndicators();
+
+        progressFill.style.width =
+            ((index + 1) / totalQuestions * 100) + '%';
+
+        currentQuestionText.textContent =
+            `Question ${index + 1} of ${totalQuestions}`;
+
+    }
+
+    function formatTime(seconds) {
+
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+
+        return String(minutes).padStart(2, '0') + ':' +
+               String(remainingSeconds).padStart(2, '0');
+    }
+
+    function updateTimer() {
+
+        timerElement.textContent = formatTime(timeLeft);
+
+        if (timeLeft <= 60) {
+            timerElement.classList.add('warning');
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitTest(true);
+            return;
+        }
+
+        timeLeft--;
+    }
+
+    async function submitTest(isTimeout = false) {
+
+        if (isSubmitting) return;
+
+        saveAnswer(currentIndex);
+
+        const answeredCount = Object.keys(answers).length;
+
+        if (!isTimeout) {
+
+            const confirmed = confirm(
+                `You answered ${answeredCount} out of ${totalQuestions} questions.\n\nAre you sure you want to submit your test?`
+            );
+
+            if (!confirmed) return;
+        }
+
+        isSubmitting = true;
+
+        clearInterval(timerInterval);
+
+        document.querySelectorAll('.test-btn, .indicator').forEach(button => {
+            button.disabled = true;
+        });
+
+        overlay.style.display = 'flex';
+
+        try {
+
+            const response = await fetch(
+                `/submit_test/${encodeURIComponent(testId)}`,
+                {
+                    method: 'POST',
+
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+
+                    body: JSON.stringify({
+                        answers: answers,
+                        is_timeout: isTimeout
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Submission failed.');
+            }
+
+            if (data.redirect_url) {
+                window.location.href = data.redirect_url;
+                return;
+            }
+
+            throw new Error(data.error || 'No results page was returned.');
+
+        } catch (error) {
+
+            console.error('Submission error:', error);
+
+            isSubmitting = false;
+
+            overlay.style.display = 'none';
+
+            document.querySelectorAll('.test-btn, .indicator').forEach(button => {
+                button.disabled = false;
+            });
+
+            alert(error.message || 'Unable to submit your test. Please try again.');
+
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+    }
+
+    // Option selection
+    questionElements.forEach((question, index) => {
+
+        question.querySelectorAll('input[type="radio"]').forEach(radio => {
+
+            radio.addEventListener('change', function () {
+
+                question.querySelectorAll('.option-item').forEach(item => {
+                    item.classList.remove('selected');
+                });
+
+                this.closest('.option-item').classList.add('selected');
+
+                saveAnswer(index);
+
+            });
+
+        });
+
+        const textarea = question.querySelector('textarea');
+
+        if (textarea) {
+            textarea.addEventListener('input', function () {
+                saveAnswer(index);
+            });
+        }
+
+    });
+
+    // Previous buttons
+    document.querySelectorAll('.btn-previous').forEach(button => {
+
+        button.addEventListener('click', function () {
+
+            saveAnswer(currentIndex);
+
+            if (currentIndex > 0) {
+                showQuestion(currentIndex - 1);
+            }
+
+        });
+
+    });
+
+    // Next buttons
+    document.querySelectorAll('.btn-next').forEach(button => {
+
+        button.addEventListener('click', function () {
+
+            saveAnswer(currentIndex);
+
+            if (currentIndex < totalQuestions - 1) {
+                showQuestion(currentIndex + 1);
+            }
+
+        });
+
+    });
+
+    // Submit buttons
+    document.querySelectorAll('.btn-submit').forEach(button => {
+
+        button.addEventListener('click', function () {
+            submitTest(false);
+        });
+
+    });
+
+    // Question indicators
+    indicators.forEach(indicator => {
+
+        indicator.addEventListener('click', function () {
+
+            saveAnswer(currentIndex);
+
+            const index = parseInt(
+                this.dataset.questionIndex,
+                10
+            );
+
+            showQuestion(index);
+
+        });
+
+    });
+
+    // Initialize
+    showQuestion(0);
+
+    updateTimer();
+
+    timerInterval = setInterval(updateTimer, 1000);
+
+});
+</script>
+
+{% endif %}
+
+{% endblock %}

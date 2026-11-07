@@ -1,0 +1,622 @@
+ 
+{% extends "base.html" %}
+
+{% block title %}Test Results | Digital Testing Service{% endblock %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --result-primary: #1769c2;
+    --result-dark: #102c57;
+    --result-cyan: #08a6c9;
+    --result-success: #15945b;
+    --result-warning: #d99013;
+    --result-danger: #dc4545;
+    --result-bg: #f3f7fc;
+    --result-border: #e3ebf5;
+    --result-shadow: 0 10px 30px rgba(16,44,87,.07);
+}
+
+.results-page {
+    min-height: 80vh;
+    padding: 45px 0 65px;
+    background: linear-gradient(135deg, #f4f8ff, #eef7ff);
+    font-family: 'Inter', sans-serif;
+}
+
+.results-wrapper {
+    max-width: 950px;
+    margin: auto;
+}
+
+.results-card {
+    background: white;
+    border: 1px solid var(--result-border);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--result-shadow);
+}
+
+.results-header {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 25px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(120deg, #102c57, #1769c2, #08a6c9);
+}
+
+.results-header::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    right: -80px;
+    top: -120px;
+    border: 35px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+}
+
+.results-header::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: -90px;
+    bottom: -120px;
+    border: 25px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+}
+
+.results-header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.result-icon {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 23px;
+    background: rgba(255,255,255,.17);
+    font-size: 35px;
+}
+
+.results-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.results-header p {
+    color: #e4f2ff;
+    margin-bottom: 0;
+}
+
+.results-body {
+    padding: 35px;
+}
+
+.score-section {
+    text-align: center;
+    margin: 5px 0 30px;
+}
+
+.score-heading {
+    color: var(--result-dark);
+    font-weight: 750;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.percentage-circle {
+    width: 235px;
+    height: 235px;
+    margin: auto;
+    position: relative;
+}
+
+.circular-chart {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eaf0f7;
+    stroke-width: 3.5;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--result-primary);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 0, 100;
+    transition: stroke-dasharray 1.5s ease, stroke .5s ease;
+}
+
+.percentage-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.percentage-value {
+    color: var(--result-primary);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.percentage-label {
+    color: #718096;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-message {
+    padding: 17px 20px;
+    border-radius: 12px;
+    margin: 25px auto 30px;
+    text-align: center;
+    font-weight: 650;
+    max-width: 700px;
+    display: none;
+}
+
+.result-message.success {
+    display: block;
+    background: #eaf8f0;
+    color: var(--result-success);
+    border-left: 4px solid var(--result-success);
+}
+
+.result-message.warning {
+    display: block;
+    background: #fff7e7;
+    color: #b7790c;
+    border-left: 4px solid var(--result-warning);
+}
+
+.result-message.danger {
+    display: block;
+    background: #fff0f0;
+    color: var(--result-danger);
+    border-left: 4px solid var(--result-danger);
+}
+
+.score-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.stat-item {
+    padding: 22px 14px;
+    border-radius: 15px;
+    text-align: center;
+    background: #f7faff;
+    border: 1px solid var(--result-border);
+    transition: .25s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(16,44,87,.07);
+}
+
+.stat-item i {
+    font-size: 27px;
+    margin-bottom: 13px;
+    display: block;
+}
+
+.stat-value {
+    color: var(--result-dark);
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.stat-label {
+    color: #718096;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.result-divider {
+    border: 0;
+    border-top: 1px solid var(--result-border);
+    margin: 28px 0;
+}
+
+.submission-info {
+    text-align: center;
+    color: #718096;
+    font-size: 13px;
+}
+
+.submission-info strong {
+    color: var(--result-dark);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 25px;
+}
+
+.result-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 23px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.result-btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-recommendations {
+    color: white;
+    background: linear-gradient(120deg, var(--result-primary), var(--result-cyan));
+    box-shadow: 0 6px 15px rgba(23,105,194,.2);
+}
+
+.btn-recommendations:hover {
+    color: white;
+}
+
+.btn-dashboard {
+    color: var(--result-primary);
+    border: 1px solid #c9ddf3;
+    background: white;
+}
+
+.btn-dashboard:hover {
+    color: white;
+    background: var(--result-primary);
+}
+
+.fade-in {
+    animation: fadeIn .7s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 600px) {
+    .results-page {
+        padding: 20px 0 40px;
+    }
+
+    .results-header {
+        padding: 30px 18px;
+    }
+
+    .results-body {
+        padding: 23px 16px;
+    }
+
+    .percentage-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .percentage-value {
+        font-size: 2.9rem;
+    }
+
+    .score-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .stat-item {
+        padding: 17px 8px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .result-btn {
+        width: 100%;
+    }
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="results-page">
+    <div class="container results-wrapper">
+
+        <div class="results-card fade-in">
+
+            <!-- Header -->
+            <div class="results-header">
+                <div class="results-header-content">
+
+                    <div class="result-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+
+                    <h1>Test Completed!</h1>
+
+                    <p>
+                        Your results for
+                        <strong>{{ test.title }}</strong>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="results-body">
+
+                <!-- Score Circle -->
+                <div class="score-section">
+
+                    <div class="score-heading">
+                        Your Assessment Performance
+                    </div>
+
+                    <div class="percentage-circle">
+
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+
+                            <path class="circle-bg"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+
+                            <path class="circle" id="score-circle"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+
+                        </svg>
+
+                        <div class="percentage-overlay">
+                            <div class="percentage-value" id="percentage-value">
+                                0%
+                            </div>
+                            <div class="percentage-label">
+                                Overall Score
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Performance Message -->
+                <div class="result-message" id="result-message"></div>
+
+                <!-- Statistics -->
+                <div class="score-stats">
+
+                    <div class="stat-item">
+                        <i class="fas fa-check-circle"
+                           style="color:#15945b;"></i>
+
+                        <div class="stat-value">{{ score }}</div>
+
+                        <div class="stat-label">
+                            Correct Answers
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-times-circle"
+                           style="color:#dc4545;"></i>
+
+                        <div class="stat-value">{{ incorrect_answers }}</div>
+
+                        <div class="stat-label">
+                            Incorrect Answers
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <i class="fas fa-list-ol"
+                           style="color:#1769c2;"></i>
+
+                        <div class="stat-value">{{ total_attempted }}</div>
+
+                        <div class="stat-label">
+                            Questions Attempted
+                        </div>
+                    </div>
+
+                    {% if total_available is defined %}
+
+                    <div class="stat-item">
+                        <i class="fas fa-layer-group"
+                           style="color:#08a6c9;"></i>
+
+                        <div class="stat-value">{{ total_available }}</div>
+
+                        <div class="stat-label">
+                            Total Available
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                    {% if submission.time_taken_seconds is defined %}
+
+                    <div class="stat-item">
+                        <i class="fas fa-clock"
+                           style="color:#d99013;"></i>
+
+                        <div class="stat-value" id="time-taken-display">
+                            --
+                        </div>
+
+                        <div class="stat-label">
+                            Time Taken
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+                <hr class="result-divider">
+
+                <!-- Submission Information -->
+                <div class="submission-info">
+                    Submission ID:
+                    <strong>{{ submission.id }}</strong>
+                </div>
+
+                <!-- Actions -->
+                <div class="button-group">
+
+                    {% if needs_recommendations %}
+
+                    <a href="{{ url_for('adaptive_recommendations', submission_id=submission.id) }}"
+                       class="result-btn btn-recommendations">
+
+                        <i class="fas fa-graduation-cap"></i>
+                        View Recommendations
+
+                    </a>
+
+                    {% endif %}
+
+                    <a href="{{ url_for('dashboard_redirect') }}"
+                       class="result-btn btn-dashboard">
+
+                        <i class="fas fa-home"></i>
+                        Return to Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const percentage = Math.min(
+        100,
+        Math.max(0, Number({{ percentage_score|default(0)|tojson }}))
+    );
+
+    const timeTakenSeconds = Math.max(
+        0,
+        Number({{ submission.time_taken_seconds|default(0)|tojson }})
+    );
+
+    const circle = document.getElementById('score-circle');
+    const percentageValue = document.getElementById('percentage-value');
+    const resultMessage = document.getElementById('result-message');
+
+    const circumference = 100;
+
+    const score = percentage;
+
+    let color;
+    let message;
+    let messageClass;
+
+    if (score >= 80) {
+
+        color = '#15945b';
+        messageClass = 'success';
+
+        message = '<i class="fas fa-award me-2"></i>' +
+                  'Outstanding! You have demonstrated excellent understanding.';
+
+    } else if (score >= 60) {
+
+        color = '#d99013';
+        messageClass = 'warning';
+
+        message = '<i class="fas fa-thumbs-up me-2"></i>' +
+                  'Good work! Keep practicing to improve your performance.';
+
+    } else {
+
+        color = '#dc4545';
+        messageClass = 'danger';
+
+        message = '<i class="fas fa-book-open me-2"></i>' +
+                  'More practice is recommended. Review the topics and try again.';
+
+    }
+
+    // Animate score circle
+    circle.style.stroke = color;
+
+    requestAnimationFrame(function () {
+        circle.style.strokeDasharray = score + ', 100';
+    });
+
+    // Display percentage
+    percentageValue.style.color = color;
+    percentageValue.textContent = score.toFixed(0) + '%';
+
+    // Display performance feedback
+    resultMessage.classList.add(messageClass);
+    resultMessage.innerHTML = message;
+
+    // Format time
+    const timeDisplay = document.getElementById('time-taken-display');
+
+    if (timeDisplay) {
+
+        const minutes = Math.floor(timeTakenSeconds / 60);
+        const seconds = timeTakenSeconds % 60;
+
+        timeDisplay.textContent =
+            minutes + 'm ' + seconds + 's';
+
+    }
+
+});
+</script>
+
+{% endblock %}

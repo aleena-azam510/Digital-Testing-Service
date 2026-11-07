@@ -1,0 +1,520 @@
+
+{% extends "base.html" %}
+
+{% block title %}Create Account - ExamProctor AI{% endblock %}
+
+{% block head %}
+<style>
+    .register-page {
+        --register-navy: #10213f;
+        --register-blue: #2563eb;
+        --register-cyan: #0891b2;
+        --register-muted: #64748b;
+        padding: 35px 0 75px;
+    }
+
+    .register-wrapper {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    .register-card {
+        overflow: hidden;
+        border: 1px solid #e8eef7;
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.09);
+    }
+
+    /* Welcome Panel */
+
+    .register-welcome {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 620px;
+        padding: 50px 40px;
+        overflow: hidden;
+        color: #fff;
+        background: linear-gradient(145deg, #10213f 0%, #1e40af 65%, #0891b2 100%);
+    }
+
+    .register-welcome::before,
+    .register-welcome::after {
+        content: "";
+        position: absolute;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .register-welcome::before {
+        width: 330px;
+        height: 330px;
+        top: -120px;
+        right: -150px;
+    }
+
+    .register-welcome::after {
+        width: 270px;
+        height: 270px;
+        bottom: -130px;
+        left: -120px;
+    }
+
+    .register-welcome-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .register-welcome-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+        height: 65px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.13);
+        font-size: 1.8rem;
+    }
+
+    .register-eyebrow {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: #bae6fd;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+    .register-welcome h1 {
+        margin-bottom: 18px;
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .register-welcome-content > p {
+        max-width: 380px;
+        color: #dbeafe;
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+
+    .register-points {
+        display: grid;
+        gap: 17px;
+        margin-top: 35px;
+    }
+
+    .register-point {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #f1f5f9;
+        font-size: 0.94rem;
+    }
+
+    .register-point i {
+        color: #67e8f9;
+        font-size: 1.05rem;
+    }
+
+    /* Form Panel */
+
+    .register-form-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 620px;
+        padding: 48px;
+    }
+
+    .register-heading {
+        margin-bottom: 8px;
+        color: var(--register-navy);
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+    }
+
+    .register-subtitle {
+        margin-bottom: 30px;
+        color: var(--register-muted);
+        line-height: 1.7;
+    }
+
+    .register-form-panel .form-label {
+        margin-bottom: 9px;
+        color: #243550;
+        font-size: 0.92rem;
+        font-weight: 650;
+    }
+
+    .register-input-group {
+        position: relative;
+    }
+
+    .register-input-group .input-icon {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        z-index: 2;
+        color: #94a3b8;
+        transform: translateY(-50%);
+    }
+
+    .register-form-panel .form-control {
+        min-height: 51px;
+        padding: 12px 45px;
+        border: 1px solid #dce4ef;
+        border-radius: 11px;
+        background: #f8fafc;
+        color: var(--register-navy);
+        transition: all 0.2s ease;
+    }
+
+    .register-form-panel .form-control:focus {
+        border-color: var(--register-blue);
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(37,99,235,0.10);
+    }
+
+    .register-form-panel .form-control::placeholder {
+        color: #a0aec0;
+    }
+
+    .register-password-toggle {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        z-index: 3;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        color: #64748b;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .register-password-toggle:hover {
+        color: var(--register-blue);
+    }
+
+    .password-hint {
+        display: block;
+        margin-top: 7px;
+        color: #94a3b8;
+        font-size: 0.78rem;
+    }
+
+    .register-submit {
+        min-height: 53px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 11px;
+        color: #fff;
+        background: linear-gradient(100deg, #2563eb, #0891b2);
+        font-size: 1rem;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
+
+    .register-submit:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(37,99,235,0.23);
+    }
+
+    .register-divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 25px 0 18px;
+        color: #94a3b8;
+        font-size: 0.83rem;
+    }
+
+    .register-divider::before,
+    .register-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #e2e8f0;
+    }
+
+    .register-login-text {
+        margin: 0;
+        color: var(--register-muted);
+        text-align: center;
+        font-size: 0.92rem;
+    }
+
+    .register-login-text a {
+        color: var(--register-blue);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .register-login-text a:hover {
+        color: var(--register-cyan);
+        text-decoration: underline;
+    }
+
+    .register-security-note {
+        margin-top: 23px;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    @media (max-width: 767px) {
+        .register-page {
+            padding: 20px 0 45px;
+        }
+
+        .register-welcome {
+            min-height: auto;
+            padding: 35px 28px;
+        }
+
+        .register-welcome-icon {
+            width: 55px;
+            height: 55px;
+            margin-bottom: 20px;
+        }
+
+        .register-welcome h1 {
+            font-size: 2rem;
+        }
+
+        .register-points {
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .register-form-panel {
+            min-height: auto;
+            padding: 35px 27px;
+        }
+
+        .register-heading {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .register-submit,
+        .register-form-panel .form-control {
+            transition: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="register-page">
+    <div class="container register-wrapper">
+
+        <div class="register-card">
+            <div class="row g-0">
+
+                <!-- Welcome Panel -->
+                <div class="col-md-5">
+                    <div class="register-welcome">
+                        <div class="register-welcome-content">
+
+                            <div class="register-welcome-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+
+                            <span class="register-eyebrow">
+                                DIGITAL TESTING SERVICE
+                            </span>
+
+                            <h1>Start Your Journey With Us</h1>
+
+                            <p>
+                                Create your account and become part of
+                                a digital learning environment designed
+                                to make assessments easier to manage
+                                and complete.
+                            </p>
+
+                            <div class="register-points">
+                                <div class="register-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Get access to your personal dashboard</span>
+                                </div>
+
+                                <div class="register-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Participate in online assessments</span>
+                                </div>
+
+                                <div class="register-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Track your assessment performance</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="col-md-7">
+                    <div class="register-form-panel">
+
+                        <h2 class="register-heading">Create Account</h2>
+
+                        <p class="register-subtitle">
+                            Fill in your details to get started.
+                        </p>
+
+                        <form action="{{ url_for('register') }}" method="POST">
+
+                            <div class="mb-3">
+                                <label for="username" class="form-label">
+                                    Username
+                                </label>
+
+                                <div class="register-input-group">
+                                    <i class="fas fa-user input-icon"></i>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="username"
+                                        name="username"
+                                        placeholder="Choose a username"
+                                        autocomplete="username"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Email Address
+                                </label>
+
+                                <div class="register-input-group">
+                                    <i class="fas fa-envelope input-icon"></i>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter your email address"
+                                        autocomplete="email"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Password
+                                </label>
+
+                                <div class="register-input-group">
+                                    <i class="fas fa-lock input-icon"></i>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Create a password"
+                                        autocomplete="new-password"
+                                        minlength="10"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="register-password-toggle"
+                                        id="toggleRegisterPassword"
+                                        aria-label="Show password"
+                                        aria-pressed="false"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+
+                                <small class="password-hint">
+                                    Use at least 10 characters for your password.
+                                </small>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn register-submit">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    Create My Account
+                                </button>
+                            </div>
+
+                        </form>
+
+                        <div class="register-divider">
+                            ALREADY REGISTERED?
+                        </div>
+
+                        <p class="register-login-text">
+                            Already have an account?
+                            <a href="{{ url_for('login') }}">
+                                Sign in here
+                            </a>
+                        </p>
+
+                        <p class="register-security-note">
+                            <i class="fas fa-shield-alt me-1"></i>
+                            Keep your login credentials secure.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const passwordInput = document.getElementById("password");
+        const toggleButton = document.getElementById("toggleRegisterPassword");
+
+        if (passwordInput && toggleButton) {
+            toggleButton.addEventListener("click", function () {
+                const isPassword = passwordInput.type === "password";
+
+                passwordInput.type = isPassword ? "text" : "password";
+
+                toggleButton.innerHTML = isPassword
+                    ? '<i class="fas fa-eye-slash"></i>'
+                    : '<i class="fas fa-eye"></i>';
+
+                toggleButton.setAttribute(
+                    "aria-label",
+                    isPassword ? "Hide password" : "Show password"
+                );
+
+                toggleButton.setAttribute(
+                    "aria-pressed",
+                    String(isPassword)
+                );
+            });
+        }
+    });
+</script>
+{% endblock %}

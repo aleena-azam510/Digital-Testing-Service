@@ -1,0 +1,484 @@
+
+{% extends "base.html" %}
+
+{% block title %}Login - ExamProctor AI{% endblock %}
+
+{% block head %}
+<style>
+    .login-page {
+        --login-navy: #10213f;
+        --login-blue: #2563eb;
+        --login-cyan: #0891b2;
+        --login-muted: #64748b;
+        padding: 35px 0 75px;
+    }
+
+    .login-wrapper {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    .login-card {
+        overflow: hidden;
+        border: 1px solid #e8eef7;
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.09);
+    }
+
+    /* Left Panel */
+
+    .login-welcome {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 570px;
+        padding: 50px 40px;
+        overflow: hidden;
+        color: #fff;
+        background: linear-gradient(145deg, #10213f 0%, #1e40af 65%, #0891b2 100%);
+    }
+
+    .login-welcome::before,
+    .login-welcome::after {
+        content: "";
+        position: absolute;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .login-welcome::before {
+        width: 330px;
+        height: 330px;
+        top: -120px;
+        right: -150px;
+    }
+
+    .login-welcome::after {
+        width: 270px;
+        height: 270px;
+        bottom: -130px;
+        left: -120px;
+    }
+
+    .welcome-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .welcome-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+        height: 65px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.13);
+        font-size: 1.8rem;
+    }
+
+    .welcome-label {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: #bae6fd;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+    .login-welcome h1 {
+        margin-bottom: 18px;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .login-welcome > .welcome-content > p {
+        max-width: 380px;
+        color: #dbeafe;
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+
+    .welcome-points {
+        display: grid;
+        gap: 17px;
+        margin-top: 35px;
+    }
+
+    .welcome-point {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #f1f5f9;
+        font-size: 0.94rem;
+    }
+
+    .welcome-point i {
+        color: #67e8f9;
+        font-size: 1.05rem;
+    }
+
+    /* Right Panel */
+
+    .login-form-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 570px;
+        padding: 55px 48px;
+    }
+
+    .login-heading {
+        margin-bottom: 8px;
+        color: var(--login-navy);
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+    }
+
+    .login-subtitle {
+        margin-bottom: 35px;
+        color: var(--login-muted);
+        line-height: 1.7;
+    }
+
+    .login-form-panel .form-label {
+        margin-bottom: 9px;
+        color: #243550;
+        font-size: 0.92rem;
+        font-weight: 650;
+    }
+
+    .login-input-group {
+        position: relative;
+    }
+
+    .login-input-group > i.input-icon {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        z-index: 2;
+        color: #94a3b8;
+        transform: translateY(-50%);
+    }
+
+    .login-form-panel .form-control {
+        min-height: 52px;
+        padding: 12px 45px 12px 45px;
+        border: 1px solid #dce4ef;
+        border-radius: 11px;
+        background: #f8fafc;
+        color: var(--login-navy);
+        transition: all 0.2s ease;
+    }
+
+    .login-form-panel .form-control:focus {
+        border-color: var(--login-blue);
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(37,99,235,0.10);
+    }
+
+    .login-form-panel .form-control::placeholder {
+        color: #a0aec0;
+    }
+
+    .password-toggle {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        z-index: 3;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        color: #64748b;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .password-toggle:hover {
+        color: var(--login-blue);
+    }
+
+    .login-submit {
+        min-height: 53px;
+        margin-top: 12px;
+        border: none;
+        border-radius: 11px;
+        color: #fff;
+        background: linear-gradient(100deg, #2563eb, #0891b2);
+        font-size: 1rem;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
+
+    .login-submit:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(37,99,235,0.23);
+    }
+
+    .register-divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 27px 0 20px;
+        color: #94a3b8;
+        font-size: 0.83rem;
+    }
+
+    .register-divider::before,
+    .register-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #e2e8f0;
+    }
+
+    .register-text {
+        margin: 0;
+        color: var(--login-muted);
+        text-align: center;
+        font-size: 0.92rem;
+    }
+
+    .register-text a {
+        color: var(--login-blue);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .register-text a:hover {
+        color: var(--login-cyan);
+        text-decoration: underline;
+    }
+
+    .login-security-note {
+        margin-top: 25px;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    @media (max-width: 767px) {
+        .login-page {
+            padding: 20px 0 45px;
+        }
+
+        .login-welcome {
+            min-height: auto;
+            padding: 35px 28px;
+        }
+
+        .welcome-icon {
+            width: 55px;
+            height: 55px;
+            margin-bottom: 20px;
+        }
+
+        .login-welcome h1 {
+            font-size: 2rem;
+        }
+
+        .welcome-points {
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .login-form-panel {
+            min-height: auto;
+            padding: 38px 27px;
+        }
+
+        .login-heading {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .login-submit,
+        .login-form-panel .form-control {
+            transition: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login-page">
+    <div class="container login-wrapper">
+
+        <div class="login-card">
+            <div class="row g-0">
+
+                <!-- Welcome Panel -->
+                <div class="col-md-5">
+                    <div class="login-welcome">
+                        <div class="welcome-content">
+
+                            <div class="welcome-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+
+                            <span class="welcome-label">
+                                DIGITAL TESTING SERVICE
+                            </span>
+
+                            <h1>Welcome Back!</h1>
+
+                            <p>
+                                Sign in to access your account, manage
+                                assessments, take tests, and track your
+                                learning progress.
+                            </p>
+
+                            <div class="welcome-points">
+                                <div class="welcome-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Access your personalized dashboard</span>
+                                </div>
+
+                                <div class="welcome-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Manage and participate in assessments</span>
+                                </div>
+
+                                <div class="welcome-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Review your test performance</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <div class="col-md-7">
+                    <div class="login-form-panel">
+
+                        <h2 class="login-heading">Sign In</h2>
+
+                        <p class="login-subtitle">
+                            Enter your credentials to continue to your account.
+                        </p>
+
+                        <form action="{{ url_for('login') }}" method="POST">
+
+                            <div class="mb-4">
+                                <label for="username" class="form-label">
+                                    Username
+                                </label>
+
+                                <div class="login-input-group">
+                                    <i class="fas fa-user input-icon"></i>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="username"
+                                        name="username"
+                                        placeholder="Enter your username"
+                                        autocomplete="username"
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Password
+                                </label>
+
+                                <div class="login-input-group">
+                                    <i class="fas fa-lock input-icon"></i>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Enter your password"
+                                        autocomplete="current-password"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        id="togglePassword"
+                                        aria-label="Show password"
+                                        aria-pressed="false"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn login-submit">
+                                    <i class="fas fa-sign-in-alt me-2"></i>
+                                    Sign In to Your Account
+                                </button>
+                            </div>
+
+                        </form>
+
+                        <div class="register-divider">
+                            NEW TO THE PLATFORM?
+                        </div>
+
+                        <p class="register-text">
+                            Don't have an account?
+                            <a href="{{ url_for('register') }}">
+                                Create an account
+                            </a>
+                        </p>
+
+                        <p class="login-security-note">
+                            <i class="fas fa-shield-alt me-1"></i>
+                            Your account credentials are protected.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const passwordInput = document.getElementById("password");
+        const toggleButton = document.getElementById("togglePassword");
+
+        if (passwordInput && toggleButton) {
+            toggleButton.addEventListener("click", function () {
+                const isPassword = passwordInput.type === "password";
+
+                passwordInput.type = isPassword ? "text" : "password";
+
+                toggleButton.innerHTML = isPassword
+                    ? '<i class="fas fa-eye-slash"></i>'
+                    : '<i class="fas fa-eye"></i>';
+
+                toggleButton.setAttribute(
+                    "aria-label",
+                    isPassword ? "Hide password" : "Show password"
+                );
+
+                toggleButton.setAttribute("aria-pressed", String(isPassword));
+            });
+        }
+    });
+</script>
+{% endblock %}

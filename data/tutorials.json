@@ -1,0 +1,98 @@
+{
+  "Web Development": [
+    {"title": "HTML Crash Course", "video_id": "UB1O30fR-EE"},
+    {"title": "CSS Tutorial for Beginners", "video_id": "yfoY53QXEnI"},
+    {"title": "JavaScript Tutorial for Beginners", "video_id": "upDLs1sn7g4"}
+  ],
+  "Python": [
+    {"title": "Python Crash Course", "video_id": "rfscVS0vtbw"},
+    {"title": "Python Tutorial for Beginners", "video_id": "_uQrJ0TkZlc"},
+    {"title": "Python Full Course", "video_id": "WGJJIrtnfpk"}
+  ],
+  "Data Structures": [
+    {"title": "Data Structures Easy Course", "video_id": "RBSGKlAvoiM"},
+    {"title": "DS & Algorithms Full Course (Java)", "video_id": "yRpLlJmRo2w"},
+    {"title": "DS & Algorithms for Beginners", "video_id": "BBpAmxU_NQo"}
+  ],
+  "Linear Algebra": [
+    {"title": "Essence of Linear Algebra", "video_id": "kjBOesZCoqc"},
+    {"title": "MIT Linear Algebra Lecture 1", "video_id": "ZK3O402wf1c"},
+    {"title": "Linear Algebra Full Course", "video_id": "ZKUqtErZCiU"}
+  ],
+  "Calculus": [
+    {"title": "Calculus 1 Full Course", "video_id": "fYyARMqiaag"},
+    {"title": "Calculus Made Easy", "video_id": "FdBf44rp0LU"},
+    {"title": "MIT Calculus Course", "video_id": "7K1sB05pE0A"}
+  ],
+  "Computer Organization & Architecture": [
+    {"title": "Computer Architecture Basics", "video_id": "GRInNLx3Tug"},
+    {"title": "Computer Organization Course", "video_id": "j8NnE1YeSN0"},
+    {"title": "Computer Org Full Course", "video_id": "Ol8D69VKX2k"}
+  ],
+  "Operating Systems": [
+    {"title": "Operating Systems Course for Beginners", "video_id": "bkSWJJZNgf8"},
+    {"title": "Complete OS in 1 Shot", "video_id": "8XBtAjKwCm4"},
+    {"title": "OS Basics for Beginners", "video_id": "vBURTt97EkA"}
+  ],
+  "Computer Networks": [
+    {"title": "Computer Networking Full Course", "video_id": "IPvYjXCsTg8"},
+    {"title": "Networks Basics Tutorial", "video_id": "VwN91x5i25g"},
+    {"title": "Data Communication & Networking", "video_id": "GfIvQiamXFU"}
+  ],
+  "Databases": [
+    {"title": "DBMS Full Course", "video_id": "kBdlM6hNDAE"},
+    {"title": "SQL Tutorial for Beginners", "video_id": "yE6tIle64tU"},
+    {"title": "Relational Databases Explained", "video_id": "WI9dE8-TFAc"}
+  ],
+  "Artificial Intelligence": [
+    {"title": "Artificial Intelligence Full Course", "video_id": "JMUxmLyrhSk"},
+    {"title": "What is AI? Intro", "video_id": "SSE4M0gcmvE"},
+    {"title": "AI Crash Course", "video_id": "GvYYFloV0aA"}
+  ],
+  "Algorithms": [
+    {"title": "Algorithms & DS Full Course", "video_id": "8hly31xKli0"},
+    {"title": "Algorithms Explained & Animated", "video_id": "6hfOvs8pY1k"},
+    {"title": "Sorting Algorithms Tutorial", "video_id": "1jCFUv-Xlqo"}
+  ],
+  "Machine Learning": [
+    {"title": "Machine Learning Full Course", "video_id": "i_LwzRVP7bg"},
+    {"title": "Machine Learning Crash Course", "video_id": "2oGsCHlfBUg"},
+    {"title": "Andrew Ng’s ML Course", "video_id": "vStJoetOxJg"}
+  ],
+  "Grammar & Syntax": [
+    {"title": "Basic English Grammar Course for Beginners", "video_id": "AVYfyTvc9KY"},
+    {"title": "English Grammar Course for Beginners", "video_id": "mUyvY1kTGXc"},
+    {"title": "Complete English Grammar Full Course", "video_id": "alozPFBFquE"}
+  ],
+  "Vocabulary & Word Usage": [
+    {"title": "Learn English Vocabulary", "video_id": "F30R0tDIXP0"},
+    {"title": "English Vocabulary Builder", "video_id": "S7hBKF79HTE"},
+    {"title": "1000 Common English Words", "video_id": "QcFo1HENYZw"}
+  ],
+  "Reading Comprehension": [
+    {"title": "Reading Comprehension Strategies", "video_id": "4Ns1jYVuJ7s"},
+    {"title": "Improve Reading Skills", "video_id": "y7ghLmcMsMY"},
+    {"title": "Practice Reading Comprehension", "video_id": "W7BW9gv_OkU"}
+  ],
+  "Writing Skills (Essays, Letters, Reports)": [
+    {"title": "Essay Writing Tips", "video_id": "yltyRufw9Sk"},
+    {"title": "How to Write a Formal Letter", "video_id": "Lj10Z_ap3cg"},
+    {"title": "Report Writing Tutorial", "video_id": "T3CZe5Rj_bI"}
+  ],
+  "Literary Devices & Poetry": [
+    {"title": "Literary Devices Explained", "video_id": "OY2zPFQsKSI"},
+    {"title": "Introduction to Poetry", "video_id": "PaWYjHHbjwc"},
+    {"title": "Figures of Speech in English", "video_id": "iqge2DNtmc0"}
+  ],
+  "Communication Skills (Speaking & Listening)": [
+    {"title": "Improve English Speaking Skills", "video_id": "27Ethdd1yu4"},
+    {"title": "English Listening Practice", "video_id": "erjMgola4fQ"},
+    {"title": "Effective Communication Skills", "video_id": "u16EPwFmdis"}
+  ],
+  "General": [
+    {"title": "Essential Study Skills & Tips", "video_id": "9B_p-6J5wI0"}, 
+    {"title": "How to Master Problem Solving", "video_id": "CP4Tq1c_dK4"},
+    {"title": "General Knowledge & Logic Basics", "video_id": "Qn4T3u9_U-0"}
+  ]
+
+}

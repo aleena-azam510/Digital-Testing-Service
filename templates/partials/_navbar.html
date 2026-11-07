@@ -1,0 +1,191 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white modern-navbar sticky-top">
+    <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('index') }}">
+            <span class="brand-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </span>
+            <span class="brand-name">ExamProctor<span> AI</span></span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button class="navbar-toggler border-0 shadow-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation links -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('features') }}">Features</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                </li>
+
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard_redirect') }}">
+                            Dashboard
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+
+            <!-- Account actions -->
+            <div class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-2">
+                {% if current_user.is_authenticated %}
+                    <span class="welcome-text">
+                        <i class="fas fa-user-circle me-1"></i>
+                        {{ current_user.username }}
+                    </span>
+
+                    <a href="{{ url_for('logout') }}" class="btn btn-outline-primary nav-action">
+                        Log Out
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-primary nav-action">
+                        Log In
+                    </a>
+
+                    <a href="{{ url_for('register') }}" class="btn btn-primary nav-action signup-btn">
+                        Get Started <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .modern-navbar {
+        min-height: 76px;
+        padding: 12px 0;
+        border-bottom: 1px solid #e8eef6;
+        box-shadow: 0 4px 20px rgba(20, 45, 80, 0.05);
+        z-index: 1030;
+    }
+
+    .modern-navbar .navbar-brand {
+        text-decoration: none;
+    }
+
+    .brand-icon {
+        width: 42px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        border-radius: 12px;
+        font-size: 20px;
+        box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+    }
+
+    .brand-name {
+        color: #142d50;
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.7px;
+    }
+
+    .brand-name span {
+        color: #2563eb;
+    }
+
+    .modern-navbar .navbar-nav {
+        gap: 8px;
+    }
+
+    .modern-navbar .nav-link {
+        color: #52647c;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 13px !important;
+        border-radius: 8px;
+        transition: color 0.25s ease, background 0.25s ease;
+    }
+
+    .modern-navbar .nav-link:hover,
+    .modern-navbar .nav-link:focus {
+        color: #2563eb;
+        background: #eff6ff;
+    }
+
+    .nav-action {
+        padding: 9px 19px;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.25s ease;
+    }
+
+    .modern-navbar .btn-outline-primary {
+        color: #2563eb;
+        border-color: #d6e3f8;
+    }
+
+    .modern-navbar .btn-outline-primary:hover {
+        color: #ffffff;
+        background: #2563eb;
+        border-color: #2563eb;
+        transform: translateY(-1px);
+    }
+
+    .modern-navbar .signup-btn {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        border: none;
+        box-shadow: 0 5px 12px rgba(37, 99, 235, 0.18);
+    }
+
+    .modern-navbar .signup-btn:hover {
+        background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        transform: translateY(-2px);
+        box-shadow: 0 7px 16px rgba(37, 99, 235, 0.25);
+    }
+
+    .welcome-text {
+        color: #52647c;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px;
+    }
+
+    @media (max-width: 991.98px) {
+        .modern-navbar .navbar-collapse {
+            padding: 16px 0 8px;
+        }
+
+        .modern-navbar .navbar-nav {
+            gap: 2px;
+        }
+
+        .modern-navbar .nav-link {
+            padding: 11px 12px !important;
+        }
+
+        .modern-navbar .d-flex.flex-column {
+            margin-top: 10px;
+        }
+
+        .welcome-text {
+            padding-left: 0;
+        }
+    }
+</style>

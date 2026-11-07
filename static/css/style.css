@@ -1,0 +1,81 @@
+/* static/css/style.css */
+/* Add any custom styles here if needed.
+   For example, a custom hero section or unique fonts. */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* A light gray background */
+}
+/* Navbar Styling */
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    padding: 0.8rem 1rem;
+    transition: var(--transition);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: pulse 2s infinite;
+}
+
+.nav-link {
+    color: var(--dark) !important;
+    font-weight: 500;
+    margin: 0 5px;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover:before {
+    width: 80%;
+}
+
+.nav-link.active {
+    background: linear-gradient(to right, rgba(108, 99, 255, 0.1), rgba(106, 13, 173, 0.1));
+}
+
+.nav-link.active:before {
+    width: 80%;
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--primary) !important;
+}
+
+/* Optional pulse animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}

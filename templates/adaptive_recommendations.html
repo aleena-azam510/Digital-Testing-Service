@@ -1,0 +1,781 @@
+ 
+{% extends "base.html" %}
+
+{% block title %}Adaptive Recommendations | Digital Testing Service{% endblock %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --primary: #1769c2;
+    --dark: #102c57;
+    --cyan: #08a6c9;
+    --success: #15945b;
+    --warning: #d99013;
+    --danger: #dc4545;
+    --bg: #f3f7fc;
+    --border: #e3ebf5;
+    --shadow: 0 8px 25px rgba(16,44,87,.07);
+}
+
+.recommendations-page {
+    min-height: 80vh;
+    padding: 40px 0 65px;
+    background: linear-gradient(135deg, #f4f8ff, #eef7ff);
+    font-family: 'Inter', sans-serif;
+}
+
+.recommendations-wrapper {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.recommendations-header {
+    background: linear-gradient(120deg, #102c57, #1769c2, #08a6c9);
+    color: white;
+    padding: 45px 25px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+}
+
+.recommendations-header::before,
+.recommendations-header::after {
+    content: "";
+    position: absolute;
+    border: 30px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+}
+
+.recommendations-header::before {
+    width: 220px;
+    height: 220px;
+    top: -125px;
+    right: -55px;
+}
+
+.recommendations-header::after {
+    width: 170px;
+    height: 170px;
+    bottom: -110px;
+    left: -65px;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,.16);
+    border-radius: 22px;
+    font-size: 32px;
+}
+
+.recommendations-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.recommendations-header p {
+    color: #e4f2ff;
+    margin: 0;
+    font-size: 15px;
+}
+
+.recommendations-header strong {
+    color: white;
+}
+
+.intro-alert {
+    padding: 20px 23px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.intro-alert.success {
+    border-left: 5px solid var(--success);
+}
+
+.intro-alert.warning {
+    border-left: 5px solid var(--warning);
+}
+
+.alert-icon {
+    font-size: 25px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.intro-alert.success .alert-icon {
+    color: var(--success);
+}
+
+.intro-alert.warning .alert-icon {
+    color: var(--warning);
+}
+
+.intro-alert h3 {
+    font-size: 17px;
+    color: var(--dark);
+    font-weight: 750;
+    margin: 0 0 5px;
+}
+
+.intro-alert p {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+}
+
+.weak-topic-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 27px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    transition: .25s ease;
+    border-top: 4px solid var(--primary);
+}
+
+.weak-topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 30px rgba(16,44,87,.10);
+}
+
+.topic-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.topic-title {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 750;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topic-title i {
+    color: var(--primary);
+}
+
+.mastery-badge {
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: #eaf3ff;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.mastery-progress {
+    margin-top: 18px;
+}
+
+.mastery-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #718096;
+    font-weight: 650;
+    margin-bottom: 8px;
+}
+
+.mastery-track {
+    height: 9px;
+    border-radius: 20px;
+    background: #eaf0f7;
+    overflow: hidden;
+}
+
+.mastery-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--primary), var(--cyan));
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 750;
+    margin: 27px 0 17px;
+}
+
+.section-heading i {
+    color: var(--primary);
+    font-size: 19px;
+}
+
+.video-card-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 13px;
+    transition: .25s ease;
+}
+
+.video-card-link:hover {
+    transform: translateY(-5px);
+    color: inherit;
+}
+
+.video-card {
+    height: 100%;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 4px 13px rgba(16,44,87,.05);
+}
+
+.video-thumbnail-wrapper {
+    height: 175px;
+    overflow: hidden;
+    position: relative;
+    background: #eaf3ff;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease;
+}
+
+.video-card-link:hover .video-thumbnail {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(16,44,87,.12);
+}
+
+.play-overlay i {
+    color: white;
+    font-size: 45px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,.3));
+}
+
+.video-card-body {
+    padding: 16px;
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.video-title-text {
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.video-card-footer {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.video-search-card {
+    min-height: 175px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: #f4f8ff;
+}
+
+.video-search-card i {
+    color: var(--primary);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.video-search-card p {
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.video-search-card small {
+    color: #718096;
+    font-size: 11px;
+}
+
+.practice-questions {
+    background: #f7faff;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 15px;
+}
+
+.question-item {
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 9px;
+    color: #42536a;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: .2s ease;
+}
+
+.question-item:hover {
+    border-left-color: var(--cyan);
+    transform: translateX(3px);
+}
+
+.question-item:last-child {
+    margin-bottom: 0;
+}
+
+.question-number {
+    color: var(--primary);
+    font-weight: 800;
+    margin-right: 6px;
+}
+
+.empty-section {
+    padding: 20px;
+    text-align: center;
+    background: #f7faff;
+    border: 1px dashed #cbd9e9;
+    border-radius: 12px;
+    color: #718096;
+    font-size: 13px;
+}
+
+.btn-dashboard {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 23px;
+    background: linear-gradient(120deg, var(--primary), var(--cyan));
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(23,105,194,.18);
+    transition: .2s ease;
+}
+
+.btn-dashboard:hover {
+    transform: translateY(-3px);
+    color: white;
+    box-shadow: 0 9px 20px rgba(23,105,194,.25);
+}
+
+.dashboard-actions {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.fade-in {
+    animation: fadeIn .6s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 768px) {
+    .recommendations-page {
+        padding: 20px 0 40px;
+    }
+
+    .recommendations-header {
+        padding: 32px 18px;
+    }
+
+    .weak-topic-card {
+        padding: 19px;
+    }
+
+    .topic-heading {
+        align-items: flex-start;
+    }
+
+    .topic-title {
+        font-size: 17px;
+    }
+
+    .intro-alert {
+        padding: 17px;
+    }
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="recommendations-page">
+
+    <div class="container recommendations-wrapper">
+
+        <!-- Page Header -->
+        <div class="recommendations-header fade-in">
+
+            <div class="header-content">
+
+                <div class="header-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h1>Personalized Learning Plan</h1>
+
+                <p>
+                    Recommendations based on your performance in
+                    <strong>{{ last_test_title }}</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        {% if not has_weak_topics %}
+
+            <!-- Mastery Achieved -->
+            <div class="intro-alert success fade-in">
+
+                <div class="alert-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+
+                <div>
+                    <h3>Excellent Work! Mastery Achieved</h3>
+
+                    <p>
+                        You've demonstrated high proficiency across all topics.
+                        Keep practicing to maintain your knowledge and skills.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="dashboard-actions">
+                <a href="{{ url_for('participant_dashboard') }}"
+                   class="btn-dashboard">
+
+                    <i class="fas fa-chart-line"></i>
+                    Return to Dashboard
+
+                </a>
+            </div>
+
+        {% else %}
+
+            <!-- Improvement Plan -->
+            <div class="intro-alert warning fade-in">
+
+                <div class="alert-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+
+                <div>
+                    <h3>Your Personalized Improvement Plan</h3>
+
+                    <p>
+                        We've identified topics that need more attention.
+                        Use the recommended tutorials and practice questions
+                        below to strengthen your understanding.
+                    </p>
+                </div>
+
+            </div>
+
+
+            {% for topic, data in recommendations.items() %}
+
+            <div class="weak-topic-card fade-in">
+
+                <!-- Topic Heading -->
+                <div class="topic-heading">
+
+                    <h3 class="topic-title">
+                        <i class="fas fa-book-open"></i>
+                        {{ topic }}
+                    </h3>
+
+                    <span class="mastery-badge">
+                        <i class="fas fa-chart-pie me-1"></i>
+                        {{ data.mastery }}% Mastery
+                    </span>
+
+                </div>
+
+
+                <!-- Mastery Progress -->
+                <div class="mastery-progress">
+
+                    <div class="mastery-progress-label">
+                        <span>Topic Mastery</span>
+                        <span>{{ data.mastery }}%</span>
+                    </div>
+
+                    <div class="mastery-track">
+                        <div class="mastery-fill"
+                             style="width: {{ [[data.mastery|float, 0]|max, 100]|min }}%;">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Recommended Videos -->
+                {% if data.videos %}
+
+                    <h4 class="section-heading">
+                        <i class="fas fa-circle-play"></i>
+                        Recommended Video Tutorials
+                    </h4>
+
+                    <div class="row">
+
+                        {% for video in data.videos %}
+
+                        <div class="col-md-6 col-lg-4 mb-3">
+
+                            {% if video.video_id %}
+
+                            <a href="https://www.youtube.com/watch?v={{ video.video_id }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="video-card-link">
+
+                                <div class="video-card">
+
+                                    <div class="video-thumbnail-wrapper">
+
+                                        <img
+                                            src="https://img.youtube.com/vi/{{ video.video_id }}/hqdefault.jpg"
+                                            alt="{{ video.title }}"
+                                            class="video-thumbnail"
+                                            loading="lazy">
+
+                                        <div class="play-overlay">
+                                            <i class="fas fa-circle-play"></i>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="video-card-body">
+
+                                        <p class="video-title-text">
+                                            {{ video.title }}
+                                        </p>
+
+                                        <div class="video-card-footer">
+                                            <i class="fab fa-youtube me-1"></i>
+                                            Watch Tutorial
+                                            <i class="fas fa-arrow-up-right-from-square ms-1"></i>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                            {% else %}
+
+                            <a href="https://www.youtube.com/results?search_query={{ video.title|urlencode }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="video-card-link">
+
+                                <div class="video-card">
+
+                                    <div class="video-search-card">
+
+                                        <i class="fas fa-magnifying-glass"></i>
+
+                                        <p>{{ video.title }}</p>
+
+                                        <small>
+                                            Search YouTube for tutorials
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                            {% endif %}
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+
+                <!-- Practice Questions -->
+                {% if data.questions %}
+
+                    <h4 class="section-heading">
+                        <i class="fas fa-clipboard-question"></i>
+                        Practice Questions
+                    </h4>
+
+                    <div class="practice-questions">
+
+                        {% for question in data.questions %}
+
+                        <div class="question-item">
+
+                            <span class="question-number">
+                                Q{{ loop.index }}.
+                            </span>
+
+                            {% if question.text is defined %}
+                                {{ question.text }}
+                            {% else %}
+                                {{ question }}
+                            {% endif %}
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+
+                {% if not data.videos and not data.questions %}
+
+                    <div class="empty-section">
+                        <i class="fas fa-info-circle me-2"></i>
+                        No additional resources are currently available for this topic.
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+            {% endfor %}
+
+
+            <!-- Dashboard Button -->
+            <div class="dashboard-actions">
+
+                <a href="{{ url_for('participant_dashboard') }}"
+                   class="btn-dashboard">
+
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Dashboard
+
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Animate recommendation cards as they enter the viewport.
+    const cards = document.querySelectorAll('.fade-in');
+
+    if ('IntersectionObserver' in window) {
+
+        const observer = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        }, {
+            threshold: 0.08
+        });
+
+        cards.forEach(function (card) {
+            observer.observe(card);
+        });
+
+    } else {
+
+        cards.forEach(function (card) {
+            card.classList.add('visible');
+        });
+
+    }
+
+});
+</script>
+{% endblock %}

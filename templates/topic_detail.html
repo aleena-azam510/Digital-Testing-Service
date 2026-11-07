@@ -1,0 +1,348 @@
+ 
+{% extends "base.html" %}
+
+{% block title %}{{ topic|title }} Tests | Digital Testing Service{% endblock %}
+
+{% block content %}
+
+<style>
+    .topic-page {
+        min-height: 75vh;
+        padding: 50px 0 70px;
+        background: linear-gradient(135deg, #f4f8ff, #eef7ff);
+    }
+
+    .topic-hero {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .topic-icon {
+        width: 78px;
+        height: 78px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #1769c2, #08a6c9);
+        color: white;
+        font-size: 32px;
+        box-shadow: 0 8px 22px rgba(23, 105, 194, .2);
+    }
+
+    .topic-hero h1 {
+        color: #102c57;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 800;
+    }
+
+    .topic-hero p {
+        color: #718096;
+        font-size: 1.05rem;
+    }
+
+    .difficulty-card {
+        height: 100%;
+        background: white;
+        border: 1px solid #e5edf8;
+        border-radius: 19px;
+        padding: 30px 24px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(20, 50, 90, .06);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .difficulty-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 35px rgba(20, 50, 90, .12);
+    }
+
+    .difficulty-icon {
+        width: 76px;
+        height: 76px;
+        margin: 0 auto 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 31px;
+    }
+
+    .easy-icon {
+        background: #e7f8ef;
+        color: #15945b;
+    }
+
+    .moderate-icon {
+        background: #fff5df;
+        color: #d99013;
+    }
+
+    .hard-icon {
+        background: #ffebeb;
+        color: #dc4545;
+    }
+
+    .difficulty-card h3 {
+        color: #102c57;
+        font-size: 1.4rem;
+        font-weight: 750;
+        margin-bottom: 12px;
+    }
+
+    .difficulty-card p {
+        color: #718096;
+        min-height: 48px;
+        font-size: .94rem;
+        line-height: 1.6;
+    }
+
+    .difficulty-label {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .easy-label {
+        background: #e7f8ef;
+        color: #15945b;
+    }
+
+    .moderate-label {
+        background: #fff5df;
+        color: #bd810e;
+    }
+
+    .hard-label {
+        background: #ffebeb;
+        color: #dc4545;
+    }
+
+    .start-btn {
+        display: inline-block;
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: 650;
+        transition: .2s ease;
+    }
+
+    .start-btn:hover {
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .easy-btn {
+        background: #15945b;
+    }
+
+    .moderate-btn {
+        background: #d99013;
+    }
+
+    .hard-btn {
+        background: #dc4545;
+    }
+
+    .empty-state {
+        max-width: 550px;
+        margin: 0 auto;
+        padding: 45px 25px;
+        background: white;
+        border: 1px solid #e5edf8;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(20, 50, 90, .06);
+    }
+
+    .empty-state i {
+        font-size: 45px;
+        color: #9ab2cf;
+        margin-bottom: 18px;
+    }
+
+    .empty-state h4 {
+        color: #102c57;
+        font-weight: 750;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 35px;
+        color: #1769c2;
+        text-decoration: none;
+        font-weight: 650;
+    }
+
+    .back-link:hover {
+        color: #08a6c9;
+    }
+</style>
+
+<div class="topic-page">
+    <div class="container">
+
+        <div class="topic-hero">
+            <div class="topic-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+
+            <h1>{{ topic|title }} Tests</h1>
+            <p>Choose your difficulty level and test your knowledge.</p>
+        </div>
+
+        {% if tests %}
+
+        <div class="row g-4 justify-content-center">
+
+            {% for test in tests %}
+
+                {% set level = (test.difficulty or 'easy')|lower|trim %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="difficulty-card">
+
+                        {% if level == 'easy' %}
+
+                            <div class="difficulty-icon easy-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+
+                            <span class="difficulty-label easy-label">
+                                BEGINNER
+                            </span>
+
+                            <h3>Easy Test</h3>
+
+                            <p>
+                                Build your foundation with basic concepts
+                                and introductory questions.
+                            </p>
+
+                            <a href="{{ url_for('take_test', test_id=test.id) }}"
+                               class="start-btn easy-btn">
+                                Start Easy Test
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+
+                        {% elif level in ['moderate', 'medium'] %}
+
+                            <div class="difficulty-icon moderate-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+
+                            <span class="difficulty-label moderate-label">
+                                INTERMEDIATE
+                            </span>
+
+                            <h3>Moderate Test</h3>
+
+                            <p>
+                                Challenge yourself with applied concepts
+                                and problem-solving questions.
+                            </p>
+
+                            <a href="{{ url_for('take_test', test_id=test.id) }}"
+                               class="start-btn moderate-btn">
+                                Start Moderate Test
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+
+                        {% elif level == 'hard' %}
+
+                            <div class="difficulty-icon hard-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+
+                            <span class="difficulty-label hard-label">
+                                ADVANCED
+                            </span>
+
+                            <h3>Hard Test</h3>
+
+                            <p>
+                                Evaluate your advanced knowledge,
+                                analytical thinking, and skills.
+                            </p>
+
+                            <a href="{{ url_for('take_test', test_id=test.id) }}"
+                               class="start-btn hard-btn">
+                                Start Hard Test
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+
+                        {% else %}
+
+                            <div class="difficulty-icon"
+                                 style="background:#eef4ff;color:#1769c2;">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+
+                            <span class="difficulty-label"
+                                  style="background:#eef4ff;color:#1769c2;">
+                                {{ level|upper }}
+                            </span>
+
+                            <h3>{{ level|title }} Test</h3>
+
+                            <p>
+                                Start this assessment and evaluate
+                                your knowledge.
+                            </p>
+
+                            <a href="{{ url_for('take_test', test_id=test.id) }}"
+                               class="start-btn"
+                               style="background:#1769c2;">
+                                Start Test
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+            <i class="fas fa-folder-open"></i>
+
+            <h4>No Tests Available Yet</h4>
+
+            <p class="text-muted mb-4">
+                There are currently no tests available for
+                {{ topic|title }}. Please check again later.
+            </p>
+
+            <a href="{{ url_for('participant_dashboard') }}"
+               class="btn btn-primary px-4">
+                <i class="fas fa-arrow-left me-2"></i>
+                Back to Dashboard
+            </a>
+        </div>
+
+        {% endif %}
+
+        <div class="text-center">
+            <a href="{{ url_for('participant_dashboard') }}"
+               class="back-link">
+                <i class="fas fa-arrow-left me-2"></i>
+                Back to Student Dashboard
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

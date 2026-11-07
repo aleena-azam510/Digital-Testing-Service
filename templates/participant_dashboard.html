@@ -1,0 +1,547 @@
+
+{% extends "base.html" %}
+
+{% block title %}Participant Dashboard | Digital Testing Service{% endblock %}
+
+{% block content %}
+<style>
+    .participant-dashboard {
+        --pd-primary: #2563eb;
+        --pd-secondary: #0891b2;
+        --pd-dark: #10213f;
+        --pd-muted: #64748b;
+        --pd-light: #f1f5f9;
+        --pd-border: #e2e8f0;
+        color: var(--pd-dark);
+        padding-bottom: 3rem;
+    }
+
+    .participant-dashboard .dashboard-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        border-radius: 22px;
+        color: #fff;
+        background: linear-gradient(120deg, #10213f 0%, #1d4ed8 65%, #0891b2 100%);
+        box-shadow: 0 15px 35px rgba(37, 99, 235, 0.16);
+    }
+
+    .participant-dashboard .dashboard-hero::after {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        right: -75px;
+        top: -115px;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 50%;
+        box-shadow: 0 0 0 35px rgba(255,255,255,.04),
+                    0 0 0 70px rgba(255,255,255,.03);
+    }
+
+    .participant-dashboard .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .participant-dashboard .hero-label {
+        display: inline-block;
+        padding: 7px 13px;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 30px;
+        background: rgba(255,255,255,.12);
+        color: #e0f2fe;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    .participant-dashboard .dashboard-hero h1 {
+        color: #fff;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 800;
+        margin-bottom: .7rem;
+    }
+
+    .participant-dashboard .dashboard-hero p {
+        color: #dbeafe;
+        margin-bottom: 0;
+        max-width: 550px;
+    }
+
+    .participant-dashboard .welcome-card {
+        position: relative;
+        z-index: 1;
+        padding: 1rem 1.25rem;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 15px;
+        background: rgba(255,255,255,.12);
+        backdrop-filter: blur(8px);
+    }
+
+    .participant-dashboard .welcome-card small {
+        display: block;
+        color: #bfdbfe;
+        margin-bottom: 4px;
+    }
+
+    .participant-dashboard .welcome-card strong {
+        color: #fff;
+        font-size: 1.05rem;
+    }
+
+    .participant-dashboard .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 2rem 0 1.2rem;
+    }
+
+    .participant-dashboard .section-heading h2 {
+        color: var(--pd-dark);
+        font-size: 1.45rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .participant-dashboard .section-heading p {
+        color: var(--pd-muted);
+        font-size: .9rem;
+        margin: .35rem 0 0;
+    }
+
+    .participant-dashboard .filter-control {
+        min-width: 170px;
+        border: 1px solid var(--pd-border);
+        border-radius: 10px;
+        padding: .65rem 2.3rem .65rem .9rem;
+        color: var(--pd-dark);
+        background-color: #fff;
+        font-size: .9rem;
+    }
+
+    .participant-dashboard .filter-control:focus {
+        border-color: var(--pd-primary);
+        box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+
+    .participant-dashboard .topic-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .participant-dashboard .topic-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 205px;
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background: #fff;
+        border: 1px solid var(--pd-border);
+        border-radius: 17px;
+        box-shadow: 0 5px 18px rgba(15, 23, 42, .035);
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        animation: pdFadeIn .5s ease both;
+    }
+
+    .participant-dashboard .topic-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--pd-primary), var(--pd-secondary));
+        opacity: 0;
+        transition: opacity .25s ease;
+    }
+
+    .participant-dashboard .topic-card:hover {
+        transform: translateY(-6px);
+        border-color: #bfdbfe;
+        box-shadow: 0 15px 30px rgba(37,99,235,.11);
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .participant-dashboard .topic-card:hover::before {
+        opacity: 1;
+    }
+
+    .participant-dashboard .topic-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 1.1rem;
+        border-radius: 13px;
+        color: var(--pd-primary);
+        background: #eff6ff;
+        font-size: 1.15rem;
+    }
+
+    .participant-dashboard .topic-card h3 {
+        color: var(--pd-dark);
+        font-size: 1.15rem;
+        font-weight: 750;
+        margin-bottom: .45rem;
+    }
+
+    .participant-dashboard .topic-card p {
+        color: var(--pd-muted);
+        font-size: .9rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .participant-dashboard .topic-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+        color: var(--pd-primary);
+        font-size: .9rem;
+        font-weight: 700;
+    }
+
+    .participant-dashboard .topic-card:hover .topic-action {
+        color: var(--pd-secondary);
+    }
+
+    .participant-dashboard .history-panel {
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--pd-border);
+        border-radius: 17px;
+        box-shadow: 0 5px 18px rgba(15,23,42,.035);
+    }
+
+    .participant-dashboard .submission-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.2rem 1.4rem;
+        border-bottom: 1px solid #edf2f7;
+        text-decoration: none;
+        color: inherit;
+        transition: background .2s ease;
+    }
+
+    .participant-dashboard .submission-item:last-child {
+        border-bottom: none;
+    }
+
+    .participant-dashboard .submission-item:hover {
+        background: #f8fbff;
+        color: inherit;
+    }
+
+    .participant-dashboard .submission-title {
+        color: var(--pd-dark);
+        font-weight: 750;
+        margin-bottom: 5px;
+    }
+
+    .participant-dashboard .submission-meta {
+        color: var(--pd-muted);
+        font-size: .85rem;
+    }
+
+    .participant-dashboard .submission-score {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 7px;
+        color: #475569;
+        font-size: .85rem;
+    }
+
+    .participant-dashboard .result-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 13px;
+        border-radius: 9px;
+        color: var(--pd-primary);
+        background: #eff6ff;
+        font-size: .85rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .participant-dashboard .empty-state {
+        padding: 2.5rem 1rem;
+        text-align: center;
+        color: var(--pd-muted);
+    }
+
+    .participant-dashboard .empty-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 58px;
+        height: 58px;
+        margin: 0 auto 1rem;
+        border-radius: 16px;
+        background: #eff6ff;
+        color: var(--pd-primary);
+        font-size: 1.4rem;
+    }
+
+    .participant-dashboard .empty-state h3 {
+        color: var(--pd-dark);
+        font-size: 1.05rem;
+        font-weight: 750;
+    }
+
+    .participant-dashboard .empty-state p {
+        margin-bottom: 0;
+        font-size: .9rem;
+    }
+
+    .participant-dashboard .no-filter-results {
+        display: none;
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--pd-muted);
+        background: #f8fafc;
+        border: 1px dashed var(--pd-border);
+        border-radius: 13px;
+    }
+
+    @keyframes pdFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .participant-dashboard .dashboard-hero {
+            padding: 1.7rem;
+        }
+
+        .participant-dashboard .welcome-card {
+            margin-top: 1.3rem;
+            width: 100%;
+        }
+
+        .participant-dashboard .section-heading {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .participant-dashboard .filter-control {
+            width: 100%;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .participant-dashboard *,
+        .participant-dashboard *::before,
+        .participant-dashboard *::after {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+</style>
+
+<div class="participant-dashboard">
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-hero">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div class="hero-content">
+                <span class="hero-label">
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    PARTICIPANT DASHBOARD
+                </span>
+
+                <h1>Ready to Test Your Knowledge?</h1>
+
+                <p>
+                    Explore available topics, choose your difficulty level,
+                    and track your learning progress through assessments.
+                </p>
+            </div>
+
+            <div class="welcome-card">
+                <small>Welcome back</small>
+                <strong>
+                    <i class="fas fa-user-circle me-2"></i>
+                    {{ current_user.username }}
+                </strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic Selection -->
+    <div class="section-heading">
+        <div>
+            <h2><i class="fas fa-layer-group me-2 text-primary"></i>Select a Topic</h2>
+            <p>Choose a subject to explore available tests and difficulty levels.</p>
+        </div>
+
+        <div>
+            <label for="topicFilter" class="visually-hidden">Filter topics</label>
+            <select id="topicFilter" class="form-select filter-control">
+                <option value="all">All Topics</option>
+                <option value="cs">Computer Science</option>
+                <option value="math">Mathematics</option>
+                <option value="english">English</option>
+            </select>
+        </div>
+    </div>
+
+    {% if available_topics %}
+    <div class="topic-grid" id="topicGrid">
+        {% for topic in available_topics %}
+        <a href="{{ url_for('topic_detail', topic=topic) }}"
+           class="topic-card topic-card-item"
+           data-topic="{{ topic|lower }}"
+           style="animation-delay: {{ loop.index0 * 0.08 }}s;">
+
+            <div class="topic-icon">
+                {% set topic_name = topic|lower %}
+                {% if 'computer' in topic_name or 'program' in topic_name or 'cs' in topic_name %}
+                    <i class="fas fa-laptop-code"></i>
+                {% elif 'math' in topic_name %}
+                    <i class="fas fa-calculator"></i>
+                {% elif 'english' in topic_name %}
+                    <i class="fas fa-book-open"></i>
+                {% else %}
+                    <i class="fas fa-book"></i>
+                {% endif %}
+            </div>
+
+            <h3>{{ topic|title }}</h3>
+
+            <p>Choose this topic to explore its available assessments.</p>
+
+            <span class="topic-action">
+                Choose Difficulty
+                <i class="fas fa-arrow-right"></i>
+            </span>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="no-filter-results" id="noFilterResults">
+        <i class="fas fa-search me-2"></i>
+        No topics match the selected filter.
+    </div>
+
+    {% else %}
+    <div class="history-panel">
+        <div class="empty-state">
+            <div class="empty-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <h3>No Topics Available Yet</h3>
+            <p>There are currently no assessment topics available. Please check again later.</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Recent Submissions -->
+    <div class="section-heading mt-5">
+        <div>
+            <h2><i class="fas fa-history me-2 text-primary"></i>Recent Test Submissions</h2>
+            <p>Review your previously completed assessments and results.</p>
+        </div>
+    </div>
+
+    <div class="history-panel">
+        {% if recent_submissions %}
+            {% for submission in recent_submissions %}
+            {% set test = submission.test %}
+
+            <a href="{{ url_for('show_results', submission_id=submission.id) }}"
+               class="submission-item">
+
+                <div>
+                    <div class="submission-title">
+                        {{ test.topic|title }} — {{ test.title }}
+                    </div>
+
+                    <div class="submission-meta">
+                        <i class="fas fa-signal me-1"></i>
+                        Difficulty: {{ test.difficulty|title }}
+                    </div>
+
+                    <div class="submission-score">
+                        <i class="fas fa-chart-line text-primary"></i>
+                        Score: {{ submission.score }}/20
+                    </div>
+                </div>
+
+                <span class="result-link">
+                    View Results
+                    <i class="fas fa-arrow-right"></i>
+                </span>
+            </a>
+
+            {% endfor %}
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3>No Test Submissions Yet</h3>
+                <p>Complete your first assessment to see your results and submission history here.</p>
+            </div>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filter = document.getElementById("topicFilter");
+    const cards = document.querySelectorAll(".topic-card-item");
+    const noResults = document.getElementById("noFilterResults");
+
+    if (!filter) return;
+
+    filter.addEventListener("change", function () {
+        const selected = this.value.toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(function (card) {
+            const topic = card.dataset.topic || "";
+
+            const matches =
+                selected === "all" ||
+                topic.includes(selected);
+
+            card.style.display = matches ? "flex" : "none";
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        if (noResults) {
+            noResults.style.display =
+                visibleCount === 0 ? "block" : "none";
+        }
+    });
+});
+</script>
+{% endblock %}

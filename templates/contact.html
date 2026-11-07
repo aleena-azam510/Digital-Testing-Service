@@ -1,0 +1,375 @@
+
+{% extends "base.html" %}
+
+{% block title %}Contact Us - ExamProctor AI{% endblock %}
+
+{% block head %}
+<style>
+    .contact-page {
+        --contact-navy: #10213f;
+        --contact-blue: #2563eb;
+        --contact-cyan: #06b6d4;
+        --contact-muted: #64748b;
+        color: var(--contact-navy);
+        padding-bottom: 70px;
+    }
+
+    .contact-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 75px 25px 65px;
+        margin-bottom: 55px;
+        text-align: center;
+        border-radius: 0 0 28px 28px;
+        background: linear-gradient(120deg, #eff6ff, #f0f9ff, #ecfeff);
+    }
+
+    .contact-hero::before,
+    .contact-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .contact-hero::before {
+        width: 260px;
+        height: 260px;
+        top: -130px;
+        left: -65px;
+        background: rgba(37, 99, 235, 0.08);
+    }
+
+    .contact-hero::after {
+        width: 300px;
+        height: 300px;
+        bottom: -190px;
+        right: -70px;
+        background: rgba(6, 182, 212, 0.10);
+    }
+
+    .contact-eyebrow {
+        display: inline-block;
+        padding: 8px 17px;
+        margin-bottom: 18px;
+        border-radius: 50px;
+        color: #1d4ed8;
+        background: #dbeafe;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .contact-hero h1 {
+        position: relative;
+        z-index: 1;
+        color: var(--contact-navy);
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 800;
+        letter-spacing: -1.5px;
+    }
+
+    .contact-hero p {
+        position: relative;
+        z-index: 1;
+        max-width: 650px;
+        margin: 15px auto 0;
+        color: var(--contact-muted);
+        font-size: 1.08rem;
+        line-height: 1.8;
+    }
+
+    .contact-layout {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .contact-info {
+        height: 100%;
+        padding: 38px 32px;
+        border-radius: 22px;
+        color: #fff;
+        background: linear-gradient(145deg, #10213f, #1e40af);
+        box-shadow: 0 18px 45px rgba(16, 33, 63, 0.15);
+    }
+
+    .contact-info h2 {
+        margin-bottom: 14px;
+        font-size: 1.8rem;
+        font-weight: 750;
+    }
+
+    .contact-info > p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        margin-bottom: 35px;
+    }
+
+    .contact-info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 27px;
+    }
+
+    .contact-icon {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 13px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.13);
+        font-size: 1.15rem;
+    }
+
+    .contact-info-item h3 {
+        margin: 2px 0 5px;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .contact-info-item p {
+        margin: 0;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .contact-form-card {
+        height: 100%;
+        padding: 40px;
+        border: 1px solid #e8eef7;
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 15px 45px rgba(15, 23, 42, 0.07);
+    }
+
+    .contact-form-card h2 {
+        margin-bottom: 9px;
+        color: var(--contact-navy);
+        font-size: 1.75rem;
+        font-weight: 800;
+    }
+
+    .contact-form-card .form-intro {
+        margin-bottom: 28px;
+        color: var(--contact-muted);
+        line-height: 1.7;
+    }
+
+    .contact-form-card .form-label {
+        margin-bottom: 8px;
+        color: #243550;
+        font-size: 0.92rem;
+        font-weight: 650;
+    }
+
+    .contact-form-card .form-control {
+        min-height: 49px;
+        padding: 12px 15px;
+        border: 1px solid #dce4ef;
+        border-radius: 11px;
+        background: #f8fafc;
+        color: var(--contact-navy);
+        transition: all 0.2s ease;
+    }
+
+    .contact-form-card textarea.form-control {
+        min-height: 145px;
+        resize: vertical;
+    }
+
+    .contact-form-card .form-control:focus {
+        border-color: var(--contact-blue);
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+    }
+
+    .contact-submit {
+        min-height: 52px;
+        border: none;
+        border-radius: 11px;
+        color: #fff;
+        background: linear-gradient(100deg, #2563eb, #0891b2);
+        font-size: 1rem;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-submit:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+    }
+
+    .contact-note {
+        margin-top: 17px;
+        color: #94a3b8;
+        font-size: 0.83rem;
+        text-align: center;
+    }
+
+    @media (max-width: 767px) {
+        .contact-hero {
+            padding: 55px 18px 45px;
+            margin-bottom: 35px;
+        }
+
+        .contact-info,
+        .contact-form-card {
+            padding: 28px 23px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .contact-submit {
+            transition: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="contact-page">
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <span class="contact-eyebrow">
+            <i class="fas fa-comments me-2"></i> WE'RE HERE TO HELP
+        </span>
+
+        <h1>Let's Start a Conversation</h1>
+
+        <p>
+            Have a question, suggestion, or need assistance with the
+            Digital Testing Service? Send us a message. We'd be glad
+            to hear from you.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <div class="container contact-layout">
+        <div class="row g-4 align-items-stretch">
+
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+
+                    <p>
+                        We're committed to making your digital testing
+                        experience straightforward and effective.
+                        Reach out using the contact form.
+                    </p>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Support</h3>
+                            <p>Send us your questions or feedback through the form.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h3>Technical Assistance</h3>
+                            <p>Let us know if you encounter an issue while using the platform.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3>Suggestions & Feedback</h3>
+                            <p>Your ideas can help us improve the testing experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-form-card">
+                    <h2>Send Us a Message</h2>
+
+                    <p class="form-intro">
+                        Complete the form below and provide as much
+                        detail as possible.
+                    </p>
+
+                    <form action="{{ url_for('contact') }}" method="POST">
+
+                        <div class="mb-4">
+                            <label for="name" class="form-label">
+                                Your Name
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label">
+                                Your Message
+                            </label>
+                            <textarea
+                                class="form-control"
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="How can we help you?"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn contact-submit">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Send Message
+                            </button>
+                        </div>
+
+                        <p class="contact-note">
+                            <i class="fas fa-lock me-1"></i>
+                            Please do not include passwords or sensitive information.
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
